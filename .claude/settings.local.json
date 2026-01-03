@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(tree:*)",
+      "WebFetch(domain:www.xtriam.com)"
+    ]
+  }
+}

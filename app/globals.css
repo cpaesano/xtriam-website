@@ -1,13 +1,109 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand Colors - xTriam Blue #027eda & Orange #ff9f00 */
+  --brand-blue-50: #e6f4fd;
+  --brand-blue-100: #cce9fb;
+  --brand-blue-200: #99d3f7;
+  --brand-blue-300: #66bdf3;
+  --brand-blue-400: #33a7ef;
+  --brand-blue-500: #027eda;
+  --brand-blue-600: #027eda;
+  --brand-blue-700: #0267b5;
+  --brand-blue-800: #015090;
+  --brand-blue-900: #01396b;
+  --brand-blue-950: #002246;
+
+  --brand-orange-50: #fff8e6;
+  --brand-orange-100: #fff1cc;
+  --brand-orange-200: #ffe399;
+  --brand-orange-300: #ffd566;
+  --brand-orange-400: #ffc733;
+  --brand-orange-500: #ff9f00;
+  --brand-orange-600: #e68f00;
+  --brand-orange-700: #cc7f00;
+  --brand-orange-800: #996000;
+  --brand-orange-900: #664000;
+  --brand-orange-950: #332000;
+
+  /* Gray tones from legacy site */
+  --gray-light: #e6e6e6;
+  --gray-medium: #bebebe;
+
+  /* Semantic Colors */
   --background: #ffffff;
   --foreground: #171717;
+  --muted: var(--gray-light);
+  --muted-foreground: #737373;
+  --border: var(--gray-light);
+  --ring: var(--brand-blue-500);
+
+  /* Primary = Blue */
+  --primary: var(--brand-blue-600);
+  --primary-foreground: #ffffff;
+  --primary-hover: var(--brand-blue-700);
+
+  /* Accent = Orange */
+  --accent: var(--brand-orange-500);
+  --accent-foreground: #ffffff;
+  --accent-hover: var(--brand-orange-600);
+
+  /* Success, Warning, Error */
+  --success: #22c55e;
+  --warning: #eab308;
+  --error: #ef4444;
 }
 
 @theme inline {
+  /* Background & Foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+
+  /* Brand Blue Scale */
+  --color-brand-blue-50: var(--brand-blue-50);
+  --color-brand-blue-100: var(--brand-blue-100);
+  --color-brand-blue-200: var(--brand-blue-200);
+  --color-brand-blue-300: var(--brand-blue-300);
+  --color-brand-blue-400: var(--brand-blue-400);
+  --color-brand-blue-500: var(--brand-blue-500);
+  --color-brand-blue-600: var(--brand-blue-600);
+  --color-brand-blue-700: var(--brand-blue-700);
+  --color-brand-blue-800: var(--brand-blue-800);
+  --color-brand-blue-900: var(--brand-blue-900);
+  --color-brand-blue-950: var(--brand-blue-950);
+
+  /* Brand Orange Scale */
+  --color-brand-orange-50: var(--brand-orange-50);
+  --color-brand-orange-100: var(--brand-orange-100);
+  --color-brand-orange-200: var(--brand-orange-200);
+  --color-brand-orange-300: var(--brand-orange-300);
+  --color-brand-orange-400: var(--brand-orange-400);
+  --color-brand-orange-500: var(--brand-orange-500);
+  --color-brand-orange-600: var(--brand-orange-600);
+  --color-brand-orange-700: var(--brand-orange-700);
+  --color-brand-orange-800: var(--brand-orange-800);
+  --color-brand-orange-900: var(--brand-orange-900);
+  --color-brand-orange-950: var(--brand-orange-950);
+
+  /* Primary & Accent */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Status Colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Gray tones */
+  --color-gray-light: var(--gray-light);
+  --color-gray-medium: var(--gray-medium);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +112,32 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --muted: #262626;
+    --muted-foreground: #a3a3a3;
+    --border: #404040;
   }
 }
 
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Focus Ring */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--brand-blue-100);
+  color: var(--brand-blue-900);
 }
