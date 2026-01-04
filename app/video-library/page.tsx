@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import { Button, VimeoEmbed } from "@/components/ui";
 import { Play } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -29,33 +29,31 @@ export default function VideoLibraryPage() {
       {/* Videos Grid */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          {/* Featured Video */}
+          {/* Customer Success Videos */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              Featured
+              Customer Success Stories
             </h2>
-            <div className="rounded-xl overflow-hidden bg-muted aspect-video flex items-center justify-center border border-border">
-              <div className="text-center p-8">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-blue-100 text-brand-blue-600 mb-4">
-                  <Play className="h-10 w-10" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  bpmPro Product Overview
-                </h3>
-                <p className="mt-2 text-muted-foreground">
-                  See how bpmPro helps window contractors streamline operations
-                </p>
-                <a
-                  href="https://youtube.com/@xtriam/videos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4"
+            <div className="grid gap-8 lg:grid-cols-2">
+              {customerVideos.map((video, index) => (
+                <div
+                  key={index}
+                  className="rounded-xl border border-border bg-background overflow-hidden shadow-sm"
                 >
-                  <Button variant="primary">
-                    Watch on YouTube
-                  </Button>
-                </a>
-              </div>
+                  <VimeoEmbed videoId={video.vimeoId} title={video.title} />
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-foreground">
+                      {video.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {video.name}, {video.company}
+                    </p>
+                    <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-brand-orange-100 px-3 py-1 text-sm font-medium text-brand-orange-700">
+                      {video.result}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -142,6 +140,23 @@ export default function VideoLibraryPage() {
     </div>
   );
 }
+
+const customerVideos = [
+  {
+    vimeoId: "842923160",
+    title: "Boost Staff Performance",
+    name: "Mohammad Aljamal",
+    company: "Hurricane Window and Screen",
+    result: "80% less admin time",
+  },
+  {
+    vimeoId: "843072856",
+    title: "Streamline Operations",
+    name: "Michele Diaz",
+    company: "Palm Aluminum & Glass",
+    result: "Streamlined operations",
+  },
+];
 
 const videoCategories = [
   {

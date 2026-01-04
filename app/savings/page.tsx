@@ -3,6 +3,27 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button, Input } from "@/components/ui";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
+
+const CHART_COLORS = [
+  "#027eda", // brand blue
+  "#ff9f00", // brand orange
+  "#10b981", // green
+  "#8b5cf6", // purple
+  "#f43f5e", // pink
+  "#06b6d4", // cyan
+];
 
 export default function SavingsPage() {
   const [step, setStep] = useState(1);
@@ -279,56 +300,120 @@ export default function SavingsPage() {
 
             {step === 3 && results && (
               <div>
+                {/* Summary Cards */}
                 <div className="text-center">
                   <h2 className="text-xl font-semibold text-foreground">
                     Your Estimated Monthly Savings
                   </h2>
-                  <div className="mt-6">
-                    <div className="text-5xl font-bold text-brand-orange-500">
-                      ${results.monthlySavings.toLocaleString()}
-                    </div>
-                    <p className="mt-2 text-muted-foreground">per month</p>
-                  </div>
-                  <div className="mt-4">
-                    <div className="text-3xl font-bold text-brand-blue-600">
-                      {results.monthlyHours} hours
-                    </div>
-                    <p className="mt-1 text-muted-foreground">
-                      of productivity gained monthly
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <h3 className="font-semibold text-foreground">
-                    Hours saved by activity:
-                  </h3>
-                  <div className="mt-4 space-y-3">
-                    {results.breakdown.map((item, index) => (
-                      <div key={index} className="flex items-center gap-4">
-                        <div className="flex-1">
-                          <div className="flex justify-between text-sm">
-                            <span className="text-muted-foreground">
-                              {item.label}
-                            </span>
-                            <span className="font-medium text-foreground">
-                              {item.hours} hrs
-                            </span>
-                          </div>
-                          <div className="mt-1 h-2 w-full rounded-full bg-muted">
-                            <div
-                              className="h-2 rounded-full bg-brand-blue-500"
-                              style={{
-                                width: `${(item.hours / results.monthlyHours) * 100}%`,
-                              }}
-                            />
-                          </div>
-                        </div>
+                  <div className="mt-6 grid grid-cols-2 gap-4">
+                    <div className="rounded-lg bg-brand-orange-50 p-4">
+                      <div className="text-3xl font-bold text-brand-orange-500 sm:text-4xl">
+                        ${results.monthlySavings.toLocaleString()}
                       </div>
-                    ))}
+                      <p className="mt-1 text-sm text-muted-foreground">per month</p>
+                    </div>
+                    <div className="rounded-lg bg-brand-blue-50 p-4">
+                      <div className="text-3xl font-bold text-brand-blue-600 sm:text-4xl">
+                        {results.monthlyHours} hrs
+                      </div>
+                      <p className="mt-1 text-sm text-muted-foreground">productivity gained</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 grid grid-cols-2 gap-4">
+                    <div className="rounded-lg border border-border p-3">
+                      <div className="text-xl font-bold text-foreground">
+                        ${(results.monthlySavings * 3).toLocaleString()}
+                      </div>
+                      <p className="text-xs text-muted-foreground">Quarterly</p>
+                    </div>
+                    <div className="rounded-lg border border-border p-3">
+                      <div className="text-xl font-bold text-foreground">
+                        ${(results.monthlySavings * 12).toLocaleString()}
+                      </div>
+                      <p className="text-xs text-muted-foreground">Annually</p>
+                    </div>
                   </div>
                 </div>
 
+                {/* Charts Section */}
+                <div className="mt-8">
+                  <h3 className="font-semibold text-foreground text-center mb-6">
+                    Hours Saved by Activity
+                  </h3>
+
+                  {/* Donut Chart */}
+                  <div className="flex justify-center">
+                    <ResponsiveContainer width="100%" height={280}>
+                      <PieChart>
+                        <Pie
+                          data={results.breakdown}
+                          dataKey="hours"
+                          nameKey="label"
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={60}
+                          outerRadius={100}
+                          paddingAngle={2}
+                          label={({ label, percent }) =>
+                            `${(percent * 100).toFixed(0)}%`
+                          }
+                          labelLine={false}
+                        >
+                          {results.breakdown.map((_, index) => (
+                            <Cell
+                              key={`cell-${index}`}
+                              fill={CHART_COLORS[index % CHART_COLORS.length]}
+                            />
+                          ))}
+                        </Pie>
+                        <Tooltip
+                          formatter={(value: number) => [`${value} hours`, 'Hours Saved']}
+                        />
+                        <Legend
+                          layout="horizontal"
+                          align="center"
+                          verticalAlign="bottom"
+                          wrapperStyle={{ paddingTop: '20px' }}
+                        />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  {/* Bar Chart */}
+                  <div className="mt-8">
+                    <ResponsiveContainer width="100%" height={250}>
+                      <BarChart
+                        data={results.breakdown}
+                        layout="vertical"
+                        margin={{ top: 5, right: 30, left: 100, bottom: 5 }}
+                      >
+                        <XAxis type="number" unit=" hrs" />
+                        <YAxis
+                          dataKey="label"
+                          type="category"
+                          width={90}
+                          tick={{ fontSize: 12 }}
+                        />
+                        <Tooltip
+                          formatter={(value: number) => [`${value} hours`, 'Hours Saved']}
+                        />
+                        <Bar
+                          dataKey="hours"
+                          radius={[0, 4, 4, 0]}
+                        >
+                          {results.breakdown.map((_, index) => (
+                            <Cell
+                              key={`bar-${index}`}
+                              fill={CHART_COLORS[index % CHART_COLORS.length]}
+                            />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
                 <div className="mt-8 flex gap-4">
                   <Button
                     variant="outline"

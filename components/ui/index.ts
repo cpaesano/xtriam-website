@@ -12,3 +12,7 @@ export {
   CardDescription,
   CardContent,
 } from "./Card";
+
+export { VimeoEmbed } from "./VimeoEmbed";
+
+export { FloatingHelpButton } from "./FloatingHelpButton";

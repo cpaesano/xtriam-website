@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui";
-import { Quote } from "lucide-react";
+import { Button, VimeoEmbed } from "@/components/ui";
+import { Quote, Play } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Customer Success Stories",
@@ -43,9 +43,58 @@ export default function SuccessStoriesPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Video Testimonials */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Hear From Our Customers
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Watch how bpmPro has transformed these window and door businesses.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {videoTestimonials.map((video, index) => (
+              <div
+                key={index}
+                className="rounded-xl border border-border bg-background overflow-hidden shadow-sm"
+              >
+                <VimeoEmbed videoId={video.vimeoId} title={video.title} />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-foreground">
+                    {video.title}
+                  </h3>
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="font-medium text-foreground">{video.name}</span>
+                    <span className="text-muted-foreground">•</span>
+                    <span className="text-muted-foreground">{video.role}</span>
+                  </div>
+                  <div className="text-brand-blue-600 font-medium">
+                    {video.company}
+                  </div>
+                  <p className="mt-3 text-muted-foreground">
+                    {video.description}
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-orange-100 px-3 py-1 text-sm font-medium text-brand-orange-700">
+                    {video.result}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Text Testimonials */}
+      <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              What Our Customers Say
+            </h2>
+          </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial, index) => (
               <div
@@ -76,7 +125,7 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* Results Section */}
-      <section className="bg-muted/30 py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -141,6 +190,29 @@ export default function SuccessStoriesPage() {
     </div>
   );
 }
+
+const videoTestimonials = [
+  {
+    vimeoId: "842923160",
+    title: "Boost Staff Performance",
+    name: "Mohammad Aljamal",
+    role: "President",
+    company: "Hurricane Window and Screen",
+    description:
+      "Mohammad faced challenges in managing business operations as the company grew. bpmPro helped them overcome these challenges.",
+    result: "80% reduction in administrative time",
+  },
+  {
+    vimeoId: "843072856",
+    title: "Streamline Operations",
+    name: "Michele Diaz",
+    role: "President",
+    company: "Palm Aluminum & Glass",
+    description:
+      "Michele dedicated five to six years to finding the right software to assist with their window business operations. bpmPro delivered with a highly user-friendly interface.",
+    result: "Streamlined entire operations",
+  },
+];
 
 const stats = [
   { value: "12+", label: "Active Clients" },

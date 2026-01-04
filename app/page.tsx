@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui";
+import { Button, VimeoEmbed } from "@/components/ui";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -112,6 +112,42 @@ export default function Home() {
             <Link href="/bpmpro-features">
               <Button variant="primary">View All Features</Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Success Video */}
+      <section className="py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <div className="inline-flex items-center rounded-full bg-brand-orange-100 px-3 py-1 text-sm font-medium text-brand-orange-700 mb-4">
+                Customer Success Story
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                80% Reduction in Admin Time
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                See how Hurricane Window and Screen transformed their operations with bpmPro. President Mohammad Aljamal shares how they overcame the challenges of managing a growing business.
+              </p>
+              <div className="mt-6">
+                <blockquote className="border-l-4 border-brand-orange-500 pl-4 italic text-muted-foreground">
+                  "bpmPro boosted our performance and slashed administrative time by 80%."
+                </blockquote>
+                <div className="mt-4">
+                  <div className="font-semibold text-foreground">Mohammad Aljamal</div>
+                  <div className="text-sm text-muted-foreground">President, Hurricane Window and Screen</div>
+                </div>
+              </div>
+              <div className="mt-8">
+                <Link href="/customer-success-stories">
+                  <Button variant="primary">See More Success Stories</Button>
+                </Link>
+              </div>
+            </div>
+            <div>
+              <VimeoEmbed videoId="842923160" title="Hurricane Window and Screen Success Story" />
+            </div>
           </div>
         </div>
       </section>
