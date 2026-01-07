@@ -87,7 +87,7 @@ export default function EliminateManualProcessesPage() {
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
             Ready to go digital?
           </h2>
-          <p className="mt-4 text-white/90">
+          <p className="mt-4 text-lg text-white/90">
             See how much time you'll save by eliminating manual processes.
           </p>
           <div className="mt-8 flex justify-center gap-4">

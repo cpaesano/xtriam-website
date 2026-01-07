@@ -139,7 +139,7 @@ export default function BpmProPage() {
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
                 Ready to see <strong>bpmPro</strong> in action?
               </h2>
-              <p className="mt-2 text-white/90">
+              <p className="mt-2 text-lg text-white/90">
                 Schedule a personalized demo and see how <strong>bpmPro</strong> can transform
                 your business.
               </p>
