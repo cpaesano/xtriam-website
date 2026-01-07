@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button, VimeoEmbed } from "@/components/ui";
+import { Button, VimeoEmbed, YouTubeEmbed } from "@/components/ui";
 import { Quote, Play } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function SuccessStoriesPage() {
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
               See how window and door contractors are transforming their
-              businesses with bpmPro.
+              businesses with <strong>bpmPro</strong>.
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function SuccessStoriesPage() {
               Hear From Our Customers
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Watch how bpmPro has transformed these window and door businesses.
+              Watch how <strong>bpmPro</strong> has transformed these window and door businesses.
             </p>
           </div>
 
@@ -61,7 +61,11 @@ export default function SuccessStoriesPage() {
                 key={index}
                 className="rounded-xl border border-border bg-background overflow-hidden shadow-sm"
               >
-                <VimeoEmbed videoId={video.vimeoId} title={video.title} />
+                {video.platform === "youtube" ? (
+                  <YouTubeEmbed videoId={video.videoId} title={video.title} />
+                ) : (
+                  <VimeoEmbed videoId={video.videoId} title={video.title} />
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground">
                     {video.title}
@@ -136,7 +140,7 @@ export default function SuccessStoriesPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {results.map((result, index) => (
               <div
                 key={index}
@@ -166,7 +170,7 @@ export default function SuccessStoriesPage() {
             </h2>
             <p className="mt-4 text-brand-blue-100">
               Join other window and door contractors who have transformed their
-              businesses with bpmPro.
+              businesses with <strong>bpmPro</strong>.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
               <Link href="/savings">
@@ -193,17 +197,41 @@ export default function SuccessStoriesPage() {
 
 const videoTestimonials = [
   {
-    vimeoId: "842923160",
+    platform: "youtube",
+    videoId: "FtWksXxC_tg",
+    title: "Driving a 50% Increase in Net Profits",
+    name: "Hisham Aljamal",
+    role: "Founder",
+    company: "Hurricane Window & Screen",
+    description:
+      "A window contractor since 1984, Hisham Aljamal shares how HWS is recapturing 50% of their net profit thanks to bpmPro. By streamlining daily operations, they're now achieving greater efficiency and profitability.",
+    result: "50% increase in net profits",
+  },
+  {
+    platform: "vimeo",
+    videoId: "849143740",
+    title: "Achieving 75% Time Savings in Quoting",
+    name: "Nour Aljamal",
+    role: "Sales Representative",
+    company: "Hurricane Window & Screen",
+    description:
+      "Nour Aljamal shares how bpmPro has revolutionized her quoting process. The time she spends creating quotes is now just 25% of what it used to be, making it a key factor in her day-to-day efficiency.",
+    result: "75% time savings in quoting",
+  },
+  {
+    platform: "vimeo",
+    videoId: "842923160",
     title: "Boost Staff Performance",
     name: "Mohammad Aljamal",
     role: "President",
-    company: "Hurricane Window and Screen",
+    company: "Hurricane Window & Screen",
     description:
       "Mohammad faced challenges in managing business operations as the company grew. bpmPro helped them overcome these challenges.",
     result: "80% reduction in administrative time",
   },
   {
-    vimeoId: "843072856",
+    platform: "vimeo",
+    videoId: "843072856",
     title: "Streamline Operations",
     name: "Michele Diaz",
     role: "President",
@@ -212,10 +240,98 @@ const videoTestimonials = [
       "Michele dedicated five to six years to finding the right software to assist with their window business operations. bpmPro delivered with a highly user-friendly interface.",
     result: "Streamlined entire operations",
   },
+  {
+    platform: "youtube",
+    videoId: "9YQVSSx78aI",
+    title: "Reducing Time Spent on Spreadsheets by 80%",
+    name: "Mohammad Aljamal",
+    role: "President",
+    company: "Hurricane Window & Screen",
+    description:
+      "Since May 2022, bpmPro has slashed administrative tasks at Hurricane Window and Screen by 80%, boosting efficiency and enhancing performance.",
+    result: "80% less time on spreadsheets",
+  },
+  {
+    platform: "youtube",
+    videoId: "fyaX4dWULW8",
+    title: "Saving 60 Hours per Month When Quoting",
+    name: "Anthony Infante",
+    role: "Vice President",
+    company: "TISW Corp",
+    description:
+      "bpmPro has revolutionized TISW Corp's operations, saving 60 hours per month on quoting.",
+    result: "60 hours saved per month",
+  },
+  {
+    platform: "youtube",
+    videoId: "Y4RumW2mN8g",
+    title: "Simplifying Project Management: An Easy-to-Use Solution",
+    name: "Desiree Williams",
+    role: "Installation Coordinator",
+    company: "Hurricane Window & Screen",
+    description:
+      "Discover how bpmPro has transformed project management and task coordination for Hurricane Window and Screen. Desiree shares her experience with bpmPro, highlighting its ease of use and efficiency.",
+    result: "Simplified project management",
+  },
+  {
+    platform: "youtube",
+    videoId: "8kZgQVvzJVA",
+    title: "Effortless Proposal Delivery and Automated Pricing",
+    name: "Stephen Demos",
+    role: "Senior Sales Representative",
+    company: "Palm Aluminum & Glass",
+    description:
+      "Discover how bpmPro has simplified proposal management and automated pricing, making the entire process effortless and efficient. With built-in email integration and automatic labor cost calculation, bpmPro delivers exceptional results.",
+    result: "Automated pricing & proposals",
+  },
+  {
+    platform: "youtube",
+    videoId: "xZ02ioC-mxQ",
+    title: "Fostering Better Team Communication",
+    name: "Hisham Aljamal",
+    role: "Founder",
+    company: "Hurricane Window & Screen",
+    description:
+      "Learn how bpmPro provides a unified system that fosters better communication across teams, transforming individual efforts into a cohesive, profit-driving strategy for operations, sales, and administrative teams.",
+    result: "Better team collaboration",
+  },
+  {
+    platform: "youtube",
+    videoId: "85sBR952yXk",
+    title: "Driving Efficiency and Growth",
+    name: "Michele Diaz",
+    role: "President",
+    company: "Palm Aluminum & Glass",
+    description:
+      "bpmPro has been key in boosting efficiency and fostering growth at Palm Aluminum & Glass by enhancing customer interactions and streamlining employee workflows.",
+    result: "Efficiency & business growth",
+  },
+  {
+    platform: "youtube",
+    videoId: "8y2CKYxQsvg",
+    title: "Improving Communications With Customers",
+    name: "Mohammad Aljamal",
+    role: "President",
+    company: "Hurricane Window & Screen",
+    description:
+      "bpmPro has significantly enhanced customer relationship management at Hurricane Window and Screen, leading to clearer and more effective communication with clients.",
+    result: "Better customer communication",
+  },
+  {
+    platform: "youtube",
+    videoId: "0sMHBl-HviI",
+    title: "Streamlining Sales Processes",
+    name: "Stephen Demos",
+    role: "Senior Sales Representative",
+    company: "Palm Aluminum & Glass",
+    description:
+      "bpmPro has streamlined sales at Palm Aluminum and Glass, making lead capture and proposal generation seamless and efficient.",
+    result: "Streamlined sales processes",
+  },
 ];
 
 const stats = [
-  { value: "12+", label: "Active Clients" },
+  { value: "25+", label: "Active Clients" },
   { value: "1000+", label: "Projects Managed" },
   { value: "50%", label: "Time Saved" },
   { value: "99.9%", label: "Uptime" },
@@ -268,18 +384,23 @@ const testimonials = [
 
 const results = [
   {
-    metric: "50%",
+    metric: "80%",
     label: "Reduction in Admin Time",
-    description: "Less time on paperwork means more time selling and installing.",
+    description: "Less time on spreadsheets means more time selling and installing.",
   },
   {
-    metric: "2x",
-    label: "Faster Quote Generation",
-    description: "Create professional proposals in half the time.",
+    metric: "75%",
+    label: "Time Savings in Quoting",
+    description: "Create professional proposals in a fraction of the time.",
   },
   {
-    metric: "30%",
-    label: "Improved Cash Flow",
-    description: "Better tracking means faster payments and fewer surprises.",
+    metric: "50%",
+    label: "Increase in Net Profits",
+    description: "Streamlined operations drive greater efficiency and profitability.",
+  },
+  {
+    metric: "60 hrs",
+    label: "Saved Monthly on Quoting",
+    description: "Revolutionary time savings that transform business operations.",
   },
 ];

@@ -64,7 +64,7 @@ export function FloatingHelpButton() {
               <span className="text-3xl flex-shrink-0">📅</span>
               <div>
                 <p className="text-lg font-semibold text-brand-orange-700">Book a Demo</p>
-                <p className="text-sm text-brand-orange-600">See bpmPro in action</p>
+                <p className="text-sm text-brand-orange-600">See <strong>bpmPro</strong> in action</p>
               </div>
             </Link>
 

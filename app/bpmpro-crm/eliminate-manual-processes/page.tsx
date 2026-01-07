@@ -20,7 +20,7 @@ export default function EliminateManualProcessesPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Spreadsheets, paper forms, and duplicate data entry are holding
-              your business back. bpmPro digitizes everything so you can work
+              your business back. <strong>bpmPro</strong> digitizes everything so you can work
               smarter.
             </p>
             <div className="mt-10 flex items-center justify-center gap-4">
@@ -71,7 +71,7 @@ export default function EliminateManualProcessesPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-sm text-green-600 font-medium">After bpmPro</div>
+                    <div className="text-sm text-green-600 font-medium">After <strong>bpmPro</strong></div>
                     <div className="text-foreground">{item.after}</div>
                   </div>
                 </div>

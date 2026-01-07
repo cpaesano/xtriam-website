@@ -20,7 +20,7 @@ export default function BpmProPage() {
               <span className="text-brand-blue-600">For Window Pros</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              bpmPro is your all-in-one solution to digitize operations, manage
+              <strong>bpmPro</strong> is your all-in-one solution to digitize operations, manage
               the customer journey from lead to payment, generate proposals
               quickly, and automate routine communications.
             </p>
@@ -45,7 +45,7 @@ export default function BpmProPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Why Window Contractors Choose bpmPro
+              Why Window Contractors Choose <strong>bpmPro</strong>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Eight powerful advantages that transform how you run your business
@@ -82,7 +82,7 @@ export default function BpmProPage() {
                 Built on Salesforce
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                bpmPro is a Salesforce-native managed package, which means you
+                <strong>bpmPro</strong> is a Salesforce-native managed package, which means you
                 get the reliability, security, and scalability of the world's #1
                 CRM platform.
               </p>
@@ -120,7 +120,7 @@ export default function BpmProPage() {
                   <div className="mt-1 text-sm text-brand-blue-200">Uptime SLA</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold">12+</div>
+                  <div className="text-3xl font-bold">25+</div>
                   <div className="mt-1 text-sm text-brand-blue-200">
                     Active Clients
                   </div>
@@ -137,10 +137,10 @@ export default function BpmProPage() {
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             <div>
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
-                Ready to see bpmPro in action?
+                Ready to see <strong>bpmPro</strong> in action?
               </h2>
               <p className="mt-2 text-brand-orange-100">
-                Schedule a personalized demo and see how bpmPro can transform
+                Schedule a personalized demo and see how <strong>bpmPro</strong> can transform
                 your business.
               </p>
             </div>

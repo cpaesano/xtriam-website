@@ -112,10 +112,10 @@ export default function AboutPage() {
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
               <div className="text-white">
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  Our Flagship Product: bpmPro
+                  Our Flagship Product: <strong>bpmPro</strong>
                 </h2>
                 <p className="mt-4 text-brand-blue-100">
-                  bpmPro is our Salesforce-native business process management
+                  <strong>bpmPro</strong> is our Salesforce-native business process management
                   platform designed specifically for window and door
                   professionals.
                 </p>
@@ -145,14 +145,14 @@ export default function AboutPage() {
                       variant="accent"
                       size="lg"
                     >
-                      Learn More About bpmPro
+                      Learn More About <strong>bpmPro</strong>
                     </Button>
                   </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center">
                 <div className="rounded-xl bg-white/10 p-8 text-center backdrop-blur">
-                  <div className="text-5xl font-bold text-white">12+</div>
+                  <div className="text-5xl font-bold text-white">25+</div>
                   <div className="mt-2 text-brand-blue-200">
                     Active Client Organizations
                   </div>

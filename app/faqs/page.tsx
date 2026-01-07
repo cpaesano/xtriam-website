@@ -25,7 +25,7 @@ export default function FAQsPage() {
               Frequently Asked Questions
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Everything you need to know about bpmPro. Can't find what you're
+              Everything you need to know about <strong>bpmPro</strong>. Can't find what you're
               looking for?{" "}
               <Link
                 href="/contact"

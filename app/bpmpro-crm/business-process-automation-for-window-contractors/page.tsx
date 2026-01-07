@@ -20,7 +20,7 @@ export default function BusinessProcessAutomationPage() {
               <span className="text-brand-blue-600">Window Contractors</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Stop wasting time on manual tasks. bpmPro automates your quotes,
+              Stop wasting time on manual tasks. <strong>bpmPro</strong> automates your quotes,
               orders, scheduling, and payments so you can focus on growing your
               business.
             </p>
@@ -69,7 +69,7 @@ export default function BusinessProcessAutomationPage() {
           </h2>
           <p className="mt-4 text-brand-blue-100">
             Join other Florida contractors who've transformed their operations
-            with bpmPro.
+            with <strong>bpmPro</strong>.
           </p>
           <div className="mt-8">
             <Link href="/book-a-demo">

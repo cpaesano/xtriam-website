@@ -86,7 +86,7 @@ export default function SavingsPage() {
               <span className="text-brand-orange-500">Additional Cash Flow</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              See how much time and money bpmPro can save your window and door
+              See how much time and money <strong>bpmPro</strong> can save your window and door
               business.
             </p>
           </div>
@@ -354,8 +354,8 @@ export default function SavingsPage() {
                           innerRadius={60}
                           outerRadius={100}
                           paddingAngle={2}
-                          label={({ label, percent }) =>
-                            `${(percent * 100).toFixed(0)}%`
+                          label={({ percent }) =>
+                            `${((percent ?? 0) * 100).toFixed(0)}%`
                           }
                           labelLine={false}
                         >
@@ -367,7 +367,7 @@ export default function SavingsPage() {
                           ))}
                         </Pie>
                         <Tooltip
-                          formatter={(value: number) => [`${value} hours`, 'Hours Saved']}
+                          formatter={(value) => [`${value} hours`, 'Hours Saved']}
                         />
                         <Legend
                           layout="horizontal"
@@ -395,7 +395,7 @@ export default function SavingsPage() {
                           tick={{ fontSize: 12 }}
                         />
                         <Tooltip
-                          formatter={(value: number) => [`${value} hours`, 'Hours Saved']}
+                          formatter={(value) => [`${value} hours`, 'Hours Saved']}
                         />
                         <Bar
                           dataKey="hours"
@@ -446,7 +446,7 @@ export default function SavingsPage() {
               Profitability Through Process Automation
             </h2>
             <p className="mt-4 text-brand-blue-100">
-              See how bpmPro can transform your window and door business. Our
+              See how <strong>bpmPro</strong> can transform your window and door business. Our
               team will show you exactly how these savings apply to your
               operation.
             </p>

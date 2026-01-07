@@ -21,7 +21,7 @@ export default function ESWindowsImportPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Already using ES Windows for quoting? Import your quotes directly
-              into bpmPro and manage your entire workflow in one place.
+              into <strong>bpmPro</strong> and manage your entire workflow in one place.
             </p>
             <div className="mt-10 flex items-center justify-center gap-4">
               <Link href="/book-a-demo">
@@ -100,7 +100,7 @@ export default function ESWindowsImportPage() {
             Ready to streamline your ES Windows workflow?
           </h2>
           <p className="mt-4 text-brand-blue-100">
-            Contact us to learn more about ES Windows integration with bpmPro.
+            Contact us to learn more about ES Windows integration with <strong>bpmPro</strong>.
           </p>
           <div className="mt-8">
             <Link href="/book-a-demo">

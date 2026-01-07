@@ -37,7 +37,7 @@ export default function StripeIntegrationPage() {
                 <span className="text-brand-blue-600">Stripe Integration</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Get paid faster with bpmPro's seamless Stripe integration.
+                Get paid faster with <strong>bpmPro</strong>'s seamless Stripe integration.
                 Accept credit cards, send payment links, and track every
                 transaction—all without leaving your CRM.
               </p>

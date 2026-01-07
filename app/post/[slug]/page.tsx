@@ -140,7 +140,7 @@ export default async function BlogPostPage({
             Ready to transform your business?
           </h2>
           <p className="mt-2 text-muted-foreground">
-            See how bpmPro can help your window and door business grow.
+            See how <strong>bpmPro</strong> can help your window and door business grow.
           </p>
           <div className="mt-6 flex justify-center gap-4">
             <Link href="/book-a-demo">

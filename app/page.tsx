@@ -17,7 +17,7 @@ export default function Home() {
                 Door Contractors
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                bpmPro is a Salesforce-native solution designed specifically for
+                <strong>bpmPro</strong> is a Salesforce-native solution designed specifically for
                 window and door contractors. Streamline your sales, manage
                 projects, and grow your business with tools built for your
                 industry.
@@ -58,7 +58,7 @@ export default function Home() {
               Sound Familiar?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Window contractors face unique challenges. We built bpmPro to
+              Window contractors face unique challenges. We built <strong>bpmPro</strong> to
               solve them.
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function Home() {
               Everything You Need to Run Your Business
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              From first contact to final installation, bpmPro manages your
+              From first contact to final installation, <strong>bpmPro</strong> manages your
               entire workflow.
             </p>
           </div>
@@ -128,11 +128,11 @@ export default function Home() {
                 80% Reduction in Admin Time
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                See how Hurricane Window and Screen transformed their operations with bpmPro. President Mohammad Aljamal shares how they overcame the challenges of managing a growing business.
+                See how Hurricane Window and Screen transformed their operations with <strong>bpmPro</strong>. President Mohammad Aljamal shares how they overcame the challenges of managing a growing business.
               </p>
               <div className="mt-6">
                 <blockquote className="border-l-4 border-brand-orange-500 pl-4 italic text-muted-foreground">
-                  "bpmPro boosted our performance and slashed administrative time by 80%."
+                  "<strong>bpmPro</strong> boosted our performance and slashed administrative time by 80%."
                 </blockquote>
                 <div className="mt-4">
                   <div className="font-semibold text-foreground">Mohammad Aljamal</div>
@@ -152,6 +152,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Real Results Section */}
+      <section className="py-20 lg:py-28 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Real Results
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Our customers see measurable improvements across their operations.
+            </p>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {realResults.map((result, index) => (
+              <div
+                key={index}
+                className="rounded-xl bg-background p-8 text-center shadow-sm border border-border"
+              >
+                <div className="text-4xl font-bold text-brand-orange-500">
+                  {result.metric}
+                </div>
+                <div className="mt-2 font-semibold text-foreground">
+                  {result.label}
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {result.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link href="/customer-success-stories">
+              <Button variant="primary">
+                Hear It From Our Customers
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-brand-blue-600 py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -161,7 +202,7 @@ export default function Home() {
                 Ready to streamline your business?
               </h2>
               <p className="mt-2 text-brand-blue-100">
-                See how much time and money you could save with bpmPro.
+                See how much time and money you could save with <strong>bpmPro</strong>.
               </p>
             </div>
             <div className="flex gap-4">
@@ -244,6 +285,29 @@ const painPoints = [
     ),
     title: "Growing Pains",
     description: "Your current tools worked when you were small, but now they're holding you back.",
+  },
+];
+
+const realResults = [
+  {
+    metric: "80%",
+    label: "Reduction in Admin Time",
+    description: "Less time on spreadsheets means more time selling and installing.",
+  },
+  {
+    metric: "75%",
+    label: "Time Savings in Quoting",
+    description: "Create professional proposals in a fraction of the time.",
+  },
+  {
+    metric: "50%",
+    label: "Increase in Net Profits",
+    description: "Streamlined operations drive greater efficiency and profitability.",
+  },
+  {
+    metric: "60 hrs",
+    label: "Saved Monthly on Quoting",
+    description: "Revolutionary time savings that transform business operations.",
   },
 ];
 

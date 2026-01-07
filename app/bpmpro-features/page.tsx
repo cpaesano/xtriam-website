@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import { Button, VimeoEmbed } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "bpmPro Features | 50+ Tools for Window & Door Contractors",
@@ -27,7 +27,7 @@ export default function FeaturesPage() {
               Window & Door Contractors
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
-              From first lead to final payment, bpmPro manages your entire
+              From first lead to final payment, <strong>bpmPro</strong> manages your entire
               business. Purpose-built on Salesforce for the window and door
               industry.
             </p>
@@ -55,7 +55,7 @@ export default function FeaturesPage() {
               Flagship Features
             </h2>
             <p className="mt-4 text-muted-foreground">
-              The core capabilities that set bpmPro apart
+              The core capabilities that set <strong>bpmPro</strong> apart
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -156,7 +156,7 @@ export default function FeaturesPage() {
                   Service Ticket Module
                 </h2>
                 <p className="mt-4 text-muted-foreground">
-                  Extend bpmPro beyond project sales into comprehensive post-installation
+                  Extend <strong>bpmPro</strong> beyond project sales into comprehensive post-installation
                   service management. Perfect for warranty work, maintenance contracts,
                   and repair services.
                 </p>
@@ -213,7 +213,7 @@ export default function FeaturesPage() {
                 Built on Salesforce
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                bpmPro leverages the world's #1 CRM platform, giving you
+                <strong>bpmPro</strong> leverages the world's #1 CRM platform, giving you
                 enterprise-grade reliability with industry-specific functionality.
               </p>
               <ul className="mt-8 space-y-4">
@@ -256,6 +256,39 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      {/* Video Testimonial Section */}
+      <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div>
+              <span className="inline-flex items-center rounded-full bg-brand-orange-100 px-3 py-1 text-sm font-medium text-brand-orange-700 mb-4">
+                Customer Story
+              </span>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                A Big Game Changer
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Nour Aljamal, Sales Representative at Hurricane Window and Screen,
+                shares how <strong>bpmPro</strong> has transformed their day-to-day operations.
+              </p>
+              <blockquote className="mt-6 border-l-4 border-brand-orange-500 pl-4 italic text-muted-foreground">
+                "It's been a big game changer for us. The way we track projects,
+                manage our sales pipeline, and communicate with customers has
+                completely transformed."
+              </blockquote>
+              <div className="mt-6">
+                <div className="font-semibold text-foreground">Nour Aljamal</div>
+                <div className="text-sm text-muted-foreground">Sales Representative</div>
+                <div className="text-sm text-brand-blue-600">Hurricane Window and Screen</div>
+              </div>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+              <VimeoEmbed videoId="849143740" title="A Big Game Changer - Nour Aljamal" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-brand-blue-600 py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -265,7 +298,7 @@ export default function FeaturesPage() {
                 Ready to see 50+ features in action?
               </h2>
               <p className="mt-2 text-brand-blue-100">
-                Schedule a demo and let us show you how bpmPro can transform
+                Schedule a demo and let us show you how <strong>bpmPro</strong> can transform
                 your business.
               </p>
             </div>

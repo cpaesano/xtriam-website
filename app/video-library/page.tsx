@@ -20,7 +20,7 @@ export default function VideoLibraryPage() {
               Video Library
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Watch demos, tutorials, and see bpmPro in action.
+              Watch demos, tutorials, and see <strong>bpmPro</strong> in action.
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function VideoLibraryPage() {
                 Want a personalized demo?
               </h2>
               <p className="mt-2 text-brand-blue-100">
-                Schedule a one-on-one session with our team to see how bpmPro
+                Schedule a one-on-one session with our team to see how <strong>bpmPro</strong>
                 fits your business.
               </p>
             </div>
