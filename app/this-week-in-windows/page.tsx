@@ -120,7 +120,7 @@ export default function ThisWeekInWindowsPage() {
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
               Never Miss an Edition
             </h2>
-            <p className="mt-4 text-brand-orange-100">
+            <p className="mt-4 text-white/90">
               Follow us on social media to get the latest industry news
               delivered to your feed.
             </p>
