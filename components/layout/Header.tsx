@@ -83,8 +83,14 @@ export function Header() {
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Buttons */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-4">
+          <Link
+            href="/login"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Customer Portal
+          </Link>
           <Link href="/book-a-demo">
             <Button variant="accent">Book a Demo</Button>
           </Link>
@@ -119,7 +125,14 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="pt-4">
+            <div className="pt-4 space-y-2">
+              <Link
+                href="/login"
+                className="block rounded-lg px-3 py-2 text-base font-medium text-brand-blue-600 hover:bg-muted transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Customer Portal
+              </Link>
               <Link href="/book-a-demo" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="accent" className="w-full">
                   Book a Demo
