@@ -125,18 +125,18 @@ export default function Home() {
                 Customer Success Story
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                80% Reduction in Admin Time
+                75% Time Savings in Quoting
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                See how Hurricane Window and Screen transformed their operations with <strong>bpmPro</strong>. President Mohammad Aljamal shares how they overcame the challenges of managing a growing business.
+                See how <strong>bpmPro</strong> has revolutionized the quoting process at Hurricane Window & Screen. The time spent creating quotes is now just 25% of what it used to be.
               </p>
               <div className="mt-6">
                 <blockquote className="border-l-4 border-brand-orange-500 pl-4 italic text-muted-foreground">
-                  "<strong>bpmPro</strong> boosted our performance and slashed administrative time by 80%."
+                  "<strong>bpmPro</strong> has made quoting so much faster. What used to take hours now takes minutes."
                 </blockquote>
                 <div className="mt-4">
-                  <div className="font-semibold text-foreground">Mohammad Aljamal</div>
-                  <div className="text-sm text-muted-foreground">President, Hurricane Window and Screen</div>
+                  <div className="font-semibold text-foreground">Nour Aljamal</div>
+                  <div className="text-sm text-muted-foreground">Sales Representative, Hurricane Window & Screen</div>
                 </div>
               </div>
               <div className="mt-8">
@@ -146,7 +146,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <VimeoEmbed videoId="842923160" title="Hurricane Window and Screen Success Story" />
+              <VimeoEmbed videoId="849143740" title="75% Time Savings in Quoting - Nour Aljamal" />
             </div>
           </div>
         </div>
