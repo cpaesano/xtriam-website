@@ -10,7 +10,7 @@ export function StatsSection() {
           {/* Active Clients */}
           <div className="text-center">
             <div className="text-4xl font-bold text-brand-blue-600">
-              <AnimatedCounter end={12} suffix="+" />
+              <AnimatedCounter end={25} suffix="+" />
             </div>
             <div className="mt-2 text-muted-foreground">Active Clients</div>
           </div>
@@ -19,9 +19,9 @@ export function StatsSection() {
           <div className="text-center">
             <div className="text-4xl font-bold text-brand-blue-600">
               <AnimatedCounter
-                end={10800}
+                end={22500}
                 suffix="+"
-                dailyGrowth={42}  // ~12 clients × 3.5 projects/day
+                dailyGrowth={87}  // ~25 clients × 3.5 projects/day
               />
             </div>
             <div className="mt-2 text-muted-foreground">Projects Managed</div>
