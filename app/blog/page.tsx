@@ -16,6 +16,7 @@ const blogPosts = [
     excerpt: "Discover how leveraging enterprise platforms can give your small business a competitive edge without enterprise-level costs.",
     date: "June 5, 2024",
     category: "Technology",
+    image: "/images/blog/salesforce-platform.jpg",
   },
   {
     slug: "leveraging-ai-for-small-business-success-the-xtriam-story",
@@ -23,6 +24,7 @@ const blogPosts = [
     excerpt: "How xTriam uses artificial intelligence to help window contractors work smarter, not harder.",
     date: "January 8, 2024",
     category: "Innovation",
+    image: "/images/blog/a-small-business.png",
   },
   {
     slug: "the-ideal-territory-manager-navigating-challenges-in-window-manufacturing",
@@ -30,6 +32,7 @@ const blogPosts = [
     excerpt: "Key strategies for territory managers in the window manufacturing industry.",
     date: "October 6, 2023",
     category: "Sales",
+    image: "/images/blog/terrority-Manager.jpg",
   },
   {
     slug: "the-power-of-meetings-streamlining-operations-for-window-dealers",
@@ -37,6 +40,7 @@ const blogPosts = [
     excerpt: "How effective meeting practices can transform your window dealership operations.",
     date: "September 7, 2023",
     category: "Operations",
+    image: "/images/blog/power-of-meetings.png",
   },
   {
     slug: "crafting-the-perfect-first-impression-navigating-the-initial-sales-interaction",
@@ -44,6 +48,7 @@ const blogPosts = [
     excerpt: "Tips for making a lasting impression during your first customer interaction.",
     date: "August 2023",
     category: "Sales",
+    image: "/images/blog/first-impression.jpg",
   },
   {
     slug: "job-supervision-the-not-so-secret-key",
@@ -51,6 +56,7 @@ const blogPosts = [
     excerpt: "Why effective job supervision is crucial for window installation success.",
     date: "July 2023",
     category: "Operations",
+    image: "/images/blog/job-supervision.jpg",
   },
   {
     slug: "making-informed-decisions-with-bpmpro-real-time-warehouse-insights",
@@ -58,6 +64,7 @@ const blogPosts = [
     excerpt: "How real-time data helps window contractors make better inventory decisions.",
     date: "June 5, 2023",
     category: "Technology",
+    image: "/images/blog/warehouse-insights.jpeg",
   },
   {
     slug: "streamlining-sales-processes-automation-for-window-dealers",
@@ -65,6 +72,47 @@ const blogPosts = [
     excerpt: "Discover how automation can transform your sales process and boost productivity.",
     date: "April 3, 2023",
     category: "Sales",
+    image: "/images/blog/sales-automation.jpg",
+  },
+  {
+    slug: "monitoring-key-performance-indicators-at-small-and-medium-sized-businesses",
+    title: "Monitoring Key Performance Indicators at Small and Medium-sized Businesses",
+    excerpt: "While KPI monitoring is vital for business success, SMBs face distinct obstacles in implementing this practice consistently.",
+    date: "December 5, 2022",
+    category: "Technology",
+    image: "/images/blog/monitor-key-performance.jpg",
+  },
+  {
+    slug: "some-insights-about-business-process-management-bpm",
+    title: "Some Insights about Business Process Management (BPM)",
+    excerpt: "Business process management represents a discipline dedicated to enhancing organizational performance through process optimization and automation.",
+    date: "November 8, 2022",
+    category: "Technology",
+    image: "/images/blog/business-process-management-insights.jpg",
+  },
+  {
+    slug: "key-points-about-streamlining-business-operations-for-window-contractors",
+    title: "Key Points about Streamlining Business Operations for Window Contractors",
+    excerpt: "Streamlining business operations can help window contractors improve efficiency, reduce costs, and gain valuable business insights.",
+    date: "October 10, 2022",
+    category: "Operations",
+    image: "/images/blog/streamlining-business-processes.jpg",
+  },
+  {
+    slug: "price-increases-in-the-window-and-door-industry-in-florida",
+    title: "Price Increases in the Window and Door Industry in Florida",
+    excerpt: "Discussing significant price escalations affecting Florida's window and door manufacturing sector with a 40 to 58% total price spike.",
+    date: "July 4, 2022",
+    category: "Industry",
+    image: "/images/blog/price-increases-in-window-business-florida.jpg",
+  },
+  {
+    slug: "xtriam-has-launched-bpmpro",
+    title: "xTriam has launched bpmPro",
+    excerpt: "xTriam announced the release of bpmPro, a business process management software that runs on the world-leading Salesforce Platform.",
+    date: "June 27, 2022",
+    category: "News",
+    image: "/images/blog/xtriam-launched-bpmPro.jpg",
   },
 ];
 
@@ -92,39 +140,52 @@ export default function BlogPage() {
             {blogPosts.map((post, index) => (
               <article
                 key={index}
-                className="group rounded-xl border border-border bg-background p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-blue-200"
+                className="group rounded-xl border border-border bg-background shadow-sm transition-all hover:shadow-md hover:border-brand-blue-200 overflow-hidden"
               >
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <span className="rounded-full bg-brand-blue-100 px-3 py-1 text-xs font-medium text-brand-blue-700">
-                    {post.category}
-                  </span>
-                  <span>{post.date}</span>
-                </div>
-                <h2 className="mt-4 text-xl font-semibold text-foreground group-hover:text-brand-blue-600 transition-colors">
-                  <Link href={`/post/${post.slug}`}>{post.title}</Link>
-                </h2>
-                <p className="mt-2 text-muted-foreground line-clamp-2">
-                  {post.excerpt}
-                </p>
-                <Link
-                  href={`/post/${post.slug}`}
-                  className="mt-4 inline-flex items-center text-sm font-medium text-brand-blue-600 hover:text-brand-blue-700"
-                >
-                  Read more
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                {post.image && (
+                  <Link href={`/post/${post.slug}`} className="block">
+                    <div className="aspect-[16/9] overflow-hidden bg-muted">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                )}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <span className="rounded-full bg-brand-blue-100 px-3 py-1 text-xs font-medium text-brand-blue-700">
+                      {post.category}
+                    </span>
+                    <span>{post.date}</span>
+                  </div>
+                  <h2 className="mt-4 text-xl font-semibold text-foreground group-hover:text-brand-blue-600 transition-colors">
+                    <Link href={`/post/${post.slug}`}>{post.title}</Link>
+                  </h2>
+                  <p className="mt-2 text-muted-foreground line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <Link
+                    href={`/post/${post.slug}`}
+                    className="mt-4 inline-flex items-center text-sm font-medium text-brand-blue-600 hover:text-brand-blue-700"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
+                    Read more
+                    <svg
+                      className="ml-1 h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </article>
             ))}
           </div>

@@ -8,12 +8,14 @@ const blogPosts: Record<string, {
   title: string;
   date: string;
   category: string;
+  image: string;
   content: string;
 }> = {
   "why-building-on-platforms-like-salesforce-is-a-game-changer-for-small-businesses": {
     title: "Why Building on Platforms Like Salesforce is a Game-Changer for Small Businesses",
     date: "June 5, 2024",
     category: "Technology",
+    image: "/images/blog/salesforce-platform.jpg",
     content: `
       <p>In today's competitive business landscape, small businesses need every advantage they can get. One of the most powerful advantages available is building your business software on established enterprise platforms like Salesforce.</p>
 
@@ -37,6 +39,7 @@ const blogPosts: Record<string, {
     title: "Leveraging AI for Small Business Success: The xTriam Story",
     date: "January 8, 2024",
     category: "Innovation",
+    image: "/images/blog/a-small-business.png",
     content: `
       <p>Artificial intelligence isn't just for big tech companies anymore. At xTriam, we're using AI to help small window and door contractors compete more effectively.</p>
 
@@ -48,6 +51,234 @@ const blogPosts: Record<string, {
 
       <h2>The Human Touch</h2>
       <p>While AI handles routine questions and data analysis, our human team focuses on what matters most: understanding your unique business challenges and building solutions that work for you.</p>
+    `,
+  },
+  "the-ideal-territory-manager-navigating-challenges-in-window-manufacturing": {
+    title: "The Ideal Territory Manager: Navigating Challenges in Window Manufacturing",
+    date: "October 6, 2023",
+    category: "Sales",
+    image: "/images/blog/terrority-Manager.jpg",
+    content: `
+      <p>Territory managers in the window manufacturing industry face unique challenges that require a specific set of skills and strategies to overcome.</p>
+
+      <h2>Understanding Your Territory</h2>
+      <p>The first step to success is deeply understanding your territory - the contractors, the competition, and the unique needs of your market.</p>
+
+      <h2>Building Strong Relationships</h2>
+      <p>In window manufacturing, relationships are everything. The best territory managers invest time in building genuine connections with their dealers and contractors.</p>
+
+      <h2>Leveraging Technology</h2>
+      <p>Modern territory managers use CRM tools like bpmPro to stay organized, track leads, and ensure no opportunity falls through the cracks.</p>
+    `,
+  },
+  "the-power-of-meetings-streamlining-operations-for-window-dealers": {
+    title: "The Power of Meetings: Streamlining Operations for Window Dealers",
+    date: "September 7, 2023",
+    category: "Operations",
+    image: "/images/blog/power-of-meetings.png",
+    content: `
+      <p>Effective meetings can transform your window dealership operations, improving communication and driving better business outcomes.</p>
+
+      <h2>The Cost of Poor Meetings</h2>
+      <p>Unproductive meetings waste time and resources. Understanding what makes meetings effective is crucial for operational efficiency.</p>
+
+      <h2>Best Practices for Dealer Meetings</h2>
+      <p>Set clear agendas, keep meetings focused, and always end with actionable next steps. These simple practices can dramatically improve meeting outcomes.</p>
+
+      <h2>Tracking Meeting Outcomes</h2>
+      <p>Use your CRM to track decisions made in meetings and ensure follow-through on action items.</p>
+    `,
+  },
+  "crafting-the-perfect-first-impression-navigating-the-initial-sales-interaction": {
+    title: "Crafting the Perfect First Impression: Navigating the Initial Sales Interaction",
+    date: "August 2023",
+    category: "Sales",
+    image: "/images/blog/first-impression.jpg",
+    content: `
+      <p>The initial sales interaction sets the tone for your entire relationship with a potential customer. Making it count is essential.</p>
+
+      <h2>Preparation is Key</h2>
+      <p>Before meeting with a prospect, research their business and understand their potential needs. This preparation shows professionalism and respect.</p>
+
+      <h2>Active Listening</h2>
+      <p>The best salespeople listen more than they talk. Understanding your customer's challenges is the first step to providing valuable solutions.</p>
+
+      <h2>Following Up</h2>
+      <p>A great first impression means nothing without proper follow-up. Use your CRM to track interactions and ensure timely communication.</p>
+    `,
+  },
+  "job-supervision-the-not-so-secret-key": {
+    title: "Job Supervision: The Not So Secret Key",
+    date: "July 2023",
+    category: "Operations",
+    image: "/images/blog/job-supervision.jpg",
+    content: `
+      <p>Effective job supervision is crucial for window installation success. It's the difference between satisfied customers and costly callbacks.</p>
+
+      <h2>Setting Clear Expectations</h2>
+      <p>Before any installation begins, ensure your team understands exactly what needs to be done and the quality standards expected.</p>
+
+      <h2>On-Site Management</h2>
+      <p>Regular check-ins during installation help catch issues early before they become expensive problems.</p>
+
+      <h2>Documentation</h2>
+      <p>Proper documentation of each job protects your business and provides valuable data for improving future operations.</p>
+    `,
+  },
+  "making-informed-decisions-with-bpmpro-real-time-warehouse-insights": {
+    title: "Making Informed Decisions with bpmPro: Real-Time Warehouse Insights",
+    date: "June 5, 2023",
+    category: "Technology",
+    image: "/images/blog/warehouse-insights.jpeg",
+    content: `
+      <p>Real-time data helps window contractors make better inventory decisions, reducing waste and improving customer satisfaction.</p>
+
+      <h2>The Challenge of Inventory Management</h2>
+      <p>Window contractors deal with complex inventory - different sizes, styles, and special orders. Managing this effectively requires good data.</p>
+
+      <h2>Real-Time Visibility</h2>
+      <p>bpmPro provides real-time visibility into your warehouse, so you always know what's in stock and what needs to be ordered.</p>
+
+      <h2>Data-Driven Decisions</h2>
+      <p>With accurate inventory data, you can make better purchasing decisions, reduce carrying costs, and ensure you have what customers need.</p>
+    `,
+  },
+  "streamlining-sales-processes-automation-for-window-dealers": {
+    title: "Streamlining Sales Processes: Automation for Window Dealers",
+    date: "April 3, 2023",
+    category: "Sales",
+    image: "/images/blog/sales-automation.jpg",
+    content: `
+      <p>Automation can transform your sales process and boost productivity, allowing your team to focus on what matters most - closing deals.</p>
+
+      <h2>Identifying Automation Opportunities</h2>
+      <p>Look for repetitive tasks in your sales process that take time but don't require human judgment. These are prime candidates for automation.</p>
+
+      <h2>Quote Generation</h2>
+      <p>Automated quote generation saves hours of manual work while ensuring accuracy and consistency.</p>
+
+      <h2>Follow-Up Automation</h2>
+      <p>Never let a lead go cold again. Automated follow-up reminders and emails keep your pipeline moving.</p>
+    `,
+  },
+  "monitoring-key-performance-indicators-at-small-and-medium-sized-businesses": {
+    title: "Monitoring Key Performance Indicators at Small and Medium-sized Businesses",
+    date: "December 5, 2022",
+    category: "Technology",
+    image: "/images/blog/monitor-key-performance.jpg",
+    content: `
+      <p>While KPI monitoring is vital for business success, SMBs face distinct obstacles in implementing this practice consistently.</p>
+
+      <h2>Key Challenges</h2>
+      <p><strong>Resource Constraints:</strong> SMBs struggle with limited staffing and budgets, making it difficult to allocate personnel and tools for regular KPI analysis.</p>
+      <p><strong>Knowledge Gaps:</strong> Many smaller enterprises lack dedicated analytics teams, which hampers their ability to accurately interpret performance data.</p>
+      <p><strong>Operational Demands:</strong> Daily business activities often take precedence, leaving SMBs stretched thin while juggling customer leads, managing sales, and maintaining cash flow.</p>
+
+      <h2>Recommended Solutions</h2>
+      <ul>
+        <li>Invest in analytical software to streamline reporting</li>
+        <li>Obtain external consulting assistance for data interpretation</li>
+        <li>Establish consistent monitoring routines</li>
+      </ul>
+
+      <h2>How bpmPro Helps</h2>
+      <p>bpmPro helps business leaders uncover and keep track of key performance metrics in real-time, enabling them to run their businesses more effectively.</p>
+    `,
+  },
+  "some-insights-about-business-process-management-bpm": {
+    title: "Some Insights about Business Process Management (BPM)",
+    date: "November 8, 2022",
+    category: "Technology",
+    image: "/images/blog/business-process-management-insights.jpg",
+    content: `
+      <p>Business process management represents a discipline dedicated to enhancing organizational performance through process optimization and automation.</p>
+
+      <h2>Key Developments Shaping BPM</h2>
+
+      <h3>1. Low-code BPM</h3>
+      <p>Low-code platforms enable business users to create and modify workflows without extensive programming expertise, accelerating digital transformation efforts.</p>
+
+      <h3>2. Cloud-based BPM</h3>
+      <p>Cloud solutions provide scalability and flexibility. xTriam specifically builds bpmPro on Salesforce's platform for contracting services.</p>
+
+      <h3>3. Process Mining</h3>
+      <p>Data-driven analysis techniques extract information from transaction logs and databases to identify bottlenecks.</p>
+
+      <h3>4. Robotic Process Automation</h3>
+      <p>Software robots handle repetitive tasks, improving efficiency while freeing employees for strategic work.</p>
+
+      <h3>5. Intelligent Automation</h3>
+      <p>Combining RPA with AI technologies like machine learning enables automation of complex decision-making processes.</p>
+
+      <h3>6. Workflow Rules</h3>
+      <p>Modern solutions offer customizable logic that controls work progression tailored to specific business needs.</p>
+
+      <h3>7. BPM and Compliance</h3>
+      <p>Automated compliance checks help organizations meet evolving regulatory standards while reducing non-compliance risks.</p>
+
+      <p>Embracing these innovations delivers operational efficiency gains and improved customer experiences.</p>
+    `,
+  },
+  "key-points-about-streamlining-business-operations-for-window-contractors": {
+    title: "Key Points about Streamlining Business Operations for Window Contractors",
+    date: "October 10, 2022",
+    category: "Operations",
+    image: "/images/blog/streamlining-business-processes.jpg",
+    content: `
+      <p>Streamlining business operations can help window contractors improve their efficiency, reduce costs, improve the customer experience, and gain valuable business insights.</p>
+
+      <h2>Four Key Benefits</h2>
+
+      <h3>1. Increased Efficiency</h3>
+      <p>By removing unnecessary steps, contractors complete projects faster, saving time and resources.</p>
+
+      <h3>2. Cost Savings</h3>
+      <p>Efficiency directly reduces expenses through fewer errors in ordering and labor management, eliminating redundant tasks, and better resource allocation, which ultimately improves profitability.</p>
+
+      <h3>3. Improved Customer Experience</h3>
+      <p>Faster response times and accurate information increase satisfaction. Staff access to information across departments, both in the office and in the field, is key, especially given the dynamic nature of window contracting.</p>
+
+      <h3>4. Better Business Insights</h3>
+      <p>Data collection enables tracking of key performance indicators (KPIs) to support decision-making. Contractors need systems to effectively monitor these metrics in real-time.</p>
+
+      <h2>The Solution</h2>
+      <p>bpmPro, built on Salesforce.com, enables contractors to achieve these four benefits consistently.</p>
+    `,
+  },
+  "price-increases-in-the-window-and-door-industry-in-florida": {
+    title: "Price Increases in the Window and Door Industry in Florida",
+    date: "July 4, 2022",
+    category: "Industry",
+    image: "/images/blog/price-increases-in-window-business-florida.jpg",
+    content: `
+      <p>Significant price escalations have affected Florida's window and door manufacturing sector. From January 1, 2021 through May 30, 2022, manufacturers implemented four rounds of price increases, resulting in a cumulative jump of 40 to 58% total price spike.</p>
+
+      <h2>Market Drivers</h2>
+      <p>These increases are attributed to pandemic-related factors—consumer spending shifted toward home improvement during lockdowns, while global supply chain disruptions reduced material availability.</p>
+
+      <h2>Florida-Specific Context</h2>
+      <p>Hurricane protection requirements make impact-resistant windows and doors essential in Florida. These specialty products typically cost double traditional alternatives, making the price surge particularly impactful for coastal residents.</p>
+
+      <h2>Navigating the Challenge</h2>
+      <p>Window and door manufacturers need tools to navigate industry challenges through process automation and improved profitability. bpmPro helps businesses adapt to these market pressures.</p>
+    `,
+  },
+  "xtriam-has-launched-bpmpro": {
+    title: "xTriam has launched bpmPro",
+    date: "June 27, 2022",
+    category: "News",
+    image: "/images/blog/xtriam-launched-bpmPro.jpg",
+    content: `
+      <p>xTriam has announced the release of bpmPro, a business process management software that runs on the world-leading Salesforce Platform. The platform targets window dealers specifically.</p>
+
+      <h2>Transforming Manual Operations</h2>
+      <p>The software's core function involves transforming manual operations into automated workflows. bpmPro empowers window dealers with the functionality to deliver a successful customer journey by converting processes into a digital, streamlined user experience that can be effectively enforced and monitored.</p>
+
+      <h2>Complete Business Lifecycle</h2>
+      <p>The solution covers the complete business lifecycle, enabling dealers to manage operations spanning initial client engagement through order management, service delivery, and post-sales support.</p>
+
+      <h2>Get Started</h2>
+      <p>Contact xTriam to book a demo and learn how bpmPro can improve your business profitability.</p>
     `,
   },
 };
@@ -122,6 +353,21 @@ export default async function BlogPostPage({
           </h1>
         </div>
       </section>
+
+      {/* Hero Image */}
+      {post.image && (
+        <section className="pb-8">
+          <div className="mx-auto max-w-4xl px-4 lg:px-8">
+            <div className="aspect-[16/9] overflow-hidden rounded-xl shadow-lg">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Content */}
       <section className="py-12 lg:py-16">

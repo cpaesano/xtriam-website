@@ -23,13 +23,34 @@ This is a **website + portal application** for xTriam, the company behind bpmPro
 3. **AI Support**: Claude-powered first-layer customer support
 4. **Salesforce Integration**: Connect to xtriam production org
 
+## Workspace Structure
+
+This project is part of the **xtriam workspace**:
+
+```
+/Users/cpaesano/Projects/xtriam/
+├── docs/                    # SHARED documentation (read these!)
+├── xtriam-website/          # This project
+└── xtriam-salesforce/       # Salesforce org project
+```
+
+## Shared Documentation (IMPORTANT)
+
+**Read these for Salesforce integration work:**
+
+| Document | Path | Purpose |
+|----------|------|---------|
+| Shared Context | `../docs/SHARED_CONTEXT.md` | Business context and overview |
+| Integration Guide | `../docs/INTEGRATION_GUIDE.md` | API contracts and OAuth setup |
+| Data Model | `../docs/DATA_MODEL.md` | SF objects and fields this site uses |
+| Authentication | `../docs/AUTHENTICATION.md` | OAuth flows and token handling |
+
 ## Related Projects
 
 | Project | Location | Relationship |
 |---------|----------|--------------|
-| bpmProPackage-3-1 | `/Users/cpaesano/bpmProPackage-3-1/` | The Salesforce managed package this website promotes |
-| astor-realty-portal | `/Users/cpaesano/Projects/astor-realty-portal/` | Sister project (Astro) |
-| volunteers-for-seniors | `/Users/cpaesano/Projects/volunteers-for-seniors/` | Sister project (Vite + React + Firebase) |
+| xtriam-salesforce | `../xtriam-salesforce/` | Salesforce org this website integrates with |
+| bpmProPackage-3-1 | `/Users/cpaesano/bpmProPackage-3-1/` | The managed package this website promotes |
 
 ## Critical Documentation
 

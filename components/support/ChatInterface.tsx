@@ -1,16 +1,20 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { getWelcomeMessage } from "@/lib/claude";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
 
+const WELCOME_MESSAGE = `Hello! I'm your bpmPro support assistant. I can help with questions about features, how-to guides, and troubleshooting.
+
+What can I help you with today?`;
+
 export function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: getWelcomeMessage() },
+    { role: "assistant", content: WELCOME_MESSAGE },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -118,7 +122,31 @@ export function ChatInterface() {
                   : "bg-gray-100 text-gray-900"
               }`}
             >
-              <p className="whitespace-pre-wrap text-sm">{message.content}</p>
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => <p className="mb-2 last:mb-0 text-base leading-relaxed">{children}</p>,
+                  strong: ({ children }) => <strong className="font-bold">{children}</strong>,
+                  em: ({ children }) => <em className="italic">{children}</em>,
+                  ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-1">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1">{children}</ol>,
+                  li: ({ children }) => <li className="text-base leading-relaxed">{children}</li>,
+                  h1: ({ children }) => <p className="font-bold text-lg mb-2">{children}</p>,
+                  h2: ({ children }) => <p className="font-bold text-base mb-2">{children}</p>,
+                  h3: ({ children }) => <p className="font-semibold text-base mb-1">{children}</p>,
+                  a: ({ href, children }) => (
+                    <a
+                      href={href}
+                      className={message.role === "user" ? "underline" : "text-brand-blue-600 underline hover:text-brand-blue-800"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {children}
+                    </a>
+                  ),
+                }}
+              >
+                {message.content}
+              </ReactMarkdown>
             </div>
           </div>
         ))}
@@ -145,30 +173,32 @@ export function ChatInterface() {
       {/* Input Area */}
       <form
         onSubmit={handleSubmit}
-        className="p-4 border-t border-gray-200 bg-gray-50"
+        className="p-4 border-t-2 border-brand-blue-100 bg-gradient-to-t from-gray-50 to-white"
       >
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <textarea
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type your message... (Press Enter to send)"
-            rows={1}
+            placeholder="Type your question here... (Press Enter to send)"
+            rows={2}
             disabled={loading}
-            className="flex-1 resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm
-              focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500
-              disabled:bg-gray-100 disabled:cursor-not-allowed"
+            className="flex-1 resize-none rounded-xl border-2 border-brand-blue-200 bg-white px-4 py-3 text-base
+              shadow-sm placeholder:text-gray-400
+              focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500 focus:shadow-md
+              disabled:bg-gray-100 disabled:cursor-not-allowed
+              transition-all duration-200"
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="px-4 py-2 bg-brand-blue-600 text-white rounded-xl
-              hover:bg-brand-blue-700 transition-colors
-              disabled:bg-gray-300 disabled:cursor-not-allowed"
+            className="px-5 py-3 bg-brand-blue-600 text-white rounded-xl
+              hover:bg-brand-blue-700 transition-all duration-200 shadow-sm hover:shadow-md
+              disabled:bg-gray-300 disabled:cursor-not-allowed disabled:shadow-none"
           >
             <svg
-              className="w-5 h-5"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -182,11 +212,11 @@ export function ChatInterface() {
             </svg>
           </button>
         </div>
-        <p className="text-xs text-gray-500 mt-2 text-center">
+        <p className="text-sm text-gray-500 mt-3 text-center">
           Powered by AI. For urgent issues, call{" "}
           <a
             href="tel:+13052990899"
-            className="text-brand-blue-600 hover:underline"
+            className="text-brand-blue-600 hover:underline font-medium"
           >
             (305) 299-0899
           </a>

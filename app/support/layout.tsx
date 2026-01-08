@@ -97,7 +97,7 @@ export default function SupportLayout({
                 )}
               </svg>
             </button>
-            <Link href="/support" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/images/logo/xTriam-Logo-Outlines-Blue-Orange.png"
                 alt="xTriam"

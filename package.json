@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "process-tutorials": "tsx scripts/process-tutorials.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
     "@headlessui/react": "^2.2.9",
     "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
     "jose": "^6.1.3",
     "jsforce": "^3.10.10",
     "lucide-react": "^0.562.0",
@@ -19,6 +21,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-hook-form": "^7.69.0",
+    "react-markdown": "^10.1.0",
     "recharts": "^3.6.0",
     "tailwind-merge": "^3.4.0",
     "twilio": "^5.11.1",
@@ -32,6 +35,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

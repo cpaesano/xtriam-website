@@ -52,28 +52,50 @@ export function normalizePhoneNumber(phone: string): string {
 /**
  * Find a Contact by phone number
  * Searches Phone, MobilePhone, HomePhone, and OtherPhone fields
+ * Uses LIKE queries to match various phone formats
  */
 export async function findContactByPhone(
   phone: string
 ): Promise<SalesforceContact | null> {
   const conn = await getSalesforceConnection();
-  const normalizedPhone = normalizePhoneNumber(phone);
 
-  // Escape single quotes for SOQL
-  const escapedPhone = normalizedPhone.replace(/'/g, "\\'");
+  // Extract just the digits for flexible matching
+  const digits = phone.replace(/\D/g, "");
+
+  // Handle 11-digit numbers starting with 1 (US country code)
+  const searchDigits = digits.length === 11 && digits.startsWith("1")
+    ? digits.slice(1)
+    : digits;
+
+  if (searchDigits.length !== 10) {
+    console.error("Invalid phone number length:", searchDigits.length);
+    return null;
+  }
+
+  // Create a pattern that matches the last 10 digits regardless of formatting
+  // Using LIKE with % wildcards to match any format
+  const pattern = `%${searchDigits.slice(0, 3)}%${searchDigits.slice(3, 6)}%${searchDigits.slice(6)}%`;
 
   const query = `
     SELECT Id, FirstName, LastName, Email, Phone, MobilePhone, HomePhone, OtherPhone,
            AccountId, Account.Id, Account.Name
     FROM Contact
-    WHERE Phone = '${escapedPhone}'
-       OR MobilePhone = '${escapedPhone}'
-       OR HomePhone = '${escapedPhone}'
-       OR OtherPhone = '${escapedPhone}'
+    WHERE Phone LIKE '${pattern}'
+       OR MobilePhone LIKE '${pattern}'
+       OR HomePhone LIKE '${pattern}'
+       OR OtherPhone LIKE '${pattern}'
     LIMIT 1
   `;
 
+  console.log("Searching for phone pattern:", pattern);
+
   const result = await conn.query<SalesforceContact>(query);
+
+  if (result.records.length > 0) {
+    console.log("Found contact:", result.records[0].FirstName, result.records[0].LastName);
+  } else {
+    console.log("No contact found for pattern:", pattern);
+  }
 
   return result.records.length > 0 ? result.records[0] : null;
 }
