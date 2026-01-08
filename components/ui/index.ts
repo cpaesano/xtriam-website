@@ -20,3 +20,5 @@ export { YouTubeEmbed } from "./YouTubeEmbed";
 export { CalendlyEmbed } from "./CalendlyEmbed";
 
 export { FloatingHelpButton } from "./FloatingHelpButton";
+
+export { AnimatedCounter } from "./AnimatedCounter";

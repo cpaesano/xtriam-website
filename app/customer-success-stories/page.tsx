@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button, VimeoEmbed, YouTubeEmbed } from "@/components/ui";
 import { Quote, Play } from "lucide-react";
+import { StatsSection } from "@/components/marketing/StatsSection";
 
 export const metadata: Metadata = {
   title: "Customer Success Stories",
@@ -28,20 +29,7 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-muted/30">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-brand-blue-600">
-                  {stat.value}
-                </div>
-                <div className="mt-2 text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       {/* Video Testimonials */}
       <section className="py-16 lg:py-24">
@@ -330,12 +318,6 @@ const videoTestimonials = [
   },
 ];
 
-const stats = [
-  { value: "25+", label: "Active Clients" },
-  { value: "1000+", label: "Projects Managed" },
-  { value: "50%", label: "Time Saved" },
-  { value: "99.9%", label: "Uptime" },
-];
 
 const testimonials = [
   {
