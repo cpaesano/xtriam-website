@@ -132,21 +132,36 @@ npm run lint
 Create `.env.local` with:
 
 ```env
-# Authentication (NextAuth.js)
-NEXTAUTH_SECRET=
-NEXTAUTH_URL=http://localhost:3000
+# Authentication
+SESSION_SECRET=          # Random string for session encryption
 
 # Claude API (for AI support)
 ANTHROPIC_API_KEY=
 
 # Salesforce (for portal integration)
 SF_LOGIN_URL=https://login.salesforce.com
-SF_CLIENT_ID=
-SF_CLIENT_SECRET=
 SF_USERNAME=admin@xtriam.com
 SF_PASSWORD=
 SF_SECURITY_TOKEN=
+
+# Twilio (for SMS verification)
+TWILIO_ACCOUNT_SID=      # Starts with "AC"
+TWILIO_AUTH_TOKEN=
+TWILIO_PHONE_NUMBER=     # Must include +1, e.g., +13055551234
 ```
+
+### Vercel Environment Variables - Lessons Learned
+
+When adding environment variables to Vercel, watch out for these common issues:
+
+| Issue | Example | Fix |
+|-------|---------|-----|
+| Missing country code | `3055551234` | Must be `+13055551234` (include +1) |
+| Trailing spaces | `https://login.salesforce.com ` | Remove any trailing/leading spaces |
+| Missing https:// | `login.salesforce.com` | Must be `https://login.salesforce.com` |
+| Extra quotes | `"sk-ant-..."` | Don't wrap values in quotes |
+
+**After adding/updating environment variables in Vercel, you MUST redeploy for changes to take effect.**
 
 ## Implementation Phases
 

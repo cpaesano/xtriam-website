@@ -48,47 +48,37 @@ export default function KnowledgePage() {
           </div>
         </Link>
 
-        <Link
-          href="/video-library"
-          target="_blank"
-          className="group rounded-xl border border-border bg-background p-6 shadow-sm hover:border-brand-blue-300 hover:shadow-md transition-all"
-        >
+        <div className="rounded-xl border border-border bg-muted/30 p-6 opacity-60 cursor-not-allowed">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-400">
               <Video className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground group-hover:text-brand-blue-600">
+              <h3 className="font-semibold text-muted-foreground">
                 Video Library
               </h3>
               <p className="text-sm text-muted-foreground">
-                Tutorials and walkthroughs
+                Tutorials and walkthroughs (Coming Soon)
               </p>
             </div>
-            <ExternalLink className="ml-auto h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
-        </Link>
+        </div>
 
-        <Link
-          href="/bpmpro-features"
-          target="_blank"
-          className="group rounded-xl border border-border bg-background p-6 shadow-sm hover:border-brand-blue-300 hover:shadow-md transition-all"
-        >
+        <div className="rounded-xl border border-border bg-muted/30 p-6 opacity-60 cursor-not-allowed">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 text-green-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 text-green-400">
               <FileText className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground group-hover:text-brand-blue-600">
+              <h3 className="font-semibold text-muted-foreground">
                 Features Guide
               </h3>
               <p className="text-sm text-muted-foreground">
-                Explore all features
+                Explore all features (Coming Soon)
               </p>
             </div>
-            <ExternalLink className="ml-auto h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
-        </Link>
+        </div>
       </div>
 
       {/* Popular Topics */}
