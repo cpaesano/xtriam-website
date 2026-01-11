@@ -1,10 +1,20 @@
-import twilio from "twilio";
+import twilio, { Twilio } from "twilio";
 
-// Initialize Twilio client
-const client = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+// Lazy initialization of Twilio client
+let client: Twilio | null = null;
+
+function getTwilioClient(): Twilio {
+  if (!client) {
+    if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN) {
+      throw new Error("Twilio credentials not configured");
+    }
+    client = twilio(
+      process.env.TWILIO_ACCOUNT_SID,
+      process.env.TWILIO_AUTH_TOKEN
+    );
+  }
+  return client;
+}
 
 // In-memory PIN storage with expiration
 // NOTE: In production, use Redis or a database with TTL
@@ -57,8 +67,9 @@ export async function sendPin(
     // Format phone for Twilio
     const formattedPhone = formatPhoneForTwilio(phone);
 
-    // Send SMS
-    await client.messages.create({
+    // Get Twilio client and send SMS
+    const twilioClient = getTwilioClient();
+    await twilioClient.messages.create({
       body: `Your xTriam verification code is: ${pin}\n\nThis code expires in 5 minutes. Do not share this code with anyone.`,
       from: process.env.TWILIO_PHONE_NUMBER,
       to: formattedPhone,
