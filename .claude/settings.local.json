@@ -3,7 +3,11 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(tree:*)",
-      "WebFetch(domain:www.xtriam.com)"
+      "WebFetch(domain:www.xtriam.com)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

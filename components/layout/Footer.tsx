@@ -19,6 +19,7 @@ const footerLinks = {
     { label: "About xTriam", href: "/about" },
     { label: "Contact Us", href: "/contact" },
     { label: "Book a Demo", href: "/book-a-demo" },
+    { label: "Customer Portal", href: "/support", featured: true },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
@@ -72,7 +73,7 @@ export function Footer() {
                 className="h-9 w-auto"
               />
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="mt-4 text-base text-muted-foreground">
               Specialized CRM++ for Window & Door Contractors. Built on Salesforce.
             </p>
             <div className="mt-6 flex gap-4">
@@ -93,13 +94,13 @@ export function Footer() {
 
           {/* Product Links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Product</h3>
+            <h3 className="text-base font-semibold text-foreground">Product</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-base text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -110,13 +111,13 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Resources</h3>
+            <h3 className="text-base font-semibold text-foreground">Resources</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-base text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -127,27 +128,36 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Company</h3>
+            <h3 className="text-base font-semibold text-foreground">Company</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className={
+                      (link as { featured?: boolean }).featured
+                        ? "inline-flex items-center gap-2 text-base font-medium text-brand-blue-600 hover:text-brand-blue-700 transition-colors"
+                        : "text-base text-muted-foreground hover:text-foreground transition-colors"
+                    }
                   >
                     {link.label}
+                    {(link as { featured?: boolean }).featured && (
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    )}
                   </Link>
                 </li>
               ))}
             </ul>
             {/* Contact Info */}
             <div className="mt-6">
-              <h3 className="text-sm font-semibold text-foreground">Contact</h3>
+              <h3 className="text-base font-semibold text-foreground">Contact</h3>
               <ul className="mt-3 space-y-2">
                 <li>
                   <a
                     href="tel:305-204-9694"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-base text-muted-foreground hover:text-foreground transition-colors"
                   >
                     (305) 204-9694
                   </a>
@@ -155,7 +165,7 @@ export function Footer() {
                 <li>
                   <a
                     href="mailto:sales@xtriam.com"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-base text-muted-foreground hover:text-foreground transition-colors"
                   >
                     sales@xtriam.com
                   </a>
@@ -168,7 +178,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               © {new Date().getFullYear()} xTriam, LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
@@ -176,7 +186,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </Link>

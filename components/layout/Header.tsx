@@ -86,9 +86,12 @@ export function Header() {
         {/* CTA Buttons */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-4">
           <Link
-            href="/login"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            href="/support"
+            className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-200 bg-brand-blue-50 px-4 py-2 text-sm font-medium text-brand-blue-700 hover:bg-brand-blue-100 hover:border-brand-blue-300 transition-colors"
           >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
             Customer Portal
           </Link>
           <Link href="/book-a-demo">
@@ -127,10 +130,13 @@ export function Header() {
             ))}
             <div className="pt-4 space-y-2">
               <Link
-                href="/login"
-                className="block rounded-lg px-3 py-2 text-base font-medium text-brand-blue-600 hover:bg-muted transition-colors"
+                href="/support"
+                className="flex items-center gap-2 rounded-lg border border-brand-blue-200 bg-brand-blue-50 px-3 py-2.5 text-base font-medium text-brand-blue-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
                 Customer Portal
               </Link>
               <Link href="/book-a-demo" onClick={() => setMobileMenuOpen(false)}>
