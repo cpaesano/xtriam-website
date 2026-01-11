@@ -28,8 +28,7 @@ export default function KnowledgePage() {
       {/* Quick Links */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link
-          href="/faqs"
-          target="_blank"
+          href="/support/faqs"
           className="group rounded-xl border border-border bg-background p-6 shadow-sm hover:border-brand-blue-300 hover:shadow-md transition-all"
         >
           <div className="flex items-center gap-3">
@@ -44,7 +43,6 @@ export default function KnowledgePage() {
                 Common questions answered
               </p>
             </div>
-            <ExternalLink className="ml-auto h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
         </Link>
 
