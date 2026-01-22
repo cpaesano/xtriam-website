@@ -8,6 +8,23 @@ export interface SessionPayload extends JWTPayload {
   lastName: string;
   email: string;
   phone: string;
+  // SSO-specific fields (optional, present when authenticated via package SSO)
+  authMethod?: "phone" | "sso";
+  orgId?: string;      // Subscriber org ID (SSO only)
+  orgName?: string;    // Subscriber org name (SSO only)
+  sfUserId?: string;   // Salesforce User ID from subscriber org (SSO only)
+}
+
+// SSO Token payload from bpmPro package
+export interface SSOTokenPayload {
+  sub: string;       // Salesforce User ID
+  name: string;      // User's full name
+  email: string;     // User's email
+  phone: string;     // User's phone (digits only)
+  orgId: string;     // Subscriber Org ID
+  orgName: string;   // Subscriber Org Name
+  iat: number;       // Issued at (Unix timestamp)
+  exp: number;       // Expires at (Unix timestamp)
 }
 
 // Salesforce Contact record
