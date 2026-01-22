@@ -174,10 +174,10 @@ export default function SupportDashboard() {
             <div>
               <p className="text-sm text-white/80">Phone Support</p>
               <a
-                href="tel:+13052990899"
+                href="tel:+13052049694"
                 className="font-medium hover:underline"
               >
-                (305) 299-0899
+                (305) 204-9694
               </a>
             </div>
           </div>

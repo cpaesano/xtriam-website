@@ -175,7 +175,7 @@ export function PortalNav({ onNavigate }: PortalNavProps) {
           </li>
           <li>
             <a
-              href="tel:+13052990899"
+              href="tel:+13052049694"
               className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
             >
               <svg

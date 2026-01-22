@@ -65,7 +65,7 @@ export function ChatInterface() {
         {
           role: "assistant",
           content:
-            "I apologize, but I encountered an error. Please try again or contact support directly at (305) 299-0899.",
+            "I apologize, but I encountered an error. Please try again or contact support directly at (305) 204-9694.",
         },
       ]);
     } finally {
@@ -215,10 +215,10 @@ export function ChatInterface() {
         <p className="text-sm text-gray-500 mt-3 text-center">
           Powered by AI. For urgent issues, call{" "}
           <a
-            href="tel:+13052990899"
+            href="tel:+13052049694"
             className="text-brand-blue-600 hover:underline font-medium"
           >
-            (305) 299-0899
+            (305) 204-9694
           </a>
         </p>
       </form>
