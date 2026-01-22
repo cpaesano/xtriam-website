@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 // TODO: Replace with actual blog posts from MDX files
 const blogPosts = [
   {
+    slug: "from-quote-to-completion-how-software-is-changing-the-remodeling-business",
+    title: "From Quote to Completion: How Software is Changing the Remodeling Business",
+    excerpt: "The remodeling and in-home services industry has transformed dramatically. Here's how contractors are using software to manage every stage of the customer journey.",
+    date: "December 2025",
+    category: "Technology",
+    image: "/images/blog/quote-to-completion.png",
+  },
+  {
     slug: "why-building-on-platforms-like-salesforce-is-a-game-changer-for-small-businesses",
     title: "Why Building on Platforms Like Salesforce is a Game-Changer for Small Businesses",
     excerpt: "Discover how leveraging enterprise platforms can give your small business a competitive edge without enterprise-level costs.",
