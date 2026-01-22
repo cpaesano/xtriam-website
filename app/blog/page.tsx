@@ -19,6 +19,22 @@ const blogPosts = [
     image: "/images/blog/quote-to-completion.png",
   },
   {
+    slug: "why-excel-and-quickbooks-arent-enough-for-growing-contractors",
+    title: "Why Excel and QuickBooks Aren't Enough for Growing Contractors",
+    excerpt: "Excel and QuickBooks got you started, but they weren't built for running a trade business. Here's why more contractors are looking for something better.",
+    date: "July 2025",
+    category: "Technology",
+    image: "/images/blog/excel-quickbooks-not-enough.jpg",
+  },
+  {
+    slug: "the-hidden-cost-of-running-your-business-on-disconnected-tools",
+    title: "The Hidden Cost of Running Your Business on Disconnected Tools",
+    excerpt: "Your software looks cheap on paper. But disconnected tools are costing you more than you think—in time, mistakes, and missed opportunities.",
+    date: "March 2025",
+    category: "Technology",
+    image: "/images/blog/hidden-cost-disconnected-tools.jpg",
+  },
+  {
     slug: "why-building-on-platforms-like-salesforce-is-a-game-changer-for-small-businesses",
     title: "Why Building on Platforms Like Salesforce is a Game-Changer for Small Businesses",
     excerpt: "Discover how leveraging enterprise platforms can give your small business a competitive edge without enterprise-level costs.",
