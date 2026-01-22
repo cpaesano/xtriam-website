@@ -200,7 +200,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
           placeholder="Brief description of your issue or request"
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
+          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
           disabled={isSubmitting}
         />
       </div>
@@ -219,7 +219,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
             id="type"
             value={type}
             onChange={(e) => setType(e.target.value as "Issue" | "Feature Request" | "Question")}
-            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
+            className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
             disabled={isSubmitting}
           >
             <option value="Issue">Issue</option>
@@ -240,7 +240,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
             id="priority"
             value={priority}
             onChange={(e) => setPriority(e.target.value as "Low" | "Medium" | "High")}
-            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
+            className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
             disabled={isSubmitting}
           >
             <option value="Low">Low</option>
@@ -270,7 +270,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
               : "What would you like to know? Please provide as much context as possible."
           }
           rows={6}
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20 resize-none"
+          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20 resize-none"
           disabled={isSubmitting}
         />
       </div>
