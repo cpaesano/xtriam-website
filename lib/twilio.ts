@@ -16,17 +16,6 @@ function getTwilioClient(): Twilio {
   return client;
 }
 
-// In-memory PIN storage with expiration
-// NOTE: In production, use Redis or a database with TTL
-const pinStore = new Map<string, { pin: string; expires: number }>();
-
-/**
- * Generate a random 6-digit PIN
- */
-export function generatePin(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString();
-}
-
 /**
  * Format phone number to E.164 format for Twilio
  */
@@ -49,37 +38,35 @@ export function formatPhoneForTwilio(phone: string): string {
 }
 
 /**
- * Send a PIN code via SMS
+ * Send a verification code via Twilio Verify
+ * Uses Twilio's managed verification service (no in-memory storage needed)
  */
 export async function sendPin(
   phone: string
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const pin = generatePin();
-    const expires = Date.now() + 5 * 60 * 1000; // 5 minutes
-
-    // Normalize phone for storage key
-    const phoneKey = phone.replace(/\D/g, "");
-
-    // Store PIN with expiration
-    pinStore.set(phoneKey, { pin, expires });
+    const serviceSid = process.env.TWILIO_VERIFY_SERVICE_SID;
+    if (!serviceSid) {
+      throw new Error("TWILIO_VERIFY_SERVICE_SID not configured");
+    }
 
     // Format phone for Twilio
     const formattedPhone = formatPhoneForTwilio(phone);
 
-    // Get Twilio client and send SMS
+    // Get Twilio client and send verification via Verify API
     const twilioClient = getTwilioClient();
-    await twilioClient.messages.create({
-      body: `Your xTriam verification code is: ${pin}\n\nThis code expires in 5 minutes. Do not share this code with anyone.`,
-      from: process.env.TWILIO_PHONE_NUMBER,
-      to: formattedPhone,
-    });
+    const verification = await twilioClient.verify.v2
+      .services(serviceSid)
+      .verifications.create({
+        to: formattedPhone,
+        channel: "sms",
+      });
 
-    console.log(`PIN sent to ${formattedPhone}`);
+    console.log(`Verification sent to ${formattedPhone}, status: ${verification.status}`);
 
     return { success: true };
   } catch (error) {
-    console.error("Twilio sendPin error:", error);
+    console.error("Twilio Verify sendPin error:", error);
     return {
       success: false,
       error:
@@ -91,47 +78,37 @@ export async function sendPin(
 }
 
 /**
- * Verify a PIN code
+ * Verify a PIN code using Twilio Verify
+ * Returns true if the code is valid, false otherwise
  */
-export function verifyPin(phone: string, pin: string): boolean {
-  // Normalize phone for lookup
-  const phoneKey = phone.replace(/\D/g, "");
-
-  const stored = pinStore.get(phoneKey);
-
-  if (!stored) {
-    console.log(`No PIN found for phone: ${phoneKey}`);
-    return false;
-  }
-
-  // Check expiration
-  if (Date.now() > stored.expires) {
-    console.log(`PIN expired for phone: ${phoneKey}`);
-    pinStore.delete(phoneKey);
-    return false;
-  }
-
-  // Check PIN match
-  if (stored.pin !== pin) {
-    console.log(`PIN mismatch for phone: ${phoneKey}`);
-    return false;
-  }
-
-  // PIN verified, clean up
-  pinStore.delete(phoneKey);
-  console.log(`PIN verified for phone: ${phoneKey}`);
-
-  return true;
-}
-
-/**
- * Clear expired PINs (call periodically in production)
- */
-export function clearExpiredPins(): void {
-  const now = Date.now();
-  for (const [phone, data] of pinStore.entries()) {
-    if (now > data.expires) {
-      pinStore.delete(phone);
+export async function verifyPin(
+  phone: string,
+  pin: string
+): Promise<boolean> {
+  try {
+    const serviceSid = process.env.TWILIO_VERIFY_SERVICE_SID;
+    if (!serviceSid) {
+      console.error("TWILIO_VERIFY_SERVICE_SID not configured");
+      return false;
     }
+
+    // Format phone for Twilio
+    const formattedPhone = formatPhoneForTwilio(phone);
+
+    // Get Twilio client and check verification via Verify API
+    const twilioClient = getTwilioClient();
+    const verificationCheck = await twilioClient.verify.v2
+      .services(serviceSid)
+      .verificationChecks.create({
+        to: formattedPhone,
+        code: pin,
+      });
+
+    console.log(`Verification check for ${formattedPhone}, status: ${verificationCheck.status}`);
+
+    return verificationCheck.status === "approved";
+  } catch (error) {
+    console.error("Twilio Verify verifyPin error:", error);
+    return false;
   }
 }

@@ -14,8 +14,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { phone, pin } = schema.parse(body);
 
-    // Verify PIN
-    const isValid = verifyPin(phone, pin);
+    // Verify PIN using Twilio Verify
+    const isValid = await verifyPin(phone, pin);
 
     if (!isValid) {
       return NextResponse.json(

@@ -40,10 +40,11 @@ This project is part of the **xtriam workspace**:
 
 | Document | Path | Purpose |
 |----------|------|---------|
-| Shared Context | `../docs/SHARED_CONTEXT.md` | Business context and overview |
-| Integration Guide | `../docs/INTEGRATION_GUIDE.md` | API contracts and OAuth setup |
-| Data Model | `../docs/DATA_MODEL.md` | SF objects and fields this site uses |
-| Authentication | `../docs/AUTHENTICATION.md` | OAuth flows and token handling |
+| Shared Context | `../docs/2025-01-05_SHARED_CONTEXT.md` | Business context and overview |
+| Integration Guide | `../docs/2025-01-05_INTEGRATION_GUIDE.md` | API contracts and OAuth setup |
+| Data Model | `../docs/2025-01-05_DATA_MODEL.md` | SF objects and fields this site uses |
+| Authentication | `../docs/2025-01-05_AUTHENTICATION.md` | OAuth flows and token handling |
+| Package-to-Portal SSO | `../docs/2026-01-22_PACKAGE_TO_PORTAL_SSO.md` | SSO from bpmPro to Customer Portal |
 
 ## Related Projects
 
@@ -144,10 +145,13 @@ SF_USERNAME=admin@xtriam.com
 SF_PASSWORD=
 SF_SECURITY_TOKEN=
 
-# Twilio (for SMS verification)
-TWILIO_ACCOUNT_SID=      # Starts with "AC"
+# Twilio (for SMS verification via Twilio Verify)
+TWILIO_ACCOUNT_SID=         # Starts with "AC"
 TWILIO_AUTH_TOKEN=
-TWILIO_PHONE_NUMBER=     # Must include +1, e.g., +13055551234
+TWILIO_VERIFY_SERVICE_SID=  # Starts with "VA" - create at console.twilio.com/verify/services
+
+# Package-to-Portal SSO (for bpmPro integration)
+PORTAL_SSO_SECRET=          # Shared secret with bpmPro package - must match Portal_SSO_Settings__mdt.Secret_Key__c
 ```
 
 ### Vercel Environment Variables - Lessons Learned
@@ -156,12 +160,18 @@ When adding environment variables to Vercel, watch out for these common issues:
 
 | Issue | Example | Fix |
 |-------|---------|-----|
-| Missing country code | `3055551234` | Must be `+13055551234` (include +1) |
 | Trailing spaces | `https://login.salesforce.com ` | Remove any trailing/leading spaces |
 | Missing https:// | `login.salesforce.com` | Must be `https://login.salesforce.com` |
 | Extra quotes | `"sk-ant-..."` | Don't wrap values in quotes |
 
 **After adding/updating environment variables in Vercel, you MUST redeploy for changes to take effect.**
+
+### Lessons Learned Documents
+
+| Document | Topic |
+|----------|-------|
+| `docs/2026-01-22_LESSONS_LEARNED_SMS_VERIFICATION.md` | SMS verification on serverless - why in-memory storage fails, Twilio Verify setup |
+| `docs/2026-01-22_PACKAGE_TO_PORTAL_SSO.md` | SSO from bpmPro package to Customer Portal - JWT token spec, implementation guide |
 
 ## Implementation Phases
 

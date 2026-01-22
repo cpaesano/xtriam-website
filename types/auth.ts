@@ -84,6 +84,7 @@ export interface CreateTicketRequest {
   subject: string;
   description: string;
   priority?: "Low" | "Medium" | "High";
+  type?: "Issue" | "Feature Request" | "Question";
 }
 
 export interface ChatMessage {

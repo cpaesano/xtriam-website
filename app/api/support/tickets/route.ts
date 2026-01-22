@@ -64,6 +64,7 @@ export async function POST(request: Request) {
       subject: body.subject,
       description: body.description,
       priority: body.priority || "Medium",
+      type: body.type || "Issue",
     });
 
     if (!result.success) {

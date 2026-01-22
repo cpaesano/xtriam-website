@@ -168,6 +168,7 @@ export async function createCase(data: {
   subject: string;
   description: string;
   priority?: string;
+  type?: string;
 }): Promise<{ success: boolean; id?: string; error?: string }> {
   const conn = await getSalesforceConnection();
 
@@ -178,6 +179,7 @@ export async function createCase(data: {
       Subject: data.subject,
       Description: data.description,
       Priority: data.priority || "Medium",
+      Type: data.type || "Issue",
       Origin: "Web",
       Status: "New",
     });
@@ -194,4 +196,82 @@ export async function createCase(data: {
       error: error instanceof Error ? error.message : "Unknown error",
     };
   }
+}
+
+/**
+ * Upload a file to Salesforce and attach it to a record (e.g., Case)
+ * Uses ContentVersion + ContentDocumentLink
+ */
+export async function uploadFileToRecord(data: {
+  recordId: string;
+  fileName: string;
+  base64Data: string;
+  contentType: string;
+}): Promise<{ success: boolean; contentDocumentId?: string; error?: string }> {
+  const conn = await getSalesforceConnection();
+
+  try {
+    // Step 1: Create ContentVersion (the file itself)
+    const contentVersion = await conn.sobject("ContentVersion").create({
+      Title: data.fileName,
+      PathOnClient: data.fileName,
+      VersionData: data.base64Data,
+      FirstPublishLocationId: data.recordId, // Automatically creates ContentDocumentLink
+    });
+
+    if (!contentVersion.success) {
+      return { success: false, error: "Failed to upload file to Salesforce" };
+    }
+
+    // Query to get the ContentDocumentId
+    const cvRecord = await conn.query<{ ContentDocumentId: string }>(
+      `SELECT ContentDocumentId FROM ContentVersion WHERE Id = '${contentVersion.id}'`
+    );
+
+    const contentDocumentId = cvRecord.records[0]?.ContentDocumentId;
+
+    console.log(`File uploaded: ${data.fileName}, ContentDocumentId: ${contentDocumentId}`);
+
+    return { success: true, contentDocumentId };
+  } catch (error) {
+    console.error("Salesforce uploadFileToRecord error:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to upload file",
+    };
+  }
+}
+
+/**
+ * Get files attached to a record
+ */
+export async function getFilesForRecord(
+  recordId: string
+): Promise<{ Id: string; Title: string; ContentDocumentId: string; FileExtension: string; ContentSize: number }[]> {
+  const conn = await getSalesforceConnection();
+
+  const query = `
+    SELECT ContentDocument.Id, ContentDocument.Title, ContentDocument.FileExtension,
+           ContentDocument.ContentSize, ContentDocument.LatestPublishedVersionId
+    FROM ContentDocumentLink
+    WHERE LinkedEntityId = '${recordId}'
+  `;
+
+  const result = await conn.query<{
+    ContentDocument: {
+      Id: string;
+      Title: string;
+      FileExtension: string;
+      ContentSize: number;
+      LatestPublishedVersionId: string;
+    };
+  }>(query);
+
+  return result.records.map((r) => ({
+    Id: r.ContentDocument.LatestPublishedVersionId,
+    Title: r.ContentDocument.Title,
+    ContentDocumentId: r.ContentDocument.Id,
+    FileExtension: r.ContentDocument.FileExtension,
+    ContentSize: r.ContentDocument.ContentSize,
+  }));
 }
