@@ -15,6 +15,9 @@ export async function GET() {
         firstName: session.firstName,
         lastName: session.lastName,
         email: session.email,
+        phone: session.phone,
+        authMethod: session.authMethod || "phone",
+        orgName: session.orgName,
       },
     });
   } catch (error) {
