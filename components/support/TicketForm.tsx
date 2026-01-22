@@ -186,27 +186,6 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
         </div>
       )}
 
-      {/* Type Selection */}
-      <div>
-        <label
-          htmlFor="type"
-          className="block text-sm font-medium text-foreground mb-2"
-        >
-          Type <span className="text-red-500">*</span>
-        </label>
-        <select
-          id="type"
-          value={type}
-          onChange={(e) => setType(e.target.value as "Issue" | "Feature Request" | "Question")}
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
-          disabled={isSubmitting}
-        >
-          <option value="Issue">Issue - Bug, error, or something not working</option>
-          <option value="Feature Request">Feature Request - New functionality or enhancement</option>
-          <option value="Question">Question - General question or how-to</option>
-        </select>
-      </div>
-
       {/* Subject */}
       <div>
         <label
@@ -226,25 +205,49 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
         />
       </div>
 
-      {/* Priority */}
-      <div>
-        <label
-          htmlFor="priority"
-          className="block text-sm font-medium text-foreground mb-2"
-        >
-          Priority
-        </label>
-        <select
-          id="priority"
-          value={priority}
-          onChange={(e) => setPriority(e.target.value as "Low" | "Medium" | "High")}
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
-          disabled={isSubmitting}
-        >
-          <option value="Low">Low - General question or minor issue</option>
-          <option value="Medium">Medium - Affecting daily work</option>
-          <option value="High">High - Urgent, blocking critical work</option>
-        </select>
+      {/* Type and Priority - Same Row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* Type Selection */}
+        <div>
+          <label
+            htmlFor="type"
+            className="block text-sm font-medium text-foreground mb-2"
+          >
+            Type <span className="text-red-500">*</span>
+          </label>
+          <select
+            id="type"
+            value={type}
+            onChange={(e) => setType(e.target.value as "Issue" | "Feature Request" | "Question")}
+            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
+            disabled={isSubmitting}
+          >
+            <option value="Issue">Issue</option>
+            <option value="Feature Request">Feature Request</option>
+            <option value="Question">Question</option>
+          </select>
+        </div>
+
+        {/* Priority */}
+        <div>
+          <label
+            htmlFor="priority"
+            className="block text-sm font-medium text-foreground mb-2"
+          >
+            Priority
+          </label>
+          <select
+            id="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value as "Low" | "Medium" | "High")}
+            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
+            disabled={isSubmitting}
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
       </div>
 
       {/* Description */}
