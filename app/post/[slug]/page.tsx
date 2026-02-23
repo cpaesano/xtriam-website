@@ -17,34 +17,34 @@ const blogPosts: Record<string, {
     category: "News",
     image: "/images/blog/invoiceticket-voice-input.png",
     content: `
-      <p>It's 6 PM on a Friday. You just finished a job — new impact windows on a two-story house in Hialeah. The homeowner is happy. Your crew is packing up. And somewhere in the back of your mind, you know you need to send an invoice before you forget the details.</p>
+      <p>It's 6 PM on a Friday. You just finished a bathroom remodel. New tile, fresh drywall, plumbing fixtures replaced. The homeowner is happy. Your crew is packing up. And somewhere in the back of your mind, you know you need to send an invoice before you forget the details.</p>
       <br/>
 
-      <p>But you're tired. Your hands are dirty. You're not going to sit down at a computer tonight. So the invoice waits until Monday. Or Wednesday. Or maybe it turns into a text message that says "hey, you owe me $4,200" — which doesn't exactly scream professional.</p>
+      <p>But you're tired. Your hands are dirty. You're not going to sit down at a computer tonight. So the invoice waits until Monday. Or Wednesday. Or maybe it turns into a text message that says "hey, you owe me $4,200." Not exactly professional.</p>
       <br/>
 
       <p>This is the reality for thousands of small contractors. The work gets done. The invoicing doesn't.</p>
       <br/>
 
-      <h2><strong>The Gap Nobody Talks About</strong></h2>
+      <h2><strong>A New Generation of Invoicing</strong></h2>
 
-      <p>There's no shortage of invoicing software. QuickBooks, FreshBooks, Wave — they all work great if you're sitting at a desk with a keyboard. But most contractors don't work that way. They work from trucks, job sites, and kitchen tables covered in blueprints.</p>
+      <p>If you're a one-person operation or running a small crew, you probably don't have a dedicated admin person handling your paperwork. You're the one doing the work, writing the estimates, and chasing payments. All of it.</p>
       <br/>
 
-      <p>Traditional invoicing tools were built for freelancers and office workers. They assume you have time to type line items, look up client details, and format a PDF. For a contractor who just spent eight hours in the sun, that's not happening.</p>
+      <p>That's exactly who InvoiceTicket is for. It's not another accounting app you need to learn. It's AI-powered invoicing that works the way you do: from your phone, on the job site, in the language you speak. You talk, it invoices. That's the whole idea.</p>
       <br/>
 
-      <p>The result? Late invoices. Missing invoices. Cash flow problems that have nothing to do with the quality of the work.</p>
+      <p>The result? Invoices go out the same day the work gets done. Cash flow improves. And you look professional without spending an hour at a computer.</p>
       <br/>
 
       <img src="/images/blog/invoiceticket-jobsite-receipt.png" alt="Contractor creating an invoice from a job site" class="rounded-xl shadow-lg my-8 w-full" />
 
       <h2><strong>Introducing InvoiceTicket</strong></h2>
 
-      <p>Today, we're launching <a href="https://invoiceticket.com" target="_blank" rel="noopener noreferrer"><strong>InvoiceTicket</strong></a> — an AI-powered invoicing app built specifically for small contractors. It's the second product from xTriam, and it's designed around one idea: invoicing should take seconds, not minutes.</p>
+      <p>Today, we're launching <a href="https://invoiceticket.com" target="_blank" rel="noopener noreferrer"><strong>InvoiceTicket</strong></a>, an AI-powered invoicing app built specifically for small contractors. It's the second product from xTriam, and it's designed around one idea: invoicing should take seconds, not minutes.</p>
       <br/>
 
-      <p>InvoiceTicket uses AI to turn natural language into professional invoices. You describe the work — by voice, text, or by scanning a receipt — and the app creates, formats, and sends the invoice for you. No typing line items. No logging into a dashboard. No friction.</p>
+      <p>InvoiceTicket uses AI to turn natural language into professional invoices. You describe the work by voice, text, or by scanning a receipt, and the app creates, formats, and sends the invoice for you. No typing line items. No logging into a dashboard. No friction.</p>
       <br/>
 
       <h2><strong>How It Works</strong></h2>
@@ -52,10 +52,10 @@ const blogPosts: Record<string, {
       <p>InvoiceTicket follows a simple three-step flow:</p>
       <br/>
 
-      <p><strong>1. Describe the work.</strong> Open the app and talk, type, or snap a photo. Say something like "Two impact windows installed at 1420 SW 3rd Street for Maria Lopez, total $4,200" — and that's it. The AI extracts the client name, description, line items, and amount.</p>
+      <p><strong>1. Describe the work.</strong> Open the app and talk, type, or snap a photo. Say something like "Bathroom remodel for David Chen, demo, tile, drywall, fixtures, total $4,200." That's it. The AI extracts the client name, description, line items, and amount.</p>
       <br/>
 
-      <p><strong>2. Review and send.</strong> InvoiceTicket generates a clean, professional invoice. Check the details, tap send, and your client gets it by email or text — with a link to pay online.</p>
+      <p><strong>2. Review and send.</strong> InvoiceTicket generates a clean, professional invoice. Check the details, tap send, and your client gets it by email or text with a link to pay online.</p>
       <br/>
 
       <p><strong>3. Get paid.</strong> Clients pay directly through the invoice using Stripe. No chasing. No "I'll mail you a check." The money lands in your account.</p>
@@ -66,13 +66,13 @@ const blogPosts: Record<string, {
       <p>A few things make InvoiceTicket different from what's already out there:</p>
       <br/>
 
-      <p><strong>Voice-first input.</strong> Most contractors would rather talk than type. InvoiceTicket's voice input lets you create an invoice while walking to your truck. The AI understands natural speech — including job descriptions, materials, and pricing — and structures it automatically.</p>
+      <p><strong>Voice-first input.</strong> Most contractors would rather talk than type. InvoiceTicket's voice input lets you create an invoice while walking to your truck. The AI understands natural speech, including job descriptions, materials, and pricing, and structures it automatically.</p>
       <br/>
 
-      <p><strong>Bilingual from day one.</strong> InvoiceTicket works in both English and Spanish. For contractors in South Florida and across the Sun Belt, this isn't a nice-to-have — it's essential. Describe your work in either language, and the invoice comes out right.</p>
+      <p><strong>Bilingual from day one.</strong> InvoiceTicket works in both English and Spanish. For contractors across the Sun Belt, this isn't a nice-to-have. It's essential. Describe your work in either language, and the invoice comes out right.</p>
       <br/>
 
-      <img src="/images/blog/invoiceticket-bilingual-support.png" alt="InvoiceTicket bilingual support — English and Spanish side by side" class="rounded-xl shadow-lg my-8 w-full" />
+      <img src="/images/blog/invoiceticket-bilingual-support.png" alt="InvoiceTicket bilingual support, English and Spanish side by side" class="rounded-xl shadow-lg my-8 w-full" />
 
       <img src="/images/blog/invoiceticket-receipt-scanning.png" alt="Contractor scanning a receipt with InvoiceTicket" class="rounded-xl shadow-lg my-8 w-full" />
 
@@ -84,7 +84,7 @@ const blogPosts: Record<string, {
 
       <h2><strong>Free to Start</strong></h2>
 
-      <p>InvoiceTicket has a free tier with no credit card required. Create your account, send your first invoice, and get paid — all without spending a dollar. Paid plans unlock higher volumes and additional features as your business grows.</p>
+      <p>InvoiceTicket has a free tier with no credit card required. Create your account, send your first invoice, and get paid without spending a dollar. Paid plans unlock higher volumes and additional features as your business grows.</p>
       <br/>
 
       <p>We believe the best way to earn a contractor's trust is to deliver value before asking for money. If InvoiceTicket helps you get paid faster, you'll stick around.</p>
@@ -92,10 +92,10 @@ const blogPosts: Record<string, {
 
       <h2><strong>The xTriam Connection</strong></h2>
 
-      <p>InvoiceTicket is the second product from xTriam. Our first product, <a href="/bpmpro"><strong>bpmPro</strong></a>, is a Salesforce-native CRM that serves window and door contractors with 25+ active client organizations. It handles the full business lifecycle — leads, quotes, orders, installations, and payments.</p>
+      <p>InvoiceTicket is the second product from xTriam. Our first product, <a href="/bpmpro"><strong>bpmPro</strong></a>, is a Salesforce-native CRM that serves window and door contractors with 25+ active client organizations. It handles the full business lifecycle: leads, quotes, orders, installations, and payments.</p>
       <br/>
 
-      <p>InvoiceTicket comes from the same DNA: deep understanding of how contractors work, obsession with removing friction, and a belief that small businesses deserve great software. Where bpmPro serves established operations that need full CRM capabilities, InvoiceTicket is for the solo contractor or small crew that just needs to get paid — fast and professionally.</p>
+      <p>InvoiceTicket comes from the same DNA: deep understanding of how contractors work, obsession with removing friction, and a belief that small businesses deserve great software. Where bpmPro serves established operations that need full CRM capabilities, InvoiceTicket is for the solo contractor or small crew that just needs to get paid. Fast and professionally.</p>
       <br/>
 
       <p>Together, these two products represent our mission: build software that helps contractors spend less time on admin and more time on the work that pays.</p>
@@ -103,7 +103,7 @@ const blogPosts: Record<string, {
 
       <h2><strong>Try It Free</strong></h2>
 
-      <p>If you're a contractor who's ever sent a late invoice, lost track of what a client owes, or typed "$" into a text message as your billing system — InvoiceTicket was built for you.</p>
+      <p>If you're a contractor who's ever sent a late invoice, lost track of what a client owes, or typed "$" into a text message as your billing system, InvoiceTicket was built for you.</p>
       <br/>
 
       <p><strong><a href="https://invoiceticket.com" target="_blank" rel="noopener noreferrer">Try it free at invoiceticket.com</a></strong></p>
