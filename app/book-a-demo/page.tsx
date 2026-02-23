@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Book a Demo | See bpmPro for Window Pros",
     description:
       "Schedule a personalized demo of bpmPro and see how it can transform your window and door business.",
-    url: "https://xtriam.com/book-a-demo",
+    url: "https://www.xtriam.com/book-a-demo",
   },
   twitter: {
     title: "Book a Demo | See bpmPro for Window Pros",

@@ -31,21 +31,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "xTriam" }],
   creator: "xTriam",
-  metadataBase: new URL("https://xtriam.com"),
+  metadataBase: new URL("https://www.xtriam.com"),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://xtriam.com",
     siteName: "xTriam",
-    title: "xTriam - Specialized CRM++ for Window & Door Contractors",
-    description:
-      "bpmPro is a Salesforce-native CRM designed specifically for window and door contractors. Streamline your sales, manage projects, and grow your business.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "xTriam - Specialized CRM++ for Window & Door Contractors",
-    description:
-      "bpmPro is a Salesforce-native CRM designed specifically for window and door contractors.",
   },
   robots: {
     index: true,
