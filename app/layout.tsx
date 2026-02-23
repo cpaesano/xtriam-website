@@ -15,17 +15,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "xTriam - Specialized CRM++ for Window & Door Contractors",
+    default: "xTriam - Software Built for Contractors",
     template: "%s | xTriam",
   },
   description:
-    "bpmPro is a Salesforce-native CRM designed specifically for window and door contractors in Florida. Streamline your sales, manage projects, and grow your business.",
+    "xTriam builds software that helps contractors run their businesses — from Salesforce-native CRM to AI-powered invoicing. Serving window, door, and trade contractors.",
   keywords: [
+    "contractor software",
     "CRM",
     "window contractors",
     "door contractors",
     "Salesforce",
     "bpmPro",
+    "InvoiceTicket",
+    "invoicing for contractors",
+    "AI invoicing",
     "Florida",
     "business process management",
   ],

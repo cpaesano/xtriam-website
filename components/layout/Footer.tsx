@@ -74,7 +74,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 text-base text-muted-foreground">
-              Specialized CRM++ for Window & Door Contractors. Built on Salesforce.
+              Software Built for Contractors.
             </p>
             <div className="mt-6 flex gap-4">
               {socialLinks.map((social) => (

@@ -50,7 +50,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Have questions about <strong>bpmPro</strong>? We're here to help. Reach out and
+              Have questions about our products? We're here to help. Reach out and
               we'll get back to you as soon as possible.
             </p>
           </div>

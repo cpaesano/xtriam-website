@@ -5,7 +5,7 @@ import { Button } from "@/components/ui";
 export const metadata: Metadata = {
   title: "About xTriam",
   description:
-    "xTriam is a technology consulting firm focused on improving profitability for window and door businesses through process optimization and operational streamlining.",
+    "xTriam is a software company that builds products for contractors — from Salesforce-native CRM to AI-powered invoicing.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
               About <span className="text-brand-blue-600">xTriam</span>
             </h1>
             <p className="mt-6 text-xl leading-8 text-muted-foreground">
-              Profitability Through Process Automation
+              Software Built for Contractors
             </p>
           </div>
         </div>
@@ -34,15 +34,17 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                xTriam is a technology consulting firm focused on improving
-                profitability for small and medium-sized businesses through
-                process optimization and operational streamlining.
+                xTriam builds software that helps contractors run their
+                businesses. We started in the window and door industry, where we
+                saw firsthand how much time gets lost to manual processes,
+                disconnected tools, and paperwork that never ends.
               </p>
               <p className="mt-4 text-lg text-muted-foreground">
-                We specifically serve manufacturers, dealers, and suppliers in
-                the windows and doors industry, combining in-depth industry
-                expertise with hands-on software development to create digital
-                business transformations.
+                That experience shaped everything we build. Today we serve
+                contractors across the trades — from enterprise CRM to
+                AI-powered invoicing — with products designed for how
+                contractors actually work: in the field, on the go, and under
+                pressure to get things done.
               </p>
             </div>
             <div className="rounded-xl bg-muted/50 p-8">
@@ -82,8 +84,8 @@ export default function AboutPage() {
               Our Approach
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              We design user-friendly, intuitive web-based, multi-device
-              solutions that transform how you do business.
+              We build products that solve real problems for contractors —
+              intuitive, multi-device, and ready for the field.
             </p>
           </div>
 
@@ -105,19 +107,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* bpmPro Section */}
+      {/* Products Section */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="rounded-2xl bg-gradient-to-br from-brand-blue-600 to-brand-blue-800 p-8 lg:p-12">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Our Products
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Two products, one mission: help contractors spend less time on
+              admin and more time on the work that pays.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* bpmPro Card */}
+            <div className="rounded-2xl bg-gradient-to-br from-brand-blue-600 to-brand-blue-800 p-8 lg:p-10">
               <div className="text-white">
-                <h2 className="text-3xl font-bold sm:text-4xl">
-                  Our Flagship Product: <strong>bpmPro</strong>
-                </h2>
+                <h3 className="text-2xl font-bold sm:text-3xl">bpmPro</h3>
+                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-brand-blue-200">
+                  Salesforce-Native CRM for Window & Door Contractors
+                </p>
                 <p className="mt-4 text-brand-blue-100">
-                  <strong>bpmPro</strong> is our Salesforce-native business process management
-                  platform designed specifically for window and door
-                  professionals.
+                  The all-in-one platform that manages the entire customer
+                  journey — from lead capture to final payment. Built on
+                  Salesforce for enterprise-grade reliability.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {bpmProFeatures.map((feature, index) => (
@@ -139,29 +153,79 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-6 flex items-center gap-6">
+                  <div>
+                    <div className="text-3xl font-bold">25+</div>
+                    <div className="text-sm text-brand-blue-200">
+                      Active Client Organizations
+                    </div>
+                  </div>
+                </div>
                 <div className="mt-8">
                   <Link href="/bpmpro">
-                    <Button
-                      variant="accent"
-                      size="lg"
-                    >
+                    <Button variant="accent" size="lg">
                       Learn More About <strong>bpmPro</strong>
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
-                <div className="rounded-xl bg-white/10 p-8 text-center backdrop-blur">
-                  <div className="text-5xl font-bold text-white">25+</div>
-                  <div className="mt-2 text-brand-blue-200">
-                    Active Client Organizations
+            </div>
+
+            {/* InvoiceTicket Card */}
+            <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 p-8 lg:p-10">
+              <div className="text-white">
+                <h3 className="text-2xl font-bold sm:text-3xl">
+                  InvoiceTicket
+                </h3>
+                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-emerald-200">
+                  AI-Powered Invoicing for Small Contractors
+                </p>
+                <p className="mt-4 text-emerald-100">
+                  Create and send professional invoices in seconds — by voice,
+                  text, or photo. Built for contractors who work from the field,
+                  not behind a desk.
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {invoiceTicketFeatures.map((feature, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <svg
+                        className="h-5 w-5 text-emerald-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-emerald-50">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex items-center gap-6">
+                  <div>
+                    <div className="text-3xl font-bold">Free</div>
+                    <div className="text-sm text-emerald-200">
+                      No Credit Card Required
+                    </div>
                   </div>
-                  <div className="mt-6 text-5xl font-bold text-white">
-                    Florida
-                  </div>
-                  <div className="mt-2 text-brand-blue-200">
-                    Focused on Window & Door Industry
-                  </div>
+                </div>
+                <div className="mt-8">
+                  <a
+                    href="https://invoiceticket.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      variant="accent"
+                      size="lg"
+                    >
+                      Try InvoiceTicket Free
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -178,7 +242,8 @@ export default function AboutPage() {
                 Ready to transform your business?
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Let's discuss how xTriam can help streamline your operations.
+                Explore our products and find the right fit for your contracting
+                business.
               </p>
             </div>
             <div className="flex gap-4">
@@ -201,29 +266,33 @@ export default function AboutPage() {
 }
 
 const differentiators = [
+  "Founded by contractors, built for contractors",
   "Deep expertise in the window and door industry",
-  "Hands-on software development experience",
+  "Products designed for the field, not just the office",
   "Focus on small and medium-sized businesses",
-  "User-friendly, intuitive solutions",
-  "Built on the trusted Salesforce platform",
+  "AI-first approach to everyday business tasks",
 ];
 
 const approach = [
   {
     title: "Understand",
-    description: "We learn your business processes and identify pain points.",
+    description:
+      "We study how contractors actually work — in the field, in the office, and everywhere in between.",
   },
   {
-    title: "Design",
-    description: "We create solutions tailored to your specific needs.",
+    title: "Build",
+    description:
+      "We design products that fit the workflow, not the other way around.",
   },
   {
-    title: "Implement",
-    description: "We deploy and configure bpmPro for your organization.",
+    title: "Deploy",
+    description:
+      "We get you up and running quickly with hands-on onboarding and setup.",
   },
   {
     title: "Support",
-    description: "We provide ongoing training and support for your team.",
+    description:
+      "We provide ongoing training and support so your team gets the most out of every tool.",
   },
 ];
 
@@ -234,4 +303,13 @@ const bpmProFeatures = [
   "Customer communications platform",
   "Project tracking and management",
   "Reporting and analytics",
+];
+
+const invoiceTicketFeatures = [
+  "Voice and text invoice creation",
+  "Bilingual support (English & Spanish)",
+  "Receipt and document scanning",
+  "Online payments via Stripe",
+  "Professional PDF invoices",
+  "Works from any phone or tablet",
 ];

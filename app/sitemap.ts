@@ -4,6 +4,7 @@ const BASE_URL = "https://www.xtriam.com";
 
 // Blog post slugs from app/post/[slug]/page.tsx
 const blogSlugs = [
+  "xtriam-launches-invoiceticket",
   "why-excel-and-quickbooks-arent-enough-for-growing-contractors",
   "the-hidden-cost-of-running-your-business-on-disconnected-tools",
   "why-building-on-platforms-like-salesforce-is-a-game-changer-for-small-businesses",

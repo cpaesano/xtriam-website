@@ -5,11 +5,19 @@ import { Button } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Insights, tips, and news for window and door contractors. Learn how to grow your business with bpmPro.",
+    "Insights, tips, and news for contractors. Grow your business with software built for the trades.",
 };
 
 // TODO: Replace with actual blog posts from MDX files
 const blogPosts = [
+  {
+    slug: "xtriam-launches-invoiceticket",
+    title: "xTriam Launches InvoiceTicket: AI-Powered Invoicing for Contractors",
+    excerpt: "xTriam introduces its second product — an AI-first invoicing app built for small contractors who work from the field, not behind a desk.",
+    date: "February 2026",
+    category: "News",
+    image: "/images/blog/invoiceticket-voice-input.png",
+  },
   {
     slug: "from-quote-to-completion-how-software-is-changing-the-remodeling-business",
     title: "From Quote to Completion: How Software is Changing the Remodeling Business",
@@ -151,7 +159,7 @@ export default function BlogPage() {
               Blog
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Insights, tips, and industry news for window and door contractors.
+              Insights, tips, and industry news for contractors.
             </p>
           </div>
         </div>
@@ -168,7 +176,7 @@ export default function BlogPage() {
               >
                 {post.image && (
                   <Link href={`/post/${post.slug}`} className="block">
-                    <div className="aspect-[16/9] overflow-hidden bg-muted">
+                    <div className="aspect-[3/2] overflow-hidden bg-muted">
                       <img
                         src={post.image}
                         alt={post.title}
