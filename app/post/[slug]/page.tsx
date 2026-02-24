@@ -812,7 +812,7 @@ export default async function BlogPostPage({
       <section className="pt-4 pb-12 lg:pt-6 lg:pb-16">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
           <article
-            className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-brand-blue-600 prose-strong:text-foreground"
+            className="prose prose-lg max-w-none prose-headings:text-foreground prose-headings:font-bold prose-p:text-muted-foreground prose-a:text-brand-blue-600 prose-strong:text-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
