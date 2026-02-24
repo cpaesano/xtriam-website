@@ -393,7 +393,7 @@ const blogPosts: Record<string, {
     date: "July 2023",
     category: "Operations",
     image: "/images/blog/job-supervision.jpg",
-    imagePosition: "top",
+    imageAspect: "square",
     content: `
       <p>Effective job supervision is crucial for window installation success. It's the difference between satisfied customers and costly callbacks.</p>
 
