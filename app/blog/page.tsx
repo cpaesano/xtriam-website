@@ -84,8 +84,8 @@ const blogPosts = [
   },
   {
     slug: "job-supervision-the-not-so-secret-key",
-    title: "Job Supervision: The Not So Secret Key",
-    excerpt: "Why effective job supervision is crucial for window installation success.",
+    title: "Job Supervision: The Not-So-Secret Key to Profitability in Window Contracting",
+    excerpt: "The jobsite is where your plans face reality. Here's how effective supervision protects your margins.",
     date: "July 2023",
     category: "Operations",
     image: "/images/blog/job-supervision.jpg",
