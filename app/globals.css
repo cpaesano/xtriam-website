@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-playfair), serif;
+}
+
 :root {
   /* Brand Colors - xTriam Blue #027eda & Orange #ff9f00 */
   --brand-blue-50: #e6f4fd;
