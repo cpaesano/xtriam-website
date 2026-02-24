@@ -145,3 +145,26 @@ html {
   background-color: var(--brand-blue-100);
   color: var(--brand-blue-900);
 }
+
+/* Blog Post Prose Styles */
+.blog-prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.blog-prose h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+@media (min-width: 640px) {
+  .blog-prose h2 {
+    font-size: 1.875rem;
+  }
+
+  .blog-prose h3 {
+    font-size: 1.5rem;
+  }
+}

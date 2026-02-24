@@ -28,7 +28,7 @@ const blogPosts: Record<string, {
       <p>This is the reality for thousands of small contractors. The work gets done. The invoicing doesn't.</p>
       <br/>
 
-      <h2><strong>A New Generation of Invoicing</strong></h2>
+      <h2>A New Generation of Invoicing</h2>
 
       <p>If you're a one-person operation or running a small crew, you probably don't have a dedicated admin person handling your paperwork. You're the one doing the work, writing the estimates, and chasing payments. All of it.</p>
       <br/>
@@ -41,7 +41,7 @@ const blogPosts: Record<string, {
 
       <img src="/images/blog/invoiceticket-jobsite-receipt.png" alt="Contractor creating an invoice from a job site" class="rounded-xl shadow-lg my-8 w-full" />
 
-      <h2><strong>Introducing InvoiceTicket</strong></h2>
+      <h2>Introducing InvoiceTicket</h2>
 
       <p>Today, we're launching <a href="https://invoiceticket.com" target="_blank" rel="noopener noreferrer"><strong>InvoiceTicket</strong></a>, an AI-powered invoicing app built specifically for small contractors. It's the second product from xTriam, and it's designed around one idea: invoicing should take seconds, not minutes.</p>
       <br/>
@@ -49,7 +49,7 @@ const blogPosts: Record<string, {
       <p><strong>InvoiceTicket</strong> uses AI to turn natural language into professional invoices. You describe the work by voice, text, or by scanning a receipt, and the app creates, formats, and sends the invoice for you. No typing line items. No logging into a dashboard. No friction.</p>
       <br/>
 
-      <h2><strong>How It Works</strong></h2>
+      <h2>How It Works</h2>
 
       <p><strong>InvoiceTicket</strong> follows a simple three-step flow:</p>
       <br/>
@@ -63,7 +63,7 @@ const blogPosts: Record<string, {
       <p><strong>3. Get paid.</strong> Clients pay directly through the invoice using Stripe. No chasing. No "I'll mail you a check." The money lands in your account.</p>
       <br/>
 
-      <h2><strong>Built Different</strong></h2>
+      <h2>Built Different</h2>
 
       <p>A few things make <strong>InvoiceTicket</strong> different from what's already out there:</p>
       <br/>
@@ -84,7 +84,7 @@ const blogPosts: Record<string, {
       <p><strong>Built for contractors, not accountants.</strong> The interface is simple, fast, and designed for people who don't want to learn another app. If you can send a text message, you can use <strong>InvoiceTicket</strong>.</p>
       <br/>
 
-      <h2><strong>Free to Start</strong></h2>
+      <h2>Free to Start</h2>
 
       <p><strong>InvoiceTicket</strong> has a free tier with no credit card required. Create your account, send your first invoice, and get paid without spending a dollar. Paid plans unlock higher volumes and additional features as your business grows.</p>
       <br/>
@@ -92,7 +92,7 @@ const blogPosts: Record<string, {
       <p>We believe the best way to earn a contractor's trust is to deliver value before asking for money. If <strong>InvoiceTicket</strong> helps you get paid faster, you'll stick around.</p>
       <br/>
 
-      <h2><strong>The xTriam Connection</strong></h2>
+      <h2>The xTriam Connection</h2>
 
       <p><strong>InvoiceTicket</strong> is the second product from xTriam. Our first product, <a href="/bpmpro"><strong>bpmPro</strong></a>, is a Salesforce-native CRM that serves window and door contractors with 25+ active client organizations. It handles the full business lifecycle: leads, quotes, orders, installations, and payments.</p>
       <br/>
@@ -103,7 +103,7 @@ const blogPosts: Record<string, {
       <p>Together, these two products represent our mission: build software that helps contractors spend less time on admin and more time on the work that pays.</p>
       <br/>
 
-      <h2><strong>Try It Free</strong></h2>
+      <h2>Try It Free</h2>
 
       <p>If you're a contractor who's ever sent a late invoice, lost track of what a client owes, or typed "$" into a text message as your billing system, <strong>InvoiceTicket</strong> was built for you.</p>
       <br/>
@@ -123,7 +123,7 @@ const blogPosts: Record<string, {
       <p>You're not alone. Most contractors start the same way—a spreadsheet for leads, QuickBooks for invoices, maybe a shared calendar for scheduling, and paper for everything else. It works until it doesn't.</p>
       <br/>
 
-      <h2><strong>The Spreadsheet Problem</strong></h2>
+      <h2>The Spreadsheet Problem</h2>
 
       <p>Excel is useful, but it wasn't built to run a contracting business. It won't remind you when a lead goes cold. It won't update itself when a job moves forward. It can't stop two salespeople from calling the same customer. Every piece of information sits alone, and keeping it up to date takes constant work.</p>
       <br/>
@@ -131,7 +131,7 @@ const blogPosts: Record<string, {
       <p>Spreadsheets also don't work well in the field. Your sales rep can't easily update a shared file from a customer's living room. By the time they get back to the office, the information is old—or forgotten.</p>
       <br/>
 
-      <h2><strong>What QuickBooks Can't Do</strong></h2>
+      <h2>What QuickBooks Can't Do</h2>
 
       <p>QuickBooks is great for accounting. It tracks money coming in and going out, creates invoices, and keeps your books clean. But accounting is only one part of running a trade business.</p>
       <br/>
@@ -142,7 +142,7 @@ const blogPosts: Record<string, {
       <p>When your accounting system doesn't connect to your daily work, you end up typing the same information twice—or trying to remember details that should already be written down.</p>
       <br/>
 
-      <h2><strong>Too Many Apps, Too Little Connection</strong></h2>
+      <h2>Too Many Apps, Too Little Connection</h2>
 
       <p>To fill the gaps, many contractors add more tools. A CRM for leads. A scheduling app for crews. A payment app for deposits. A texting app for customer updates. Soon, you're paying for six different services that don't share information.</p>
       <br/>
@@ -153,7 +153,7 @@ const blogPosts: Record<string, {
       <p>Your team feels it too. They waste time jumping between apps, copying information from one place to another, and searching for details that should be easy to find.</p>
       <br/>
 
-      <h2><strong>What Growing Contractors Really Need</strong></h2>
+      <h2>What Growing Contractors Really Need</h2>
 
       <p>The answer isn't more tools—it's fewer tools that work together. Growing contractors need one system that handles the whole job: getting leads, creating quotes, signing contracts, scheduling work, tracking progress, collecting payments, and following up with customers.</p>
       <br/>
@@ -164,7 +164,7 @@ const blogPosts: Record<string, {
       <p>Your team sees the same information whether they're in the office or in the field. Your sales team knows where every deal stands. And you, as the owner, can see how your whole business is doing at any time.</p>
       <br/>
 
-      <h2><strong>The True Cost of "Good Enough"</strong></h2>
+      <h2>The True Cost of "Good Enough"</h2>
 
       <p>Keeping your old tools feels cheaper because the monthly cost is low. But the real cost isn't the software—it's the time your team wastes working around problems.</p>
       <br/>
@@ -175,7 +175,7 @@ const blogPosts: Record<string, {
       <p>These small problems add up fast. For most small contractors, they cost tens of thousands of dollars each year in wasted time, lost jobs, and mistakes that could have been avoided.</p>
       <br/>
 
-      <h2><strong>Signs It's Time to Change</strong></h2>
+      <h2>Signs It's Time to Change</h2>
 
       <p>You don't need to be a big company to benefit from better software. In fact, smaller teams often see the biggest improvements because every person's time counts more.</p>
       <br/>
@@ -213,7 +213,7 @@ const blogPosts: Record<string, {
       <p>These hidden costs add up fast.</p>
       <br/>
 
-      <h2><strong>The Time Tax</strong></h2>
+      <h2>The Time Tax</h2>
 
       <p>Think about your office manager. How much of their day is spent typing the same information into different places? Customer name here. Address there. Job details somewhere else.</p>
       <br/>
@@ -224,7 +224,7 @@ const blogPosts: Record<string, {
       <p>That's not work. That's a tax on bad tools.</p>
       <br/>
 
-      <h2><strong>The Mistake Multiplier</strong></h2>
+      <h2>The Mistake Multiplier</h2>
 
       <p>Every time someone types something by hand, there's a chance for error. Wrong phone number. Wrong address. Wrong price. Wrong date.</p>
       <br/>
@@ -235,7 +235,7 @@ const blogPosts: Record<string, {
       <p>Each mistake costs time to fix. Some cost you customers.</p>
       <br/>
 
-      <h2><strong>The Blind Spot</strong></h2>
+      <h2>The Blind Spot</h2>
 
       <p>When your data lives in five different places, you can't see your business clearly. Simple questions become hard to answer:</p>
       <br/>
@@ -251,7 +251,7 @@ const blogPosts: Record<string, {
       <p>Without clear answers, you make decisions based on gut feeling instead of facts. Sometimes you guess right. Sometimes you don't.</p>
       <br/>
 
-      <h2><strong>The Real Math</strong></h2>
+      <h2>The Real Math</h2>
 
       <p>Let's add it up for a small contractor with 10 employees:</p>
       <br/>
@@ -267,7 +267,7 @@ const blogPosts: Record<string, {
       <p>That's $20,000 or more—every year—just from using tools that don't talk to each other.</p>
       <br/>
 
-      <h2><strong>What Connected Looks Like</strong></h2>
+      <h2>What Connected Looks Like</h2>
 
       <p>Imagine this instead: A new lead comes in. It goes straight into your system. Your salesperson gets notified. They visit the customer and build a quote on the spot. The customer signs. The job gets scheduled automatically. Materials get ordered. The crew sees the job on their calendar. Work gets done. Invoice goes out. Payment comes in. Books update.</p>
       <br/>
@@ -278,7 +278,7 @@ const blogPosts: Record<string, {
       <p>That's what one connected system does.</p>
       <br/>
 
-      <h2><strong>The Bottom Line</strong></h2>
+      <h2>The Bottom Line</h2>
 
       <p>Disconnected tools feel cheap because the monthly bill is low. But you're paying for them every day in wasted time, preventable mistakes, and decisions made without good information.</p>
       <br/>
@@ -546,7 +546,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Lead Entry</strong></h2>
+      <h2>Lead Entry</h2>
 
       <p>As soon as you receive a lead, enter it into your system. This not only keeps you organized but ensures that no potential business slips through the cracks.</p>
 
@@ -554,7 +554,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Appointment Setting</strong></h2>
+      <h2>Appointment Setting</h2>
 
       <p>Promptly reach out to the client to set up an appointment. Offering them multiple time slots gives them the flexibility to choose and shows that you value their convenience.</p>
 
@@ -562,7 +562,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Lead Assignment</strong></h2>
+      <h2>Lead Assignment</h2>
 
       <p>Distribute leads among salespersons efficiently. An even distribution ensures that every client gets adequate attention and no salesperson feels overwhelmed.</p>
 
@@ -570,7 +570,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Communication is Key</strong></h2>
+      <h2>Communication is Key</h2>
 
       <p>As soon as a lead is assigned, notify the salesperson via email. Swift communication can make the difference in closing a deal.</p>
 
@@ -578,7 +578,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Client Confirmation</strong></h2>
+      <h2>Client Confirmation</h2>
 
       <p>Informing the prospect that their project has been assigned instills confidence. It assures them that their request is being actively processed.</p>
 
@@ -586,7 +586,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Appointment Reminders</strong></h2>
+      <h2>Appointment Reminders</h2>
 
       <p>Life is busy, and people forget. Setting a reminder for the measuring appointment ensures both the salesperson and the client are on the same page.</p>
 
@@ -594,7 +594,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Consistent Follow-ups</strong></h2>
+      <h2>Consistent Follow-ups</h2>
 
       <p>Ensure your staff alerts the salesperson in due time to confirm the appointment. This prevents last-minute rushes and ensures punctuality.</p>
 
@@ -602,7 +602,7 @@ const blogPosts: Record<string, {
 
       <br />
 
-      <h2><strong>Updates and Adjustments</strong></h2>
+      <h2>Updates and Adjustments</h2>
 
       <p>Things change. If there's a change in the arrival time or any other aspect, promptly inform the client. Transparency builds trust.</p>
 
@@ -834,7 +834,7 @@ const blogPosts: Record<string, {
       <p>The difference? Software that manages the entire customer journey—from the first inquiry to the final walkthrough.</p>
       <br/>
 
-      <h2><strong>The Old Way vs. The New Way</strong></h2>
+      <h2>The Old Way vs. The New Way</h2>
 
       <p>Traditional contractors juggle spreadsheets, paper contracts, sticky notes, and a dozen different apps that don't talk to each other. A lead comes in by phone, gets written on a notepad, maybe makes it into a spreadsheet, and then sits there until someone remembers to follow up. Quotes are created in Word documents, emailed back and forth, and version control becomes a nightmare.</p>
       <br/>
@@ -842,7 +842,7 @@ const blogPosts: Record<string, {
       <p>Modern contractors use integrated systems where a lead automatically enters the pipeline, triggers a follow-up sequence, and moves through defined stages. The quote is generated from a product catalog with current pricing, sent electronically for signature, and converted into a project the moment the customer approves.</p>
       <br/>
 
-      <h2><strong>Stage 1: Lead Capture and Follow-Up</strong></h2>
+      <h2>Stage 1: Lead Capture and Follow-Up</h2>
 
       <p>Speed matters. Studies consistently show that responding to a lead within five minutes dramatically increases conversion rates. Yet most contractors take hours or even days to respond.</p>
       <br/>
@@ -850,7 +850,7 @@ const blogPosts: Record<string, {
       <p>With the right software, leads from your website, phone calls, and referrals all flow into one system. Automated responses acknowledge the inquiry immediately while your sales team gets notified to make personal contact. No lead falls through the cracks because the system tracks every interaction.</p>
       <br/>
 
-      <h2><strong>Stage 2: The In-Home Consultation</strong></h2>
+      <h2>Stage 2: The In-Home Consultation</h2>
 
       <p>When your sales rep arrives at the customer's home, they have everything they need on a tablet or phone: the customer's contact history, notes from the initial call, and a product catalog with real-time pricing. They can build a quote on the spot, show options, and capture the signature before leaving.</p>
       <br/>
@@ -858,7 +858,7 @@ const blogPosts: Record<string, {
       <p>This isn't just convenient—it's expected. Homeowners are accustomed to instant transactions in every other area of their lives. A contractor who says "I'll email you a quote in a few days" loses to one who closes on the spot.</p>
       <br/>
 
-      <h2><strong>Stage 3: Order Management and Scheduling</strong></h2>
+      <h2>Stage 3: Order Management and Scheduling</h2>
 
       <p>Once a deal closes, the real work begins. Materials need to be ordered, crews need to be scheduled, and the customer needs to know what's happening. Integrated software turns a signed contract into purchase orders automatically, checks inventory, and slots the job into your production calendar.</p>
       <br/>
@@ -866,7 +866,7 @@ const blogPosts: Record<string, {
       <p>Customers receive updates without your office staff making phone calls. They know when materials arrive, when installation is scheduled, and who will be showing up at their door.</p>
       <br/>
 
-      <h2><strong>Stage 4: Installation and Field Communication</strong></h2>
+      <h2>Stage 4: Installation and Field Communication</h2>
 
       <p>Your installation crews need access to job details, product specifications, and customer preferences—without calling the office ten times a day. Mobile access to project information eliminates miscommunication and ensures the work matches what was sold.</p>
       <br/>
@@ -874,7 +874,7 @@ const blogPosts: Record<string, {
       <p>Field teams can document their work with photos, note any issues that arise, and capture customer sign-off on completion. Everything is logged in one system, creating a complete project history.</p>
       <br/>
 
-      <h2><strong>Stage 5: Payment and Follow-Up</strong></h2>
+      <h2>Stage 5: Payment and Follow-Up</h2>
 
       <p>Collecting payment shouldn't require chasing customers with invoices. Modern payment processing integrates directly with your project management system. Customers can pay deposits, progress payments, and final balances electronically. Your accounting sees the payment immediately, and the project record updates automatically.</p>
       <br/>
@@ -882,7 +882,7 @@ const blogPosts: Record<string, {
       <p>After the job is complete, automated follow-up requests reviews from satisfied customers and schedules future maintenance reminders. One project becomes the foundation for a long-term customer relationship.</p>
       <br/>
 
-      <h2><strong>The Competitive Advantage</strong></h2>
+      <h2>The Competitive Advantage</h2>
 
       <p>Contractors who adopt integrated software aren't just more organized—they're more profitable. They close more deals because they respond faster and quote on the spot. They complete more jobs because scheduling is optimized and communication is clear. They collect payments faster because the process is frictionless.</p>
       <br/>
@@ -890,7 +890,7 @@ const blogPosts: Record<string, {
       <p>Most importantly, they deliver a better customer experience. In an industry where referrals drive growth, that experience translates directly into new business.</p>
       <br/>
 
-      <h2><strong>Making the Transition</strong></h2>
+      <h2>Making the Transition</h2>
 
       <p>The biggest obstacle isn't technology—it's change management. Contractors worry about the learning curve, the cost, and whether their team will actually use the system. The key is choosing software designed specifically for your industry, with workflows that match how you actually operate.</p>
       <br/>
@@ -999,7 +999,7 @@ export default async function BlogPostPage({
       <section className="pt-4 pb-12 lg:pt-6 lg:pb-16">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
           <article
-            className="prose prose-lg max-w-none prose-headings:text-foreground prose-headings:font-bold prose-h2:text-2xl prose-h2:sm:text-3xl prose-h3:text-xl prose-h3:sm:text-2xl prose-p:text-muted-foreground prose-a:text-brand-blue-600 prose-strong:text-foreground"
+            className="blog-prose prose prose-lg max-w-none prose-headings:text-foreground prose-headings:font-bold prose-p:text-muted-foreground prose-a:text-brand-blue-600 prose-strong:text-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
