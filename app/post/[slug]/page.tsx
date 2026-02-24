@@ -757,7 +757,7 @@ export default async function BlogPostPage({
       )}
 
       {/* Title */}
-      <section className="py-6 lg:py-8">
+      <section className="pt-6 pb-2 lg:pt-8 lg:pb-2">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
           <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
             <span className="rounded-full bg-brand-blue-100 px-3 py-1 text-xs font-medium text-brand-blue-700">
@@ -772,7 +772,7 @@ export default async function BlogPostPage({
       </section>
 
       {/* Content */}
-      <section className="py-12 lg:py-16">
+      <section className="pt-4 pb-12 lg:pt-6 lg:pb-16">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
           <article
             className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-brand-blue-600 prose-strong:text-foreground"
