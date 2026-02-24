@@ -928,16 +928,15 @@ const blogPosts: Record<string, {
     category: "News",
     image: "/images/blog/xtriam-launched-bpmPro.jpg",
     content: `
-      <p>xTriam has announced the release of bpmPro, a business process management software that runs on the world-leading Salesforce Platform. The platform targets window dealers specifically.</p>
+      <p>xTriam is excited to announce the launch of <strong>bpmPro</strong>, a business process management software that runs on the world-leading Salesforce Platform. <strong>bpmPro</strong> empowers window dealers with the functionality to deliver a successful customer journey. The software takes all the manual business processes into a digital, streamlined user experience that can be effectively enforced and monitored.</p>
 
-      <h2>Transforming Manual Operations</h2>
-      <p>The software's core function involves transforming manual operations into automated workflows. bpmPro empowers window dealers with the functionality to deliver a successful customer journey by converting processes into a digital, streamlined user experience that can be effectively enforced and monitored.</p>
+      <br />
 
-      <h2>Complete Business Lifecycle</h2>
-      <p>The solution covers the complete business lifecycle, enabling dealers to manage operations spanning initial client engagement through order management, service delivery, and post-sales support.</p>
+      <p>With <strong>bpmPro</strong>, you can run and control your entire business operations - from engaging the client to managing the order to delivering the service to supporting your post-sales efforts.</p>
 
-      <h2>Get Started</h2>
-      <p>Contact xTriam to book a demo and learn how bpmPro can improve your business profitability.</p>
+      <br />
+
+      <p><strong>To sign up and start maximizing your profits, <a href="/contact">contact us to book a demo</a>.</strong></p>
     `,
   },
   "from-quote-to-completion-how-software-is-changing-the-remodeling-business": {
