@@ -10,6 +10,7 @@ const blogPosts: Record<string, {
   category: string;
   image: string;
   imagePosition?: "top" | "bottom";
+  imageAspect?: "square" | "auto";
   content: string;
 }> = {
   "xtriam-launches-invoiceticket": {
@@ -429,6 +430,7 @@ const blogPosts: Record<string, {
     date: "April 3, 2023",
     category: "Sales",
     image: "/images/blog/sales-automation.jpg",
+    imageAspect: "square",
     content: `
       <p>Automation can transform your sales process and boost productivity, allowing your team to focus on what matters most - closing deals.</p>
 
@@ -718,11 +720,11 @@ export default async function BlogPostPage({
       {post.image && (
         <section className="pb-8">
           <div className="mx-auto max-w-4xl px-4 lg:px-8">
-            <div className="aspect-video overflow-hidden rounded-xl shadow-lg">
+            <div className={`${post.imageAspect === "square" ? "aspect-square max-w-2xl mx-auto" : post.imageAspect === "auto" ? "" : "aspect-video"} overflow-hidden rounded-xl shadow-lg`}>
               <img
                 src={post.image}
                 alt={post.title}
-                className={`w-full h-full object-cover ${post.imagePosition === "top" ? "object-top" : post.imagePosition === "bottom" ? "object-bottom" : ""}`}
+                className={`w-full ${post.imageAspect === "auto" ? "h-auto" : "h-full object-cover"} ${post.imagePosition === "top" ? "object-top" : post.imagePosition === "bottom" ? "object-bottom" : ""}`}
               />
             </div>
           </div>
