@@ -43,6 +43,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "xTriam",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "xTriam - Software Built for Contractors",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
