@@ -903,16 +903,23 @@ const blogPosts: Record<string, {
     category: "Industry",
     image: "/images/blog/price-increases-in-window-business-florida.jpg",
     content: `
-      <p>Significant price escalations have affected Florida's window and door manufacturing sector. From January 1, 2021 through May 30, 2022, manufacturers implemented four rounds of price increases, resulting in a cumulative jump of 40 to 58% total price spike.</p>
+      <p>Record price increases in 2021 and so far in 2022 in Florida. It is widely known that, as a result of the Covid-19 pandemic, consumer spending priorities switched. Expenditures in home improvement, including fenestration, has grown dramatically during this period of time. The main reason for this uplift in demand makes sense to us: lockdowns forced us to stay at home when otherwise we would have been at the office. The other side of the equation, the supply, has also been widely publicized. Because of multiple worldwide lockdowns, which slowed down or even temporarily shut down the commerce of raw materials and finished products, the global supply chain suffered significant disruptions.</p>
 
-      <h2>Market Drivers</h2>
-      <p>These increases are attributed to pandemic-related factors—consumer spending shifted toward home improvement during lockdowns, while global supply chain disruptions reduced material availability.</p>
+      <br />
 
-      <h2>Florida-Specific Context</h2>
-      <p>Hurricane protection requirements make impact-resistant windows and doors essential in Florida. These specialty products typically cost double traditional alternatives, making the price surge particularly impactful for coastal residents.</p>
+      <h2>Price Increases on Windows and Doors in Florida</h2>
 
-      <h2>Navigating the Challenge</h2>
-      <p>Window and door manufacturers need tools to navigate industry challenges through process automation and improved profitability. bpmPro helps businesses adapt to these market pressures.</p>
+      <p>Many of my colleagues from different industries have asked me how the above described scenario affected our prices for windows and doors in Florida. Since January 1st, 2021 to May 30th, 2022, Florida's window and door manufacturers have increased prices four times. The cumulative price increase has resulted in a 40 to 58% total price spike for this time span.</p>
+
+      <br />
+
+      <p>For those of you non-Coastal residents, our fenestration needs are designed for hurricane protection. As a result, our windows and doors are built to withstand significant wind pressures, as well as impacts by flying debris. These products are called impact-resistant windows and doors, which typically cost at least twice as much as the traditional windows and doors. Hence, a price spike of 58% on a big-ticket item like impact windows really hits home, both literally and figuratively.</p>
+
+      <br />
+
+      <h2>Why Are These Increase Rates Higher than the US Inflation Rates?</h2>
+
+      <p>The data above is real data from the field, more specifically, from the Florida market. It is the sum of effective price increases by the leading manufacturers of impact-resistant products in Florida. You might ask yourself: why are these numbers so much higher than the reported annual inflation rates for the United States? For that analysis, I would pass it on to a more qualified specialist on this complicated topic.</p>
     `,
   },
   "xtriam-has-launched-bpmpro": {
