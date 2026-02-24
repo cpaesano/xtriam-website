@@ -176,7 +176,7 @@ export default function BlogPage() {
               >
                 {post.image && (
                   <Link href={`/post/${post.slug}`} className="block">
-                    <div className="aspect-[3/2] overflow-hidden bg-muted">
+                    <div className="aspect-video overflow-hidden bg-muted">
                       <img
                         src={post.image}
                         alt={post.title}

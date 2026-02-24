@@ -716,7 +716,7 @@ export default async function BlogPostPage({
       {post.image && (
         <section className="pb-8">
           <div className="mx-auto max-w-4xl px-4 lg:px-8">
-            <div className="aspect-[3/2] overflow-hidden rounded-xl shadow-lg">
+            <div className="aspect-video overflow-hidden rounded-xl shadow-lg">
               <img
                 src={post.image}
                 alt={post.title}
