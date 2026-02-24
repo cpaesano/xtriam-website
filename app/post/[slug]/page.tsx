@@ -9,6 +9,7 @@ const blogPosts: Record<string, {
   date: string;
   category: string;
   image: string;
+  imagePosition?: "top" | "bottom";
   content: string;
 }> = {
   "xtriam-launches-invoiceticket": {
@@ -391,6 +392,7 @@ const blogPosts: Record<string, {
     date: "July 2023",
     category: "Operations",
     image: "/images/blog/job-supervision.jpg",
+    imagePosition: "top",
     content: `
       <p>Effective job supervision is crucial for window installation success. It's the difference between satisfied customers and costly callbacks.</p>
 
@@ -720,7 +722,7 @@ export default async function BlogPostPage({
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover ${post.imagePosition === "top" ? "object-top" : post.imagePosition === "bottom" ? "object-bottom" : ""}`}
               />
             </div>
           </div>
