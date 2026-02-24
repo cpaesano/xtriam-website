@@ -89,6 +89,7 @@ const blogPosts = [
     date: "July 2023",
     category: "Operations",
     image: "/images/blog/job-supervision.jpg",
+    imageAspect: "square" as const,
   },
   {
     slug: "making-informed-decisions-with-bpmpro-real-time-warehouse-insights",
@@ -105,6 +106,7 @@ const blogPosts = [
     date: "April 3, 2023",
     category: "Sales",
     image: "/images/blog/sales-automation.jpg",
+    imageAspect: "square" as const,
   },
   {
     slug: "monitoring-key-performance-indicators-at-small-and-medium-sized-businesses",
@@ -176,7 +178,7 @@ export default function BlogPage() {
               >
                 {post.image && (
                   <Link href={`/post/${post.slug}`} className="block">
-                    <div className="aspect-video overflow-hidden bg-muted">
+                    <div className={`${post.imageAspect === "square" ? "aspect-square" : "aspect-video"} overflow-hidden bg-muted`}>
                       <img
                         src={post.image}
                         alt={post.title}
