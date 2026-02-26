@@ -15,6 +15,9 @@
 6. [Google Business Profile](#6-google-business-profile)
 7. [Structured Data / Schema Markup](#7-structured-data--schema-markup)
 8. [Recovery Timeline Expectations](#8-recovery-timeline-expectations)
+9. [LinkedIn & Content Strategy](#9-linkedin--content-strategy)
+7. [Structured Data / Schema Markup](#7-structured-data--schema-markup)
+8. [Recovery Timeline Expectations](#8-recovery-timeline-expectations)
 
 ---
 
@@ -346,13 +349,83 @@ Add JSON-LD as a `<script>` tag in page components:
 
 ---
 
+## 9. LinkedIn & Content Strategy
+
+LinkedIn content helps SEO indirectly by building topical authority, driving referral traffic, and increasing brand visibility in Google search results. Google indexes LinkedIn articles and high-engagement posts.
+
+### The Golden Rule: Blog First, LinkedIn Second
+
+**Why order matters:** If you post the same article on both LinkedIn and your blog simultaneously, Google picks one version to rank and ignores the other. LinkedIn has massive domain authority — Google will likely rank the LinkedIn version, sending traffic to LinkedIn instead of your site.
+
+**The correct flow:**
+
+```
+1. Publish full article on xtriam.com/post/...     (Week 1)
+2. Wait 1–2 weeks for Google to crawl and index it (Week 1–2)
+3. Republish on LinkedIn with modifications          (Week 2–3)
+4. Share as a LinkedIn post linking to your blog     (Same day as step 1)
+```
+
+### Blog Post (Your Site — The Canonical Source)
+
+- Full article lives on xtriam.com
+- Has proper canonical tags, OG metadata, structured data (BlogPosting schema)
+- This is the version you want Google to rank
+- Target 800–1,500 words for SEO-meaningful content
+
+### LinkedIn Article (Republished Version)
+
+When republishing on LinkedIn after Google has indexed your blog version:
+
+- **Rewrite the intro** (first 2–3 paragraphs) so it's not a verbatim copy
+- **Keep the body mostly the same** — it's fine, the intro change is enough
+- **Add a link back** at the top or bottom: *"Originally published on [xtriam.com](https://www.xtriam.com/post/...)"*
+- LinkedIn does **not** support canonical tags — the link back is your only signal to Google
+
+### LinkedIn Posts (Short-Form — Immediate Sharing)
+
+For immediate promotion the same day you publish a blog post:
+
+- Write a **short LinkedIn post** (3–5 sentences) with a hook and a link to the blog
+- This is NOT the full article — it's a teaser that drives clicks to your site
+- Include relevant keywords naturally in the first 3 lines
+- Ask a question or share a takeaway to encourage comments
+- Early engagement (first 60 minutes) helps both LinkedIn visibility and Google indexing
+
+### Content Calendar
+
+| Content Type | Where | Frequency | SEO Value |
+|-------------|-------|-----------|-----------|
+| Long-form article (800–1,500 words) | Blog first, then LinkedIn article | 1–2x per month | High — builds topical authority, earns backlinks |
+| Short LinkedIn posts (tips, insights, news) | LinkedIn only | 2–3x per week | Medium — engagement signals, brand visibility |
+| LinkedIn post linking to blog | LinkedIn | Every time you publish a blog post | High — drives referral traffic to your site |
+| Repurposed blog content as short posts | LinkedIn | Ongoing | Medium — extends content lifespan |
+
+### Why This Helps Google Rankings
+
+LinkedIn links are `nofollow` (they don't pass direct SEO "link juice"), but the indirect benefits are significant:
+
+| Benefit | How It Works |
+|---------|-------------|
+| **Topical authority** | Google sees you publishing consistently about "window contractor CRM" across multiple platforms and recognizes you as an expert |
+| **Referral traffic** | People click through from LinkedIn to your site — traffic signals relevance to Google |
+| **Brand searches** | LinkedIn visibility increases brand awareness, leading to more people searching "xtriam" or "bpmpro" directly |
+| **Content indexing** | Google indexes LinkedIn articles — your brand appears in more search results |
+| **Backlink opportunities** | Readers who discover your content on LinkedIn may link to your blog from their own sites |
+
+### Duplicate Content: Not a Penalty
+
+Google does not penalize duplicate content. It simply **chooses one version to rank** and suppresses the others. By publishing on your blog first and waiting for indexing before republishing on LinkedIn, you ensure Google treats your site as the canonical source.
+
+---
+
 ## Action Plan Summary
 
 | Priority | Action | Cost | Time | Status |
 |----------|--------|------|------|--------|
 | 1 | Fix robots.txt, sitemap.xml, canonical tags, OG metadata | Free | Done | **Completed Feb 22** |
-| 2 | Submit sitemap in Google Search Console | Free | 5 min | Pending deploy |
-| 3 | Request indexing of top 5 pages via URL Inspection | Free | 10 min | Pending deploy |
+| 2 | Deploy to Vercel and submit sitemap in Google Search Console | Free | Done | **Completed Feb 23** (37 pages, status: Success) |
+| 3 | Request indexing of top 5 pages via URL Inspection | Free | 10 min | To do |
 | 4 | Set up Google Keyword Planner (no-ads account) | Free | 30 min | To do |
 | 5 | Claim and complete Google Business Profile | Free | 30 min | To do |
 | 6 | Set up Ahrefs Webmaster Tools (free) | Free | 15 min | To do |
@@ -362,3 +435,6 @@ Add JSON-LD as a `<script>` tag in page components:
 | 10 | Implement Organization + FAQPage + WebApplication schema | Free | 2–3 hours | To do |
 | 11 | Ask 5–10 bpmPro clients for Google reviews | Free | 30 min | To do |
 | 12 | Implement BlogPosting + BreadcrumbList schema | Free | 1–2 hours | To do |
+| 13 | Publish 1st blog post targeting a money keyword | Free | 1–2 hours | To do |
+| 14 | Share blog post on LinkedIn with intro hook | Free | 15 min | To do |
+| 15 | Establish content cadence: 1–2 blog posts/month + 2–3 LinkedIn posts/week | Free | Ongoing | To do |

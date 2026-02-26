@@ -51,7 +51,7 @@ This project is part of the **xtriam workspace**:
 | Project | Location | Relationship |
 |---------|----------|--------------|
 | xtriam-salesforce | `../xtriam-salesforce/` | Salesforce org this website integrates with |
-| bpmProPackage-3-1 | `/Users/cpaesano/bpmProPackage-3-1/` | The managed package this website promotes |
+| bpmpro-package | `../bpmpro-package/` | The managed package this website promotes |
 
 ## Critical Documentation
 
