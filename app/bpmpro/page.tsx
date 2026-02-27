@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
 
@@ -15,6 +16,16 @@ export default function BpmProPage() {
       <section className="bg-gradient-to-b from-brand-blue-50 to-background py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-8 flex justify-center">
+              <Image
+                src="/images/logo/bpmpro-logo-transparent.png"
+                alt="bpmPro"
+                width={295}
+                height={90}
+                className="h-16 w-auto sm:h-20"
+                priority
+              />
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               The Business Process Management Software{" "}
               <span className="text-brand-blue-600">For Window Pros</span>
