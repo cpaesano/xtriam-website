@@ -13,7 +13,7 @@ export default function TermsPage() {
           Terms and Conditions
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Last updated: January 2025
+          Last updated: January 2026
         </p>
 
         <div className="mt-12 prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground">

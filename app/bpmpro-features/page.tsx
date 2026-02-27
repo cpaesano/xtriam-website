@@ -20,7 +20,7 @@ export default function FeaturesPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-orange-500"></span>
               </span>
-              Updated for 2025
+              Updated for 2026
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               <span className="text-brand-blue-600">50+ Features</span> Built for
