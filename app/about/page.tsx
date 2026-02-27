@@ -183,13 +183,13 @@ export default function AboutPage() {
             {/* InvoiceTicket Card */}
             <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 p-8 lg:p-10">
               <div className="text-white">
-                <div className="mb-2">
+                <div className="mb-2 inline-block overflow-hidden rounded-xl">
                   <Image
-                    src="/images/logo/invoiceticket-logo-white.png"
+                    src="/images/logo/invoiceticket-logo-white-bg.png"
                     alt="InvoiceTicket"
                     width={280}
                     height={55}
-                    className="h-10 w-auto"
+                    className="h-12 w-auto"
                   />
                 </div>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-emerald-200">
