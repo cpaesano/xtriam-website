@@ -7,6 +7,29 @@ For reusable SEO knowledge and cross-site playbooks, see `../../docs/seo/`.
 
 ---
 
+## 2026-02-27 — Ranking recovery confirmed: "crm for window contractors" at position #3
+
+**Discovery:** Google has re-indexed many xtriam.com pages after the Feb 22 SEO recovery fix. The robots.txt and sitemap.xml have been successfully read by Google.
+
+**Key result:** For the keyword **"crm for window contractors"**, xtriam.com now ranks **#3** on Google (from Carlos's device), up from being completely out of rankings post-migration.
+
+**SERP snapshot (Feb 27, 2026):**
+
+| Position | Result | Domain |
+|----------|--------|--------|
+| #1 | Top 7 Contractor CRMs for Window & Door Companies | builderprime.com |
+| #2 | CRM for the Construction Industry | pro.houzz.com |
+| **#3** | **xTriam - Software Built for Contractors** | **xtriam.com** |
+
+**Google snippet for xtriam.com:**
+> "Specialized CRM++ for Window & Door Contractors. bpmPro is a Salesforce-native solution designed specifically for window and door contractors."
+
+**Timeline:** Recovery took ~5 days from the SEO fix deploy (Feb 22) to confirmed ranking recovery (Feb 27). This is faster than the 4–8 week estimate from the original recovery doc.
+
+**Status:** ~12 pages still not indexed per Google Search Console. Next step: review those pages and decide whether to improve content and request indexing.
+
+---
+
 ## 2026-02-26 — GA4 internal traffic filter and production-only tracking
 
 **Action 1:** Created IP filtering rule in GA4 to exclude internal traffic from analytics.
