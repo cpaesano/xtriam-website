@@ -125,7 +125,7 @@ export default function AboutPage() {
             {/* bpmPro Card */}
             <div className="rounded-2xl bg-gradient-to-br from-brand-blue-600 to-brand-blue-800 p-8 lg:p-10">
               <div className="text-white">
-                <div className="mb-2 inline-block rounded-xl bg-white px-4 py-2">
+                <div className="mb-2">
                   <Image
                     src="/images/logo/bpmpro-logo.png"
                     alt="bpmPro"
