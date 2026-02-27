@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui";
 
@@ -124,7 +125,15 @@ export default function AboutPage() {
             {/* bpmPro Card */}
             <div className="rounded-2xl bg-gradient-to-br from-brand-blue-600 to-brand-blue-800 p-8 lg:p-10">
               <div className="text-white">
-                <h3 className="text-2xl font-bold sm:text-3xl">bpmPro</h3>
+                <div className="mb-2 inline-block rounded-xl bg-white px-4 py-2">
+                  <Image
+                    src="/images/logo/bpmpro-logo.png"
+                    alt="bpmPro"
+                    width={180}
+                    height={55}
+                    className="h-10 w-auto"
+                  />
+                </div>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-brand-blue-200">
                   Salesforce-Native CRM for Window & Door Contractors
                 </p>
@@ -174,9 +183,15 @@ export default function AboutPage() {
             {/* InvoiceTicket Card */}
             <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 p-8 lg:p-10">
               <div className="text-white">
-                <h3 className="text-2xl font-bold sm:text-3xl">
-                  InvoiceTicket
-                </h3>
+                <div className="mb-2">
+                  <Image
+                    src="/images/logo/invoiceticket-logo-white.png"
+                    alt="InvoiceTicket"
+                    width={280}
+                    height={55}
+                    className="h-10 w-auto"
+                  />
+                </div>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-emerald-200">
                   AI-Powered Invoicing for Small Contractors
                 </p>
