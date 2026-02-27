@@ -173,7 +173,7 @@ export default function AboutPage() {
                 <div className="mt-8">
                   <Link href="/bpmpro">
                     <Button variant="accent" size="lg">
-                      Learn More About <strong>bpmPro</strong>
+                      Learn More About{" "}<strong>bpmPro</strong>
                     </Button>
                   </Link>
                 </div>
