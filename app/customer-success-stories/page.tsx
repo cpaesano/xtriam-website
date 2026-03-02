@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Button, VimeoEmbed, YouTubeEmbed } from "@/components/ui";
 import { Quote, Play } from "lucide-react";
@@ -17,6 +18,16 @@ export default function SuccessStoriesPage() {
       <section className="bg-gradient-to-b from-brand-blue-50 to-background py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
+            <div className="mb-8 flex justify-center">
+              <Image
+                src="/images/logo/bpmpro-logo-transparent.png"
+                alt="bpmPro"
+                width={295}
+                height={90}
+                className="h-16 w-auto sm:h-20"
+                priority
+              />
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Customer Success Stories
             </h1>

@@ -7,6 +7,57 @@ For reusable SEO knowledge and cross-site playbooks, see `../../docs/seo/`.
 
 ---
 
+## 2026-02-27 — Google Search Console: impressions returning for industry keywords
+
+**Status:** Site is confirmed back in Google's index. GSC is now showing impressions for non-brand, industry-relevant queries over the last 24 hours.
+
+**Top queries (last 24 hrs, from GSC):**
+
+| Query | Clicks | Impressions | Avg Position |
+|-------|--------|-------------|--------------|
+| software for selling windows and doors | 0 | 3 | 10.7 |
+| give more | 0 | 1 | 12.0 |
+| window and door sales software | 0 | 1 | 26.0 |
+
+**Analysis:**
+- "software for selling windows and doors" at position 10.7 is right at the page 1/page 2 border — one position improvement puts it on page 1
+- "window and door sales software" at position 26 shows Google is associating the site with the right keyword family again
+- "give more" is likely an irrelevant coincidental match
+- Zero clicks is expected — positions 10+ get very low CTR, and impression volume is still ramping up
+- Combined with "crm for window contractors" at #3 (confirmed earlier today via manual search), the recovery is progressing well
+
+**Recovery timeline so far:**
+- Feb 22: SEO fix deployed (robots.txt, sitemap, canonicals, OG metadata)
+- Feb 27 (day 5): "crm for window contractors" back at #3, new industry keywords appearing in GSC
+- Next milestone: clicks from organic search, more keywords entering page 1
+
+---
+
+## 2026-02-27 — Enriched 3 landing pages for SEO indexing + Google re-index requests
+
+**Problem:** The three `/bpmpro-crm/` landing pages were not being indexed by Google. All three were too thin — short pages with minimal content that Google deemed low-value for indexing.
+
+**Pages enriched:**
+
+| Page | URL | Commit | What was added |
+|------|-----|--------|----------------|
+| Business Process Automation | `/bpmpro-crm/business-process-automation-for-window-contractors` | `7488b1c` | bpmPro logo in hero, expanded automation areas with bullet points, "Built on Salesforce" stats section, verified results testimonial card |
+| Eliminate Manual Processes | `/bpmpro-crm/eliminate-manual-processes` | `bbf3cde` | bpmPro logo in hero, "Hidden Cost of Manual Processes" stat cards, "From Manual Chaos to Digital Clarity" before/after comparisons, 6 elimination area cards with bullets, "Built for Window Contractors" testimonial + verified results card |
+| Import ES Windows Quotes | `/bpmpro-crm/quickly-import-your-es-windows-quotes` | `f843102` | bpmPro logo in hero, "Why Contractors Struggle with Manual Quote Entry" stat cards, expanded How It Works steps with bullets, "What Gets Imported" 5-card grid, "Works Alongside Your Other Tools" integrations section, "Real Results from Real Contractors" testimonial + verified results card |
+
+**Pattern used across all three pages:**
+- Added bpmPro logo above the h1 heading
+- Added pain point / stat cards section with industry-relevant numbers
+- Expanded existing sections with bullet-point detail
+- Added a testimonial + verified results two-column section (quote from a real customer + blue/orange gradient card with 4 verified stats)
+- Updated SEO metadata (title and description) for each page
+
+**Google re-index requests:** All three pages were submitted for re-indexing via Google Search Console URL Inspection tool after deployment.
+
+**Expected outcome:** Pages should appear in Google's index within 1–2 weeks. Monitor in GSC under "Pages" → "Why pages aren't indexed" to confirm they move from "Discovered - currently not indexed" to "Indexed."
+
+---
+
 ## 2026-02-27 — Ranking recovery confirmed: "crm for window contractors" at position #3
 
 **Discovery:** Google has re-indexed many xtriam.com pages after the Feb 22 SEO recovery fix. The robots.txt and sitemap.xml have been successfully read by Google.
