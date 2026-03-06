@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingHelpButton } from "@/components/ui/FloatingHelpButton";
+import { LazyHelpButton } from "@/components/ui/LazyHelpButton";
 
 export default function MarketingLayout({
   children,
@@ -12,7 +12,7 @@ export default function MarketingLayout({
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
-      <FloatingHelpButton />
+      <LazyHelpButton />
     </>
   );
 }

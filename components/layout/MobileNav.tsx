@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui";
-import { cn } from "@/lib/utils";
 
 const primaryNav = [
   { label: "Meet bpmPro", href: "/bpmpro" },
@@ -22,6 +20,14 @@ const moreNav = [
   { label: "Help", href: "/help" },
 ];
 
+function ChevronDownIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+    </svg>
+  );
+}
+
 export function DesktopMoreDropdown() {
   const [open, setOpen] = useState(false);
 
@@ -33,7 +39,7 @@ export function DesktopMoreDropdown() {
         className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
       >
         More
-        <ChevronDown className={cn("h-4 w-4 transition-transform", open && "rotate-180")} />
+        <ChevronDownIcon className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
       {open && (
@@ -66,7 +72,15 @@ export function MobileMenuButton() {
         onClick={() => setOpen(!open)}
       >
         <span className="sr-only">Toggle menu</span>
-        {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {open ? (
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        )}
       </button>
 
       {open && (
