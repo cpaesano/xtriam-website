@@ -1,11 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui";
-import { cn } from "@/lib/utils";
+import { MobileMenuButton, DesktopMoreDropdown } from "./MobileNav";
 
 const primaryNav = [
   { label: "Meet bpmPro", href: "/bpmpro" },
@@ -14,22 +10,10 @@ const primaryNav = [
   { label: "Success Stories", href: "/customer-success-stories" },
 ];
 
-const moreNav = [
-  { label: "Video Library", href: "/video-library" },
-  { label: "About xTriam", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
-  { label: "Blog", href: "/blog" },
-  { label: "FAQs", href: "/faqs" },
-  { label: "Help", href: "/help" },
-];
-
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+      <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -54,33 +38,8 @@ export function Header() {
             </Link>
           ))}
 
-          {/* More Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setMoreMenuOpen(!moreMenuOpen)}
-              onBlur={() => setTimeout(() => setMoreMenuOpen(false), 150)}
-              className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              More
-              <ChevronDown className={cn("h-4 w-4 transition-transform", moreMenuOpen && "rotate-180")} />
-            </button>
-
-            {moreMenuOpen && (
-              <div className="absolute right-0 mt-2 w-48 rounded-lg border border-border bg-background shadow-lg">
-                <div className="py-1">
-                  {moreNav.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          {/* More Dropdown (client component) */}
+          <DesktopMoreDropdown />
         </div>
 
         {/* CTA Buttons */}
@@ -99,55 +58,9 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="lg:hidden -m-2.5 p-2.5 text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className="sr-only">Toggle menu</span>
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        {/* Mobile menu button (client component) */}
+        <MobileMenuButton />
       </nav>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border">
-          <div className="space-y-1 px-4 py-4">
-            {[...primaryNav, ...moreNav].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block rounded-lg px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="pt-4 space-y-2">
-              <Link
-                href="/support"
-                className="flex items-center gap-2 rounded-lg border border-brand-blue-200 bg-brand-blue-50 px-3 py-2.5 text-base font-medium text-brand-blue-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                Customer Portal
-              </Link>
-              <Link href="/book-a-demo" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="accent" className="w-full">
-                  Book a Demo
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

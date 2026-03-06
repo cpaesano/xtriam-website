@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui";
 import { VimeoFacade } from "@/components/ui/VimeoFacade";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
+      <link
+        rel="preload"
+        as="image"
+        type="image/webp"
+        imageSrcSet="/images/hero/Multi-Device-MockUp-Wide-Format-480.webp 480w, /images/hero/Multi-Device-MockUp-Wide-Format-800.webp 800w, /images/hero/Multi-Device-MockUp-Wide-Format-1200.webp 1200w"
+        imageSizes="(max-width: 768px) 100vw, 50vw"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-blue-50 to-background py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -44,14 +50,15 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   type="image/webp"
                 />
-                <Image
-                  src="/images/hero/Multi-Device-MockUp-Wide-Format.png"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/hero/Multi-Device-MockUp-Wide-Format-1200.webp"
                   alt="bpmPro on multiple devices - desktop, tablet, and mobile"
                   width={1200}
                   height={639}
                   className="w-full h-auto"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </picture>
             </div>
