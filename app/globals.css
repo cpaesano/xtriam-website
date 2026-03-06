@@ -38,7 +38,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --muted: var(--gray-light);
-  --muted-foreground: #737373;
+  --muted-foreground: #374151;
   --border: var(--gray-light);
   --ring: var(--brand-blue-500);
 
@@ -108,7 +108,7 @@
   --color-gray-medium: var(--gray-medium);
 
   /* Fonts */
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
