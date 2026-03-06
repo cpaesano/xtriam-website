@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:static": "npx @tailwindcss/cli --input static-pages/input.css --output public/static/css/styles.css --minify && cp static-pages/*.html public/static/",
+    "build:static": "npx @tailwindcss/cli --input static-pages/input.css --output public/static/css/styles.css --minify && node scripts/inline-css.js",
     "build": "npm run build:static && next build",
     "start": "next start",
     "lint": "eslint",
