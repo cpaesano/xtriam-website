@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, VimeoEmbed, YouTubeEmbed } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { YouTubeFacade } from "@/components/ui/YouTubeFacade";
+import { VimeoFacade } from "@/components/ui/VimeoFacade";
 import { Quote, Play } from "lucide-react";
 import { StatsSection } from "@/components/marketing/StatsSection";
 
@@ -61,9 +63,9 @@ export default function SuccessStoriesPage() {
                 className="rounded-xl border border-border bg-background overflow-hidden shadow-sm"
               >
                 {video.platform === "youtube" ? (
-                  <YouTubeEmbed videoId={video.videoId} title={video.title} />
+                  <YouTubeFacade videoId={video.videoId} title={video.title} />
                 ) : (
-                  <VimeoEmbed videoId={video.videoId} title={video.title} />
+                  <VimeoFacade videoId={video.videoId} title={video.title} />
                 )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground">

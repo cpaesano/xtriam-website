@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button, VimeoEmbed } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { VimeoFacade } from "@/components/ui/VimeoFacade";
 
 export const metadata: Metadata = {
   title: "bpmPro Features | 50+ Tools for Window & Door Contractors",
@@ -283,7 +284,7 @@ export default function FeaturesPage() {
               </div>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg border border-border">
-              <VimeoEmbed videoId="849143740" title="A Big Game Changer - Nour Aljamal" />
+              <VimeoFacade videoId="849143740" title="A Big Game Changer - Nour Aljamal" />
             </div>
           </div>
         </div>

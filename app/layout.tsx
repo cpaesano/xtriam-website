@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Playfair_Display } from "next/font/google";
 import Script from "next/script";
-import { LayoutWrapper } from "@/components/layout/LayoutWrapper";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-JMQLNXQGYQ";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -93,9 +87,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${playfair.variable} antialiased min-h-screen flex flex-col`}
       >
-        <LayoutWrapper>{children}</LayoutWrapper>
+        {children}
       </body>
     </html>
   );

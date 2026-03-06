@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button, VimeoEmbed } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { VimeoFacade } from "@/components/ui/VimeoFacade";
 import { Play } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ export default function VideoLibraryPage() {
                   key={index}
                   className="rounded-xl border border-border bg-background overflow-hidden shadow-sm"
                 >
-                  <VimeoEmbed videoId={video.vimeoId} title={video.title} />
+                  <VimeoFacade videoId={video.vimeoId} title={video.title} />
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-foreground">
                       {video.title}

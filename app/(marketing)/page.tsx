@@ -1,4 +1,5 @@
-import { Button, VimeoEmbed } from "@/components/ui";
+import { Button } from "@/components/ui";
+import { VimeoFacade } from "@/components/ui/VimeoFacade";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -37,14 +38,22 @@ export default function Home() {
             </div>
             {/* Hero Image */}
             <div className="relative">
-              <Image
-                src="/images/hero/Multi-Device-MockUp-Wide-Format.png"
-                alt="bpmPro on multiple devices - desktop, tablet, and mobile"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-                priority
-              />
+              <picture>
+                <source
+                  srcSet="/images/hero/Multi-Device-MockUp-Wide-Format-480.webp 480w, /images/hero/Multi-Device-MockUp-Wide-Format-800.webp 800w, /images/hero/Multi-Device-MockUp-Wide-Format-1200.webp 1200w"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  type="image/webp"
+                />
+                <Image
+                  src="/images/hero/Multi-Device-MockUp-Wide-Format.png"
+                  alt="bpmPro on multiple devices - desktop, tablet, and mobile"
+                  width={1200}
+                  height={639}
+                  className="w-full h-auto"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -146,7 +155,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <VimeoEmbed videoId="849143740" title="75% Time Savings in Quoting - Nour Aljamal" />
+              <VimeoFacade videoId="849143740" title="75% Time Savings in Quoting - Nour Aljamal" />
             </div>
           </div>
         </div>
