@@ -7,6 +7,66 @@ For reusable SEO knowledge and cross-site playbooks, see `../../docs/seo/`.
 
 ---
 
+## 2026-03-05 — Mobile PageSpeed: 73 → 97 (Core Web Vitals all green)
+
+**Trigger:** PageSpeed Insights showed Performance score of 73 on mobile with LCP at 4.9s (poor). Core Web Vitals directly impact Google rankings — this was likely contributing to the ranking drop.
+
+**Changes made (3 commits):**
+
+| Fix | Impact | Commit |
+|-----|--------|--------|
+| Replace client-side `LayoutWrapper` with `(marketing)` route group | Marketing pages now server-render (no hydration needed for layout) | `80da277` |
+| Convert hero image from 770KB PNG to responsive WebP (14-51KB) | 93% image size reduction, 3 responsive sizes with `<picture>` | `80da277` |
+| Replace Vimeo/YouTube iframes with click-to-play facades | Eliminates ~500KB 3rd-party JS on initial page load | `80da277` |
+| Remove Geist Mono font | One fewer render-blocking font request | `80da277` |
+| Convert Header to server component + client islands | Only mobile menu toggle and More dropdown need JavaScript | `dbbe0f2` |
+| Add `<link rel=preload>` for hero image | Browser starts fetching LCP image immediately | `dbbe0f2` |
+| Move Playfair Display font to blog-only layout | Saves 28KB font from critical path on non-blog pages | `7da0f05` |
+| Replace lucide-react icons with inline SVGs in MobileNav | Removes icon library from homepage client bundle | `7da0f05` |
+| Lazy-load FloatingHelpButton via `next/dynamic` | Deferred until after initial render | `7da0f05` |
+
+**Results:**
+
+| Metric | Before | After | Change |
+|--------|--------|-------|--------|
+| Performance | 73 | **97** | +24 points |
+| FCP | 3.0s | **0.9s** | -70% |
+| LCP | 4.9s | **1.8s** | -63% |
+| TBT | 150ms | **170ms** | ~same |
+| CLS | 0 | **0** | same |
+| Best Practices | 77 | **100** | +23 points |
+| Unused JS | 341KB | **175KB** | -49% |
+
+**All Core Web Vitals now in green zone.** LCP at 1.8s is well under Google's 2.5s "good" threshold.
+
+---
+
+## 2026-03-05 — Ranking drop: "CRM for window contractors" — not visible from user's device
+
+**Trigger:** Manual Google search for "CRM for window contractors" from Carlos's device shows xtriam.com **completely absent** from results.
+
+**What the user sees:** xtriam.com does not appear at all for "CRM for window contractors" (was #3 on Feb 27).
+
+**What automated web search shows:** xtriam.com at #4 — but this routes through different infrastructure and does not reflect what real users in South Florida see.
+
+| Source | Position | Date |
+|--------|----------|------|
+| Carlos's device (manual search) | **#3** | Feb 27 |
+| Carlos's device (manual search) | **Not visible** | Mar 5 |
+| Automated web search tool | #4 | Mar 5 |
+
+**Technical check:** No issues found — site returns 200, robots.txt and sitemap.xml serving correctly.
+
+**Possible causes:**
+- Google ranking volatility during SEO recovery period (still within first 2 weeks post-fix)
+- Google may be A/B testing different SERP compositions by region/device
+- The site's domain authority is still rebuilding after 56 days without proper SEO infrastructure
+- Builder Prime is dominating with 3 listings, squeezing smaller sites off page 1
+
+**Action:** Check Google Search Console for actual average position and impression data for this keyword over the past 7 days. GSC data is more reliable than manual spot-checks. If position has dropped significantly in GSC, consider adding more content depth to the homepage and key landing pages to strengthen relevance signals.
+
+---
+
 ## 2026-02-27 — Google Search Console: impressions returning for industry keywords
 
 **Status:** Site is confirmed back in Google's index. GSC is now showing impressions for non-brand, industry-relevant queries over the last 24 hours.
