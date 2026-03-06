@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return {
+      // beforeFiles rewrites run BEFORE Next.js pages, so static HTML takes priority
+      beforeFiles: [
+        { source: "/", destination: "/static/index.html" },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
 };
 
 export default nextConfig;
