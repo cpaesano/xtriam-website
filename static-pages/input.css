@@ -54,6 +54,9 @@
 }
 
 @theme inline {
+  /* Default font family for Tailwind v4 base reset */
+  --default-font-family: "Geist", system-ui, -apple-system, sans-serif;
+
   /* Background & Foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
