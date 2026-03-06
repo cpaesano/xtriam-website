@@ -55,7 +55,7 @@
 
 @theme inline {
   /* Default font family for Tailwind v4 base reset */
-  --default-font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --default-font-family: "DM Sans", system-ui, -apple-system, sans-serif;
 
   /* Background & Foreground */
   --color-background: var(--background);
@@ -97,7 +97,7 @@
   --color-accent-foreground: var(--accent-foreground);
 
   /* Fonts */
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 

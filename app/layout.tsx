@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-JMQLNXQGYQ";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -82,7 +82,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${inter.variable} antialiased min-h-screen flex flex-col`}
+        className={`${dmSans.variable} antialiased min-h-screen flex flex-col`}
       >
         {children}
       </body>
