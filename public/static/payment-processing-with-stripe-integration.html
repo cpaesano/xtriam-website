@@ -3,28 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>xTriam - Software Built for Contractors</title>
-  <meta name="description" content="xTriam builds software that helps contractors run their businesses — from Salesforce-native CRM to AI-powered invoicing. Serving window, door, and trade contractors." />
+  <title>Payment Processing with Stripe Integration</title>
+  <meta name="description" content="Accept payments seamlessly with bpmPro's built-in Stripe integration. Process deposits, progress payments, and final invoices directly in your CRM." />
   <meta name="keywords" content="contractor software,CRM,window contractors,door contractors,Salesforce,bpmPro,window and door CRM,business process management" />
   <meta name="author" content="xTriam" />
-  <link rel="canonical" href="https://www.xtriam.com/" />
+  <link rel="canonical" href="https://www.xtriam.com/payment-processing-with-stripe-integration" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="xTriam" />
-  <meta property="og:title" content="xTriam - Software Built for Contractors" />
-  <meta property="og:description" content="xTriam builds software that helps contractors run their businesses — from Salesforce-native CRM to AI-powered invoicing. Serving window, door, and trade contractors." />
+  <meta property="og:title" content="Payment Processing with Stripe Integration" />
+  <meta property="og:description" content="Accept payments seamlessly with bpmPro's built-in Stripe integration. Process deposits, progress payments, and final invoices directly in your CRM." />
   <meta property="og:image" content="https://www.xtriam.com/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://www.xtriam.com/" />
+  <meta property="og:url" content="https://www.xtriam.com/payment-processing-with-stripe-integration" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="/icon.png" />
   <link rel="apple-touch-icon" href="/apple-icon.png" />
   <link rel="preload" href="/static/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
-    imagesrcset="/images/hero/Multi-Device-MockUp-Wide-Format-480.webp 480w, /images/hero/Multi-Device-MockUp-Wide-Format-800.webp 800w, /images/hero/Multi-Device-MockUp-Wide-Format-1200.webp 1200w"
-    imagesizes="(max-width: 768px) 100vw, 50vw" />
   <style>
     @font-face {
       font-family: 'Geist';
@@ -107,222 +104,296 @@
 
   <main class="flex-1">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-brand-blue-50 to-background py-16 lg:py-24">
+    <section class="bg-gradient-to-b from-brand-blue-50 to-background py-20 lg:py-28">
       <div class="mx-auto max-w-7xl px-4 lg:px-8">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div class="text-center lg:text-left">
-            <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Specialized <span class="text-brand-blue-600">CRM++</span> for Window &amp; Door Contractors
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-blue-100 px-4 py-1.5 text-sm font-medium text-brand-blue-700 mb-6">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              Secure Payments
+            </div>
+            <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              Payment Processing with <span class="text-brand-blue-600">Stripe Integration</span>
             </h1>
             <p class="mt-6 text-lg leading-8 text-muted-foreground">
-              <strong>bpmPro</strong> is a Salesforce-native solution designed specifically for window and door contractors. Streamline your sales, manage projects, and grow your business with tools built for your industry.
+              Get paid faster with <strong>bpmPro</strong>'s seamless Stripe integration.
+              Accept credit cards, send payment links, and track every
+              transaction&mdash;all without leaving your CRM.
             </p>
-            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-semibold text-accent-foreground hover:bg-brand-orange-600 transition-colors">Book a Demo</a>
-              <a href="/savings" class="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-base font-semibold text-foreground hover:bg-muted transition-colors">Calculate Your Savings</a>
+            <div class="mt-10 flex items-center gap-4">
+              <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-semibold text-accent-foreground hover:bg-brand-orange-600 transition-colors">See It in Action</a>
+              <a href="/contact" class="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-base font-semibold text-foreground hover:bg-muted transition-colors">Contact Sales</a>
             </div>
           </div>
           <div class="relative">
-            <picture>
-              <source
-                srcset="/images/hero/Multi-Device-MockUp-Wide-Format-480.webp 480w, /images/hero/Multi-Device-MockUp-Wide-Format-800.webp 800w, /images/hero/Multi-Device-MockUp-Wide-Format-1200.webp 1200w"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                type="image/webp" />
-              <img
-                src="/images/hero/Multi-Device-MockUp-Wide-Format-1200.webp"
-                alt="bpmPro on multiple devices - desktop, tablet, and mobile"
-                width="1200" height="639"
-                class="w-full h-auto"
-                fetchpriority="high"
-                decoding="async" />
-            </picture>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pain Points Section -->
-    <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Sound Familiar?</h2>
-          <p class="mt-4 text-lg text-muted-foreground">Window contractors face unique challenges. We built <strong>bpmPro</strong> to solve them.</p>
-        </div>
-        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-xl border border-border bg-background p-6 shadow-sm">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Wasting Time on Manual Tasks</h3>
-            <p class="mt-2 text-muted-foreground">Spreadsheets, paperwork, and duplicate data entry eating up your day.</p>
-          </div>
-          <div class="rounded-xl border border-border bg-background p-6 shadow-sm">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Lost Quotes &amp; Proposals</h3>
-            <p class="mt-2 text-muted-foreground">Can't find that quote from last month? Your team using different formats?</p>
-          </div>
-          <div class="rounded-xl border border-border bg-background p-6 shadow-sm">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Cash Flow Problems</h3>
-            <p class="mt-2 text-muted-foreground">Late payments, missed deposits, and unclear project financials.</p>
-          </div>
-          <div class="rounded-xl border border-border bg-background p-6 shadow-sm">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Scheduling Chaos</h3>
-            <p class="mt-2 text-muted-foreground">Double-booked installations, missed appointments, unhappy customers.</p>
-          </div>
-          <div class="rounded-xl border border-border bg-background p-6 shadow-sm">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">No Visibility into Performance</h3>
-            <p class="mt-2 text-muted-foreground">How are your salespeople really doing? Which jobs are profitable?</p>
-          </div>
-          <div class="rounded-xl border border-border bg-background p-6 shadow-sm">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-orange-100 text-brand-orange-600">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Growing Pains</h3>
-            <p class="mt-2 text-muted-foreground">Your current tools worked when you were small, but now they're holding you back.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Overview Section -->
-    <section class="bg-muted/30 py-20 lg:py-28">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Everything You Need to Run Your Business</h2>
-          <p class="mt-4 text-lg text-muted-foreground">From first contact to final installation, <strong>bpmPro</strong> manages your entire workflow.</p>
-        </div>
-        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="text-center">
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-100 text-brand-blue-600">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Sales Documents</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Create professional quotes and proposals in minutes.</p>
-          </div>
-          <div class="text-center">
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-100 text-brand-blue-600">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Projects Board</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Track every project from sale to installation.</p>
-          </div>
-          <div class="text-center">
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-100 text-brand-blue-600">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Payments &amp; Stripe</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Accept payments and track cash flow easily.</p>
-          </div>
-          <div class="text-center">
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-100 text-brand-blue-600">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-            </div>
-            <h3 class="mt-4 text-lg font-semibold text-foreground">Reports &amp; Dashboards</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Real-time insights into your business performance.</p>
-          </div>
-        </div>
-        <div class="mt-12 text-center">
-          <a href="/bpmpro-features" class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-brand-blue-700 transition-colors">View All Features</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Customer Success Video -->
-    <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <div class="inline-flex items-center rounded-full bg-brand-orange-100 px-3 py-1 text-sm font-medium text-brand-orange-700 mb-4">Customer Success Story</div>
-            <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">75% Time Savings in Quoting</h2>
-            <p class="mt-4 text-lg text-muted-foreground">See how <strong>bpmPro</strong> has revolutionized the quoting process at Hurricane Window &amp; Screen. The time spent creating quotes is now just 25% of what it used to be.</p>
-            <div class="mt-6">
-              <blockquote class="border-l-4 border-brand-orange-500 pl-4 italic text-muted-foreground">
-                "<strong>bpmPro</strong> has made quoting so much faster. What used to take hours now takes minutes."
-              </blockquote>
-              <div class="mt-4">
-                <div class="font-semibold text-foreground">Nour Aljamal</div>
-                <div class="text-sm text-muted-foreground">Sales Representative, Hurricane Window &amp; Screen</div>
+            <div class="rounded-2xl bg-white p-8 shadow-xl border border-border">
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-sm font-medium text-muted-foreground">Payment Request</span>
+                <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Secure</span>
               </div>
-            </div>
-            <div class="mt-8">
-              <a href="/customer-success-stories" class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-brand-blue-700 transition-colors">See More Success Stories</a>
-            </div>
-          </div>
-          <div>
-            <!-- Vimeo facade: click to play -->
-            <button onclick="this.outerHTML='<iframe src=\'https://player.vimeo.com/video/849143740?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0\' class=\'absolute inset-0 h-full w-full\' allow=\'autoplay; fullscreen\' allowfullscreen title=\'75% Time Savings in Quoting\'></iframe>'; this.parentElement.classList.add('relative','aspect-video');"
-              class="relative aspect-video w-full overflow-hidden rounded-xl bg-gray-900 group cursor-pointer"
-              aria-label="Play video: 75% Time Savings in Quoting">
-              <img src="https://vumbnail.com/849143740.jpg" alt="75% Time Savings in Quoting" class="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-blue-700 group-hover:scale-110 transition-all">
-                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center py-3 border-b border-border">
+                  <span class="text-muted-foreground">Project</span>
+                  <span class="font-medium">Johnson Residence</span>
+                </div>
+                <div class="flex justify-between items-center py-3 border-b border-border">
+                  <span class="text-muted-foreground">Invoice #</span>
+                  <span class="font-medium">INV-2024-0847</span>
+                </div>
+                <div class="flex justify-between items-center py-3 border-b border-border">
+                  <span class="text-muted-foreground">Amount Due</span>
+                  <span class="text-2xl font-bold text-brand-blue-600">$4,250.00</span>
+                </div>
+                <button class="w-full bg-brand-blue-600 text-white py-3 rounded-lg font-medium hover:bg-brand-blue-700 transition-colors">Pay with Card</button>
+                <div class="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  Secured by Stripe
                 </div>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Real Results Section -->
-    <section class="py-20 lg:py-28 bg-muted/30">
+    <!-- Features -->
+    <section class="py-20">
       <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center mb-12">
-          <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Real Results</h2>
-          <p class="mt-4 text-lg text-muted-foreground">Our customers see measurable improvements across their operations.</p>
+        <div class="mx-auto max-w-2xl text-center mb-16">
+          <h2 class="text-3xl font-bold text-foreground">Payments Made Simple</h2>
+          <p class="mt-4 text-muted-foreground">Everything you need to collect payments from your customers.</p>
         </div>
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-xl bg-background p-8 text-center shadow-sm border border-border">
-            <div class="text-4xl font-bold text-brand-orange-500">80%</div>
-            <div class="mt-2 font-semibold text-foreground">Reduction in Admin Time</div>
-            <p class="mt-2 text-sm text-muted-foreground">Less time on spreadsheets means more time selling and installing.</p>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Feature 1: Payment Links -->
+          <div class="rounded-xl bg-background p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue-100 text-brand-blue-600">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Payment Links</h3>
+            <p class="mt-2 text-muted-foreground">Send customers a secure link via email or text. They can pay in seconds from any device.</p>
           </div>
-          <div class="rounded-xl bg-background p-8 text-center shadow-sm border border-border">
-            <div class="text-4xl font-bold text-brand-orange-500">75%</div>
-            <div class="mt-2 font-semibold text-foreground">Time Savings in Quoting</div>
-            <p class="mt-2 text-sm text-muted-foreground">Create professional proposals in a fraction of the time.</p>
+          <!-- Feature 2: All Major Cards -->
+          <div class="rounded-xl bg-background p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue-100 text-brand-blue-600">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">All Major Cards</h3>
+            <p class="mt-2 text-muted-foreground">Accept Visa, Mastercard, American Express, Discover, and more. No extra setup required.</p>
           </div>
-          <div class="rounded-xl bg-background p-8 text-center shadow-sm border border-border">
-            <div class="text-4xl font-bold text-brand-orange-500">50%</div>
-            <div class="mt-2 font-semibold text-foreground">Increase in Net Profits</div>
-            <p class="mt-2 text-sm text-muted-foreground">Streamlined operations drive greater efficiency and profitability.</p>
+          <!-- Feature 3: Automatic Recording -->
+          <div class="rounded-xl bg-background p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue-100 text-brand-blue-600">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Automatic Recording</h3>
+            <p class="mt-2 text-muted-foreground">Every payment is automatically logged in bpmPro. No manual reconciliation needed.</p>
           </div>
-          <div class="rounded-xl bg-background p-8 text-center shadow-sm border border-border">
-            <div class="text-4xl font-bold text-brand-orange-500">60 hrs</div>
-            <div class="mt-2 font-semibold text-foreground">Saved Monthly on Quoting</div>
-            <p class="mt-2 text-sm text-muted-foreground">Revolutionary time savings that transform business operations.</p>
+          <!-- Feature 4: Payment Reminders -->
+          <div class="rounded-xl bg-background p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue-100 text-brand-blue-600">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Payment Reminders</h3>
+            <p class="mt-2 text-muted-foreground">Automatically send payment reminders for outstanding balances. Stop chasing payments.</p>
+          </div>
+          <!-- Feature 5: Real-time Reporting -->
+          <div class="rounded-xl bg-background p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue-100 text-brand-blue-600">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Real-time Reporting</h3>
+            <p class="mt-2 text-muted-foreground">See payment status, track deposits, and generate reports all in one dashboard.</p>
+          </div>
+          <!-- Feature 6: Mobile Friendly -->
+          <div class="rounded-xl bg-background p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-blue-100 text-brand-blue-600">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Mobile Friendly</h3>
+            <p class="mt-2 text-muted-foreground">Customers can pay from their phone, tablet, or computer. Works everywhere.</p>
           </div>
         </div>
-        <div class="mt-12 text-center">
-          <a href="/customer-success-stories" class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-brand-blue-700 transition-colors">Hear It From Our Customers</a>
+      </div>
+    </section>
+
+    <!-- Payment Types -->
+    <section class="bg-muted/30 py-20">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center mb-16">
+          <h2 class="text-3xl font-bold text-foreground">Flexible Payment Options</h2>
+          <p class="mt-4 text-muted-foreground">Collect payments at every stage of your projects.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Payment Type 1: Deposits -->
+          <div class="rounded-xl bg-background p-8 shadow-sm border border-border text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-orange-100 text-brand-orange-600 text-2xl font-bold">1</div>
+            <h3 class="mt-6 text-xl font-semibold text-foreground">Deposits</h3>
+            <p class="mt-4 text-muted-foreground">Secure the job with upfront deposits. Customers receive a payment link immediately after signing.</p>
+            <div class="mt-4 text-sm text-brand-blue-600 font-medium">Typically 30-50% of project</div>
+          </div>
+          <!-- Payment Type 2: Progress Payments -->
+          <div class="rounded-xl bg-background p-8 shadow-sm border border-border text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-orange-100 text-brand-orange-600 text-2xl font-bold">2</div>
+            <h3 class="mt-6 text-xl font-semibold text-foreground">Progress Payments</h3>
+            <p class="mt-4 text-muted-foreground">Collect payments at key milestones like material delivery or installation start.</p>
+            <div class="mt-4 text-sm text-brand-blue-600 font-medium">Split remaining balance</div>
+          </div>
+          <!-- Payment Type 3: Final Payment -->
+          <div class="rounded-xl bg-background p-8 shadow-sm border border-border text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-orange-100 text-brand-orange-600 text-2xl font-bold">3</div>
+            <h3 class="mt-6 text-xl font-semibold text-foreground">Final Payment</h3>
+            <p class="mt-4 text-muted-foreground">Collect final payment upon project completion. Send link before your crew leaves the site.</p>
+            <div class="mt-4 text-sm text-brand-blue-600 font-medium">Remaining balance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-foreground">Why Contractors Love Our Payment System</h2>
+            <div class="mt-8 space-y-6">
+              <!-- Benefit 1 -->
+              <div class="flex gap-4">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-foreground">No More Chasing Checks</h3>
+                  <p class="mt-1 text-muted-foreground">Customers can pay instantly online. No more waiting for checks in the mail or trips to the bank.</p>
+                </div>
+              </div>
+              <!-- Benefit 2 -->
+              <div class="flex gap-4">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-foreground">Faster Cash Flow</h3>
+                  <p class="mt-1 text-muted-foreground">Funds typically arrive in your bank account within 2 business days. Some same-day payouts available.</p>
+                </div>
+              </div>
+              <!-- Benefit 3 -->
+              <div class="flex gap-4">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-foreground">Professional Image</h3>
+                  <p class="mt-1 text-muted-foreground">Branded payment pages show customers you run a modern, professional operation.</p>
+                </div>
+              </div>
+              <!-- Benefit 4 -->
+              <div class="flex gap-4">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-foreground">Automatic Reconciliation</h3>
+                  <p class="mt-1 text-muted-foreground">Payments sync directly to your project records. Your books are always up to date.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-xl bg-gradient-to-br from-brand-blue-600 to-brand-blue-800 p-8 text-white">
+            <h3 class="text-xl font-semibold">Average Results</h3>
+            <div class="mt-8 grid grid-cols-2 gap-8">
+              <div>
+                <div class="text-4xl font-bold">3x</div>
+                <div class="mt-2 text-brand-blue-200">Faster payment collection</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold">50%</div>
+                <div class="mt-2 text-brand-blue-200">Reduction in late payments</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold">$0</div>
+                <div class="mt-2 text-brand-blue-200">Setup or monthly fees</div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold">24/7</div>
+                <div class="mt-2 text-brand-blue-200">Customers can pay anytime</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="bg-muted/30 py-20">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600 mb-6">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-foreground">Enterprise-Grade Security</h2>
+          <p class="mt-4 text-muted-foreground">
+            Stripe is trusted by millions of businesses worldwide. Your
+            customers' payment information is always secure with PCI-DSS Level
+            1 compliance&mdash;the highest level of certification.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-6">
+            <div class="flex items-center gap-2 text-muted-foreground">
+              <svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              PCI-DSS Level 1
+            </div>
+            <div class="flex items-center gap-2 text-muted-foreground">
+              <svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              256-bit Encryption
+            </div>
+            <div class="flex items-center gap-2 text-muted-foreground">
+              <svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Fraud Protection
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
     <section class="bg-brand-blue-600 py-16">
-      <div class="mx-auto max-w-7xl px-4 lg:px-8">
-        <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
-          <div>
-            <h2 class="text-2xl font-bold text-white sm:text-3xl">Ready to streamline your business?</h2>
-            <p class="mt-2 text-brand-blue-100">See how much time and money you could save with <strong>bpmPro</strong>.</p>
-          </div>
-          <div class="flex gap-4">
-            <a href="/savings" class="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-brand-blue-600 hover:bg-brand-blue-50 transition-colors">Calculate Savings</a>
-            <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-semibold text-accent-foreground hover:bg-brand-orange-600 transition-colors">Book a Demo</a>
-          </div>
+      <div class="mx-auto max-w-7xl px-4 lg:px-8 text-center">
+        <h2 class="text-2xl font-bold text-white sm:text-3xl">Ready to get paid faster?</h2>
+        <p class="mt-4 text-brand-blue-100">See how Stripe integration can improve your cash flow.</p>
+        <div class="mt-8 flex justify-center gap-4">
+          <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-semibold text-accent-foreground hover:bg-brand-orange-600 transition-colors">Schedule a Demo</a>
+          <a href="/savings" class="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-brand-blue-600 hover:bg-brand-blue-50 transition-colors">Calculate Savings</a>
         </div>
       </div>
     </section>

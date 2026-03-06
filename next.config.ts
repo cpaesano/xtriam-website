@@ -25,6 +25,18 @@ const nextConfig: NextConfig = {
       // beforeFiles rewrites run BEFORE Next.js pages, so static HTML takes priority
       beforeFiles: [
         { source: "/", destination: "/static/index.html" },
+        { source: "/bpmpro", destination: "/static/bpmpro.html" },
+        { source: "/bpmpro-features", destination: "/static/bpmpro-features.html" },
+        { source: "/about", destination: "/static/about.html" },
+        { source: "/customer-success-stories", destination: "/static/customer-success-stories.html" },
+        { source: "/video-library", destination: "/static/video-library.html" },
+        { source: "/blog", destination: "/static/blog.html" },
+        { source: "/privacy-policy", destination: "/static/privacy-policy.html" },
+        { source: "/terms-and-conditions", destination: "/static/terms-and-conditions.html" },
+        { source: "/payment-processing-with-stripe-integration", destination: "/static/payment-processing-with-stripe-integration.html" },
+        { source: "/bpmpro-crm/business-process-automation-for-window-contractors", destination: "/static/bpmpro-crm-business-process-automation.html" },
+        { source: "/bpmpro-crm/eliminate-manual-processes", destination: "/static/bpmpro-crm-eliminate-manual-processes.html" },
+        { source: "/bpmpro-crm/quickly-import-your-es-windows-quotes", destination: "/static/bpmpro-crm-es-windows-quotes.html" },
       ],
       afterFiles: [],
       fallback: [],
