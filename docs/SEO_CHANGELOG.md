@@ -7,6 +7,37 @@ For reusable SEO knowledge and cross-site playbooks, see `../../docs/seo/`.
 
 ---
 
+## 2026-03-06 — Fix keyword cannibalization for "crm for window contractors"
+
+**Trigger:** Keyword "crm for window contractors" ranking on page 2, position 8 — but Google was showing the landing page (`/bpmpro-crm/business-process-automation-for-window-contractors`) instead of the homepage. The homepage title (`xTriam - Software Built for Contractors`) contained zero industry keywords.
+
+**Root cause:** The landing page won on every signal — URL contains `crm` + `window-contractors`, title has "Window Contractors", while the homepage title had no CRM or window keywords.
+
+**Changes made:**
+
+| Page | Element | Before | After |
+|------|---------|--------|-------|
+| Homepage | Title | `xTriam - Software Built for Contractors` | `xTriam \| CRM for Window and Door Contractors` |
+| Homepage | Meta description | Generic software description | Front-loaded "CRM for window and door contractors" |
+| Homepage | Hero text | No exact keyword match | Added "CRM for window contractors" phrase |
+| /bpmpro | Title | `Meet bpmPro - Business Process Management for Window Pros` | `bpmPro \| The CRM Built for Window and Door Contractors` |
+| /bpmpro | Meta description | "business process management platform" | "all-in-one CRM for window and door contractors" |
+| Landing page | Hero | No logo | Added bpmPro logo above H1 |
+| Landing page | Body | No link to homepage | Added internal link with "CRM for window contractors" anchor text |
+
+**Expected outcome:** Homepage should overtake the landing page for "crm for window contractors" within 1-2 weeks as Google recrawls the updated title tags and content.
+
+---
+
+## 2026-03-06 — Switch to DM Sans font, improve text contrast
+
+**Changes:**
+- Replaced Geist font with DM Sans (self-hosted WOFF2 for static pages, next/font/google for Next.js)
+- Darkened `--muted-foreground` from `#737373` to `#374151` (gray-700) for better readability
+- Increased nav link font size from `text-sm` (14px) to `text-base` (16px)
+
+---
+
 ## 2026-03-05 — Mobile PageSpeed: 73 → 97 (Core Web Vitals all green)
 
 **Trigger:** PageSpeed Insights showed Performance score of 73 on mobile with LCP at 4.9s (poor). Core Web Vitals directly impact Google rankings — this was likely contributing to the ranking drop.
