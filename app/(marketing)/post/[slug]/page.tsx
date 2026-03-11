@@ -1018,6 +1018,252 @@ const blogPosts: Record<string, {
       <p>The contractors who thrive in 2026 and beyond will be those who treat software as essential infrastructure, not an optional upgrade. The transformation of in-home services is already here. The only question is whether you're leading it or catching up.</p>
     `,
   },
+  "best-crm-for-window-and-door-companies": {
+    title: "Best CRM for Window and Door Companies in 2026",
+    date: "March 2026",
+    category: "Industry Guide",
+    image: "/images/blog/salesforce-platform.jpg",
+    imageAspect: "auto",
+    content: `
+      <p>If you run a window and door company, you already know the pain: quotes scattered across spreadsheets, jobs tracked on whiteboards, payments chased through texts, and commissions calculated by hand at the end of the month. A good CRM changes all of that.</p>
+      <br/>
+
+      <p>But not every CRM is built for this industry. Most are designed for generic sales teams or tech companies. Window and door contractors need something different — a system that understands the quote-to-installation workflow, handles complex product configurations, and tracks projects from lead to final payment.</p>
+      <br/>
+
+      <p>We reviewed the top CRM options available to window and door companies in 2026. Here's what we found.</p>
+      <br/>
+
+      <h2>What to Look for in a Window and Door CRM</h2>
+
+      <p>Before diving into specific products, here's what matters most for this industry:</p>
+      <br/>
+
+      <ul>
+        <li><strong>Quote-to-payment workflow</strong> — Can it handle the full lifecycle from lead to proposal to order to installation to payment?</li>
+        <li><strong>Product configuration</strong> — Window and door quotes involve complex specs (sizes, types, glass options, hardware). Can the CRM handle this?</li>
+        <li><strong>Project management</strong> — Can you track job status, scheduling, and crew assignments?</li>
+        <li><strong>Commission tracking</strong> — Sales reps in this industry work on commission. Does the CRM calculate it automatically?</li>
+        <li><strong>Payment processing</strong> — Can customers pay deposits and progress payments directly through the system?</li>
+        <li><strong>Mobile access</strong> — Your team is in the field. Does it work on phones and tablets?</li>
+        <li><strong>Reporting</strong> — Can you see revenue, pipeline, and production status at a glance?</li>
+      </ul>
+      <br/>
+
+      <p>With those criteria in mind, here are the top options.</p>
+      <br/>
+
+      <h2>1. bpmPro by xTriam — Best for Salesforce-Native Power</h2>
+
+      <p><a href="/bpmpro"><strong>bpmPro</strong></a> is a Salesforce 2GP managed package built specifically for window and door contractors. It's not a generic CRM adapted for the industry — it was built from the ground up by a <a href="/about">former window installer</a> who spent over two decades in the business.</p>
+      <br/>
+
+      <p><strong>What makes it stand out:</strong></p>
+      <ul>
+        <li><strong>Salesforce-native</strong> — Runs on the world's #1 CRM platform, giving you enterprise-grade security, 99.9% uptime, and access to 5,000+ AppExchange integrations</li>
+        <li><strong><a href="/bpmpro-features">50+ features</a></strong> designed for window/door workflows: Close Deal Wizard, Projects Board, Commission Manager, Email Wizard</li>
+        <li><strong>ES Windows integration</strong> — <a href="/bpmpro-crm/quickly-import-your-es-windows-quotes">Import ES Windows quotes</a> directly, no manual re-entry</li>
+        <li><strong><a href="/payment-processing-with-stripe-integration">Stripe payment processing</a></strong> built-in for deposits, progress payments, and final invoices</li>
+        <li><strong>Fully customizable</strong> — Since it's on Salesforce, you can create custom fields, flows, reports, and dashboards</li>
+      </ul>
+      <br/>
+
+      <p><strong>Best for:</strong> Window and door contractors who want an enterprise-grade platform that can scale with their business. Ideal for companies with 5+ employees who need robust reporting and workflow automation.</p>
+      <br/>
+
+      <p><strong>Pricing:</strong> Custom pricing based on number of users. <a href="/book-a-demo">Book a free demo</a> to learn more.</p>
+      <br/>
+
+      <h2>2. Builder Prime — Best for Multi-Trade Contractors</h2>
+
+      <p><strong>Builder Prime</strong> is a popular CRM for home improvement contractors that supports multiple trades including windows, doors, roofing, siding, and remodeling. It offers estimating, production tracking, and a built-in CRM.</p>
+      <br/>
+
+      <p><strong>Strengths:</strong></p>
+      <ul>
+        <li>Supports multiple trades in one platform</li>
+        <li>Built-in estimating with product catalogs</li>
+        <li>Production board for job tracking</li>
+        <li>Good onboarding and support</li>
+      </ul>
+      <br/>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>Not built on Salesforce — proprietary platform with less customization</li>
+        <li>No ES Windows quote import integration</li>
+        <li>Reporting is less flexible than Salesforce-based solutions</li>
+      </ul>
+      <br/>
+
+      <p><strong>Best for:</strong> Multi-trade contractors who do windows/doors plus other home improvement services.</p>
+      <br/>
+
+      <h2>3. LeadPerfection — Best for Large Window Companies</h2>
+
+      <p><strong>LeadPerfection</strong> is one of the older players in the home improvement CRM space. It was originally built for the replacement window industry and has deep roots in the sector.</p>
+      <br/>
+
+      <p><strong>Strengths:</strong></p>
+      <ul>
+        <li>Long track record in the window/door industry</li>
+        <li>Lead management and appointment scheduling</li>
+        <li>Call center integration for companies running in-home sales teams</li>
+        <li>Robust reporting</li>
+      </ul>
+      <br/>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>Interface feels dated compared to modern alternatives</li>
+        <li>Not Salesforce-native — limited third-party integrations</li>
+        <li>Better suited for larger companies with dedicated sales teams</li>
+      </ul>
+      <br/>
+
+      <p><strong>Best for:</strong> Larger window companies (20+ employees) with in-home sales teams and call center operations.</p>
+      <br/>
+
+      <h2>4. JobNimbus — Best for Simplicity</h2>
+
+      <p><strong>JobNimbus</strong> is a general contractor CRM that's popular in the roofing industry but also used by some window and door companies. It's known for being easy to set up and use.</p>
+      <br/>
+
+      <p><strong>Strengths:</strong></p>
+      <ul>
+        <li>Simple, intuitive interface</li>
+        <li>Quick setup — can be running in a day</li>
+        <li>Good mobile app</li>
+        <li>Affordable starting price</li>
+      </ul>
+      <br/>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>Not specifically designed for window/door workflows</li>
+        <li>No window product configuration tools</li>
+        <li>No commission tracking built-in</li>
+        <li>Limited customization for complex workflows</li>
+      </ul>
+      <br/>
+
+      <p><strong>Best for:</strong> Small window companies (1-5 people) who want a simple, affordable CRM to replace spreadsheets.</p>
+      <br/>
+
+      <h2>5. MarketSharp — Best for Marketing-Focused Companies</h2>
+
+      <p><strong>MarketSharp</strong> targets home improvement contractors with a strong focus on marketing automation and lead tracking. It's used by some window and door dealers.</p>
+      <br/>
+
+      <p><strong>Strengths:</strong></p>
+      <ul>
+        <li>Strong marketing automation (email campaigns, lead scoring)</li>
+        <li>Appointment scheduling and confirmation</li>
+        <li>Built-in canvassing tools</li>
+        <li>Good for companies that generate leads through door-to-door or event marketing</li>
+      </ul>
+      <br/>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>Weaker on project management and production tracking</li>
+        <li>Not window/door-specific — it's a general home improvement tool</li>
+        <li>Pricing can be high for small companies</li>
+      </ul>
+      <br/>
+
+      <p><strong>Best for:</strong> Window companies that invest heavily in marketing and need tools to track ROI across campaigns.</p>
+      <br/>
+
+      <h2>6. Houzz Pro — Best for Companies Already on Houzz</h2>
+
+      <p><strong>Houzz Pro</strong> is an all-in-one business management tool from the Houzz platform. It combines CRM, project management, and marketing in one package.</p>
+      <br/>
+
+      <p><strong>Strengths:</strong></p>
+      <ul>
+        <li>Integration with the Houzz marketplace for lead generation</li>
+        <li>3D floor planning and mood board tools</li>
+        <li>Online invoicing and payments</li>
+        <li>Well-known brand name</li>
+      </ul>
+      <br/>
+
+      <p><strong>Limitations:</strong></p>
+      <ul>
+        <li>Very generic — not built for window/door-specific workflows</li>
+        <li>No product configuration for window specs</li>
+        <li>Better for remodelers and interior designers than window contractors</li>
+        <li>No commission tracking or production boards</li>
+      </ul>
+      <br/>
+
+      <p><strong>Best for:</strong> Contractors who already generate leads from the Houzz platform and want an integrated solution.</p>
+      <br/>
+
+      <h2>7. Spreadsheets (Excel / Google Sheets) — The "Free" Option</h2>
+
+      <p>Let's be honest — most window contractors start here. And for a one-person operation doing 5 jobs a month, spreadsheets can work. But they break down fast once you start growing.</p>
+      <br/>
+
+      <p><strong>When spreadsheets stop working:</strong></p>
+      <ul>
+        <li>You can't see which jobs are in which stage without scrolling through rows</li>
+        <li>There's no way to automate follow-ups or reminders</li>
+        <li>Commission calculations become a monthly headache</li>
+        <li>You lose quotes because they're buried in email threads</li>
+        <li>Multiple people editing the same file causes version conflicts</li>
+      </ul>
+      <br/>
+
+      <p>If any of this sounds familiar, it's time to move to a real CRM.</p>
+      <br/>
+
+      <h2>Comparison Table</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>bpmPro</th>
+            <th>Builder Prime</th>
+            <th>LeadPerfection</th>
+            <th>JobNimbus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Window-specific workflows</td><td>Yes</td><td>Partial</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Salesforce-native</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Commission tracking</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+          <tr><td>ES Windows integration</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Stripe payments</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+          <tr><td>Custom reports/dashboards</td><td>Unlimited (Salesforce)</td><td>Limited</td><td>Moderate</td><td>Limited</td></tr>
+          <tr><td>Mobile access</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Scalability</td><td>Enterprise-grade</td><td>SMB</td><td>Mid-Large</td><td>SMB</td></tr>
+        </tbody>
+      </table>
+      <br/>
+
+      <h2>Our Recommendation</h2>
+
+      <p>There's no single "best" CRM for every window and door company. It depends on your size, budget, and what matters most to you:</p>
+      <br/>
+
+      <ul>
+        <li><strong>If you want the most powerful, customizable solution</strong> — <a href="/bpmpro">bpmPro</a> on Salesforce gives you enterprise-grade tools with window-specific features</li>
+        <li><strong>If you do multiple trades</strong> — Builder Prime covers windows plus roofing, siding, and remodeling</li>
+        <li><strong>If you're a large company with a sales team</strong> — LeadPerfection has deep experience in the industry</li>
+        <li><strong>If you want the simplest option</strong> — JobNimbus gets you up and running quickly</li>
+        <li><strong>If marketing is your priority</strong> — MarketSharp focuses on lead generation and campaign tracking</li>
+      </ul>
+      <br/>
+
+      <p>Whatever you choose, the key is to stop running your business on spreadsheets and disconnected tools. A good CRM pays for itself within months through faster quoting, fewer lost leads, and better cash flow.</p>
+      <br/>
+
+      <p><strong>Ready to see how bpmPro compares for your business?</strong> <a href="/book-a-demo">Book a free demo</a> and we'll show you how it works with your real data.</p>
+    `,
+  },
 };
 
 // Generate static params for known blog posts

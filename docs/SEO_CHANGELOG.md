@@ -7,6 +7,26 @@ For reusable SEO knowledge and cross-site playbooks, see `../../docs/seo/`.
 
 ---
 
+## 2026-03-11 — Ranking #1 for "CRM for window contractors"
+
+**Confirmed:** xtriam.com now ranks **#1** on Google for "CRM for window contractors" — verified from two locations:
+- Miami, FL (USA)
+- Buenos Aires, Argentina
+
+This is up from #3 (Feb 27), #8 on page 2 (Mar 6), and completely absent (post-migration). The SEO recovery is now ahead of all competitors for our primary keyword.
+
+**Timeline:**
+| Date | Position | Notes |
+|------|----------|-------|
+| Dec 28, 2025 | Lost | Migration to Next.js, no robots/sitemap |
+| Feb 22, 2026 | Not ranked | SEO recovery fix deployed |
+| Feb 27, 2026 | #3 | Recovery confirmed |
+| Mar 5, 2026 | Not visible (from device) | Ranking volatility |
+| Mar 6, 2026 | Page 2, #8 | Wrong page ranking (cannibalization) |
+| **Mar 11, 2026** | **#1** | Title tag + meta + structured data fixes working |
+
+---
+
 ## 2026-03-06 — Fix keyword cannibalization for "crm for window contractors"
 
 **Trigger:** Keyword "crm for window contractors" ranking on page 2, position 8 — but Google was showing the landing page (`/bpmpro-crm/business-process-automation-for-window-contractors`) instead of the homepage. The homepage title (`xTriam - Software Built for Contractors`) contained zero industry keywords.
