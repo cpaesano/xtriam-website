@@ -21,6 +21,62 @@
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="/icon.png" />
   <link rel="apple-touch-icon" href="/apple-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Stripe charge per transaction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stripe's standard processing fee is 2.9% + $0.30 per successful card charge. There are no monthly fees, setup fees, or hidden costs. You only pay when you get paid."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a separate Stripe account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you'll need your own Stripe account, which is free to create. During bpmPro setup, our team helps you connect it to your CRM so payments flow seamlessly into your project records."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my customers pay with ACH or bank transfer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Stripe supports ACH bank transfers in addition to all major credit and debit cards. ACH transfers have lower processing fees (0.8%, capped at $5), which is ideal for larger project payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do payment reminders work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "bpmPro tracks outstanding balances on every project. You can send automated payment reminder emails with a fresh payment link, so customers can pay with one click. No more awkward phone calls chasing payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this available on all bpmPro plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stripe payment processing is available on both the Professional and Enterprise plans. There's no extra charge from bpmPro for using the payment feature — you only pay Stripe's standard transaction fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I track payments alongside my QuickBooks data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. bpmPro integrates with QuickBooks, so payment data flows into your accounting system. Deposits, progress payments, and final payments are all tracked in both bpmPro and QuickBooks for clean, accurate books."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preload" href="/static/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face {
@@ -382,6 +438,119 @@
               Fraud Protection
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center mb-16">
+          <h2 class="text-3xl font-bold text-foreground">How Payment Processing Works in bpmPro</h2>
+          <p class="mt-4 text-muted-foreground">From quote approval to final payment — everything stays in one system.</p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-600 text-white text-lg font-bold">1</div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Customer Signs Contract</h3>
+            <p class="mt-2 text-muted-foreground">Your customer approves the proposal in bpmPro. The deposit payment link is generated automatically.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-600 text-white text-lg font-bold">2</div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Payment Link Sent</h3>
+            <p class="mt-2 text-muted-foreground">An email with a secure Stripe payment link goes to the customer. They click and pay from any device.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-600 text-white text-lg font-bold">3</div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Payment Recorded</h3>
+            <p class="mt-2 text-muted-foreground">The payment is automatically recorded in your project record. No manual data entry needed.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-600 text-white text-lg font-bold">4</div>
+            <h3 class="mt-4 text-lg font-semibold text-foreground">Funds in Your Account</h3>
+            <p class="mt-2 text-muted-foreground">Stripe deposits funds directly to your bank account, typically within 2 business days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-muted/30 py-20">
+      <div class="mx-auto max-w-3xl px-4 lg:px-8">
+        <h2 class="text-3xl font-bold text-foreground text-center mb-12">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg border border-border bg-background overflow-hidden">
+            <summary class="flex w-full items-center justify-between p-4 text-left cursor-pointer hover:bg-muted/50 transition-colors font-medium text-foreground">
+              What does Stripe charge per transaction?
+            </summary>
+            <div class="px-4 pb-4">
+              <p class="text-muted-foreground">Stripe's standard processing fee is 2.9% + $0.30 per successful card charge. There are no monthly fees, setup fees, or hidden costs. You only pay when you get paid.</p>
+            </div>
+          </details>
+          <details class="rounded-lg border border-border bg-background overflow-hidden">
+            <summary class="flex w-full items-center justify-between p-4 text-left cursor-pointer hover:bg-muted/50 transition-colors font-medium text-foreground">
+              Do I need a separate Stripe account?
+            </summary>
+            <div class="px-4 pb-4">
+              <p class="text-muted-foreground">Yes, you'll need your own Stripe account, which is free to create. During bpmPro setup, our team helps you connect it to your CRM so payments flow seamlessly into your project records.</p>
+            </div>
+          </details>
+          <details class="rounded-lg border border-border bg-background overflow-hidden">
+            <summary class="flex w-full items-center justify-between p-4 text-left cursor-pointer hover:bg-muted/50 transition-colors font-medium text-foreground">
+              Can my customers pay with ACH or bank transfer?
+            </summary>
+            <div class="px-4 pb-4">
+              <p class="text-muted-foreground">Yes. Stripe supports ACH bank transfers in addition to all major credit and debit cards. ACH transfers have lower processing fees (0.8%, capped at $5), which is ideal for larger project payments.</p>
+            </div>
+          </details>
+          <details class="rounded-lg border border-border bg-background overflow-hidden">
+            <summary class="flex w-full items-center justify-between p-4 text-left cursor-pointer hover:bg-muted/50 transition-colors font-medium text-foreground">
+              How do payment reminders work?
+            </summary>
+            <div class="px-4 pb-4">
+              <p class="text-muted-foreground">bpmPro tracks outstanding balances on every project. You can send automated payment reminder emails with a fresh payment link, so customers can pay with one click. No more awkward phone calls chasing payments.</p>
+            </div>
+          </details>
+          <details class="rounded-lg border border-border bg-background overflow-hidden">
+            <summary class="flex w-full items-center justify-between p-4 text-left cursor-pointer hover:bg-muted/50 transition-colors font-medium text-foreground">
+              Is this available on all bpmPro plans?
+            </summary>
+            <div class="px-4 pb-4">
+              <p class="text-muted-foreground">Stripe payment processing is available on both the Professional and Enterprise plans. There's no extra charge from bpmPro for using the payment feature — you only pay Stripe's standard transaction fees.</p>
+            </div>
+          </details>
+          <details class="rounded-lg border border-border bg-background overflow-hidden">
+            <summary class="flex w-full items-center justify-between p-4 text-left cursor-pointer hover:bg-muted/50 transition-colors font-medium text-foreground">
+              Can I track payments alongside my QuickBooks data?
+            </summary>
+            <div class="px-4 pb-4">
+              <p class="text-muted-foreground">Yes. bpmPro integrates with QuickBooks, so payment data flows into your accounting system. Deposits, progress payments, and final payments are all tracked in both bpmPro and QuickBooks for clean, accurate books.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links Section -->
+    <section class="py-16">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center mb-12">
+          <h2 class="text-2xl font-bold text-foreground">Part of the Complete bpmPro Platform</h2>
+          <p class="mt-4 text-muted-foreground">Payment processing is just one piece. bpmPro is the <a href="/" class="text-brand-blue-600 hover:underline">CRM for window and door contractors</a> that covers your entire business.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <a href="/bpmpro" class="block rounded-xl border border-border bg-background p-6 hover:shadow-md hover:border-brand-blue-200 transition-all">
+            <h3 class="text-lg font-semibold text-foreground">Meet bpmPro</h3>
+            <p class="mt-2 text-muted-foreground">See how bpmPro manages your entire window contracting business from lead to final payment.</p>
+          </a>
+          <a href="/bpmpro-features" class="block rounded-xl border border-border bg-background p-6 hover:shadow-md hover:border-brand-blue-200 transition-all">
+            <h3 class="text-lg font-semibold text-foreground">All Features</h3>
+            <p class="mt-2 text-muted-foreground">Quoting, scheduling, project management, commissions, and more — all built on Salesforce.</p>
+          </a>
+          <a href="/savings" class="block rounded-xl border border-border bg-background p-6 hover:shadow-md hover:border-brand-blue-200 transition-all">
+            <h3 class="text-lg font-semibold text-foreground">Cash Calculator</h3>
+            <p class="mt-2 text-muted-foreground">See how much time and money bpmPro can save your window contracting business.</p>
+          </a>
         </div>
       </div>
     </section>
