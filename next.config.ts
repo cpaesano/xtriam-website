@@ -37,6 +37,7 @@ const nextConfig: NextConfig = {
         { source: "/bpmpro-crm/business-process-automation-for-window-contractors", destination: "/static/bpmpro-crm-business-process-automation.html" },
         { source: "/bpmpro-crm/eliminate-manual-processes", destination: "/static/bpmpro-crm-eliminate-manual-processes.html" },
         { source: "/bpmpro-crm/quickly-import-your-es-windows-quotes", destination: "/static/bpmpro-crm-es-windows-quotes.html" },
+        { source: "/bpmpro-crm/salesforce-for-window-contractors", destination: "/static/bpmpro-crm-salesforce-for-window-contractors.html" },
       ],
       afterFiles: [],
       fallback: [],
