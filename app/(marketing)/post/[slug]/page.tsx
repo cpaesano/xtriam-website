@@ -1280,7 +1280,7 @@ const blogPosts: Record<string, {
     title: "Why Every Service Business Needs to Stop Invoicing by Text Message",
     date: "February 26, 2026",
     category: "Industry",
-    image: "/images/blog/invoiceticket-jobsite-receipt.png",
+    image: "/images/blog/stop-invoicing-by-text.png",
     content: `
       <p>It's 5:30 PM. A plumber just finished replacing a water heater. He wipes his hands, pulls out his phone, and sends a text: <em>"Hey, total came to $1,850. Venmo or Zelle works."</em></p>
       <br/>
@@ -1374,7 +1374,7 @@ const blogPosts: Record<string, {
     title: "How AI is Changing the Way Small Businesses Get Paid",
     date: "March 2026",
     category: "Technology",
-    image: "/images/blog/invoiceticket-voice-input.png",
+    image: "/images/blog/ai-changing-how-businesses-get-paid.png",
     content: `
       <p>For most small service businesses, getting paid has always been the least automated part of the job. You can find customers on social media, schedule jobs with an app, and even order materials from your phone. But when it comes to invoicing? It's still a manual, after-hours chore that most contractors dread.</p>
       <br/>
