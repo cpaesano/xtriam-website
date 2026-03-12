@@ -21,6 +21,8 @@ const blogSlugs = [
   "price-increases-in-the-window-and-door-industry-in-florida",
   "xtriam-has-launched-bpmpro",
   "from-quote-to-completion-how-software-is-changing-the-remodeling-business",
+  "why-every-service-business-needs-to-stop-invoicing-by-text-message",
+  "how-ai-is-changing-the-way-small-businesses-get-paid",
 ];
 
 // Newsletter edition slugs from app/this-week-in-windows/[slug]/page.tsx
