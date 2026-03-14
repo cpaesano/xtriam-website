@@ -23,6 +23,10 @@ const blogSlugs = [
   "from-quote-to-completion-how-software-is-changing-the-remodeling-business",
   "why-every-service-business-needs-to-stop-invoicing-by-text-message",
   "how-ai-is-changing-the-way-small-businesses-get-paid",
+  "why-your-quoting-process-is-costing-you-more-than-you-think",
+  "how-to-reduce-office-overhead-at-your-construction-company",
+  "stop-chasing-unpaid-invoices-heres-what-to-do-instead",
+  "how-to-grow-your-contracting-business-without-hiring-more-office-staff",
 ];
 
 // Newsletter edition slugs from app/this-week-in-windows/[slug]/page.tsx
