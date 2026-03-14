@@ -89,7 +89,7 @@ export function getAllTutorials(): TutorialMeta[] {
 
     const slug = file.replace('.md', '');
     const title = frontmatter.title || extractTitle(body, file);
-    const description = extractDescription(body);
+    const description = frontmatter.description || extractDescription(body);
     const category = frontmatter.category || guessCategory(body);
 
     return { slug, title, description, category };
