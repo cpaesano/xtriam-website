@@ -1372,7 +1372,7 @@ const blogPosts: Record<string, {
   },
   "how-to-grow-your-contracting-business-without-hiring-more-office-staff": {
     title: "How to Grow Your Contracting Business Without Hiring More Office Staff",
-    date: "February 2026",
+    date: "April 2025",
     category: "Operations",
     image: "/images/blog/grow-without-hiring.png",
     content: `
