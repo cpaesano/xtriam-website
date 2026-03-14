@@ -133,6 +133,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${BASE_URL}/automation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/window-and-door-industry`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -181,20 +187,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  const tutorials: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/tutorials`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-  ];
-
   return [
     ...staticPages,
     ...landingPages,
     ...blogPosts,
     ...newsletters,
-    ...tutorials,
   ];
 }

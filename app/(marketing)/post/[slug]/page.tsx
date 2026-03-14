@@ -1498,6 +1498,8 @@ const blogPosts: Record<string, {
       <br/>
 
       <p><strong><a href="/bpmpro">bpmPro</a> was built for exactly this</strong> — by someone who ran a window and door company and hit the same growth ceiling. <a href="/book-a-demo">Book a free demo</a> and see how much of your office workload can be automated.</p>
+      <br/>
+      <p><strong>Related:</strong> <a href="/automation">How we automate the back office for contractors</a> | <a href="/window-and-door-industry">Our 20+ years in the window &amp; door industry</a></p>
     `,
   },
   "stop-chasing-unpaid-invoices-heres-what-to-do-instead": {
@@ -1611,6 +1613,8 @@ const blogPosts: Record<string, {
       <br/>
 
       <p><strong><a href="/bpmpro">bpmPro</a> handles payments, milestones, and automated reminders</strong> so your team never has to make another collection call. <a href="/book-a-demo">Book a free demo</a> and see how much time and cash flow you can recover.</p>
+      <br/>
+      <p><strong>Related:</strong> <a href="/automation">How we automate the back office for contractors</a> | <a href="/window-and-door-industry">Our 20+ years in the window &amp; door industry</a></p>
     `,
   },
   "how-to-reduce-office-overhead-at-your-construction-company": {
@@ -1734,6 +1738,8 @@ const blogPosts: Record<string, {
       <br/>
 
       <p>Want to see how much overhead you could cut? <a href="/savings">Try our savings calculator</a> or <a href="/book-a-demo">book a free demo</a>.</p>
+      <br/>
+      <p><strong>Related:</strong> <a href="/automation">How we automate the back office for contractors</a> | <a href="/window-and-door-industry">Our 20+ years in the window &amp; door industry</a></p>
     `,
   },
   "why-your-quoting-process-is-costing-you-more-than-you-think": {
@@ -1843,6 +1849,8 @@ const blogPosts: Record<string, {
       <br/>
 
       <p><a href="/book-a-demo">Book a free demo</a> and we'll show you exactly how much time and money your quoting process is costing you — and how fast you can fix it.</p>
+      <br/>
+      <p><strong>Related:</strong> <a href="/automation">How we automate the back office for contractors</a> | <a href="/window-and-door-industry">Our 20+ years in the window &amp; door industry</a></p>
     `,
   },
   "how-ai-is-changing-the-way-small-businesses-get-paid": {

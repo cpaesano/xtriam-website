@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/tutorials",
+        destination: "/support/tutorials",
+        permanent: true,
+      },
+      {
+        source: "/tutorials/:slug",
+        destination: "/support/tutorials/:slug",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
@@ -34,6 +44,7 @@ const nextConfig: NextConfig = {
         { source: "/privacy-policy", destination: "/static/privacy-policy.html" },
         { source: "/terms-and-conditions", destination: "/static/terms-and-conditions.html" },
         { source: "/payment-processing-with-stripe-integration", destination: "/static/payment-processing-with-stripe-integration.html" },
+        { source: "/automation", destination: "/static/automation.html" },
         { source: "/window-and-door-industry", destination: "/static/window-and-door-industry.html" },
         { source: "/bpmpro-crm/business-process-automation-for-window-contractors", destination: "/static/bpmpro-crm-business-process-automation.html" },
         { source: "/bpmpro-crm/eliminate-manual-processes", destination: "/static/bpmpro-crm-eliminate-manual-processes.html" },
