@@ -1,37 +1,9 @@
 import Link from "next/link";
 import { getAllTutorials } from "@/lib/tutorials";
-
-const categoryColors: Record<string, string> = {
-  sales: "bg-blue-100 text-blue-800",
-  operations: "bg-green-100 text-green-800",
-  financial: "bg-yellow-100 text-yellow-800",
-  admin: "bg-purple-100 text-purple-800",
-  estimating: "bg-orange-100 text-orange-800",
-  general: "bg-gray-100 text-gray-800",
-};
-
-const categoryLabels: Record<string, string> = {
-  sales: "Sales",
-  operations: "Operations",
-  financial: "Financial",
-  estimating: "Estimating",
-  admin: "Admin",
-  general: "General",
-};
+import { TutorialList } from "@/components/support/TutorialList";
 
 export default function TutorialsPage() {
   const tutorials = getAllTutorials();
-
-  // Group by category
-  const grouped = tutorials.reduce(
-    (acc, tutorial) => {
-      const cat = tutorial.category;
-      if (!acc[cat]) acc[cat] = [];
-      acc[cat].push(tutorial);
-      return acc;
-    },
-    {} as Record<string, typeof tutorials>
-  );
 
   return (
     <div>
@@ -62,51 +34,7 @@ export default function TutorialsPage() {
           </Link>
         </div>
       ) : (
-        <div className="space-y-10">
-          {Object.entries(grouped).map(([category, categoryTutorials]) => (
-            <div key={category}>
-              <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span
-                  className={`px-3 py-1 rounded-full text-sm ${categoryColors[category]}`}
-                >
-                  {categoryLabels[category] || category}
-                </span>
-              </h2>
-              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-                {categoryTutorials.map((tutorial) => (
-                  <Link
-                    key={tutorial.slug}
-                    href={`/support/tutorials/${tutorial.slug}`}
-                    className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 hover:shadow-md hover:border-brand-blue-300 transition-all group"
-                  >
-                    <h3 className="font-semibold text-gray-900 group-hover:text-brand-blue-600 mb-2">
-                      {tutorial.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm line-clamp-3">
-                      {tutorial.description}
-                    </p>
-                    <div className="mt-3 text-brand-blue-600 text-sm font-medium flex items-center gap-1">
-                      View tutorial
-                      <svg
-                        className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <TutorialList tutorials={tutorials} />
       )}
     </div>
   );
