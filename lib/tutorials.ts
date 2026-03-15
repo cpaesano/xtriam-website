@@ -11,8 +11,6 @@ export interface Tutorial {
   category: string;
   content: string;
   lastUpdated?: string;
-  type?: 'markdown' | 'pdf';
-  pdfUrl?: string;
 }
 
 export interface TutorialMeta {
@@ -20,7 +18,6 @@ export interface TutorialMeta {
   title: string;
   description: string;
   category: string;
-  type?: 'markdown' | 'pdf';
 }
 
 function extractTitle(content: string, filename: string): string {
@@ -95,9 +92,7 @@ export function getAllTutorials(): TutorialMeta[] {
     const description = frontmatter.description || extractDescription(body);
     const category = frontmatter.category || guessCategory(body);
 
-    const type = frontmatter.type === 'pdf' ? 'pdf' as const : 'markdown' as const;
-
-    return { slug, title, description, category, type };
+    return { slug, title, description, category };
   });
 }
 
@@ -119,9 +114,6 @@ export function getTutorialBySlug(slug: string): Tutorial | null {
   const stats = fs.statSync(filePath);
   const lastUpdated = stats.mtime.toISOString().split('T')[0];
 
-  const type = frontmatter.type === 'pdf' ? 'pdf' as const : 'markdown' as const;
-  const pdfUrl = frontmatter.pdfUrl || undefined;
-
   return {
     slug,
     title,
@@ -129,8 +121,6 @@ export function getTutorialBySlug(slug: string): Tutorial | null {
     category,
     content: body,
     lastUpdated,
-    type,
-    pdfUrl,
   };
 }
 

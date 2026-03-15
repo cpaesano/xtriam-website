@@ -77,16 +77,6 @@ export default async function TutorialPage({ params }: Props) {
       </div>
 
       {/* Content */}
-      {tutorial.type === "pdf" && tutorial.pdfUrl ? (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          <iframe
-            src={`${tutorial.pdfUrl}#toolbar=0&navpanes=0`}
-            className="w-full border-0"
-            style={{ height: "80vh" }}
-            title={tutorial.title}
-          />
-        </div>
-      ) : (
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 lg:p-8">
         <article className="tutorial-content">
           <ReactMarkdown
@@ -176,7 +166,6 @@ export default async function TutorialPage({ params }: Props) {
           </ReactMarkdown>
         </article>
       </div>
-      )}
 
       {/* Help Banner */}
       <div className="mt-6 bg-brand-blue-50 rounded-xl p-6 text-center">

@@ -79,13 +79,8 @@ export default function TutorialsPage() {
                     href={`/support/tutorials/${tutorial.slug}`}
                     className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 hover:shadow-md hover:border-brand-blue-300 transition-all group"
                   >
-                    <h3 className="font-semibold text-gray-900 group-hover:text-brand-blue-600 mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-gray-900 group-hover:text-brand-blue-600 mb-2">
                       {tutorial.title}
-                      {tutorial.type === "pdf" && (
-                        <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-red-100 text-red-700">
-                          PDF
-                        </span>
-                      )}
                     </h3>
                     <p className="text-gray-600 text-sm line-clamp-3">
                       {tutorial.description}
