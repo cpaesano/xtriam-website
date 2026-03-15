@@ -139,7 +139,7 @@ export default async function TutorialPage({ params }: Props) {
                   <img
                     src={src}
                     alt={alt || "Tutorial screenshot"}
-                    className="rounded-lg border border-gray-200 shadow-sm w-full"
+                    className="rounded-lg border border-gray-200 shadow-sm max-w-full h-auto"
                     loading="lazy"
                   />
                   {alt && (
