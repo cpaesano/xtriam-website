@@ -12,6 +12,7 @@ const categoryColors: Record<string, string> = {
   operations: "bg-green-100 text-green-800",
   financial: "bg-yellow-100 text-yellow-800",
   admin: "bg-purple-100 text-purple-800",
+  estimating: "bg-orange-100 text-orange-800",
   general: "bg-gray-100 text-gray-800",
 };
 
@@ -19,6 +20,7 @@ const categoryLabels: Record<string, string> = {
   sales: "Sales",
   operations: "Operations",
   financial: "Financial",
+  estimating: "Estimating",
   admin: "Admin",
   general: "General",
 };

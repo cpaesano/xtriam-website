@@ -1,7 +1,7 @@
 ---
 title: "Importing from PGT Industries"
 description: "Export the correct CSV file from the PGT Industries quoting system so it can be imported into bpmPro."
-category: operations
+category: estimating
 ---
 
 # bpmPro — Importing from PGT Industries
