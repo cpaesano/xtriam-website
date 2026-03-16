@@ -16,7 +16,7 @@ interface TicketListProps {
 
 export function TicketList({ limit, showViewAll = false }: TicketListProps) {
   const [allTickets, setAllTickets] = useState<SalesforceCase[]>([]);
-  const [activeFilter, setActiveFilter] = useState<FilterTab>("all");
+  const [activeFilter, setActiveFilter] = useState<FilterTab>("open");
   const [isAdmin, setIsAdmin] = useState(false);
   const [viewAll, setViewAll] = useState(false);
   const [loading, setLoading] = useState(true);

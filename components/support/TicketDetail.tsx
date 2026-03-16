@@ -17,9 +17,13 @@ interface TicketDetailProps {
   caseId: string;
 }
 
+const STATUSES = ["New", "Working", "On Hold", "Escalated", "Closed"];
+
 export function TicketDetail({ caseId }: TicketDetailProps) {
   const [ticket, setTicket] = useState<SalesforceCase | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -30,6 +34,7 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
 
         if (data.success) {
           setTicket(data.ticket);
+          if (data.isAdmin !== undefined) setIsAdmin(data.isAdmin);
         } else {
           setError(data.error || "Failed to load ticket");
         }
@@ -42,6 +47,26 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
 
     fetchTicket();
   }, [caseId]);
+
+  async function handleStatusChange(newStatus: string) {
+    if (!ticket || updating) return;
+    setUpdating(true);
+    try {
+      const response = await fetch(`/api/support/tickets/${caseId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: newStatus }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setTicket({ ...ticket, Status: newStatus });
+      }
+    } catch {
+      console.error("Failed to update status");
+    } finally {
+      setUpdating(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -93,7 +118,22 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
             </h1>
           </div>
           <div className="flex items-center gap-3">
-            <StatusBadge status={ticket.Status} />
+            {isAdmin ? (
+              <select
+                value={ticket.Status}
+                onChange={(e) => handleStatusChange(e.target.value)}
+                disabled={updating}
+                className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium
+                  focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500
+                  disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {STATUSES.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            ) : (
+              <StatusBadge status={ticket.Status} />
+            )}
             <PriorityBadge priority={ticket.Priority} />
           </div>
         </div>
@@ -190,8 +230,8 @@ function StatusBadge({ status }: { status: string }) {
       color: "bg-yellow-100 text-yellow-700",
       icon: <Clock className="h-4 w-4" />,
     },
-    "In Progress": {
-      color: "bg-yellow-100 text-yellow-700",
+    "On Hold": {
+      color: "bg-gray-100 text-gray-700",
       icon: <Clock className="h-4 w-4" />,
     },
     Escalated: {

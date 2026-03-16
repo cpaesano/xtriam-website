@@ -180,6 +180,23 @@ export async function getCaseById(
 }
 
 /**
+ * Update a Case's status
+ */
+export async function updateCaseStatus(
+  caseId: string,
+  status: string
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const conn = await getSalesforceConnection();
+    await conn.sobject("Case").update({ Id: caseId, Status: status });
+    return { success: true };
+  } catch (error) {
+    console.error("Error updating case status:", error);
+    return { success: false, error: "Failed to update case status" };
+  }
+}
+
+/**
  * Create a new Case (support ticket)
  */
 export async function createCase(data: {
