@@ -8,6 +8,7 @@ interface TutorialMeta {
   title: string;
   description: string;
   category: string;
+  youtubeId?: string;
 }
 
 const categoryColors: Record<string, string> = {
@@ -40,6 +41,14 @@ function TutorialCard({ tutorial }: { tutorial: TutorialMeta }) {
         >
           {categoryLabels[tutorial.category] || tutorial.category}
         </span>
+        {tutorial.youtubeId && (
+          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-700">
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Video
+          </span>
+        )}
       </div>
       <h3 className="font-semibold text-gray-900 group-hover:text-brand-blue-600 mb-2">
         {tutorial.title}
@@ -48,7 +57,7 @@ function TutorialCard({ tutorial }: { tutorial: TutorialMeta }) {
         {tutorial.description}
       </p>
       <div className="mt-3 text-brand-blue-600 text-sm font-medium flex items-center gap-1">
-        View tutorial
+        {tutorial.youtubeId ? "Watch video" : "View tutorial"}
         <svg
           className="w-4 h-4 group-hover:translate-x-1 transition-transform"
           fill="none"

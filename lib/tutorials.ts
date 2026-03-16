@@ -11,6 +11,7 @@ export interface Tutorial {
   category: string;
   content: string;
   lastUpdated?: string;
+  youtubeId?: string;
 }
 
 export interface TutorialMeta {
@@ -18,6 +19,7 @@ export interface TutorialMeta {
   title: string;
   description: string;
   category: string;
+  youtubeId?: string;
 }
 
 function extractTitle(content: string, filename: string): string {
@@ -92,7 +94,9 @@ export function getAllTutorials(): TutorialMeta[] {
     const description = frontmatter.description || extractDescription(body);
     const category = frontmatter.category || guessCategory(body);
 
-    return { slug, title, description, category };
+    const youtubeId = frontmatter.youtubeId || undefined;
+
+    return { slug, title, description, category, youtubeId };
   });
 }
 
@@ -114,6 +118,8 @@ export function getTutorialBySlug(slug: string): Tutorial | null {
   const stats = fs.statSync(filePath);
   const lastUpdated = stats.mtime.toISOString().split('T')[0];
 
+  const youtubeId = frontmatter.youtubeId || undefined;
+
   return {
     slug,
     title,
@@ -121,6 +127,7 @@ export function getTutorialBySlug(slug: string): Tutorial | null {
     category,
     content: body,
     lastUpdated,
+    youtubeId,
   };
 }
 

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { getTutorialBySlug, getAllTutorialSlugs } from "@/lib/tutorials";
+import { YouTubeFacade } from "@/components/ui/YouTubeFacade";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -75,6 +76,16 @@ export default async function TutorialPage({ params }: Props) {
           </p>
         )}
       </div>
+
+      {/* Video */}
+      {tutorial.youtubeId && (
+        <div className="mb-6">
+          <YouTubeFacade
+            videoId={tutorial.youtubeId}
+            title={tutorial.title}
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 lg:p-8">
