@@ -180,6 +180,54 @@ export async function getCaseById(
 }
 
 /**
+ * Get comments for a Case
+ */
+export interface CaseComment {
+  Id: string;
+  CommentBody: string;
+  CreatedDate: string;
+  CreatedBy: {
+    Name: string;
+  };
+  IsPublished: boolean;
+}
+
+export async function getCaseComments(caseId: string): Promise<CaseComment[]> {
+  const conn = await getSalesforceConnection();
+
+  const query = `
+    SELECT Id, CommentBody, CreatedDate, CreatedBy.Name, IsPublished
+    FROM CaseComment
+    WHERE ParentId = '${caseId}'
+    ORDER BY CreatedDate DESC
+  `;
+
+  const result = await conn.query<CaseComment>(query);
+  return result.records;
+}
+
+/**
+ * Add a comment to a Case
+ */
+export async function addCaseComment(
+  caseId: string,
+  commentBody: string
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const conn = await getSalesforceConnection();
+    await conn.sobject("CaseComment").create({
+      ParentId: caseId,
+      CommentBody: commentBody,
+      IsPublished: false,
+    });
+    return { success: true };
+  } catch (error) {
+    console.error("Error adding case comment:", error);
+    return { success: false, error: "Failed to add comment" };
+  }
+}
+
+/**
  * Update a Case's status
  */
 export async function updateCaseStatus(

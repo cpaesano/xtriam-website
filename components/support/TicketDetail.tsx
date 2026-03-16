@@ -10,8 +10,19 @@ import {
   Loader2,
   Calendar,
   Tag,
+  MessageSquare,
+  Send,
 } from "lucide-react";
 import type { SalesforceCase } from "@/types/auth";
+
+interface CaseComment {
+  Id: string;
+  CommentBody: string;
+  CreatedDate: string;
+  CreatedBy: {
+    Name: string;
+  };
+}
 
 interface TicketDetailProps {
   caseId: string;
@@ -21,9 +32,12 @@ const STATUSES = ["New", "Working", "On Hold", "Escalated", "Closed"];
 
 export function TicketDetail({ caseId }: TicketDetailProps) {
   const [ticket, setTicket] = useState<SalesforceCase | null>(null);
+  const [comments, setComments] = useState<CaseComment[]>([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
+  const [newComment, setNewComment] = useState("");
+  const [submittingComment, setSubmittingComment] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -34,6 +48,7 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
 
         if (data.success) {
           setTicket(data.ticket);
+          setComments(data.comments || []);
           if (data.isAdmin !== undefined) setIsAdmin(data.isAdmin);
         } else {
           setError(data.error || "Failed to load ticket");
@@ -65,6 +80,38 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
       console.error("Failed to update status");
     } finally {
       setUpdating(false);
+    }
+  }
+
+  async function handleAddComment(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newComment.trim() || submittingComment) return;
+
+    setSubmittingComment(true);
+    try {
+      const response = await fetch(`/api/support/tickets/${caseId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ comment: newComment.trim() }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        // Add comment to list locally
+        setComments((prev) => [
+          {
+            Id: Date.now().toString(),
+            CommentBody: newComment.trim(),
+            CreatedDate: new Date().toISOString(),
+            CreatedBy: { Name: "You" },
+          },
+          ...prev,
+        ]);
+        setNewComment("");
+      }
+    } catch {
+      console.error("Failed to add comment");
+    } finally {
+      setSubmittingComment(false);
     }
   }
 
@@ -187,6 +234,70 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
               </p>
             )}
           </div>
+        </div>
+
+        {/* Comments Section */}
+        <div className="mt-6">
+          <h2 className="text-sm font-medium text-muted-foreground mb-3 flex items-center gap-2">
+            <MessageSquare className="h-4 w-4" />
+            Comments ({comments.length})
+          </h2>
+
+          {/* Add Comment Form */}
+          <form onSubmit={handleAddComment} className="mb-4">
+            <div className="flex gap-2">
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Add a comment..."
+                rows={2}
+                disabled={submittingComment}
+                className="flex-1 resize-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm
+                  placeholder:text-gray-400
+                  focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500
+                  disabled:bg-gray-100 disabled:cursor-not-allowed"
+              />
+              <button
+                type="submit"
+                disabled={submittingComment || !newComment.trim()}
+                className="self-end px-4 py-2 bg-brand-blue-600 text-white rounded-lg text-sm font-medium
+                  hover:bg-brand-blue-700 transition-colors
+                  disabled:bg-gray-300 disabled:cursor-not-allowed
+                  flex items-center gap-2"
+              >
+                <Send className="h-4 w-4" />
+                {submittingComment ? "Sending..." : "Send"}
+              </button>
+            </div>
+          </form>
+
+          {/* Comment List */}
+          {comments.length > 0 ? (
+            <div className="space-y-3">
+              {comments.map((comment) => (
+                <div
+                  key={comment.Id}
+                  className="rounded-lg border border-gray-200 bg-gray-50 p-4"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-gray-900">
+                      {comment.CreatedBy.Name}
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      {formatDate(comment.CreatedDate)}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-700 whitespace-pre-wrap">
+                    {comment.CommentBody}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground italic">
+              No comments yet.
+            </p>
+          )}
         </div>
 
         {/* Help text */}
