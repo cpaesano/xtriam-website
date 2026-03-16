@@ -31,6 +31,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Contact not found" }, { status: 404 });
     }
 
+    // Check if user is admin
+    const adminEmails = (process.env.ADMIN_EMAILS || "").split(",").map((e) => e.trim().toLowerCase()).filter(Boolean);
+    const isAdmin = !!(contact.Email && adminEmails.includes(contact.Email.toLowerCase()));
+
     // Create session
     await createSession({
       contactId: contact.Id,
@@ -39,6 +43,7 @@ export async function POST(request: NextRequest) {
       lastName: contact.LastName || "",
       email: contact.Email || "",
       phone: phone,
+      isAdmin,
     });
 
     return NextResponse.json({

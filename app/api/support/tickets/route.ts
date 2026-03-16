@@ -1,13 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getCases, createCase } from "@/lib/salesforce";
+import { getCases, getAllCases, createCase } from "@/lib/salesforce";
 import type { CreateTicketRequest } from "@/types/auth";
 
 /**
  * GET /api/support/tickets
- * Returns all support tickets for the authenticated user
+ * Returns support tickets for the authenticated user
+ * Admin users can pass ?all=true to see all tickets across all contacts
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
     const session = await getSession();
 
@@ -18,11 +19,17 @@ export async function GET() {
       );
     }
 
-    const tickets = await getCases(session.contactId);
+    const showAll = request.nextUrl.searchParams.get("all") === "true";
+    const isAdmin = !!session.isAdmin;
+
+    const tickets = (showAll && isAdmin)
+      ? await getAllCases()
+      : await getCases(session.contactId);
 
     return NextResponse.json({
       success: true,
       tickets,
+      isAdmin,
     });
   } catch (error) {
     console.error("Error fetching tickets:", error);

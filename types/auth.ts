@@ -8,6 +8,7 @@ export interface SessionPayload extends JWTPayload {
   lastName: string;
   email: string;
   phone: string;
+  isAdmin?: boolean;   // true for xTriam admin users
   // SSO-specific fields (optional, present when authenticated via package SSO)
   authMethod?: "phone" | "sso";
   orgId?: string;      // Subscriber org ID (SSO only)
@@ -68,6 +69,12 @@ export interface SalesforceCase {
   CreatedDate: string;
   ClosedDate: string | null;
   LastModifiedDate: string;
+  Contact?: {
+    Name: string;
+    Account?: {
+      Name: string;
+    };
+  };
 }
 
 // API request/response types

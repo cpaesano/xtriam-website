@@ -140,6 +140,26 @@ export async function getCases(contactId: string): Promise<SalesforceCase[]> {
 }
 
 /**
+ * Get all Cases across all contacts (admin view)
+ */
+export async function getAllCases(): Promise<SalesforceCase[]> {
+  const conn = await getSalesforceConnection();
+
+  const query = `
+    SELECT Id, CaseNumber, Subject, Status, Priority, Description,
+           CreatedDate, ClosedDate, LastModifiedDate,
+           Contact.Name, Contact.Account.Name
+    FROM Case
+    ORDER BY CreatedDate DESC
+    LIMIT 500
+  `;
+
+  const result = await conn.query<SalesforceCase>(query);
+
+  return result.records;
+}
+
+/**
  * Get a single Case by ID
  */
 export async function getCaseById(
