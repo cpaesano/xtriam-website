@@ -43,6 +43,27 @@ const quickActions = [
     ),
     color: "brand-orange",
   },
+  {
+    title: "What's New",
+    description: "See the latest features and improvements in bpmPro",
+    href: "/support/whats-new",
+    icon: (
+      <svg
+        className="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+      </svg>
+    ),
+    color: "green",
+  },
   // TODO: Re-enable Knowledge Base when content is ready
   // {
   //   title: "Knowledge Base",
