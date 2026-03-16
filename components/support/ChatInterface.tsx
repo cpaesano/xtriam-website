@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
   role: "user" | "assistant";
@@ -123,6 +124,7 @@ export function ChatInterface() {
               }`}
             >
               <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 components={{
                   p: ({ children }) => <p className="mb-2 last:mb-0 text-base leading-relaxed">{children}</p>,
                   strong: ({ children }) => <strong className="font-bold">{children}</strong>,
@@ -143,6 +145,16 @@ export function ChatInterface() {
                       {children}
                     </a>
                   ),
+                  table: ({ children }) => (
+                    <div className="overflow-x-auto mb-2">
+                      <table className="min-w-full text-sm border-collapse">{children}</table>
+                    </div>
+                  ),
+                  thead: ({ children }) => <thead className="border-b border-gray-300">{children}</thead>,
+                  tbody: ({ children }) => <tbody>{children}</tbody>,
+                  tr: ({ children }) => <tr className="border-b border-gray-200 last:border-0">{children}</tr>,
+                  th: ({ children }) => <th className="text-left py-1 pr-3 font-semibold">{children}</th>,
+                  td: ({ children }) => <td className="py-1 pr-3">{children}</td>,
                 }}
               >
                 {message.content}

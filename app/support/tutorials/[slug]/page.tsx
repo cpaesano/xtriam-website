@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { getTutorialBySlug, getAllTutorialSlugs } from "@/lib/tutorials";
 import { YouTubeFacade } from "@/components/ui/YouTubeFacade";
 
@@ -91,6 +92,7 @@ export default async function TutorialPage({ params }: Props) {
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 lg:p-8">
         <article className="tutorial-content">
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               h1: ({ children }) => (
                 <h1 className="text-2xl font-bold text-gray-900 mb-4">
@@ -171,6 +173,28 @@ export default async function TutorialPage({ params }: Props) {
                 </code>
               ),
               hr: () => <hr className="my-8 border-gray-200" />,
+              table: ({ children }) => (
+                <div className="overflow-x-auto my-4">
+                  <table className="min-w-full text-sm border-collapse border border-gray-200 rounded-lg">
+                    {children}
+                  </table>
+                </div>
+              ),
+              thead: ({ children }) => (
+                <thead className="bg-gray-50">{children}</thead>
+              ),
+              tbody: ({ children }) => <tbody>{children}</tbody>,
+              tr: ({ children }) => (
+                <tr className="border-b border-gray-200">{children}</tr>
+              ),
+              th: ({ children }) => (
+                <th className="text-left py-2 px-3 font-semibold text-gray-900 border-b border-gray-300">
+                  {children}
+                </th>
+              ),
+              td: ({ children }) => (
+                <td className="py-2 px-3 text-gray-700">{children}</td>
+              ),
             }}
           >
             {tutorial.content}
