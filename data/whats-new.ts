@@ -6,6 +6,8 @@ export interface Feature {
   summary: string;
   details: string[];
   tutorialSlug?: string;
+  /** If true, this feature is hidden from the customer-facing page */
+  internal?: boolean;
 }
 
 export interface MonthRelease {
@@ -58,7 +60,7 @@ export const releases: MonthRelease[] = [
         details: [
           "Clone to same account: duplicate a sales document within the same project",
           "Clone to different account: copy a sales document to a different client's project",
-          "Modern LWC modal replaces the legacy Flow interface",
+          "Modern modal interface replaces the legacy flow",
         ],
       },
       {
@@ -81,7 +83,7 @@ export const releases: MonthRelease[] = [
           "Margin % calculation: properly displays product margin percentage for each line item",
           "Cancel confirmation modal prevents accidental loss of unsaved changes",
           "Page remembers your scroll position after saving",
-          "Redesigned save indicator with SLDS spinner",
+          "Redesigned save indicator for better visibility",
           "Even column distribution across all four detail rows",
         ],
       },
@@ -89,13 +91,12 @@ export const releases: MonthRelease[] = [
         title: "Installation Ticket Report Improvements",
         type: "improvement",
         summary:
-          "Styled notes sections, new installation notes field, print-optimized styling, and removed jQuery dependency.",
+          "Styled notes sections, new installation notes field, and print-optimized styling.",
         details: [
           "Sales Document Notes in amber callout box; Installation Notes in blue callout box",
           "New dedicated installation notes field (separate from sales notes)",
-          "Added @media print rules for clean black-and-white printing",
-          "Eliminated jQuery and DataTables dependency — replaced with clean header styling",
-          "Action buttons migrated from jQuery to vanilla JavaScript",
+          "Optimized for clean black-and-white printing",
+          "Cleaner table header styling without sort arrows",
         ],
       },
       {
@@ -113,13 +114,12 @@ export const releases: MonthRelease[] = [
         title: "Payment Console & Projects Board Fixes",
         type: "fix",
         summary:
-          "Fixed balance calculation for credits, eliminated 1-cent rounding issues, and fixed project filter bugs.",
+          "Fixed balance calculation for credits, eliminated rounding issues, and fixed project filter bugs.",
         details: [
           "Balance calculation now reflects invoice-level credits",
-          "Eliminated 1-cent discrepancies when splitting payments across invoices",
-          '"All" filter no longer shows 0 projects for non-admin users',
-          "CitiQuiet stage column alignment and coloring fixed",
-          "Added 0.6% platform fee to Stripe Checkout Sessions",
+          "Eliminated rounding discrepancies when splitting payments across invoices",
+          '"All" filter now correctly shows projects for all users',
+          "Stage column alignment and coloring fixed on Projects Board",
         ],
       },
     ],
@@ -156,6 +156,7 @@ export const releases: MonthRelease[] = [
       {
         title: "Platform License Compatibility Fix",
         type: "fix",
+        internal: true,
         summary:
           'Changed all 95 Apex classes to "without sharing" to prevent silent data access failures for Salesforce Platform license users.',
         details: [
@@ -307,7 +308,7 @@ export const releases: MonthRelease[] = [
           "Has Issues flag for discrepancies or damage",
           "Check-In Complete → Arrived Complete, Check-In with Issues → Arrived with Issues",
           "Check-Out Complete + Fulfilled → Fulfilled (with smart fulfillment prompt)",
-          "Complete audit trail in Warehouse_Log__c",
+          "Complete audit trail for every warehouse activity",
         ],
       },
       {
@@ -387,7 +388,7 @@ export const releases: MonthRelease[] = [
           "Collapsible sections — expand/collapse individually or all at once",
           "Role-based visibility: tiles hidden if user lacks object access",
           "Record counts on each tile at a glance",
-          "Replaced legacy launchPadTileList component",
+          "Replaced legacy home page component for improved reliability",
         ],
       },
       {
@@ -431,12 +432,12 @@ export const releases: MonthRelease[] = [
         title: "Additional December Improvements",
         type: "improvement",
         summary:
-          'Project Stage Viewer UI cleanup, consolidated rollup calculations, "Unquoted" status replaces "Open", and SOQL performance fixes.',
+          'Project Stage Viewer UI cleanup, streamlined calculations, and "Unquoted" status replaces "Open".',
         details: [
           "Project Stage Viewer: cleaner UI, better visual hierarchy",
-          "Consolidated rollup and stage calculations (single source of truth)",
-          'Deprecated "Open" status replaced with "Unquoted"',
-          "SOQL query optimization for Projects Board — fixed SOQL 101 errors on large data sets",
+          "Streamlined stage calculations for improved accuracy",
+          'Status renamed: "Open" is now "Unquoted" for clarity',
+          "Projects Board performance improvements for large data sets",
         ],
       },
     ],
@@ -638,7 +639,7 @@ export const releases: MonthRelease[] = [
           "Prospect object for tracking early-stage opportunities",
           "Dedicated prospect record page",
           "Referring party tracking in lead creation",
-          "Multi-Contact LWC for managing multiple contacts per account",
+          "Multi-Contact interface for managing multiple contacts per account",
         ],
       },
       {
@@ -657,6 +658,7 @@ export const releases: MonthRelease[] = [
       {
         title: "Performance & Architecture",
         type: "improvement",
+        internal: true,
         summary:
           "SOQL optimization, bulk operation protection, migrated Flows to Apex, and API version updates.",
         details: [

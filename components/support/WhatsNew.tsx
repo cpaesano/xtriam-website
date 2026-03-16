@@ -42,11 +42,21 @@ export function WhatsNew() {
     new Set()
   );
 
+  // Filter out internal features, then apply search
+  const publicReleases = useMemo(() => {
+    return releases
+      .map((release) => ({
+        ...release,
+        features: release.features.filter((f) => !f.internal),
+      }))
+      .filter((r) => r.features.length > 0);
+  }, []);
+
   const filteredReleases = useMemo(() => {
-    if (!search.trim()) return releases;
+    if (!search.trim()) return publicReleases;
 
     const q = search.toLowerCase();
-    return releases
+    return publicReleases
       .map((release) => ({
         ...release,
         features: release.features.filter(
@@ -57,7 +67,7 @@ export function WhatsNew() {
         ),
       }))
       .filter((r) => r.features.length > 0);
-  }, [search]);
+  }, [search, publicReleases]);
 
   // When searching, expand all months that have results
   const visibleExpandedMonths = useMemo(() => {
@@ -91,7 +101,7 @@ export function WhatsNew() {
     });
   }
 
-  const totalFeatures = releases.reduce(
+  const totalFeatures = publicReleases.reduce(
     (sum, r) => sum + r.features.length,
     0
   );
