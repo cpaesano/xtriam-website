@@ -34,6 +34,7 @@ export async function POST(request: NextRequest) {
     // Check if user is admin
     const adminEmails = (process.env.ADMIN_EMAILS || "").split(",").map((e) => e.trim().toLowerCase()).filter(Boolean);
     const isAdmin = !!(contact.Email && adminEmails.includes(contact.Email.toLowerCase()));
+    console.log("Admin check:", { contactEmail: contact.Email, adminEmails, isAdmin });
 
     // Create session
     await createSession({
