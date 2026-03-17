@@ -181,7 +181,8 @@ export async function getCaseById(
 
 /**
  * Get adjacent Case IDs (prev/next) for navigation
- * Orders by CreatedDate DESC (same as list view)
+ * Uses CaseNumber DESC ordering (stable, unique per case)
+ * Fetches the full ordered ID list and finds neighbors by position
  */
 export async function getAdjacentCaseIds(
   caseId: string,
@@ -189,35 +190,22 @@ export async function getAdjacentCaseIds(
 ): Promise<{ prevCaseId: string | null; nextCaseId: string | null }> {
   const conn = await getSalesforceConnection();
 
-  // Get the current case's CreatedDate
-  const currentResult = await conn.query<{ CreatedDate: string }>(
-    `SELECT CreatedDate FROM Case WHERE Id = '${caseId}'`
+  const contactFilter = contactId ? `WHERE ContactId = '${contactId}'` : "";
+
+  const result = await conn.query<{ Id: string }>(
+    `SELECT Id FROM Case ${contactFilter} ORDER BY CaseNumber DESC`
   );
 
-  if (currentResult.records.length === 0) {
+  const ids = result.records.map((r) => r.Id);
+  const currentIndex = ids.indexOf(caseId);
+
+  if (currentIndex === -1) {
     return { prevCaseId: null, nextCaseId: null };
   }
 
-  const currentDate = currentResult.records[0].CreatedDate;
-  const contactFilter = contactId ? `AND ContactId = '${contactId}'` : "";
-
-  // In DESC order: "prev" = newer (CreatedDate > current), "next" = older (CreatedDate < current)
-  const [newerResult, olderResult] = await Promise.all([
-    conn.query<{ Id: string }>(
-      `SELECT Id FROM Case
-       WHERE CreatedDate > ${currentDate} AND Id != '${caseId}' ${contactFilter}
-       ORDER BY CreatedDate ASC LIMIT 1`
-    ),
-    conn.query<{ Id: string }>(
-      `SELECT Id FROM Case
-       WHERE CreatedDate < ${currentDate} AND Id != '${caseId}' ${contactFilter}
-       ORDER BY CreatedDate DESC LIMIT 1`
-    ),
-  ]);
-
   return {
-    prevCaseId: newerResult.records[0]?.Id || null,
-    nextCaseId: olderResult.records[0]?.Id || null,
+    prevCaseId: currentIndex > 0 ? ids[currentIndex - 1] : null,
+    nextCaseId: currentIndex < ids.length - 1 ? ids[currentIndex + 1] : null,
   };
 }
 
