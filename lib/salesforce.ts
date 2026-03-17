@@ -180,6 +180,48 @@ export async function getCaseById(
 }
 
 /**
+ * Get adjacent Case IDs (prev/next) for navigation
+ * Orders by CreatedDate DESC (same as list view)
+ */
+export async function getAdjacentCaseIds(
+  caseId: string,
+  contactId?: string
+): Promise<{ prevCaseId: string | null; nextCaseId: string | null }> {
+  const conn = await getSalesforceConnection();
+
+  // Get the current case's CreatedDate
+  const currentResult = await conn.query<{ CreatedDate: string }>(
+    `SELECT CreatedDate FROM Case WHERE Id = '${caseId}'`
+  );
+
+  if (currentResult.records.length === 0) {
+    return { prevCaseId: null, nextCaseId: null };
+  }
+
+  const currentDate = currentResult.records[0].CreatedDate;
+  const contactFilter = contactId ? `AND ContactId = '${contactId}'` : "";
+
+  // In DESC order: "prev" = newer (CreatedDate > current), "next" = older (CreatedDate < current)
+  const [newerResult, olderResult] = await Promise.all([
+    conn.query<{ Id: string }>(
+      `SELECT Id FROM Case
+       WHERE CreatedDate > ${currentDate} AND Id != '${caseId}' ${contactFilter}
+       ORDER BY CreatedDate ASC LIMIT 1`
+    ),
+    conn.query<{ Id: string }>(
+      `SELECT Id FROM Case
+       WHERE CreatedDate < ${currentDate} AND Id != '${caseId}' ${contactFilter}
+       ORDER BY CreatedDate DESC LIMIT 1`
+    ),
+  ]);
+
+  return {
+    prevCaseId: newerResult.records[0]?.Id || null,
+    nextCaseId: olderResult.records[0]?.Id || null,
+  };
+}
+
+/**
  * Get comments for a Case
  */
 export interface CaseComment {

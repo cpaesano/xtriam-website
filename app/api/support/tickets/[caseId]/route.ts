@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getCaseById, updateCaseStatus, getCaseComments, addCaseComment } from "@/lib/salesforce";
+import { getCaseById, updateCaseStatus, getCaseComments, addCaseComment, getAdjacentCaseIds } from "@/lib/salesforce";
 
 interface RouteParams {
   params: Promise<{ caseId: string }>;
@@ -30,9 +30,12 @@ export async function GET(request: Request, { params }: RouteParams) {
       );
     }
 
-    const [ticket, comments] = await Promise.all([
+    const contactId = session.isAdmin ? undefined : session.contactId;
+
+    const [ticket, comments, adjacent] = await Promise.all([
       getCaseById(caseId),
       getCaseComments(caseId),
+      getAdjacentCaseIds(caseId, contactId),
     ]);
 
     if (!ticket) {
@@ -47,6 +50,8 @@ export async function GET(request: Request, { params }: RouteParams) {
       ticket,
       comments,
       isAdmin: !!session.isAdmin,
+      prevCaseId: adjacent.prevCaseId,
+      nextCaseId: adjacent.nextCaseId,
     });
   } catch (error) {
     console.error("Error fetching ticket:", error);

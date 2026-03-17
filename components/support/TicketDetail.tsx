@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   AlertCircle,
   CheckCircle2,
@@ -34,6 +36,8 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
   const [ticket, setTicket] = useState<SalesforceCase | null>(null);
   const [comments, setComments] = useState<CaseComment[]>([]);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [prevCaseId, setPrevCaseId] = useState<string | null>(null);
+  const [nextCaseId, setNextCaseId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [newComment, setNewComment] = useState("");
@@ -50,6 +54,8 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
           setTicket(data.ticket);
           setComments(data.comments || []);
           if (data.isAdmin !== undefined) setIsAdmin(data.isAdmin);
+          setPrevCaseId(data.prevCaseId || null);
+          setNextCaseId(data.nextCaseId || null);
         } else {
           setError(data.error || "Failed to load ticket");
         }
@@ -145,13 +151,46 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
 
   return (
     <div className="space-y-6">
-      <Link
-        href="/support/tickets"
-        className="inline-flex items-center gap-2 text-brand-blue-600 hover:underline"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to tickets
-      </Link>
+      {/* Navigation Bar */}
+      <div className="flex items-center justify-between">
+        <Link
+          href="/support/tickets"
+          className="inline-flex items-center gap-2 text-brand-blue-600 hover:underline"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to tickets
+        </Link>
+        <div className="flex items-center gap-2">
+          {prevCaseId ? (
+            <Link
+              href={`/support/tickets/${prevCaseId}`}
+              className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Previous
+            </Link>
+          ) : (
+            <span className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-300 bg-gray-50 border border-gray-200 rounded-lg cursor-not-allowed">
+              <ChevronLeft className="h-4 w-4" />
+              Previous
+            </span>
+          )}
+          {nextCaseId ? (
+            <Link
+              href={`/support/tickets/${nextCaseId}`}
+              className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              Next
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          ) : (
+            <span className="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-gray-300 bg-gray-50 border border-gray-200 rounded-lg cursor-not-allowed">
+              Next
+              <ChevronRight className="h-4 w-4" />
+            </span>
+          )}
+        </div>
+      </div>
 
       <div className="rounded-xl border border-border bg-background p-6 shadow-sm">
         {/* Header */}
