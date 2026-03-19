@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Preview: bpmPro Full Campaign — Q1 2026</title>
+    <style>
+        /* Preview wrapper styling */
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .preview-header {
+            max-width: 650px;
+            margin: 0 auto 20px;
+            padding: 15px 20px;
+            background: #1a1a2e;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        .preview-header h1 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .preview-header p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        .preview-meta {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+        .preview-meta strong {
+            color: #666;
+            display: inline-block;
+            width: 80px;
+        }
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .preview-notes {
+            max-width: 650px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .preview-notes strong {
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-header">
+        <h1>EMAIL PREVIEW: bpmPro Full Campaign — Q1 2026</h1>
+        <p>Template ID: BPMPRO_FULL_CAMPAIGN_Q1 | For warm prospects (non-clients)</p>
+    </div>
+
+    <div class="preview-meta">
+        <p><strong>Subject:</strong> We've been building — here's what's new for window &amp; door pros</p>
+        <p><strong>From:</strong> Carlos Paesano &lt;cpaesano@xtriam.com&gt;</p>
+        <p><strong>To:</strong> {{{Recipient.FirstName}}} {{{Recipient.LastName}}} &lt;{{{Recipient.Email}}}&gt;</p>
+        <p><strong>Preheader:</strong> New invoicing tool + 65 modules built specifically for your trade. From someone in the industry since 2003.</p>
+    </div>
+
+    <div class="email-container">
+        <!-- START EMAIL HTML — Copy everything inside .email-container for Salesforce Email_Template__c Body_HTML__c -->
+        <div style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
+
+            <!-- Preheader (hidden) -->
+            <div style="display: none; max-height: 0; overflow: hidden;">
+                New invoicing tool + 65 modules built specifically for your trade. From someone in the industry since 2003.
+                &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+            </div>
+
+            <!-- Logo Header -->
+            <div style="text-align: center; padding: 30px 20px 20px;">
+                <a href="https://www.xtriam.com?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=logo">
+                    <img src="https://www.xtriam.com/images/logo/xTriam-Logo-Outlines-Blue-Orange.png"
+                         alt="xTriam"
+                         width="160"
+                         style="width: 160px; height: auto; border: 0;">
+                </a>
+            </div>
+
+            <!-- Body -->
+            <div style="padding: 10px 40px 30px;">
+                <p style="margin: 0 0 16px;">Hi {{{Recipient.FirstName}}},</p>
+
+                <p style="margin: 0 0 16px;">It's Carlos from xTriam. We've been busy building — and I wanted to share what's new.</p>
+
+                <!-- NEW: InvoiceTicket as the news -->
+                <div style="background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0;">
+                    <p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #10b981;">Just Launched</p>
+                    <p style="margin: 0 0 8px; font-weight: 700; font-size: 20px; color: #333;">InvoiceTicket — Invoicing Built for the Field</p>
+                    <a href="https://invoiceticket.com?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=invoiceticket-image">
+                        <img src="https://www.xtriam.com/images/email/invoiceticket-field-pros.jpg"
+                             alt="Contractors using InvoiceTicket on their phones in the field"
+                             width="552"
+                             style="width: 100%; max-width: 552px; height: auto; border-radius: 8px; margin: 12px 0; border: 0;">
+                    </a>
+                    <p style="margin: 0 0 16px; color: #555;">Create and send professional invoices by voice, text, or photo — in seconds. Your installers, subs, or anyone on the crew can use it right from their phone. <strong>Free to start, no credit card.</strong></p>
+
+                    <!-- 3-Step How It Works -->
+                    <table style="width: 100%; border-collapse: collapse; margin: 8px 0 16px;">
+                        <tr>
+                            <td style="width: 33%; text-align: center; vertical-align: top; padding: 8px 6px;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: #10b981; color: #fff; font-size: 28px; line-height: 48px; margin: 0 auto 8px;">&#127908;</div>
+                                <div style="background: #10b981; color: #fff; font-size: 11px; font-weight: 700; border-radius: 10px; display: inline-block; padding: 2px 10px; margin-bottom: 6px;">STEP 1</div>
+                                <p style="margin: 0; font-weight: 700; font-size: 14px; color: #333;">Describe Your Work</p>
+                                <p style="margin: 4px 0 0; font-size: 12px; color: #777;">Talk, type, or snap a photo. English &amp; Spanish.</p>
+                            </td>
+                            <td style="width: 33%; text-align: center; vertical-align: top; padding: 8px 6px; border-left: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: #10b981; color: #fff; font-size: 28px; line-height: 48px; margin: 0 auto 8px;">&#128233;</div>
+                                <div style="background: #10b981; color: #fff; font-size: 11px; font-weight: 700; border-radius: 10px; display: inline-block; padding: 2px 10px; margin-bottom: 6px;">STEP 2</div>
+                                <p style="margin: 0; font-weight: 700; font-size: 14px; color: #333;">Send the Invoice</p>
+                                <p style="margin: 4px 0 0; font-size: 12px; color: #777;">Your client gets a pro invoice with a link to pay online.</p>
+                            </td>
+                            <td style="width: 33%; text-align: center; vertical-align: top; padding: 8px 6px;">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: #10b981; color: #fff; font-size: 28px; line-height: 48px; margin: 0 auto 8px;">&#128176;</div>
+                                <div style="background: #10b981; color: #fff; font-size: 11px; font-weight: 700; border-radius: 10px; display: inline-block; padding: 2px 10px; margin-bottom: 6px;">STEP 3</div>
+                                <p style="margin: 0; font-weight: 700; font-size: 14px; color: #333;">Get Paid</p>
+                                <p style="margin: 4px 0 0; font-size: 12px; color: #777;">Zelle, Venmo, CashApp, or credit card. Funds in 2 days.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="https://invoiceticket.com?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=invoiceticket"
+                       style="display: inline-block; padding: 10px 24px; background: #10b981; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 14px;">Try InvoiceTicket Free &rarr;</a>
+                </div>
+
+                <!-- Transition to bpmPro -->
+                <p style="margin: 0 0 16px;">InvoiceTicket is our newest tool — but it's not all we do.</p>
+
+                <p style="margin: 0 0 16px;"><strong>bpmPro is the most complete CRM built specifically for window and door contractors.</strong> Over 65 modules, all designed for how you actually run your business:</p>
+
+                <!-- bpmPro Feature Highlights — compact -->
+                <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                    <tr>
+                        <td style="padding: 6px 0; vertical-align: top; width: 24px; color: #ff9f00; font-weight: bold;">&#10003;</td>
+                        <td style="padding: 6px 0 6px 8px;"><strong>Import quotes</strong> from vendors like ES Windows — no double entry</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px 0; vertical-align: top; width: 24px; color: #ff9f00; font-weight: bold;">&#10003;</td>
+                        <td style="padding: 6px 0 6px 8px;"><strong>Project management</strong> — drag-and-drop board from quote to final inspection</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px 0; vertical-align: top; width: 24px; color: #ff9f00; font-weight: bold;">&#10003;</td>
+                        <td style="padding: 6px 0 6px 8px;"><strong>Sales commission management</strong> — track and calculate rep payouts</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px 0; vertical-align: top; width: 24px; color: #ff9f00; font-weight: bold;">&#10003;</td>
+                        <td style="padding: 6px 0 6px 8px;"><strong>Automations</strong> — emails, tasks, reminders that run without you</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px 0; vertical-align: top; width: 24px; color: #ff9f00; font-weight: bold;">&#10003;</td>
+                        <td style="padding: 6px 0 6px 8px;"><strong>Payments via Stripe</strong> — deposits, progress payments, final invoices</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px 0; vertical-align: top; width: 24px; color: #ff9f00; font-weight: bold;">&#10003;</td>
+                        <td style="padding: 6px 0 6px 8px;"><strong>And 60+ more modules</strong> — scheduling, permits, vendor POs, reporting...</td>
+                    </tr>
+                </table>
+
+                <!-- Projects Board GIF -->
+                <div style="text-align: center; margin: 24px 0;">
+                    <a href="https://www.xtriam.com/campaign/bpmpro-demo?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=projects-board-gif">
+                        <img src="https://www.xtriam.com/images/email/projects-board.gif"
+                             alt="bpmPro Projects Board — drag-and-drop project management"
+                             width="560"
+                             style="width: 100%; max-width: 560px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 0;">
+                    </a>
+                    <p style="margin: 8px 0 0; font-size: 13px; color: #999;">The bpmPro Projects Board — see every job at a glance</p>
+                </div>
+
+                <!-- Primary CTA -->
+                <div style="text-align: center; margin: 32px 0;">
+                    <a href="https://www.xtriam.com/campaign/bpmpro-demo?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=main-cta"
+                       style="display: inline-block; padding: 14px 32px; background: #ff9f00; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 16px;">
+                        See bpmPro in Action &rarr;
+                    </a>
+                </div>
+
+                <!-- Custom Build — shorter, more direct -->
+                <div style="background: #1e293b; border-radius: 8px; padding: 24px; margin: 24px 0; color: white;">
+                    <p style="margin: 0 0 8px; font-weight: 700; font-size: 18px;">Don't See What You Need?</p>
+                    <p style="margin: 0 0 12px; color: #94a3b8;">We've been building software for this industry since 2003. If you have a pain point our current tools don't cover — we can build it for you.</p>
+                    <a href="https://www.xtriam.com/contact?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=custom-build"
+                       style="color: #ff9f00; font-weight: 600; text-decoration: none;">Tell us what you need &rarr;</a>
+                </div>
+
+                <!-- Signature -->
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <p style="margin: 4px 0;">Best regards,</p>
+                    <p style="margin: 4px 0;"><strong>Carlos A. Paesano</strong></p>
+                    <p style="margin: 4px 0;">Founder & Managing Director<br>
+                    <a href="https://www.xtriam.com?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=signature" style="color: #027eda;">xTriam.com</a><br>
+                    <em>Profitability Through Process Automation</em></p>
+                    <p style="margin: 4px 0;">954-592-1256 (SMS enabled)<br>
+                    <a href="mailto:cpaesano@xtriam.com" style="color: #027eda;">cpaesano@xtriam.com</a></p>
+                </div>
+
+                <!-- Footer -->
+                <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999;">
+                    <p style="margin: 4px 0;">xTriam, LLC | 5966 S Dixie Hwy Ste 300, South Miami, FL 33143</p>
+                    <p style="margin: 4px 0;"><a href="https://www.xtriam.com/unsubscribe?token={{{UnsubscribeToken}}}" style="color: #999;">Unsubscribe from marketing emails</a></p>
+                </div>
+
+                <!-- Tracking Pixel -->
+                <img src="https://www.xtriam.com/api/email/track?cid={{{ContactId}}}&camp={{{CampaignId}}}" width="1" height="1" style="display: block; width: 1px; height: 1px; border: 0;" alt="">
+            </div>
+        </div>
+        <!-- END EMAIL HTML -->
+    </div>
+
+    <div class="preview-notes">
+        <strong>Template Notes (Full Campaign Q1 2026):</strong>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+            <li><strong>Audience:</strong> ~790 warm prospects, excluding active bpmPro clients</li>
+            <li><strong>Send in waves:</strong> Split into 2-3 batches for deliverability</li>
+            <li><strong>Merge fields:</strong> {{{Recipient.FirstName}}}, {{{ContactId}}}, {{{CampaignId}}}, {{{UnsubscribeToken}}}</li>
+            <li><strong>Landing page:</strong> https://www.xtriam.com/campaign/bpmpro-demo</li>
+            <li><strong>UTM params:</strong> utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1</li>
+            <li><strong>Subject line alternatives:</strong>
+                <ul>
+                    <li>A: "We've been building — here's what's new for window &amp; door pros"</li>
+                    <li>B: "New tool for your crew + 65 modules built for your trade"</li>
+                    <li>C: "Something new from xTriam — your installers are going to love this"</li>
+                </ul>
+            </li>
+            <li><strong>Requires:</strong> projects-board.gif at https://www.xtriam.com/images/email/projects-board.gif</li>
+        </ul>
+    </div>
+</body>
+</html>

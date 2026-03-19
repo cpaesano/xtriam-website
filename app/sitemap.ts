@@ -4,6 +4,8 @@ const BASE_URL = "https://www.xtriam.com";
 
 // Blog post slugs from app/post/[slug]/page.tsx
 const blogSlugs = [
+  "best-sales-software-for-window-and-door-contractors",
+  "window-and-door-contractor-marketing-strategies",
   "xtriam-launches-invoiceticket",
   "why-excel-and-quickbooks-arent-enough-for-growing-contractors",
   "the-hidden-cost-of-running-your-business-on-disconnected-tools",
@@ -170,6 +172,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/campaign/bpmpro-demo`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
   ];
 
