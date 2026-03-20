@@ -39,7 +39,13 @@
       "Bash(python3:*)",
       "Read(//usr/local/Cellar/**)",
       "Read(//usr/local/bin/**)",
-      "Bash(pip3 install:*)"
+      "Bash(pip3 install:*)",
+      "Bash(pip3 list:*)",
+      "Bash(gcloud projects:*)",
+      "Bash(gcloud services:*)",
+      "Bash(mkdir -p /Users/cpaesano/Projects/xtriam/xtriam-website/app/\\\\\\(marketing\\\\\\)/campaign/bpmpro-demo)",
+      "Bash(mkdir -p /Users/cpaesano/Projects/xtriam/xtriam-website/emails)",
+      "Bash(open:*)"
     ]
   }
 }
