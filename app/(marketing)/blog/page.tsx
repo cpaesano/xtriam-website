@@ -11,12 +11,28 @@ export const metadata: Metadata = {
 // TODO: Replace with actual blog posts from MDX files
 const blogPosts = [
   {
+    slug: "best-sales-software-for-window-and-door-contractors",
+    title: "Best Sales Software for Window and Door Contractors in 2026",
+    excerpt: "Disconnected tools are slowing your sales process. Here's what to look for in window and door sales software — and an honest comparison of the major options in 2026.",
+    date: "March 2026",
+    category: "Technology",
+    image: "/images/blog/sales-software-contractors.png",
+  },
+  {
     slug: "xtriam-launches-invoiceticket",
     title: "xTriam Launches InvoiceTicket: AI-Powered Invoicing for Contractors",
     excerpt: "xTriam introduces its second product — an AI-first invoicing app built for small contractors who work from the field, not behind a desk.",
     date: "February 2026",
     category: "News",
     image: "/images/blog/invoiceticket-voice-input.png",
+  },
+  {
+    slug: "window-and-door-contractor-marketing-strategies",
+    title: "Window and Door Contractor Marketing: 7 Strategies That Actually Work",
+    excerpt: "Referrals got you started, but they won't get you to $5M. Here are seven marketing strategies that consistently produce results for window and door contractors — from Google Business Profile optimization to automated lead follow-up.",
+    date: "March 2026",
+    category: "Marketing",
+    image: "/images/blog/contractor-marketing.png",
   },
   {
     slug: "from-quote-to-completion-how-software-is-changing-the-remodeling-business",

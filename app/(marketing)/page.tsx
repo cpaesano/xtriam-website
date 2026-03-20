@@ -24,9 +24,10 @@ export default function Home() {
                 Door Contractors
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                <strong>bpmPro</strong> is a Salesforce-native solution designed specifically for
-                window and door contractors. Streamline your sales, manage
-                projects, and grow your business with tools built for your
+                <strong>bpmPro</strong> is the window and door CRM software built
+                specifically for contractors. Whether you run a window company,
+                door company, or installation business — streamline your sales,
+                manage projects, and grow with the only CRM designed for your
                 industry.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -74,8 +75,9 @@ export default function Home() {
               Sound Familiar?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Window contractors face unique challenges. We built <strong>bpmPro</strong> to
-              solve them.
+              Window and door companies face unique challenges that generic CRMs
+              can&apos;t solve. We built <strong>bpmPro</strong> as a CRM for window installers
+              and contractors — from the ground up.
             </p>
           </div>
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -105,8 +107,8 @@ export default function Home() {
               Everything You Need to Run Your Business
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              From first contact to final installation, <strong>bpmPro</strong> manages your
-              entire workflow.
+              From first contact to final installation, this window company CRM
+              manages your entire workflow.
             </p>
           </div>
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -176,7 +178,7 @@ export default function Home() {
               Real Results
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Our customers see measurable improvements across their operations.
+              Window companies using bpmPro see measurable improvements across their operations.
             </p>
           </div>
 
@@ -215,10 +217,10 @@ export default function Home() {
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             <div>
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
-                Ready to streamline your business?
+                Ready to streamline your window business?
               </h2>
               <p className="mt-2 text-brand-blue-100">
-                See how much time and money you could save with <strong>bpmPro</strong>.
+                See how much time and money your window or door company could save with <strong>bpmPro</strong> — the CRM for window companies that actually understand your workflow.
               </p>
             </div>
             <div className="flex gap-4">
@@ -255,7 +257,7 @@ const painPoints = [
       </svg>
     ),
     title: "Wasting Time on Manual Tasks",
-    description: "Spreadsheets, paperwork, and duplicate data entry eating up your day.",
+    description: "Spreadsheets, paperwork, and duplicate data entry eating up your day. Your window business CRM should eliminate busywork, not create more.",
   },
   {
     icon: (
@@ -300,7 +302,7 @@ const painPoints = [
       </svg>
     ),
     title: "Growing Pains",
-    description: "Your current tools worked when you were small, but now they're holding you back.",
+    description: "Your current tools worked when you were small, but now they're holding you back. You need window and door sales software that scales with you.",
   },
 ];
 
@@ -335,7 +337,7 @@ const features = [
       </svg>
     ),
     title: "Sales Documents",
-    description: "Create professional quotes and proposals in minutes.",
+    description: "Window and door sales software that creates professional quotes and proposals in minutes.",
   },
   {
     icon: (

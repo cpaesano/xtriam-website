@@ -1935,6 +1935,314 @@ const blogPosts: Record<string, {
       <p><strong>Ready to try it? <a href="https://invoiceticket.com" target="_blank" rel="noopener noreferrer">InvoiceTicket</a> is free to start — no credit card required.</strong> Or <a href="/book-a-demo">book a demo</a> to see how xTriam's full suite of contractor tools can transform your business.</p>
     `,
   },
+  "window-and-door-contractor-marketing-strategies": {
+    title: "Window and Door Contractor Marketing: 7 Strategies That Actually Work",
+    date: "March 2026",
+    category: "Marketing",
+    image: "/images/blog/contractor-marketing.png",
+    content: `
+      <p>Most window and door contractors get their first few jobs through word of mouth. A neighbor sees the work. A friend gives a referral. Business grows. And then it plateaus.</p>
+      <br/>
+
+      <p>At some point, referrals alone can't sustain the growth you need. You're doing great work, but your phone isn't ringing enough. You try running a Facebook ad, maybe boost a post, maybe pay for a lead service — and the results are inconsistent at best.</p>
+      <br/>
+
+      <p>The problem isn't that window and door contractor marketing doesn't work. The problem is that most contractors are using tactics without a system behind them. They generate leads but don't follow up fast enough. They get reviews but don't use them strategically. They have a website but it doesn't show up when someone searches "window replacement near me."</p>
+      <br/>
+
+      <p>After working with window and door contractors since 2003, here are seven marketing strategies that consistently produce results — not theory, but what actually works in the field.</p>
+      <br/>
+
+      <h2>1. Own Your Google Business Profile</h2>
+
+      <p>If you do nothing else on this list, do this. Your Google Business Profile (GBP) is the single most important piece of marketing for window companies that sell to homeowners in a local market.</p>
+      <br/>
+
+      <p>When someone searches "window contractor near me" or "impact window installation Miami," Google shows the Map Pack — three local businesses with ratings, photos, and contact info — before any website results. If you're not in that top three, you're invisible to the majority of local searchers.</p>
+      <br/>
+
+      <p>Here's what separates the contractors who show up from the ones who don't:</p>
+      <br/>
+
+      <p><strong>Complete every field.</strong> Business hours, service area, categories (use "Window Installation Service" as your primary), attributes, and a detailed business description that includes the cities you serve. Google rewards completeness.</p>
+      <br/>
+
+      <p><strong>Post weekly.</strong> Google Business Profile has a "Posts" feature that most contractors ignore. Share a completed job photo every week with a short description: "Impact window installation in Coral Gables — 12 PGT WinGuard units, completed in one day." These posts signal to Google that your business is active.</p>
+      <br/>
+
+      <p><strong>Add photos consistently.</strong> Businesses with more than 100 photos get 520% more calls than the average listing, according to Google's own data. Take before-and-after photos of every job and upload them weekly. This is one of the easiest ways to generate window contractor leads without spending a dollar on ads.</p>
+      <br/>
+
+      <h2>2. Build a Review Engine</h2>
+
+      <p>You already know reviews matter. But the difference between a contractor with 40 reviews and one with 200 reviews is not luck — it's a system.</p>
+      <br/>
+
+      <p>Here's the system that works: send a review request within 2 hours of completing a job. Not a week later. Not when you remember. Within 2 hours, while the customer is still looking at their new windows and feeling good about the decision.</p>
+      <br/>
+
+      <p>The easiest way to do this is with an automated text message. When the job status changes to "Complete" in your CRM, the customer gets a text with a direct link to your Google review page. No extra steps for your team. No "I'll remind them later" that never happens.</p>
+      <br/>
+
+      <p>Contractors using automated review requests typically see a 3–5x increase in review volume within six months. And volume matters more than perfection — a business with 180 reviews at 4.6 stars outranks one with 12 reviews at 5.0 stars every time.</p>
+      <br/>
+
+      <p><strong>Respond to every review.</strong> Yes, every one. Thank positive reviewers by name and mention the specific work ("Glad you're happy with the PGT sliding doors, Maria!"). For negative reviews, respond professionally and take the conversation offline. Google's algorithm factors in response rate.</p>
+      <br/>
+
+      <h2>3. Invest in Local SEO — Not Just a Website</h2>
+
+      <p>Having a website is table stakes. Ranking that website for the searches your customers actually make is where the value is.</p>
+      <br/>
+
+      <p>Marketing for window companies should focus on local, intent-driven keywords. People don't search "best window company in America." They search "impact window installation Broward County" or "window replacement cost Miami-Dade." Your website needs pages that match these searches.</p>
+      <br/>
+
+      <p>Here's a practical approach:</p>
+      <br/>
+
+      <p><strong>Create a page for each service.</strong> Don't lump everything on one "Services" page. Have dedicated pages for "Impact Window Installation," "Sliding Glass Door Replacement," "Window Repair," and "Commercial Storefront Windows." Each page should be 500+ words with relevant photos from actual jobs.</p>
+      <br/>
+
+      <p><strong>Create location pages.</strong> If you serve 8 cities, create a page for each one. "Window Installation in Coral Gables" should be its own page with local references, photos from jobs in that area, and your Google Business Profile embedded.</p>
+      <br/>
+
+      <p><strong>Blog consistently.</strong> One post per month about a topic your customers search for. "How much do impact windows cost in Florida?" or "Do impact windows lower insurance premiums?" These posts bring in organic traffic for months or years after you publish them.</p>
+      <br/>
+
+      <h2>4. Use Before-and-After Content Everywhere</h2>
+
+      <p>This is the most underused marketing asset in the window and door industry. Every job you complete is a piece of content waiting to happen.</p>
+      <br/>
+
+      <p>Before-and-after photos work because they show the transformation — and that's what homeowners are buying. They're not buying glass and vinyl. They're buying the feeling of a better-looking, safer, more energy-efficient home.</p>
+      <br/>
+
+      <p>Here's how to systematize it:</p>
+      <br/>
+
+      <p><strong>Make it part of the job process.</strong> Train your crews to take a "before" photo when they arrive and an "after" photo when they finish. Make it as routine as clocking in. If you use a CRM, attach the photos to the job record so they're organized and easy to find later.</p>
+      <br/>
+
+      <p><strong>Post to multiple channels.</strong> The same before-and-after photo can go on your Google Business Profile, Instagram, Facebook, your website gallery, and in a follow-up email to past customers. One photo, five touchpoints.</p>
+      <br/>
+
+      <p><strong>Add context.</strong> Don't just post the photos — tell the story. "This Kendall homeowner replaced 14 single-pane windows with PGT WinGuard impact windows. The job took two days and qualified for an insurance discount of $1,200/year." Specific details build credibility and help with SEO.</p>
+      <br/>
+
+      <h2>5. Run Targeted Advertising That Tracks to Revenue</h2>
+
+      <p>Most window and door advertising fails because contractors treat it like a billboard — blast a message to everyone and hope some of it sticks. That's how you burn $2,000 a month with nothing to show for it.</p>
+      <br/>
+
+      <p>Effective window and door advertising is targeted, measurable, and connected to your sales process.</p>
+      <br/>
+
+      <p><strong>Google Ads for high-intent searches.</strong> If someone searches "impact window installation near me," they're ready to buy. A Google Search ad targeting that keyword in your service area puts you in front of the right person at the right time. Budget $500–$1,500/month and track every lead to see your actual cost per job sold — not just cost per click.</p>
+      <br/>
+
+      <p><strong>Facebook/Instagram for awareness and retargeting.</strong> Social ads work best when they keep you top of mind. Show before-and-after photos to homeowners in your service area. Then retarget people who visited your website but didn't call. This combination — Google for intent, social for awareness — covers both ends of the buying journey.</p>
+      <br/>
+
+      <p><strong>Track everything back to revenue.</strong> This is where most contractors drop the ball. You spend $1,200 on Google Ads and get 30 leads. How many became quotes? How many closed? What was the revenue? If you can't answer those questions, you're flying blind. A CRM that tracks leads from source to close makes window and door advertising measurable — and that's when it starts making money. <a href="/bpmpro">bpmPro</a> does exactly this, tracking every lead from first click to final payment so you know which marketing channels actually produce revenue.</p>
+      <br/>
+
+      <h2>6. Build a Referral Program With Structure</h2>
+
+      <p>Referrals are your best leads. They close faster, negotiate less, and have higher lifetime value. But most contractors treat referrals as something that happens to them, not something they build.</p>
+      <br/>
+
+      <p>A structured referral program turns happy customers into a predictable lead source.</p>
+      <br/>
+
+      <p><strong>Ask at the right time.</strong> The best time to ask for a referral is right after the customer expresses satisfaction — when they say "I love these windows" or leave a 5-star review. That's the moment to say, "We'd love to help your neighbors too. Here's a referral card."</p>
+      <br/>
+
+      <p><strong>Make the incentive meaningful.</strong> A $50 gift card is fine. A $200 credit toward future work is better because it brings them back. Some contractors offer $100 to the referrer and $100 off to the new customer — everybody wins.</p>
+      <br/>
+
+      <p><strong>Track every referral.</strong> If you don't track where referrals come from, you can't thank the right people or know which customers are your best advocates. Log every referral source in your CRM. Over time, you'll find that 10–15% of your customers generate 60–70% of your referrals. Those are your VIPs — treat them accordingly.</p>
+      <br/>
+
+      <p><strong>Realtors and property managers.</strong> Don't limit referrals to homeowners. Realtors who sell homes often recommend window upgrades. Property managers need reliable contractors for multi-unit replacements. Build relationships with 5–10 realtors in your market and check in quarterly. A single realtor who sends you three jobs a year is worth more than most ad campaigns.</p>
+      <br/>
+
+      <h2>7. Follow Up Fast — Or Lose the Lead</h2>
+
+      <p>Here's the stat that should change how you think about window contractor leads: contractors who respond to an inquiry within 5 minutes are 10x more likely to make contact than those who wait 30 minutes. Wait an hour, and your odds drop by over 90%.</p>
+      <br/>
+
+      <p>Most of the marketing strategies above are about generating leads. This one is about not wasting the leads you already get.</p>
+      <br/>
+
+      <p>When a homeowner fills out a "Get a Quote" form on your website at 7 PM on a Tuesday, they're probably also filling out forms on two or three other contractor sites. The first company to call back wins the appointment 78% of the time. Not the cheapest. Not the one with the best reviews. The first one to respond.</p>
+      <br/>
+
+      <p>Automated lead response makes this possible without someone sitting by the phone 24/7. When a new lead comes in, the system can:</p>
+      <br/>
+
+      <ul>
+        <li>Send an immediate text: "Thanks for reaching out to [Company Name]. We got your request and will call you within the hour."</li>
+        <li>Notify your sales rep by text and email with the lead details</li>
+        <li>Create a task to follow up if no contact is made within 15 minutes</li>
+        <li>Log the lead source so you know which marketing channel produced it</li>
+      </ul>
+      <br/>
+
+      <p>This is where your CRM becomes a marketing tool, not just a database. The speed and consistency of your follow-up determines whether your marketing dollars produce revenue or just clicks. With <a href="/bpmpro">bpmPro</a>, new leads trigger instant notifications and automated responses so no inquiry goes unanswered — even at 9 PM on a Saturday.</p>
+      <br/>
+
+      <h2>Putting It All Together</h2>
+
+      <p>Effective window and door contractor marketing isn't about doing one thing well. It's about building a system where each piece reinforces the others:</p>
+      <br/>
+
+      <ul>
+        <li>Your <strong>Google Business Profile</strong> drives local visibility</li>
+        <li>Your <strong>reviews</strong> build trust before you ever talk to the customer</li>
+        <li>Your <strong>SEO</strong> brings in leads month after month without ongoing ad spend</li>
+        <li>Your <strong>content</strong> shows the quality of your work</li>
+        <li>Your <strong>advertising</strong> fills gaps and targets high-intent buyers</li>
+        <li>Your <strong>referral program</strong> turns customers into advocates</li>
+        <li>Your <strong>follow-up speed</strong> converts leads into revenue</li>
+      </ul>
+      <br/>
+
+      <p>The contractors who grow consistently aren't necessarily doing more marketing. They're doing it with a system that captures every lead, tracks every touchpoint, and closes the loop between marketing spend and actual revenue.</p>
+      <br/>
+
+      <p>That's exactly what we built <a href="/bpmpro">bpmPro</a> to do. It's a CRM for window and door contractors that manages the entire customer journey — from the first inquiry to the final payment. Every lead tracked. Every follow-up automated. Every marketing dollar accountable.</p>
+      <br/>
+
+      <p><strong><a href="/book-a-demo">Book a free demo</a></strong> and see how it works for your business. Or check out how other contractors are using it on our <a href="/customer-success-stories">customer success stories</a> page.</p>
+    `,
+  },
+  "best-sales-software-for-window-and-door-contractors": {
+    title: "Best Sales Software for Window and Door Contractors in 2026",
+    date: "March 2026",
+    category: "Technology",
+    image: "/images/blog/sales-software-contractors.png",
+    content: `
+      <p>If you run a window and door contracting business, your sales process probably looks something like this: a lead comes in by phone or email. Someone writes it on a sticky note or enters it into a spreadsheet. A salesperson goes to the home, measures, and writes up a quote—maybe in Excel, maybe on paper. The quote gets emailed. The customer calls back with questions. Someone digs through their inbox to find the original numbers. The job gets sold, and now you need to figure out how to hand it off to operations without losing any details.</p>
+      <br/>
+
+      <p>Every step is a different tool. Every handoff is a chance for something to fall through the cracks. And the bigger your operation gets, the more time you spend stitching everything together instead of selling.</p>
+      <br/>
+
+      <p>That's why more contractors are looking for dedicated window and door sales software—something built for this industry, not adapted from generic business tools.</p>
+      <br/>
+
+      <h2>What "Sales Software" Actually Means for Window Contractors</h2>
+
+      <p>When most people hear "sales software," they think of a basic CRM—a place to store contacts and log calls. That's table stakes. For window and door contractors, the sales process involves a lot more than tracking names and phone numbers.</p>
+      <br/>
+
+      <p>Window contractor software needs to handle the full journey from first contact to signed contract. That includes lead capture and assignment, on-site measuring and estimating, product configuration (sizes, styles, glass types, hardware), proposal generation with accurate pricing, electronic signatures, deposit collection, and a clean handoff to your operations team for ordering and scheduling.</p>
+      <br/>
+
+      <p>If your software for selling windows and doors doesn't cover that full chain, you're still going to be jumping between tools—and that's where deals slow down, errors creep in, and margins shrink.</p>
+      <br/>
+
+      <h2>Key Features to Look For</h2>
+
+      <p>After working in this industry since 2003, here's what I'd tell any contractor evaluating window sales software:</p>
+      <br/>
+
+      <p><strong>Quoting and estimating.</strong> This is the foundation. You need a system that lets your sales team build accurate quotes quickly—ideally with product catalogs, pricing rules, and the ability to import quotes from manufacturer estimating tools like ES Windows or WinQuote. If your salespeople are still building quotes in Excel, they're spending 30–45 minutes on something that should take 10.</p>
+      <br/>
+
+      <p><strong>Lead tracking and pipeline management.</strong> You need to see every open opportunity at a glance: where it stands, who owns it, when the last follow-up was, and what the expected close date is. If a lead goes cold because nobody followed up, that's money you left on the table. Good window door sales software makes this impossible to miss.</p>
+      <br/>
+
+      <p><strong>Proposal generation.</strong> Your proposals represent your brand. A professional, itemized proposal with your logo, clear pricing, and terms builds trust. Bonus points if the system generates it directly from the quote without re-entering data.</p>
+      <br/>
+
+      <p><strong>Payment processing.</strong> Collecting deposits and progress payments shouldn't require a separate system. The best platforms let you <a href="/payment-processing-with-stripe-integration">collect payments electronically</a>—credit card or ACH—right from the invoice or proposal. Faster payments mean healthier cash flow.</p>
+      <br/>
+
+      <p><strong>Project handoff to operations.</strong> This is the one most people overlook. Once a deal closes, someone needs to place the manufacturer order, schedule the installation crew, and track the job through completion. If your sales tool doesn't connect to your operations workflow, you're back to manual handoffs and data re-entry.</p>
+      <br/>
+
+      <p><strong>Reporting.</strong> You should be able to answer basic questions without asking anyone: How many quotes went out this month? What's our close rate? What's the average job size? Which salesperson is performing? If you can't pull these numbers in under a minute, your software isn't doing its job.</p>
+      <br/>
+
+      <h2>The Major Players</h2>
+
+      <p>Here's an honest look at the main options contractors are evaluating in 2026:</p>
+      <br/>
+
+      <p><strong>Builder Prime</strong> is probably the most visible name in contractor software right now. They've invested heavily in SEO and marketing, and their platform covers CRM, estimating, and project management. It's a solid option for general contractors and remodelers. The limitation for window and door specialists is that it's built for broad trades—it doesn't have deep, industry-specific features like manufacturer quote imports or window product configuration.</p>
+      <br/>
+
+      <p><strong>JobNimbus</strong> started in roofing and has expanded into other trades. It's strong on project management and has good mobile apps. For window contractors specifically, you may find yourself customizing more than you'd like to fit your workflow. It works best if your sales process is relatively simple.</p>
+      <br/>
+
+      <p><strong>QuoteIQ</strong> focuses specifically on quoting for window and door contractors. If your primary pain point is the estimating process, it's worth evaluating. The trade-off is that it's narrowly focused—you'll still need separate tools for CRM, project management, and payments.</p>
+      <br/>
+
+      <p><strong>Houzz Pro</strong> is a good entry point for smaller operations that want a simple CRM with lead management and basic invoicing. The Houzz marketplace can drive leads, which is a unique advantage. But it's designed for the broad home services market, not specifically for window and door sales, and it won't scale well if you're managing a multi-salesperson team with complex product configurations.</p>
+      <br/>
+
+      <h2>bpmPro: The Salesforce-Native Option</h2>
+
+      <p><a href="/bpmpro"><strong>bpmPro</strong></a> is the platform we built at xTriam, and it takes a fundamentally different approach. Instead of building another standalone app, we built bpmPro as a managed package on Salesforce—the same platform used by companies of every size worldwide.</p>
+      <br/>
+
+      <p>What does that mean in practice? It means you get a true enterprise-grade CRM with window-and-door-specific workflows layered on top. Lead management, quoting, proposals, electronic signatures, <a href="/payment-processing-with-stripe-integration">payment processing via Stripe</a>, manufacturer order management, installation scheduling, and warranty tracking—all in one system.</p>
+      <br/>
+
+      <p>Some specific things that set bpmPro apart for window and door contractors:</p>
+      <br/>
+
+      <p><strong>ES Windows quote import.</strong> If your manufacturer uses ES Windows for estimating, bpmPro imports those quotes directly. No re-typing. No copy-paste errors. The quote flows straight into your proposal and then into your order.</p>
+      <br/>
+
+      <p><strong>Full lifecycle coverage.</strong> Most window sales software stops at the signed contract. bpmPro follows the job through ordering, delivery, installation, punch list, and final payment. Your sales team and operations team work in the same system, so nothing gets lost in the handoff.</p>
+      <br/>
+
+      <p><strong>Real numbers.</strong> bpmPro currently manages over $150 million in revenue across 20+ subscriber organizations. These are real window and door contractors running their entire businesses on the platform—not a pilot program.</p>
+      <br/>
+
+      <p><strong>Salesforce ecosystem.</strong> Because bpmPro runs on Salesforce, you get access to thousands of integrations, advanced reporting with dashboards you can build yourself, and a platform that scales with you. If you ever need custom automation or want to connect to QuickBooks, your email marketing tool, or any other system, the infrastructure is already there.</p>
+      <br/>
+
+      <p>You can see the full <a href="/bpmpro-features">feature list here</a>.</p>
+      <br/>
+
+      <h2>How to Evaluate Software for Your Business</h2>
+
+      <p>Regardless of which platform you're considering, here's a practical framework for making the decision:</p>
+      <br/>
+
+      <p><strong>1. Map your current process first.</strong> Before you look at any software, write down every step of your sales process from lead to signed contract. Include who does each step and what tool they use. This gives you a clear picture of what you need to replace.</p>
+      <br/>
+
+      <p><strong>2. Identify your biggest bottleneck.</strong> Where do deals stall? Where do mistakes happen? Where are you losing the most time? The right software should directly address your top two or three pain points.</p>
+      <br/>
+
+      <p><strong>3. Ask about the handoff to operations.</strong> This is the question most vendors don't want you to ask, because most sales tools stop at the sale. If your software doesn't handle what happens after the contract is signed, you're only solving half the problem.</p>
+      <br/>
+
+      <p><strong>4. Run a real scenario.</strong> During your demo, don't just watch a scripted presentation. Bring an actual quote from a recent job and ask the vendor to walk through it in their system—from lead entry to quote to proposal to payment collection. That will tell you more than any feature list.</p>
+      <br/>
+
+      <p><strong>5. Talk to actual users.</strong> Ask for references from window and door contractors specifically, not general contractors or roofers. The workflow differences matter more than you might think.</p>
+      <br/>
+
+      <p><strong>6. Calculate the real cost.</strong> Include not just the monthly subscription but also setup fees, training time, and the cost of any additional tools you'll need to fill gaps. A cheaper tool that requires three add-ons often costs more than an all-in-one platform.</p>
+      <br/>
+
+      <h2>The Bottom Line</h2>
+
+      <p>The window and door industry has specific needs that generic business software doesn't address well. Manufacturer quote imports, product configurations, installation scheduling, warranty tracking—these aren't nice-to-haves. They're the daily reality of running this kind of business.</p>
+      <br/>
+
+      <p>The right window and door sales software should eliminate data re-entry, give your sales team a clear view of their pipeline, produce professional proposals, collect payments without friction, and hand jobs off to operations cleanly. If your current setup doesn't do all of that, it's worth looking at what's available in 2026.</p>
+      <br/>
+
+      <p><strong>Want to see how bpmPro handles the full sales-to-installation workflow? <a href="/book-a-demo">Book a free demo</a> and bring your toughest questions.</strong></p>
+    `,
+  },
 };
 
 // Generate static params for known blog posts
