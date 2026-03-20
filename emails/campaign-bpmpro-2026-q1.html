@@ -98,13 +98,13 @@
             </div>
 
             <!-- Body -->
-            <div style="padding: 10px 40px 30px;">
+            <div style="padding: 10px 16px 30px;">
                 <p style="margin: 0 0 16px;">Hi {{{Recipient.FirstName}}},</p>
 
                 <p style="margin: 0 0 16px;">It's Carlos from xTriam. We've been busy building — and I wanted to share what's new.</p>
 
                 <!-- NEW: InvoiceTicket as the news -->
-                <div style="background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0;">
+                <div style="background: #ecfdf5; border-radius: 8px; padding: 20px 24px; margin: 24px 0;">
                     <p style="margin: 0 0 4px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #10b981;">Just Launched</p>
                     <p style="margin: 0 0 8px; font-weight: 700; font-size: 20px; color: #333;">InvoiceTicket — Invoicing Built for the Field</p>
                     <a href="https://invoiceticket.com?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=invoiceticket-image">
@@ -175,15 +175,20 @@
                     </tr>
                 </table>
 
-                <!-- Projects Board GIF -->
-                <div style="text-align: center; margin: 24px 0;">
-                    <a href="https://www.xtriam.com/campaign/bpmpro-demo?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=projects-board-gif">
-                        <img src="https://www.xtriam.com/images/email/projects-board.gif"
-                             alt="bpmPro Projects Board — drag-and-drop project management"
-                             width="560"
-                             style="width: 100%; max-width: 560px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 0;">
-                    </a>
-                    <p style="margin: 8px 0 0; font-size: 13px; color: #999;">The bpmPro Projects Board — see every job at a glance</p>
+                <!-- ES Windows CSV Import -->
+                <div style="background: #f0f9ff; border-radius: 8px; padding: 20px; margin: 24px 0;">
+                    <p style="margin: 0 0 8px; font-weight: 700; font-size: 18px; color: #333;">ES Windows dealers — this one's for you.</p>
+                    <p style="margin: 0 0 16px;">Generate your quote in ES, download the CSV, and import it into bpmPro in seconds. Dimensions, series, configurations, quantities, costs, design pressures — all populate automatically. No retyping.</p>
+                    <div style="text-align: center; margin: 16px 0;">
+                        <a href="https://www.xtriam.com/campaign/bpmpro-demo?utm_source=email&utm_medium=sendgrid&utm_campaign=bpmpro-2026-q1&utm_content=esw-csv-import">
+                            <img src="https://www.xtriam.com/images/email/esw-csv-import.gif"
+                                 alt="ES Windows CSV quote import into bpmPro"
+                                 width="560"
+                                 style="width: 100%; max-width: 560px; height: auto; border-radius: 8px; border: 0;">
+                        </a>
+                    </div>
+                    <p style="margin: 0 0 8px;">Then build your full proposal with markups for labor, permits, and add-ons — all in one place.</p>
+                    <p style="margin: 0; font-style: italic; color: #666;">Work with a different manufacturer? We can make it work too.</p>
                 </div>
 
                 <!-- Primary CTA -->
@@ -213,14 +218,7 @@
                     <a href="mailto:cpaesano@xtriam.com" style="color: #027eda;">cpaesano@xtriam.com</a></p>
                 </div>
 
-                <!-- Footer -->
-                <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999;">
-                    <p style="margin: 4px 0;">xTriam, LLC | 5966 S Dixie Hwy Ste 300, South Miami, FL 33143</p>
-                    <p style="margin: 4px 0;"><a href="https://www.xtriam.com/unsubscribe?token={{{UnsubscribeToken}}}" style="color: #999;">Unsubscribe from marketing emails</a></p>
-                </div>
-
-                <!-- Tracking Pixel -->
-                <img src="https://www.xtriam.com/api/email/track?cid={{{ContactId}}}&camp={{{CampaignId}}}" width="1" height="1" style="display: block; width: 1px; height: 1px; border: 0;" alt="">
+                <!-- Footer and tracking pixel added automatically by MarketingEmailService -->
             </div>
         </div>
         <!-- END EMAIL HTML -->
