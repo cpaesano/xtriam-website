@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
+    "@google-analytics/data": "^5.2.1",
     "@headlessui/react": "^2.2.9",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
