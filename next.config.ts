@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
         { source: "/about", destination: "/static/about.html" },
         { source: "/customer-success-stories", destination: "/static/customer-success-stories.html" },
         { source: "/video-library", destination: "/static/video-library.html" },
-        { source: "/blog", destination: "/static/blog.html" },
+        // /blog now served by Next.js app/(marketing)/blog/page.tsx
         { source: "/privacy-policy", destination: "/static/privacy-policy.html" },
         { source: "/terms-and-conditions", destination: "/static/terms-and-conditions.html" },
         { source: "/payment-processing-with-stripe-integration", destination: "/static/payment-processing-with-stripe-integration.html" },
