@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+const POSTS_PER_PAGE = 6;
+
 interface BlogPost {
   slug: string;
   title: string;
@@ -20,10 +22,20 @@ interface BlogGridProps {
 
 export function BlogGrid({ posts, categories }: BlogGridProps) {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filtered = activeCategory === "All"
     ? posts
     : posts.filter((p) => p.category === activeCategory);
+
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  const startIdx = (currentPage - 1) * POSTS_PER_PAGE;
+  const paginated = filtered.slice(startIdx, startIdx + POSTS_PER_PAGE);
+
+  function handleCategoryChange(cat: string) {
+    setActiveCategory(cat);
+    setCurrentPage(1); // Reset to page 1 when filtering
+  }
 
   return (
     <div>
@@ -32,7 +44,7 @@ export function BlogGrid({ posts, categories }: BlogGridProps) {
         {categories.map((cat) => (
           <button
             key={cat}
-            onClick={() => setActiveCategory(cat)}
+            onClick={() => handleCategoryChange(cat)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               activeCategory === cat
                 ? "bg-brand-blue-600 text-white"
@@ -51,7 +63,7 @@ export function BlogGrid({ posts, categories }: BlogGridProps) {
 
       {/* Posts Grid */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((post) => (
+        {paginated.map((post) => (
           <article
             key={post.slug}
             className="group rounded-xl border border-border bg-background shadow-sm transition-all hover:shadow-md hover:border-brand-blue-200 overflow-hidden"
@@ -100,6 +112,49 @@ export function BlogGrid({ posts, categories }: BlogGridProps) {
           <p>No posts in this category yet.</p>
         </div>
       )}
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="mt-10 flex items-center justify-center gap-3">
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            Previous
+          </button>
+
+          <div className="flex gap-1">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`rounded-lg px-3.5 py-2 text-sm font-medium transition-colors ${
+                  currentPage === page
+                    ? "bg-brand-blue-600 text-white"
+                    : "text-muted-foreground hover:bg-muted"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            Next
+          </button>
+        </div>
+      )}
+
+      {/* Post count */}
+      <div className="mt-4 text-center text-sm text-muted-foreground">
+        Showing {startIdx + 1}–{Math.min(startIdx + POSTS_PER_PAGE, filtered.length)} of {filtered.length} posts
+        {activeCategory !== "All" && <span> in {activeCategory}</span>}
+      </div>
     </div>
   );
 }
