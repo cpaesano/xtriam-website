@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import { BlogGrid } from "./BlogGrid";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -166,123 +166,118 @@ const blogPosts = [
   },
 ];
 
+// Extract unique categories
+const categories = ["All", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
+
 export default function BlogPage() {
+  const featured = blogPosts[0];
+  const remaining = blogPosts.slice(1);
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-brand-blue-50 to-background py-16 lg:py-20">
+      {/* Hero + Featured Post */}
+      <section className="bg-gradient-to-b from-brand-blue-50 to-background py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl text-center mb-10">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Blog
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Insights, tips, and industry news for contractors.
+              Insights, tips, and industry news for window &amp; door contractors.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Blog Posts */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2">
-            {blogPosts.map((post, index) => (
-              <article
-                key={index}
-                className="group rounded-xl border border-border bg-background shadow-sm transition-all hover:shadow-md hover:border-brand-blue-200 overflow-hidden"
-              >
-                {post.image && (
-                  <Link href={`/post/${post.slug}`} className="block">
-                    <div className={`${post.imageAspect === "square" ? "aspect-square" : "aspect-video"} overflow-hidden bg-muted`}>
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                  </Link>
-                )}
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <span className="rounded-full bg-brand-blue-100 px-3 py-1 text-xs font-medium text-brand-blue-700">
-                      {post.category}
-                    </span>
-                    <span>{post.date}</span>
-                  </div>
-                  <h2 className="mt-4 text-xl font-semibold text-foreground group-hover:text-brand-blue-600 transition-colors">
-                    <Link href={`/post/${post.slug}`}>{post.title}</Link>
-                  </h2>
-                  <p className="mt-2 text-muted-foreground line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    href={`/post/${post.slug}`}
-                    className="mt-4 inline-flex items-center text-sm font-medium text-brand-blue-600 hover:text-brand-blue-700"
-                  >
-                    Read more
-                    <svg
-                      className="ml-1 h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
+          {/* Featured Post */}
+          <Link href={`/post/${featured.slug}`} className="group block">
+            <article className="grid md:grid-cols-2 gap-6 rounded-xl border border-border bg-background shadow-sm overflow-hidden transition-all hover:shadow-lg hover:border-brand-blue-200">
+              <div className="aspect-video md:aspect-auto overflow-hidden bg-muted">
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-6 lg:p-8">
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <span className="rounded-full bg-brand-orange-100 px-3 py-1 text-xs font-semibold text-brand-orange-700">
+                    Featured
+                  </span>
+                  <span className="rounded-full bg-brand-blue-100 px-3 py-1 text-xs font-medium text-brand-blue-700">
+                    {featured.category}
+                  </span>
+                  <span>{featured.date}</span>
                 </div>
-              </article>
-            ))}
-          </div>
+                <h2 className="mt-4 text-2xl lg:text-3xl font-bold text-foreground group-hover:text-brand-blue-600 transition-colors">
+                  {featured.title}
+                </h2>
+                <p className="mt-3 text-muted-foreground text-base lg:text-lg">
+                  {featured.excerpt}
+                </p>
+                <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand-blue-600 group-hover:text-brand-blue-700">
+                  Read article
+                  <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </article>
+          </Link>
+        </div>
+      </section>
 
-          {/* Pagination placeholder */}
-          <div className="mt-12 flex justify-center gap-2">
-            <Button variant="outline" disabled>
-              Previous
-            </Button>
-            <Button variant="outline">Next</Button>
+      {/* Category Filter + Posts Grid */}
+      <section className="py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <BlogGrid posts={remaining} categories={categories} />
+        </div>
+      </section>
+
+      {/* Mid-page CTA */}
+      <section className="bg-brand-blue-600 py-14">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+              Ready to streamline your business?
+            </h2>
+            <p className="mt-4 text-lg text-blue-100">
+              bpmPro is the most complete CRM built specifically for window and door contractors. See how it can work for you.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                href="/book-a-demo"
+                className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-brand-blue-600 shadow-sm hover:bg-blue-50 transition-colors"
+              >
+                Book a Free Demo
+              </Link>
+              <Link
+                href="/savings"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white px-6 py-3 text-base font-semibold text-white hover:bg-white/10 transition-colors"
+              >
+                Calculate Your Savings
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-muted/30 py-16">
+      {/* Social Follow */}
+      <section className="bg-muted/30 py-12">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold text-foreground">
-              Stay Updated
+            <h2 className="text-xl font-bold text-foreground">
+              Follow Us
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Follow us on social media for the latest tips and industry news.
-            </p>
-            <div className="mt-6 flex justify-center gap-4">
-              <a
-                href="https://youtube.com/@xtriam/videos"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-brand-blue-600 transition-colors"
-              >
+            <div className="mt-4 flex justify-center gap-6">
+              <a href="https://youtube.com/@xtriam/videos" target="_blank" rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-brand-blue-600 transition-colors font-medium">
                 YouTube
               </a>
-              <a
-                href="https://instagram.com/xtriam.windows.crm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-brand-blue-600 transition-colors"
-              >
+              <a href="https://instagram.com/xtriam.windows.crm" target="_blank" rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-brand-blue-600 transition-colors font-medium">
                 Instagram
               </a>
-              <a
-                href="https://tiktok.com/@bpmpro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-brand-blue-600 transition-colors"
-              >
+              <a href="https://tiktok.com/@bpmpro" target="_blank" rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-brand-blue-600 transition-colors font-medium">
                 TikTok
               </a>
             </div>
