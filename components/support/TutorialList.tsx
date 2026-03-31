@@ -9,6 +9,7 @@ interface TutorialMeta {
   description: string;
   category: string;
   youtubeId?: string;
+  thumbnail?: string;
 }
 
 type FilterType = "all" | "videos" | "guides";
@@ -58,6 +59,16 @@ function TutorialCard({ tutorial }: { tutorial: TutorialMeta }) {
           </div>
         </div>
       )}
+      {!tutorial.youtubeId && tutorial.thumbnail && (
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-3 bg-gray-100">
+          <img
+            src={tutorial.thumbnail}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+            loading="lazy"
+          />
+        </div>
+      )}
       <div className="flex items-center gap-2 mb-2">
         <span
           className={`px-2 py-0.5 rounded-full text-xs font-medium ${categoryColors[tutorial.category]}`}
@@ -100,42 +111,77 @@ function TutorialCard({ tutorial }: { tutorial: TutorialMeta }) {
 }
 
 function FilterTabs({
-  active,
-  onChange,
+  activeType,
+  onTypeChange,
+  activeCategory,
+  onCategoryChange,
   counts,
+  categoryCounts,
 }: {
-  active: FilterType;
-  onChange: (f: FilterType) => void;
+  activeType: FilterType;
+  onTypeChange: (f: FilterType) => void;
+  activeCategory: string | null;
+  onCategoryChange: (c: string | null) => void;
   counts: { all: number; videos: number; guides: number };
+  categoryCounts: Record<string, number>;
 }) {
-  const tabs: { key: FilterType; label: string; count: number }[] = [
+  const typeTabs: { key: FilterType; label: string; count: number }[] = [
     { key: "all", label: "All", count: counts.all },
     { key: "videos", label: "Videos", count: counts.videos },
     { key: "guides", label: "Step-by-Step Guides", count: counts.guides },
   ];
 
+  // Sort categories by count descending
+  const sortedCategories = Object.entries(categoryCounts).sort(
+    (a, b) => b[1] - a[1]
+  );
+
   return (
-    <div className="flex gap-2 mb-6">
-      {tabs.map((tab) => (
-        <button
-          key={tab.key}
-          onClick={() => onChange(tab.key)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            active === tab.key
-              ? "bg-brand-blue-600 text-white"
-              : "bg-white text-gray-600 border border-gray-300 hover:bg-gray-50"
-          }`}
-        >
-          {tab.label}
-          <span
-            className={`ml-1.5 text-xs ${
-              active === tab.key ? "text-blue-200" : "text-gray-400"
+    <div className="space-y-3 mb-6">
+      {/* Type filters */}
+      <div className="flex flex-wrap gap-2">
+        {typeTabs.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => onTypeChange(tab.key)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              activeType === tab.key
+                ? "bg-brand-blue-600 text-white"
+                : "bg-white text-gray-600 border border-gray-300 hover:bg-gray-50"
             }`}
           >
-            {tab.count}
-          </span>
-        </button>
-      ))}
+            {tab.label}
+            <span
+              className={`ml-1.5 text-xs ${
+                activeType === tab.key ? "text-blue-200" : "text-gray-400"
+              }`}
+            >
+              {tab.count}
+            </span>
+          </button>
+        ))}
+
+        {/* Divider */}
+        <div className="w-px bg-gray-300 mx-1 self-stretch" />
+
+        {/* Category filters */}
+        {sortedCategories.map(([cat, count]) => (
+          <button
+            key={cat}
+            onClick={() =>
+              onCategoryChange(activeCategory === cat ? null : cat)
+            }
+            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              activeCategory === cat
+                ? `${categoryColors[cat]} ring-2 ring-offset-1 ring-brand-blue-400`
+                : `${categoryColors[cat]} opacity-70 hover:opacity-100`
+            }`}
+          >
+            {categoryLabels[cat] || cat}
+            <span className="ml-1 text-xs opacity-70">{count}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
@@ -176,21 +222,36 @@ function GroupedView({ tutorials }: { tutorials: TutorialMeta[] }) {
 export function TutorialList({ tutorials }: { tutorials: TutorialMeta[] }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<FilterType>("all");
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
 
   const videoCount = tutorials.filter((t) => t.youtubeId).length;
   const guideCount = tutorials.filter((t) => !t.youtubeId).length;
 
+  // Category counts
+  const categoryCounts = tutorials.reduce(
+    (acc, t) => {
+      acc[t.category] = (acc[t.category] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>
+  );
+
   // Apply type filter
-  const typeFiltered =
+  let filtered =
     filter === "videos"
       ? tutorials.filter((t) => t.youtubeId)
       : filter === "guides"
         ? tutorials.filter((t) => !t.youtubeId)
         : tutorials;
 
+  // Apply category filter
+  if (categoryFilter) {
+    filtered = filtered.filter((t) => t.category === categoryFilter);
+  }
+
   // Apply search filter
   const searchFiltered = query.trim()
-    ? typeFiltered.filter((t) => {
+    ? filtered.filter((t) => {
         const q = query.toLowerCase();
         return (
           t.title.toLowerCase().includes(q) ||
@@ -252,13 +313,19 @@ export function TutorialList({ tutorials }: { tutorials: TutorialMeta[] }) {
 
       {/* Filter Tabs */}
       <FilterTabs
-        active={filter}
-        onChange={setFilter}
+        activeType={filter}
+        onTypeChange={(f) => {
+          setFilter(f);
+          setCategoryFilter(null);
+        }}
+        activeCategory={categoryFilter}
+        onCategoryChange={setCategoryFilter}
         counts={{
           all: tutorials.length,
           videos: videoCount,
           guides: guideCount,
         }}
+        categoryCounts={categoryCounts}
       />
 
       {/* Search Results */}
@@ -288,9 +355,18 @@ export function TutorialList({ tutorials }: { tutorials: TutorialMeta[] }) {
             </div>
           </div>
         )
+      ) : categoryFilter ? (
+        /* Flat grid when category is selected */
+        <div>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {filtered.map((tutorial) => (
+              <TutorialCard key={tutorial.slug} tutorial={tutorial} />
+            ))}
+          </div>
+        </div>
       ) : (
         /* Default Grouped View */
-        <GroupedView tutorials={typeFiltered} />
+        <GroupedView tutorials={filtered} />
       )}
     </>
   );

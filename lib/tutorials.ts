@@ -20,6 +20,7 @@ export interface TutorialMeta {
   description: string;
   category: string;
   youtubeId?: string;
+  thumbnail?: string;
 }
 
 function extractTitle(content: string, filename: string): string {
@@ -55,6 +56,11 @@ function extractDescription(content: string): string {
   }
 
   return 'Tutorial guide for bpmPro';
+}
+
+function extractFirstImage(content: string): string | undefined {
+  const match = content.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+  return match ? match[2] : undefined;
 }
 
 function guessCategory(content: string): string {
@@ -95,8 +101,9 @@ export function getAllTutorials(): TutorialMeta[] {
     const category = frontmatter.category || guessCategory(body);
 
     const youtubeId = frontmatter.youtubeId || undefined;
+    const thumbnail = !youtubeId ? extractFirstImage(body) : undefined;
 
-    return { slug, title, description, category, youtubeId };
+    return { slug, title, description, category, youtubeId, thumbnail };
   });
 }
 
