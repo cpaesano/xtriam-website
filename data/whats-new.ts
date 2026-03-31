@@ -18,6 +18,107 @@ export interface MonthRelease {
 
 export const releases: MonthRelease[] = [
   // ─────────────────────────────────────────────
+  // APRIL 2026
+  // ─────────────────────────────────────────────
+  {
+    month: "April 2026",
+    versions: "v7.69 – v7.80",
+    features: [
+      {
+        title: "Quick Start Lead Wizard",
+        type: "new",
+        summary:
+          "Complete rebuild from a Salesforce Flow to a Lightning Web Component. 5-step wizard with duplicate detection, team calendar with appointment scheduling, .ics calendar invites, and lead pipeline sidebar with sales rep load chart.",
+        details: [
+          "Duplicate detection highlights matching Accounts/Contacts by name, email, or phone",
+          "Team Calendar with Day/Week/Month views, color-coded employees, individual focus mode",
+          "Appointment confirmation email with .ics attachment (Apple Calendar, Google, Outlook)",
+          "Lead Pipeline panel shows Unquoted count with per-rep bar chart — click to assign",
+          '"Send Notification to Sales Person" sends HTML email and saves it to Project activity timeline',
+        ],
+      },
+      {
+        title: "E-Signature & Document Sharing",
+        type: "new",
+        summary:
+          "Send Sales Documents for electronic signature via email with a secure web link. Customers can view product details, payment terms, and sign directly from their phone or computer.",
+        details: [
+          '"View & Sign" email with company logo and document summary',
+          "Product illustrations with dimensions on the public view",
+          "Signature capture with SHA-256 audit trail",
+          "Collapsible Terms & Conditions section",
+          "Sales rep contact card on every shared document",
+        ],
+      },
+      {
+        title: "Stage Integration Emails",
+        type: "new",
+        summary:
+          "Automatically send project data to external systems when a stage is passed. Connect bpmPro to your automation workflows, AI platforms, Zapier, Make, or any system that can receive email.",
+        details: [
+          "Fires automatically when any stage is marked \"Passed\" — no user action required",
+          "Also fires when a new Lead is created (first stage auto-passes)",
+          "JSON payload with project, contact, address, sales document, and payment terms data",
+          "Configure different email addresses per stage (comma-separated)",
+          "Works with any automation platform that can receive email",
+        ],
+      },
+      {
+        title: "Company Logo Uploader",
+        type: "new",
+        summary:
+          "Upload your company logo directly from Company Settings. Logo appears in email headers, document sharing, and the customer-facing signature page.",
+        details: [],
+      },
+      {
+        title: "Sales Hub User Filter",
+        type: "new",
+        summary:
+          "Filter the Sales Hub dashboard by sales rep. View your own pipeline, all reps, or select an individual rep to see their sales documents.",
+        details: [
+          "Dropdown: My SalesDocs / All Sales Reps / individual rep names",
+          "Dynamic section titles show whose pipeline you are viewing",
+          "Compact Quick Sales Doc wizard with Project Manager field",
+        ],
+      },
+      {
+        title: 'Sales Stage Rename: "Prospecting" to "Unquoted"',
+        type: "improvement",
+        summary:
+          'Renamed the first sales stage from "Prospecting" to "Unquoted" across all screens, reports, and workflows. Better reflects that a new project has not yet been quoted.',
+        details: [],
+      },
+      {
+        title: "A3 Edit Items Improvements",
+        type: "improvement",
+        summary:
+          "Vendor discounts, $0 price overrides, responsive layout for tablets, and empty state design when no items exist.",
+        details: [
+          "Vendor Discount: enter discount as dollar amount or percentage with bidirectional sync",
+          "$0 Price Override: include items at no charge for bundled or promotional pricing",
+          "Responsive layout optimized for iPad and narrow screens",
+          'Empty state with prominent "add items" button when document has no line items',
+          "Negative markup values are now rejected",
+        ],
+      },
+      {
+        title: "Financial Summary Fees Hint",
+        type: "improvement",
+        summary:
+          'The Contract & Billing card now shows "Includes $X in fees" when the invoiced amount exceeds the contracted amount due to permit fees or transaction fees.',
+        details: [],
+      },
+      {
+        title: "Send Wizard Simplified",
+        type: "improvement",
+        summary:
+          'Streamlined from 4 steps to 3 (removed Preview PDF step). Dynamic button labels match document type ("Send Proposal", "Send Contract"). Email content toggles with live preview.',
+        details: [],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
   // MARCH 2026
   // ─────────────────────────────────────────────
   {
