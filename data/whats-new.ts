@@ -738,6 +738,57 @@ export const releases: MonthRelease[] = [
   },
 
   // ─────────────────────────────────────────────
+  // JUNE 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "June 2025",
+    versions: "v5.50 – v5.76",
+    features: [
+      {
+        title: "Supply-Only Mode",
+        type: "new",
+        summary:
+          "Sales Documents can now be configured for supply-only (no labor) with automatic adjustment of pricing, PDF output, and accounting calculations.",
+        details: [
+          "Toggle supply-only mode per Sales Document",
+          "PDF and accounting automatically exclude labor line items",
+          "Scope of Work filters items based on supply-only setting",
+        ],
+      },
+      {
+        title: "SalesDoc Product/Labor Breakdown",
+        type: "new",
+        summary:
+          "Visual category breakdown on Sales Document pages showing product vs labor cost distribution.",
+        details: [
+          "Product and labor cost breakdown displayed on SalesDoc page",
+          "Category-level visibility into pricing composition",
+        ],
+      },
+      {
+        title: "Cloned Item Markups",
+        type: "improvement",
+        summary:
+          "Cloned line items now preserve their original markup settings instead of resetting to defaults.",
+        details: [
+          "Cloned items retain source markup values",
+          "Eliminates manual re-entry after cloning",
+        ],
+      },
+      {
+        title: "Installer Summary & Sales Team Display",
+        type: "improvement",
+        summary:
+          "Installer summary view on Sales Documents and sales team member display for better project visibility.",
+        details: [
+          "Installer summary visible on Sales Documents",
+          "Sales team members displayed on SalesDoc pages",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
   // MAY 2025
   // ─────────────────────────────────────────────
   {
@@ -758,6 +809,28 @@ export const releases: MonthRelease[] = [
         ],
       },
       {
+        title: "Project Tree Navigator & Record Trail",
+        type: "new",
+        summary:
+          "Visual navigation tree for project records and breadcrumb trail to track and return to previously viewed records.",
+        details: [
+          "Project Tree Navigator for visual record hierarchy",
+          "Record Trail to track and return to previous records",
+          "SalesDoc Navigator for quick access across documents",
+        ],
+      },
+      {
+        title: "SalesDoc Clauses",
+        type: "new",
+        summary:
+          "Configurable terms and clauses on Sales Documents with optional shading and company-level defaults.",
+        details: [
+          "Add clauses and terms directly to Sales Documents",
+          "Optional shading for visual emphasis via Company Settings",
+          "Clause ordering with decimal index positioning",
+        ],
+      },
+      {
         title: "Mobile & UI Improvements",
         type: "improvement",
         summary:
@@ -765,6 +838,154 @@ export const releases: MonthRelease[] = [
         details: [
           "Account, Contact, and Project pages redesigned for Salesforce Mobile",
           "Optimized layouts for field work on phones and tablets",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // APRIL 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "April 2025",
+    versions: "v4.22 – v4.70",
+    features: [
+      {
+        title: "Invoice Payment Module",
+        type: "new",
+        summary:
+          "Record and track payments against invoices with refund support, payment history, and dedicated record pages.",
+        details: [
+          "Invoice Payment object with dedicated record page and tab",
+          "Refund support for invoice payments",
+          "Payment history linked to Sales Document Invoices",
+        ],
+      },
+      {
+        title: "QuickBooks Invoice Integration",
+        type: "new",
+        summary:
+          "Send multiple Sales Document Invoices to QuickBooks with configurable charge categories.",
+        details: [
+          "Send multiple SalesDoc Invoices to QuickBooks in one action",
+          "Configurable invoice charge categories",
+          "Automatic sync between bpmPro and QuickBooks",
+        ],
+      },
+      {
+        title: "CPI Integration with Sales Documents",
+        type: "new",
+        summary:
+          "CPI product lists integrated directly into Sales Documents, visible in the Accounting Package and PDF output.",
+        details: [
+          "CPI product list displayed on Sales Document pages",
+          "CPI data included in Accounting Package and PDF",
+          "Add CPI products from the SalesDoc record page",
+        ],
+      },
+      {
+        title: "Convert to Sold with Deal Sheets",
+        type: "new",
+        summary:
+          "Converting a project to Sold now automatically creates Deal Sheets and initializes Project Stages.",
+        details: [
+          "Deal Sheets auto-created during Convert to Sold",
+          "Project Stages initialized automatically for new sold projects",
+          "IsWon status tracked on Project Assignments and Sales Documents",
+        ],
+      },
+      {
+        title: "Payout Console & Margin Input",
+        type: "improvement",
+        summary:
+          "Editable price fields in the Payout Console and a new Margin % input for line item pricing.",
+        details: [
+          "Editable price fields in the Payout Console",
+          "Margin % input field for precise pricing control",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // MARCH 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "March 2025",
+    versions: "v4.02 – v4.18",
+    features: [
+      {
+        title: "CPI Add-On Functionality",
+        type: "new",
+        summary:
+          "Custom Product Integration (CPI) add-on system for attaching supplementary products to sales documents.",
+        details: [
+          "Add-on product functionality for CPI items",
+          "External ID support for vendor catalog integration",
+          "Pass-through items excluded from effective markup calculations",
+        ],
+      },
+      {
+        title: "Line Item & Effective Markups",
+        type: "new",
+        summary:
+          "Per-line-item markup controls with effective markup calculations based on commissionable cost.",
+        details: [
+          "Individual markup values per line item",
+          "Effective markup calculated from commissionable cost",
+          "Default markup applied when importing items via CSV",
+        ],
+      },
+      {
+        title: "Days Unquoted Tracking",
+        type: "new",
+        summary:
+          "Automatic tracking of how long a project has been in Unquoted status for pipeline visibility.",
+        details: [
+          "Days Unquoted field on Projects",
+          "Current Stage logic updated to always reflect Highest Passed stage",
+        ],
+      },
+      {
+        title: "Work Assignment Notifications",
+        type: "improvement",
+        summary:
+          "Fixed and improved automated notifications when Work Assignments are created or updated.",
+        details: [
+          "Reliable notification delivery for Work Assignments",
+          "Project Contact Role enhancements",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // JANUARY 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "January 2025",
+    versions: "v2.15 – v2.22",
+    features: [
+      {
+        title: "Projects Board Enhancements",
+        type: "improvement",
+        summary:
+          "Color-coded project status indicators, record counters, and horizontal scrolling for the Projects Board.",
+        details: [
+          "Color-coded status indicators for at-a-glance pipeline health",
+          "Record counters per status column",
+          "Horizontal scrolling for wide pipeline views",
+          "Lowest Pending Status tracking",
+        ],
+      },
+      {
+        title: "QuickBooks Integration",
+        type: "new",
+        summary:
+          "Sync projects and invoices with QuickBooks for streamlined accounting workflows.",
+        details: [
+          "QuickBooks package management and sync",
+          "Project record page integration with QuickBooks data",
         ],
       },
     ],
