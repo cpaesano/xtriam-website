@@ -460,6 +460,317 @@ export const releases: MonthRelease[] = [
   },
 
   // ─────────────────────────────────────────────
+  // NOVEMBER 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "November 2025",
+    versions: "v7.06 – v7.19",
+    features: [
+      {
+        title: "Projects Board — Complete Overhaul",
+        type: "new",
+        summary:
+          "Visual pipeline management with real-time stage tracking, smart filtering, historical intelligence, and traffic light dashboard.",
+        details: [
+          "Color-coded visual pipeline with time-in-stage calculations",
+          "Toggle between detailed and compact views",
+          "Filter by status, stage, sales rep, and custom criteria",
+          '"Lost at Stage" and "Highest Passed Stage" fields for post-mortem analysis',
+          "Traffic light dashboard with customizable thresholds",
+          "Optimized loading for hundreds of projects",
+        ],
+      },
+      {
+        title: "Project Stage Management System",
+        type: "new",
+        summary:
+          "Forward-only stage progression, duration tracking, bottleneck analysis, stage downgrade protection, and inactive stages.",
+        details: [
+          "Forward-only stage movement ensures data integrity",
+          "Automatic duration tracking (hours and days) per stage",
+          "Bottleneck analysis: identify which stages consistently take longer",
+          "Downgrade protection with clear warnings about data that will be cleared",
+          "Inactive stages for scope reduction without losing history",
+          "Drag-and-drop stage reordering",
+        ],
+      },
+      {
+        title: "Team Assignment & Notification System",
+        type: "new",
+        summary:
+          "Assign team members to stages with automated email notifications and external customer alerts.",
+        details: [
+          "Stage-specific team assignments with project-specific overrides",
+          "Automated internal email notifications when projects enter assigned stages",
+          "External customer notifications for up to two configurable milestone stages",
+          "Professional HTML email templates",
+          "Automatic stage progression when current stage is complete",
+        ],
+      },
+      {
+        title: "CPI Add-On Product Catalog",
+        type: "new",
+        summary:
+          "Pre-configured add-on packages that can be quickly added to any sales document with one click.",
+        details: [
+          "Add-on catalog with pre-configured product packages",
+          "One-click auto-add for complete add-on packages",
+          "Flexible configuration for custom add-on packages",
+          "Seamless integration with existing CPI system",
+        ],
+      },
+      {
+        title: "Confidential Item Pricing Distribution",
+        type: "improvement",
+        summary:
+          "Refactored proportional distribution of confidential costs across visible line items with 33-decimal precision.",
+        details: [
+          "Confidential items proportionally distributed across all visible line items",
+          "Cross-category support: labor-based confidential items work with product-only views",
+          "33-decimal precision for accurate pricing on large orders",
+          "Clear warning when printing proposals with confidential items",
+          "Sales tax calculated correctly on actual taxable base",
+        ],
+      },
+      {
+        title: "Enhanced PDF Generation",
+        type: "improvement",
+        summary:
+          "Improved footer layout, product vendor images, image height control, and company logo improvements.",
+        details: [
+          "Cleaner footer layout on customer-facing documents",
+          "Removed internal accounting details from customer documents",
+          "Product vendor images from catalogs displayed in PDFs",
+          "Image height control prevents overflow for consistent formatting",
+        ],
+      },
+      {
+        title: "Performance & Architecture",
+        type: "improvement",
+        internal: true,
+        summary:
+          "SOQL optimization, bulk operation protection, migrated Flows to Apex, and API version updates.",
+        details: [
+          "SOQL limit protection for hundreds of records simultaneously",
+          "Trigger optimization reduces processing time for bulk updates",
+          "Migrated complex Flows and Process Builders to Apex for reliability",
+          "API version updates (v62, v63, v64)",
+          "Comprehensive test class coverage",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // OCTOBER 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "October 2025",
+    versions: "v6.52 – v6.98",
+    features: [
+      {
+        title: "Commission Payout Manager",
+        type: "new",
+        summary:
+          "Complete commission management with payout tracking, chargeback support, and CSV export for accounting.",
+        details: [
+          "Payout tracking with visibility into calculations and status",
+          "Chargeback support for returns and cancellations",
+          "Adjusted commissionable cost tracking",
+          "Negative commission handling from chargebacks",
+          "Submitted payout filtering for items requiring attention",
+          "CSV export for integration with external payroll",
+        ],
+      },
+      {
+        title: "Email Wizard for Sales Documents",
+        type: "new",
+        summary:
+          "Interactive email composer with smart templates, PDF preview, and rich text formatting — replaces the legacy Send PDF button.",
+        details: [
+          "Create professional emails directly within bpmPro",
+          "Pre-populated recipient info with customizable subject lines",
+          "PDF preview before sending",
+          "Rich text editor with fonts, colors, and styles",
+          "Multiple recipients with TO, CC, BCC support",
+        ],
+      },
+      {
+        title: "Recycle Bin",
+        type: "new",
+        summary:
+          "Soft delete functionality with audit trail and easy recovery for accidentally deleted records.",
+        details: [
+          "Records can be recovered if deleted accidentally",
+          "Audit trail of what was deleted and when",
+          "Simple process to restore deleted records",
+        ],
+      },
+      {
+        title: "Visual Product Previews & A3 Edit Items",
+        type: "improvement",
+        summary:
+          "Hover image previews, drag-and-drop item reordering, keyboard shortcuts, and rearrange mode.",
+        details: [
+          "Hover over items to view product images",
+          "Product images visible while editing line items",
+          "Drag & drop to rearrange items in sales documents",
+          "Enter and Cancel keyboard shortcuts for faster data entry",
+          "Excluded labor cloning preserves labor exclusion settings",
+        ],
+      },
+      {
+        title: "Advanced Pricing Controls",
+        type: "improvement",
+        summary:
+          "Decimal precision for markups, enhanced price override modal, cost lock, copy from previous, and mass markup updates.",
+        details: [
+          "Enter markup and margin values with decimal places for exact pricing",
+          "Enhanced price override modal with improved controls and validation",
+          "Cost lock feature preserves historical cost data for auditing",
+          "Copy from Previous: duplicate pricing settings from prior documents",
+          "Mass markup updates across multiple items",
+        ],
+      },
+      {
+        title: "Mobile & UI Improvements",
+        type: "improvement",
+        summary:
+          "Compact view toggle, scrolling navigation bar, and status toggle buttons.",
+        details: [
+          "Compact view toggle for detailed vs minimal views",
+          "Refresh buttons and top/bottom navigation",
+          "Project Tree Navigator for visual record navigation",
+          "Record Trail to track and return to previous records",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // SEPTEMBER 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "September 2025",
+    versions: "v6.27 – v6.43",
+    features: [
+      {
+        title: "Tax Flexibility & Reporting",
+        type: "improvement",
+        summary:
+          "Non-taxable designation, enhanced tax reports, county tax proration, sales tax adjustments, and CSV export.",
+        details: [
+          "Non-taxable option for special pricing scenarios",
+          "Sales Tax Treatment as a required field",
+          "Enhanced reporting with better visibility by jurisdiction",
+          "County tax proration for Washington State support",
+          "Manual tax adjustment fields and CSV tax report export",
+        ],
+      },
+      {
+        title: "Sales Document Accounting Console",
+        type: "new",
+        summary:
+          "Centralized financial management for quotes and invoices — accounting overview, credit memos, and payment application.",
+        details: [
+          "See all financial aspects of a sales document in one place",
+          "Create and manage invoices directly from sales documents",
+          "Credit memo support for returns and credits",
+          "Apply payments with real-time balance updates",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // AUGUST 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "August 2025",
+    versions: "v6.05 – v6.26",
+    features: [
+      {
+        title: "Confidential Item Pricing Distribution",
+        type: "new",
+        summary:
+          "Proportional distribution of confidential costs across visible line items, migrated from Flows to Apex.",
+        details: [
+          "Confidential items proportionally distributed across all visible line items",
+          "Cross-category support: labor-based confidential items work with product-only views",
+          "Sales tax calculated correctly on actual taxable base",
+        ],
+      },
+      {
+        title: "Dealer Item Manager",
+        type: "new",
+        summary:
+          "Dedicated interface for managing your product catalog with enhanced lookup, filtering, and history tracking.",
+        details: [
+          "Brand new dedicated interface for product database management",
+          "Improved search with keyword filtering",
+          "Optional criteria filtering",
+          "History tracking for dealer items",
+          "Dedicated Dealer Item application",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // JULY 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "July 2025",
+    versions: "v5.87 – v5.96",
+    features: [
+      {
+        title: "Dealer Item Manager — Dedicated Page",
+        type: "new",
+        summary:
+          "New Dealer Item Manager page with keyword search, filters, and Credit Memo improvements.",
+        details: [
+          "Dealer Item Lookup with filters",
+          "Credit Memo improvements",
+          "Command Center navigation improvements",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // MAY 2025
+  // ─────────────────────────────────────────────
+  {
+    month: "May 2025",
+    versions: "v5.02 – v5.49",
+    features: [
+      {
+        title: "Lead & Prospect Management",
+        type: "new",
+        summary:
+          "QuickStart lead creation, prospect object for early-stage opportunities, and multi-contact management.",
+        details: [
+          "Streamlined lead creation with essential information",
+          "Prospect object for tracking early-stage opportunities",
+          "Dedicated prospect record page",
+          "Referring party tracking in lead creation",
+          "Multi-Contact interface for managing multiple contacts per account",
+        ],
+      },
+      {
+        title: "Mobile & UI Improvements",
+        type: "improvement",
+        summary:
+          "Account, Contact, and Project pages redesigned for Salesforce Mobile.",
+        details: [
+          "Account, Contact, and Project pages redesigned for Salesforce Mobile",
+          "Optimized layouts for field work on phones and tablets",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
   // DECEMBER 2024
   // ─────────────────────────────────────────────
   {
@@ -539,235 +850,6 @@ export const releases: MonthRelease[] = [
           "Streamlined stage calculations for improved accuracy",
           'Status renamed: "Open" is now "Unquoted" for clarity',
           "Projects Board performance improvements for large data sets",
-        ],
-      },
-    ],
-  },
-
-  // ─────────────────────────────────────────────
-  // 2025 ONGOING (thematic features spanning the year)
-  // ─────────────────────────────────────────────
-  {
-    month: "2025 Highlights",
-    features: [
-      {
-        title: "Projects Board — Complete Overhaul",
-        type: "new",
-        summary:
-          "Visual pipeline management with real-time stage tracking, smart filtering, historical intelligence, and traffic light dashboard.",
-        details: [
-          "Color-coded visual pipeline with time-in-stage calculations",
-          "Toggle between detailed and compact views",
-          "Filter by status, stage, sales rep, and custom criteria",
-          '"Lost at Stage" and "Highest Passed Stage" fields for post-mortem analysis',
-          "Traffic light dashboard with customizable thresholds",
-          "Optimized loading for hundreds of projects",
-        ],
-      },
-      {
-        title: "Project Stage Management System",
-        type: "new",
-        summary:
-          "Forward-only stage progression, duration tracking, bottleneck analysis, stage downgrade protection, and inactive stages.",
-        details: [
-          "Forward-only stage movement ensures data integrity",
-          "Automatic duration tracking (hours and days) per stage",
-          "Bottleneck analysis: identify which stages consistently take longer",
-          "Downgrade protection with clear warnings about data that will be cleared",
-          "Inactive stages for scope reduction without losing history",
-          "Drag-and-drop stage reordering",
-        ],
-      },
-      {
-        title: "Team Assignment & Notification System",
-        type: "new",
-        summary:
-          "Assign team members to stages with automated email notifications and external customer alerts.",
-        details: [
-          "Stage-specific team assignments with project-specific overrides",
-          "Automated internal email notifications when projects enter assigned stages",
-          "External customer notifications for up to two configurable milestone stages",
-          "Professional HTML email templates",
-          "Automatic stage progression when current stage is complete",
-        ],
-      },
-      {
-        title: "Commission Payout Manager",
-        type: "new",
-        summary:
-          "Complete commission management with payout tracking, chargeback support, and CSV export for accounting.",
-        details: [
-          "Payout tracking with visibility into calculations and status",
-          "Chargeback support for returns and cancellations",
-          "Adjusted commissionable cost tracking",
-          "Negative commission handling from chargebacks",
-          "Submitted payout filtering for items requiring attention",
-          "CSV export for integration with external payroll",
-        ],
-      },
-      {
-        title: "Email Wizard for Sales Documents",
-        type: "new",
-        summary:
-          "Interactive email composer with smart templates, PDF preview, and rich text formatting — replaces the legacy Send PDF button.",
-        details: [
-          "Create professional emails directly within bpmPro",
-          "Pre-populated recipient info with customizable subject lines",
-          "PDF preview before sending",
-          "Rich text editor with fonts, colors, and styles",
-          "Multiple recipients with TO, CC, BCC support",
-        ],
-      },
-      {
-        title: "Confidential Item Pricing Distribution",
-        type: "new",
-        summary:
-          "Proportional distribution of confidential costs across visible line items with 33-decimal precision.",
-        details: [
-          "Confidential items proportionally distributed across all visible line items",
-          "Cross-category support: labor-based confidential items work with product-only views",
-          "33-decimal precision for accurate pricing on large orders",
-          "Clear warning when printing proposals with confidential items",
-          "Sales tax calculated correctly on actual taxable base",
-        ],
-      },
-      {
-        title: "CPI Add-On Product Catalog",
-        type: "new",
-        summary:
-          "Pre-configured add-on packages that can be quickly added to any sales document with one click.",
-        details: [
-          "Add-on catalog with pre-configured product packages",
-          "One-click auto-add for complete add-on packages",
-          "Flexible configuration for custom add-on packages",
-          "Seamless integration with existing CPI system",
-        ],
-      },
-      {
-        title: "Advanced Pricing Controls",
-        type: "improvement",
-        summary:
-          "Decimal precision for markups, enhanced price override modal, cost lock, copy from previous, and mass markup updates.",
-        details: [
-          "Enter markup and margin values with decimal places for exact pricing",
-          "Enhanced price override modal with improved controls and validation",
-          "Cost lock feature preserves historical cost data for auditing",
-          "Copy from Previous: duplicate pricing settings from prior documents",
-          "Mass markup updates across multiple items",
-        ],
-      },
-      {
-        title: "Tax Flexibility & Reporting",
-        type: "improvement",
-        summary:
-          "Non-taxable designation, enhanced tax reports, county tax proration, sales tax adjustments, and CSV export.",
-        details: [
-          "Non-taxable option for special pricing scenarios",
-          "Sales Tax Treatment as a required field",
-          "Enhanced reporting with better visibility by jurisdiction",
-          "County tax proration for Washington State support",
-          "Manual tax adjustment fields and CSV tax report export",
-        ],
-      },
-      {
-        title: "Enhanced PDF Generation",
-        type: "improvement",
-        summary:
-          "Improved footer layout, product vendor images, image height control, and company logo improvements.",
-        details: [
-          "Cleaner footer layout on customer-facing documents",
-          "Removed internal accounting details from customer documents",
-          "Product vendor images from catalogs displayed in PDFs",
-          "Image height control prevents overflow for consistent formatting",
-        ],
-      },
-      {
-        title: "Visual Product Previews & A3 Edit Items",
-        type: "improvement",
-        summary:
-          "Hover image previews, drag-and-drop item reordering, keyboard shortcuts, and rearrange mode.",
-        details: [
-          "Hover over items to view product images",
-          "Product images visible while editing line items",
-          "Drag & drop to rearrange items in sales documents",
-          "Enter and Cancel keyboard shortcuts for faster data entry",
-          "Excluded labor cloning preserves labor exclusion settings",
-        ],
-      },
-      {
-        title: "Dealer Item Manager",
-        type: "new",
-        summary:
-          "Dedicated interface for managing your product catalog with enhanced lookup, filtering, and history tracking.",
-        details: [
-          "Brand new dedicated interface for product database management",
-          "Improved search with keyword filtering",
-          "Optional criteria filtering",
-          "History tracking for dealer items",
-          "Dedicated Dealer Item application",
-        ],
-      },
-      {
-        title: "Sales Document Accounting Console",
-        type: "new",
-        summary:
-          "Centralized financial management for quotes and invoices — accounting overview, credit memos, and payment application.",
-        details: [
-          "See all financial aspects of a sales document in one place",
-          "Create and manage invoices directly from sales documents",
-          "Credit memo support for returns and credits",
-          "Apply payments with real-time balance updates",
-        ],
-      },
-      {
-        title: "Recycle Bin",
-        type: "new",
-        summary:
-          "Soft delete functionality with audit trail and easy recovery for accidentally deleted records.",
-        details: [
-          "Records can be recovered if deleted accidentally",
-          "Audit trail of what was deleted and when",
-          "Simple process to restore deleted records",
-        ],
-      },
-      {
-        title: "Lead & Prospect Management",
-        type: "new",
-        summary:
-          "QuickStart lead creation, prospect object for early-stage opportunities, and multi-contact management.",
-        details: [
-          "Streamlined lead creation with essential information",
-          "Prospect object for tracking early-stage opportunities",
-          "Dedicated prospect record page",
-          "Referring party tracking in lead creation",
-          "Multi-Contact interface for managing multiple contacts per account",
-        ],
-      },
-      {
-        title: "Mobile & UI Improvements",
-        type: "improvement",
-        summary:
-          "Mobile-optimized pages, Project Tree Navigator, Record Trail, compact view toggle, and keyboard shortcuts.",
-        details: [
-          "Account, Contact, and Project pages redesigned for Salesforce Mobile",
-          "Project Tree Navigator for visual record navigation",
-          "Record Trail to track and return to previous records",
-          "Compact view toggle for detailed vs minimal views",
-          "Refresh buttons and top/bottom navigation",
-        ],
-      },
-      {
-        title: "Performance & Architecture",
-        type: "improvement",
-        internal: true,
-        summary:
-          "SOQL optimization, bulk operation protection, migrated Flows to Apex, and API version updates.",
-        details: [
-          "SOQL limit protection for hundreds of records simultaneously",
-          "Trigger optimization reduces processing time for bulk updates",
-          "Migrated complex Flows and Process Builders to Apex for reliability",
-          "API version updates (v62, v63, v64)",
-          "Comprehensive test class coverage",
         ],
       },
     ],
