@@ -15,12 +15,12 @@ interface TutorialMeta {
 type FilterType = "all" | "videos" | "guides";
 
 const categoryColors: Record<string, string> = {
-  sales: "bg-blue-100 text-blue-800",
-  operations: "bg-green-100 text-green-800",
-  financial: "bg-yellow-100 text-yellow-800",
-  admin: "bg-purple-100 text-purple-800",
-  estimating: "bg-orange-100 text-orange-800",
-  general: "bg-gray-100 text-gray-800",
+  sales: "bg-blue-100 text-blue-900",
+  operations: "bg-green-100 text-green-900",
+  financial: "bg-amber-100 text-amber-900",
+  admin: "bg-purple-100 text-purple-900",
+  estimating: "bg-orange-100 text-orange-900",
+  general: "bg-gray-200 text-gray-900",
 };
 
 const categoryLabels: Record<string, string> = {
