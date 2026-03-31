@@ -1,14 +1,14 @@
 ---
-title: "QuickStart: Create a Lead and Sales Document"
-description: "Complete walkthrough of the QuickStart New Lead Creation flow — from searching for duplicates to creating an account, contact, project, and sales document in one step."
+title: "QuickStart: Create a Lead and Sales Document (Legacy)"
+description: "Legacy tutorial for the original QuickStart New Lead Creation flow. This flow has been replaced by the Lead Quick Start Wizard in v7.69."
 category: sales
 ---
 
 # QuickStart: Create a Lead and Sales Document in bpmPro
 
-The QuickStart flow is the fastest way to enter a new lead in bpmPro. It creates the account, contact, project, and (optionally) a sales document all at once. This tutorial walks through the complete process step by step.
+> **This tutorial is outdated.** The QuickStart flow described here has been replaced by the **Lead Quick Start Wizard** in bpmPro v7.69 (April 2026). The new wizard includes duplicate detection, team calendar, appointment scheduling, and automatic notifications. Please see the updated tutorial: **[Lead Quick Start Wizard](/support/tutorials/lead-quickstart-wizard)**
 
-> **Important:** Before creating a new lead, always search first to make sure the contact doesn't already exist in the system. This prevents duplicate records.
+The QuickStart flow was the original way to enter a new lead in bpmPro. It created the account, contact, project, and (optionally) a sales document all at once. The steps below are preserved for reference only.
 
 ---
 
