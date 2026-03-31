@@ -29,6 +29,7 @@ export const releases: MonthRelease[] = [
         type: "new",
         summary:
           "Complete rebuild from a Salesforce Flow to a Lightning Web Component. 5-step wizard with duplicate detection, team calendar with appointment scheduling, .ics calendar invites, and lead pipeline sidebar with sales rep load chart.",
+        tutorialSlug: "lead-quickstart-wizard",
         details: [
           "Duplicate detection highlights matching Accounts/Contacts by name, email, or phone",
           "Team Calendar with Day/Week/Month views, color-coded employees, individual focus mode",
