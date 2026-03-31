@@ -40,7 +40,7 @@ This is the most common approach when you already have the account, contact, and
 
 ### Option 2 — Automatically via the QuickStart Flow
 
-When using the [QuickStart New Lead Creation](/support/tutorials/entering-new-leads) flow, check the **Create Sales Document** checkbox on the second screen. bpmPro will create the sales document automatically along with the account, contact, and project.
+When using the [Lead Quick Start Wizard](/support/tutorials/lead-quickstart-wizard), check the **Create Sales Document** checkbox on the review screen. bpmPro will create the sales document automatically along with the account, contact, and project.
 
 ---
 

@@ -93,4 +93,4 @@ After merging:
 
 ## Related Tutorials
 
-- [QuickStart: Create a Lead and Sales Document](/support/tutorials/quickstart-lead-and-sales-document) — Always search first before creating new leads to prevent duplicates
+- [Lead Quick Start Wizard](/support/tutorials/lead-quickstart-wizard) — The wizard includes built-in duplicate detection to prevent creating duplicate records

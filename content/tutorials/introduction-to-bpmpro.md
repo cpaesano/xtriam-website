@@ -92,5 +92,5 @@ Throughout the process, you can collect payments from clients, assign work to em
 
 ## Related Tutorials
 
-- [QuickStart: Create a Lead and Sales Document](/support/tutorials/quickstart-lead-and-sales-document) — The fastest way to create an account, contact, project, and sales document in one step
+- [Lead Quick Start Wizard](/support/tutorials/lead-quickstart-wizard) — Capture a new lead, assign the team, schedule a sales appointment, and send notifications in one guided flow
 - [Creating Sales Documents](/support/tutorials/creating-sales-documents) — How to create sales documents from within an existing project
