@@ -152,10 +152,10 @@ export async function GET(request: NextRequest) {
   const { firstName, lastName } = splitName(payload.name);
 
   // Create session with SSO data
-  // Note: For SSO users, we use the SF User ID as contactId and orgId as accountId
-  // This distinguishes SSO sessions from phone-verified sessions
+  // contactId comes from bpmProUserContactService (resolved via Associated_User__c or email fallback)
+  // Falls back to SF User ID if no Contact mapping exists in the subscriber org
   await createSession({
-    contactId: payload.sub,        // SF User ID from subscriber org
+    contactId: payload.contactId || payload.sub,
     accountId: payload.orgId,      // Subscriber Org ID
     firstName,
     lastName,

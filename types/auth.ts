@@ -19,6 +19,7 @@ export interface SessionPayload extends JWTPayload {
 // SSO Token payload from bpmPro package
 export interface SSOTokenPayload {
   sub: string;       // Salesforce User ID
+  contactId?: string; // Salesforce Contact ID (resolved by bpmProUserContactService)
   name: string;      // User's full name
   email: string;     // User's email
   phone: string;     // User's phone (digits only)
