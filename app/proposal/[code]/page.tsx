@@ -5,8 +5,16 @@ import { getProposalConfig } from "@/lib/proposal";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Proposal Access | xTriam",
+  title: "Palm City Iron Works — Implementation Proposal | xTriam",
+  description:
+    "An exclusive implementation proposal prepared by xTriam for Palm City Iron Works. Dealer Portal platform with CPQ, BisTrack integration, and AI-powered operations.",
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "Palm City Iron Works — Implementation Proposal",
+    description:
+      "A platform customized around how your business actually works. Prepared by Carlos A. Paesano, Founder & Chief Software Architect — xTriam.",
+    type: "website",
+  },
 };
 
 export default async function ProposalAccessPage({
