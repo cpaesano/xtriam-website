@@ -37,7 +37,7 @@ export function HeroSection() {
         </h1>
 
         <p className="mt-8 text-lg sm:text-xl text-brand-blue-200 max-w-2xl mx-auto leading-relaxed">
-          A platform built around how your business actually works &mdash;
+          A platform customized around how your business actually works &mdash;
           not around how a software company assumed it does.
         </p>
 
