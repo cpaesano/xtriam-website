@@ -2,7 +2,7 @@
 
 import { SectionReveal } from "../SectionReveal";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { Wrench, GraduationCap, Building2, Code2, Handshake } from "lucide-react";
+import { GraduationCap, Building2, Code2, Handshake } from "lucide-react";
 
 const timeline = [
   {
@@ -12,16 +12,10 @@ const timeline = [
     description: "Degree in Civil Engineering. Chicago Booth MBA. The analytical foundation for everything that followed.",
   },
   {
-    year: "2003",
+    year: "2003–2020",
     icon: Building2,
     title: "Construction & Home Services",
-    description: "Licensed General Contractor. Licensed Real Estate Broker. 17 years running a window and door installation business.",
-  },
-  {
-    year: "2003–2020",
-    icon: Wrench,
-    title: "Living the Pain",
-    description: "Spreadsheet quoting. Chasing payments. Scheduling on whiteboards. Hours lost to admin that should take minutes. Lived every workflow challenge you face today.",
+    description: "Licensed General Contractor. Licensed Real Estate Broker. 17 years running a window and door installation business. Spreadsheet quoting, chasing payments, scheduling on whiteboards. Lived every workflow challenge you face today.",
   },
   {
     year: "2020+",
