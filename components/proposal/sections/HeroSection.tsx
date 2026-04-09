@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
 export function HeroSection() {
@@ -15,6 +16,25 @@ export function HeroSection() {
       }} />
 
       <div className="relative z-10 max-w-4xl">
+        {/* Partner logos */}
+        <div className="flex items-center justify-center gap-6 sm:gap-10 mb-10">
+          <Image
+            src="/images/logo/xTriam-Logo-Outlines-White-Orange.png"
+            alt="xTriam"
+            width={160}
+            height={50}
+            className="h-10 sm:h-14 w-auto"
+          />
+          <span className="text-brand-blue-500 text-3xl font-light">&times;</span>
+          <Image
+            src="/images/logo/palm-city-ironworks-logo-white.png"
+            alt="Palm City Iron Works"
+            width={200}
+            height={60}
+            className="h-10 sm:h-14 w-auto"
+          />
+        </div>
+
         <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-6">
           Implementation Proposal &middot; April 2026
         </p>
