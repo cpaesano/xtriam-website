@@ -36,11 +36,11 @@ export default function ProposalPage() {
       <SectionWrapper sectionId="demo">
         <DemoSection />
       </SectionWrapper>
-      <SectionWrapper sectionId="future">
-        <FutureVisionSection />
-      </SectionWrapper>
       <SectionWrapper sectionId="investment">
         <InvestmentSection />
+      </SectionWrapper>
+      <SectionWrapper sectionId="future">
+        <FutureVisionSection />
       </SectionWrapper>
       <SectionWrapper sectionId="next-steps">
         <NextStepsSection />

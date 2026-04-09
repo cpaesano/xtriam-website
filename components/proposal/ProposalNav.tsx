@@ -13,8 +13,8 @@ const sections = [
   { id: "platform", label: "The Platform" },
   { id: "deliverables", label: "Phase 1" },
   { id: "demo", label: "Live Demo" },
-  { id: "future", label: "Future Vision" },
   { id: "investment", label: "Investment" },
+  { id: "future", label: "Future Vision" },
   { id: "next-steps", label: "Next Steps" },
 ];
 
