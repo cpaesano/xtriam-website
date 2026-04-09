@@ -97,9 +97,9 @@ export function NextStepsSection() {
               <Image
                 src="/images/team/carlos-paesano.png"
                 alt="Carlos A. Paesano"
-                width={96}
-                height={96}
-                className="w-24 h-24 rounded-full border-4 border-brand-blue-500/20 mx-auto mb-4"
+                width={144}
+                height={144}
+                className="w-36 h-36 rounded-full border-4 border-brand-blue-500/20 mx-auto mb-4"
               />
               <p className="text-lg font-bold text-foreground">Carlos A. Paesano</p>
               <p className="text-base text-muted-foreground">Founder &amp; Chief Software Architect</p>
