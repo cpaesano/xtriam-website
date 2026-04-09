@@ -17,21 +17,25 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-4xl">
         {/* Partner logos */}
-        <div className="flex items-center justify-center gap-6 sm:gap-10 mb-10">
-          <Image
-            src="/images/logo/xTriam-Logo-Outlines-White-Orange.png"
-            alt="xTriam"
-            width={160}
-            height={50}
-            className="h-10 sm:h-14 w-auto"
-          />
-          <span className="text-brand-blue-500 text-3xl font-light">&times;</span>
+        <div className="flex flex-col items-center gap-6 sm:gap-8 mb-10">
           <Image
             src="/images/logo/palm-city-ironworks-logo-white.png"
             alt="Palm City Iron Works"
-            width={200}
-            height={60}
-            className="h-10 sm:h-14 w-auto"
+            width={400}
+            height={120}
+            className="h-20 sm:h-28 lg:h-32 w-auto"
+          />
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-px bg-brand-blue-500/50" />
+            <span className="text-brand-blue-400 text-sm tracking-widest uppercase">powered by</span>
+            <div className="w-12 h-px bg-brand-blue-500/50" />
+          </div>
+          <Image
+            src="/images/logo/xTriam-Logo-Outlines-White-Orange.png"
+            alt="xTriam"
+            width={140}
+            height={45}
+            className="h-8 sm:h-10 w-auto"
           />
         </div>
 
