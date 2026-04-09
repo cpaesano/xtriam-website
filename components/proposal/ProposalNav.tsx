@@ -6,6 +6,7 @@ import { useTheme } from "./ThemeProvider";
 
 const sections = [
   { id: "hero", label: "Welcome" },
+  { id: "transformation", label: "The Journey" },
   { id: "challenge", label: "The Challenge" },
   { id: "partner", label: "The Partner" },
   { id: "testimonials", label: "Results" },

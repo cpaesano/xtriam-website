@@ -134,7 +134,7 @@ export function InvestmentSection() {
                   <div className="flex items-baseline gap-2">
                     {phase >= 3 && (
                       <AnimatedCounter
-                        end={50}
+                        end={55}
                         prefix="$"
                         suffix=",000"
                         duration={1500}
@@ -149,16 +149,48 @@ export function InvestmentSection() {
           </div>
         </div>
 
-        {/* Monthly subscription note */}
+        {/* Monthly subscription model */}
         <div className={`transition-all duration-700 delay-500 mt-8 ${phase >= 3 ? "opacity-100" : "opacity-0"}`}>
-          <div className="bg-brand-blue-800/50 border border-brand-blue-700 rounded-2xl p-6 text-center">
-            <p className="text-white font-medium mb-2">Monthly Platform Subscription</p>
-            <p className="text-brand-blue-300 text-base">
-              Base fee + per active dealer user/month &mdash; scales with usage so you never overpay.
+          <div className="bg-brand-blue-800/50 border border-brand-blue-700 rounded-2xl p-6 sm:p-8">
+            <p className="text-white font-semibold text-lg mb-1 text-center">Monthly Platform Subscription</p>
+            <p className="text-brand-blue-300 text-base mb-6 text-center">
+              You pay for active users &mdash; the fee scales with the value your network is getting.
             </p>
-            <p className="text-brand-blue-400 text-sm mt-2">
-              Exact rates confirmed in the formal Statement of Work after discovery.
-            </p>
+
+            {/* Three components */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
+                <p className="text-2xl font-bold text-white">$500</p>
+                <p className="text-brand-blue-400 text-sm">/month</p>
+                <p className="text-brand-blue-300 text-sm mt-2">Base Platform Fee</p>
+                <p className="text-brand-blue-400 text-xs mt-1">Hosting, AI, email, SMS</p>
+              </div>
+              <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
+                <p className="text-2xl font-bold text-white">$30</p>
+                <p className="text-brand-blue-400 text-sm">/user/month</p>
+                <p className="text-brand-blue-300 text-sm mt-2">Vendor-Side Users</p>
+                <p className="text-brand-blue-400 text-xs mt-1">Palm City internal team</p>
+              </div>
+              <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
+                <p className="text-2xl font-bold text-white">$8</p>
+                <p className="text-brand-blue-400 text-sm">/user/month</p>
+                <p className="text-brand-blue-300 text-sm mt-2">Dealer-Side Users</p>
+                <p className="text-brand-blue-400 text-xs mt-1">Per active dealer login</p>
+              </div>
+            </div>
+
+            {/* Estimated range */}
+            <div className="bg-brand-blue-900/30 border border-brand-blue-600/30 rounded-xl p-4 text-center">
+              <p className="text-brand-blue-200 text-base">
+                Estimated at launch with 120 active dealers:
+              </p>
+              <p className="text-3xl font-bold text-white mt-1">
+                $2,800 &ndash; $3,200<span className="text-lg font-normal text-brand-blue-300">/month</span>
+              </p>
+              <p className="text-brand-blue-400 text-sm mt-2">
+                Scales with your network &mdash; you never pay for inactive dealers.
+              </p>
+            </div>
           </div>
         </div>
 

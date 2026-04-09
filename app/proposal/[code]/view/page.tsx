@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/proposal/sections/HeroSection";
+import { TransformationSection } from "@/components/proposal/sections/TransformationSection";
 import { ChallengeSection } from "@/components/proposal/sections/ChallengeSection";
 import { PartnerSection } from "@/components/proposal/sections/PartnerSection";
 import { TestimonialsSection } from "@/components/proposal/sections/TestimonialsSection";
@@ -14,6 +15,9 @@ export default function ProposalPage() {
   return (
     <>
       <HeroSection />
+      <SectionWrapper sectionId="transformation">
+        <TransformationSection />
+      </SectionWrapper>
       <SectionWrapper sectionId="challenge">
         <ChallengeSection />
       </SectionWrapper>
