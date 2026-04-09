@@ -8,6 +8,7 @@ const sections = [
   { id: "hero", label: "Welcome" },
   { id: "challenge", label: "The Challenge" },
   { id: "partner", label: "The Partner" },
+  { id: "testimonials", label: "Results" },
   { id: "platform", label: "The Platform" },
   { id: "deliverables", label: "Phase 1" },
   { id: "demo", label: "Live Demo" },

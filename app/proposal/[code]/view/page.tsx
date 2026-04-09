@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/proposal/sections/HeroSection";
 import { ChallengeSection } from "@/components/proposal/sections/ChallengeSection";
 import { PartnerSection } from "@/components/proposal/sections/PartnerSection";
+import { TestimonialsSection } from "@/components/proposal/sections/TestimonialsSection";
 import { PlatformSection } from "@/components/proposal/sections/PlatformSection";
 import { DeliverablesSection } from "@/components/proposal/sections/DeliverablesSection";
 import { DemoSection } from "@/components/proposal/sections/DemoSection";
@@ -18,6 +19,9 @@ export default function ProposalPage() {
       </SectionWrapper>
       <SectionWrapper sectionId="partner">
         <PartnerSection />
+      </SectionWrapper>
+      <SectionWrapper sectionId="testimonials">
+        <TestimonialsSection />
       </SectionWrapper>
       <SectionWrapper sectionId="platform">
         <PlatformSection />
