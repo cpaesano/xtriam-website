@@ -62,6 +62,12 @@ const proposals: Record<string, ProposalConfig> = {
         role: "contributor",
         avatar: "AE",
       },
+      eduardo8749: {
+        id: "eduardo",
+        name: "Eduardo Bleiberg",
+        role: "contributor",
+        avatar: "EB",
+      },
     },
   },
 };
