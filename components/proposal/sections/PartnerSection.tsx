@@ -69,7 +69,7 @@ export function PartnerSection() {
               &ldquo;Built by someone who ran a construction company &mdash; not by someone who read about it.&rdquo;
             </p>
             <cite className="mt-4 block text-brand-blue-300 text-base not-italic">
-              Carlos A. Paesano &mdash; Founder, xTriam
+              Carlos A. Paesano &mdash; Founder &amp; Chief Software Architect, xTriam
             </cite>
           </blockquote>
         </SectionReveal>
