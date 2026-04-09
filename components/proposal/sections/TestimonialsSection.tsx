@@ -37,20 +37,29 @@ const testimonials = [
     title: "President, Palm Aluminum & Glass",
     headline: "Streamline Operations",
     quote: "Streamlined entire operations at Palm Aluminum & Glass, from sales through installation.",
-    videoId: "85sBR952yYk",
+    videoId: "843072856",
+    platform: "vimeo" as const,
     stat: "End-to-end",
     statLabel: "operations streamlined",
   },
 ];
 
-function VideoEmbed({ videoId, title }: { videoId: string; title: string }) {
+function VideoEmbed({ videoId, title, platform = "youtube" }: { videoId: string; title: string; platform?: "youtube" | "vimeo" }) {
   const [playing, setPlaying] = useState(false);
+
+  const embedUrl = platform === "vimeo"
+    ? `https://player.vimeo.com/video/${videoId}?autoplay=1`
+    : `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+
+  const thumbnailUrl = platform === "vimeo"
+    ? null // Vimeo thumbnails require API call, use play button overlay instead
+    : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   if (playing) {
     return (
       <div className="relative w-full aspect-video rounded-xl overflow-hidden">
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+          src={embedUrl}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -65,11 +74,17 @@ function VideoEmbed({ videoId, title }: { videoId: string; title: string }) {
       onClick={() => setPlaying(true)}
       className="relative w-full aspect-video rounded-xl overflow-hidden group"
     >
-      <img
-        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-        alt={title}
-        className="w-full h-full object-cover"
-      />
+      {thumbnailUrl ? (
+        <img
+          src={thumbnailUrl}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-brand-blue-800 to-brand-blue-950 flex items-center justify-center">
+          <p className="text-brand-blue-300 text-sm px-4 text-center">{title}</p>
+        </div>
+      )}
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
         <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white group-hover:scale-110 transition-all flex items-center justify-center shadow-lg">
           <Play className="w-7 h-7 text-brand-blue-900 ml-1" fill="currentColor" />
@@ -102,7 +117,7 @@ export function TestimonialsSection() {
           {testimonials.map((t, i) => (
             <SectionReveal key={t.videoId} delay={i * 150}>
               <div className="bg-muted/50 border border-border rounded-2xl overflow-hidden">
-                <VideoEmbed videoId={t.videoId} title={t.headline} />
+                <VideoEmbed videoId={t.videoId} title={t.headline} platform={(t as { platform?: "youtube" | "vimeo" }).platform} />
 
                 <div className="p-6">
                   {/* Stat */}
