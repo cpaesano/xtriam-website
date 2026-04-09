@@ -57,7 +57,7 @@ export function HeroSection() {
         </p>
 
         <p className="mt-6 text-brand-blue-400 text-sm">
-          Prepared by Carlos A. Paesano, Founder &mdash; xTriam
+          Prepared by Carlos A. Paesano, Founder &amp; Chief Software Architect &mdash; xTriam
         </p>
       </div>
 
