@@ -160,7 +160,7 @@ export function InvestmentSection() {
             {/* Three components */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
-                <p className="text-2xl font-bold text-white">$500</p>
+                <p className="text-2xl font-bold text-white">$700</p>
                 <p className="text-brand-blue-400 text-sm">/month</p>
                 <p className="text-brand-blue-300 text-sm mt-2">Base Platform Fee</p>
                 <p className="text-brand-blue-400 text-xs mt-1">Hosting, AI, email, SMS</p>
@@ -185,7 +185,7 @@ export function InvestmentSection() {
                 Estimated at launch with 120 active dealers:
               </p>
               <p className="text-3xl font-bold text-white mt-1">
-                $2,800 &ndash; $3,200<span className="text-lg font-normal text-brand-blue-300">/month</span>
+                $3,000 &ndash; $3,400<span className="text-lg font-normal text-brand-blue-300">/month</span>
               </p>
               <p className="text-brand-blue-400 text-sm mt-2">
                 Scales with your network &mdash; you never pay for inactive dealers.
