@@ -16,32 +16,17 @@ export function HeroSection() {
       }} />
 
       <div className="relative z-10 max-w-4xl">
-        {/* Partner logos */}
-        <div className="flex flex-col items-center gap-6 sm:gap-8 mb-10">
-          <Image
-            src="/images/logo/palm-city-ironworks-logo-white.png"
-            alt="Palm City Iron Works"
-            width={400}
-            height={120}
-            className="h-20 sm:h-28 lg:h-32 w-auto"
-          />
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-px bg-brand-blue-500/50" />
-            <span className="text-brand-blue-400 text-sm tracking-widest uppercase">powered by</span>
-            <div className="w-12 h-px bg-brand-blue-500/50" />
-          </div>
-          <Image
-            src="/images/logo/xTriam-Logo-Outlines-White-Orange.png"
-            alt="xTriam"
-            width={140}
-            height={45}
-            className="h-8 sm:h-10 w-auto"
-          />
-        </div>
-
-        <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-6">
-          Implementation Proposal &middot; April 2026
+        <p className="text-brand-blue-300 font-medium tracking-widest uppercase text-sm sm:text-base mb-8">
+          Implementation Proposal
         </p>
+
+        <Image
+          src="/images/logo/palm-city-ironworks-logo-white.png"
+          alt="Palm City Iron Works"
+          width={500}
+          height={150}
+          className="h-24 sm:h-32 lg:h-40 w-auto mx-auto mb-10"
+        />
 
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
           The beginning of the{" "}
@@ -56,9 +41,23 @@ export function HeroSection() {
           not around how a software company assumed it does.
         </p>
 
-        <div className="mt-6 text-brand-blue-400 text-sm">
-          <p>Prepared by Carlos A. Paesano</p>
-          <p>Founder &amp; Chief Software Architect &mdash; xTriam</p>
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-px bg-brand-blue-500/50" />
+            <span className="text-brand-blue-400 text-sm tracking-widest uppercase">Presented by</span>
+            <div className="w-12 h-px bg-brand-blue-500/50" />
+          </div>
+          <Image
+            src="/images/logo/xTriam-Logo-Outlines-White-Orange.png"
+            alt="xTriam"
+            width={140}
+            height={45}
+            className="h-8 sm:h-10 w-auto"
+          />
+          <div className="text-brand-blue-400 text-sm mt-1">
+            <p>Carlos A. Paesano</p>
+            <p>Founder &amp; Chief Software Architect</p>
+          </div>
         </div>
       </div>
 
