@@ -1,8 +1,16 @@
 "use client";
 
 import { SectionReveal } from "../SectionReveal";
-import { ExternalLink, Monitor } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Monitor, CheckCircle2 } from "lucide-react";
+
+const demoHighlights = [
+  "Product catalog with full iron door lineup",
+  "CPQ engine — configure dimensions, options, and pricing in real time",
+  "Three-layer pricing: vendor cost → dealer cost → retail",
+  "Branded proposal PDF generation",
+  "Dealer and vendor dashboards with order tracking",
+  "Role-based access — vendor sees everything, dealer sees their view",
+];
 
 export function DemoSection() {
   return (
@@ -14,43 +22,30 @@ export function DemoSection() {
           </div>
 
           <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-3">
-            See it in action
+            Working prototype
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Live Prototype
+            We&apos;ve Already Started Building
           </h2>
           <p className="text-lg text-brand-blue-200 max-w-2xl mx-auto mb-10">
-            We&apos;ve already started building. Explore the working prototype — browse the catalog,
-            configure a product, generate a quote. This is the foundation your platform will be built on.
+            A live prototype of the Dealer Portal was presented on-site at Palm City Ironworks
+            on April 8, 2026. Here&apos;s what was demonstrated:
           </p>
 
-          <div className="bg-brand-blue-800/50 border border-brand-blue-700 rounded-2xl p-8 mb-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left mb-6">
-              <div>
-                <p className="text-brand-blue-400 text-sm uppercase tracking-wider mb-1">Vendor login</p>
-                <p className="text-white text-base">vendor@demo.com</p>
-              </div>
-              <div>
-                <p className="text-brand-blue-400 text-sm uppercase tracking-wider mb-1">Dealer login</p>
-                <p className="text-white text-base">dealer@demo.com</p>
-              </div>
+          <div className="bg-brand-blue-800/50 border border-brand-blue-700 rounded-2xl p-8 text-left max-w-xl mx-auto">
+            <div className="space-y-4">
+              {demoHighlights.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                  <span className="text-brand-blue-100 text-base">{item}</span>
+                </div>
+              ))}
             </div>
-            <p className="text-brand-blue-300 text-sm">
-              Both accounts are pre-configured with Palm City products, pricing, and sample orders.
-            </p>
           </div>
 
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => window.open("https://dealer-portal.xtriam.com", "_blank")}
-            className="gap-2"
-          >
-            Launch Prototype <ExternalLink className="w-4 h-4" />
-          </Button>
-
-          <p className="mt-4 text-brand-blue-400 text-sm">
-            Opens in a new tab &middot; No login required for demo
+          <p className="mt-8 text-brand-blue-300 text-base max-w-lg mx-auto">
+            The prototype is built on the same production stack that will power your live platform.
+            What you saw is not a mockup &mdash; it&apos;s the foundation.
           </p>
         </SectionReveal>
       </div>
