@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SectionReveal } from "../SectionReveal";
 import { MapPin, FileText, Rocket, HeadphonesIcon, Phone, Mail } from "lucide-react";
 
@@ -77,7 +78,7 @@ export function NextStepsSection() {
               Let&apos;s schedule the discovery session and make this real.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
               <a
                 href="tel:+19545921256"
                 className="flex items-center gap-2 text-brand-blue-600 dark:text-brand-blue-400 hover:underline font-medium"
@@ -92,21 +93,34 @@ export function NextStepsSection() {
               </a>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-base font-semibold text-foreground">Carlos A. Paesano</p>
-              <p className="text-sm text-muted-foreground">Founder &amp; Chief Software Architect</p>
-              <p className="text-sm text-muted-foreground">xTriam</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                5966 S Dixie Hwy Ste 300, South Miami, FL 33143
+            <div className="pt-6 border-t border-border">
+              <Image
+                src="/images/team/carlos-paesano.png"
+                alt="Carlos A. Paesano"
+                width={96}
+                height={96}
+                className="w-24 h-24 rounded-full border-4 border-brand-blue-500/20 mx-auto mb-4"
+              />
+              <p className="text-lg font-bold text-foreground">Carlos A. Paesano</p>
+              <p className="text-base text-muted-foreground">Founder &amp; Chief Software Architect</p>
+              <p className="text-base text-muted-foreground">xTriam</p>
+              <p className="text-sm text-muted-foreground mt-3">
+                5966 S Dixie Hwy Ste 300
+              </p>
+              <p className="text-sm text-muted-foreground">
+                South Miami, FL 33143
               </p>
             </div>
           </div>
         </SectionReveal>
 
         {/* Footer */}
-        <div className="mt-12 text-center text-sm text-muted-foreground">
+        <div className="mt-12 text-center text-sm text-muted-foreground space-y-1">
+          <p className="font-medium">
+            This proposal is confidential and prepared exclusively for
+            Brian O&apos;Neill and John Felder of Palm City Ironworks.
+          </p>
           <p>&copy; {new Date().getFullYear()} xTriam, LLC. All rights reserved.</p>
-          <p className="mt-1">This proposal is confidential and intended solely for Palm City Ironworks.</p>
         </div>
       </div>
     </section>
