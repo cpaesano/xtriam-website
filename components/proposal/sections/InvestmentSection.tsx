@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { SectionReveal } from "../SectionReveal";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { X, Minus, Check } from "lucide-react";
+import { X, Minus, Check, Handshake } from "lucide-react";
 
 function useInView(threshold = 0.3) {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,9 +29,9 @@ export function InvestmentSection() {
     if (!inView) return;
 
     const timers = [
-      setTimeout(() => setPhase(1), 500),   // competitors
-      setTimeout(() => setPhase(2), 3000),   // labor
-      setTimeout(() => setPhase(3), 5500),   // xTriam
+      setTimeout(() => setPhase(1), 500),   // status quo
+      setTimeout(() => setPhase(2), 3000),   // xTriam full
+      setTimeout(() => setPhase(3), 5500),   // partnership courtesy
     ];
     return () => timers.forEach(clearTimeout);
   }, [inView]);
@@ -54,40 +54,8 @@ export function InvestmentSection() {
         </SectionReveal>
 
         <div className="space-y-6">
-          {/* Competitor pricing */}
+          {/* Status quo */}
           <div className={`transition-all duration-700 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-            <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-6 sm:p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
-                  <X className="w-5 h-5 text-red-400" />
-                </div>
-                <div>
-                  <p className="text-base text-red-300 uppercase tracking-wider mb-1">Enterprise alternative</p>
-                  <p className="text-base text-brand-blue-300 mb-3">
-                    Paradigm Omni and similar enterprise CPQ platforms
-                  </p>
-                  <div className="flex items-baseline gap-2">
-                    {phase >= 1 && (
-                      <AnimatedCounter
-                        end={100}
-                        prefix="$"
-                        suffix="K+"
-                        duration={1500}
-                        className="text-4xl sm:text-5xl font-bold text-red-400"
-                      />
-                    )}
-                    <span className="text-red-300 text-base">to start, plus $3K–$8K/month</span>
-                  </div>
-                  <p className="text-brand-blue-400 text-sm mt-2">
-                    Built for Pella, Andersen, and Home Depot &mdash; not for a family business
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Labor cost */}
-          <div className={`transition-all duration-700 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6 sm:p-8">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
@@ -96,52 +64,97 @@ export function InvestmentSection() {
                 <div>
                   <p className="text-base text-amber-300 uppercase tracking-wider mb-1">The status quo alternative</p>
                   <p className="text-base text-brand-blue-300 mb-3">
-                    Hire one operations coordinator to manage dealers manually
+                    Hire one operations coordinator or use existing internal staff to manage dealers manually
                   </p>
                   <div className="flex items-baseline gap-2">
-                    {phase >= 2 && (
-                      <AnimatedCounter
-                        end={60}
-                        prefix="$"
-                        suffix="K"
-                        duration={1500}
-                        className="text-4xl sm:text-5xl font-bold text-amber-400"
-                      />
+                    {phase >= 1 && (
+                      <>
+                        <AnimatedCounter
+                          end={60}
+                          prefix="$"
+                          suffix="K"
+                          duration={1500}
+                          className="text-4xl sm:text-5xl font-bold text-amber-400"
+                        />
+                        <span className="text-amber-400 text-2xl sm:text-3xl font-bold">&ndash; $80K</span>
+                      </>
                     )}
-                    <span className="text-amber-300 text-base">per year — and they still can&apos;t do what the platform does</span>
+                    <span className="text-amber-300 text-base">per year</span>
                   </div>
                   <p className="text-brand-blue-400 text-sm mt-2">
-                    No automation, no real-time visibility, no AI insights, no dealer self-service
+                    No automation, no real-time visibility, no AI insights, no dealer self-service &mdash;
+                    and they still can&apos;t do what the platform does
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* xTriam */}
+          {/* xTriam full price */}
+          <div className={`transition-all duration-700 ${phase >= 2 ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+            <div className="bg-brand-blue-800/30 border border-brand-blue-600/30 rounded-2xl p-6 sm:p-8">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-brand-blue-600/20 flex items-center justify-center shrink-0">
+                  <Check className="w-5 h-5 text-brand-blue-400" />
+                </div>
+                <div>
+                  <p className="text-base text-brand-blue-300 uppercase tracking-wider mb-1">xTriam &mdash; Phase 1 Implementation</p>
+                  <p className="text-base text-brand-blue-300 mb-3">
+                    Full hands-on implementation by Carlos Paesano, including on-site consulting, catalog setup,
+                    BisTrack integration, notifications, dealer onboarding, training, and 30 days of go-live support
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    {phase >= 2 && (
+                      <AnimatedCounter
+                        end={69}
+                        prefix="$"
+                        suffix=",000"
+                        duration={1500}
+                        className="text-5xl sm:text-6xl font-bold text-white"
+                      />
+                    )}
+                    <span className="text-brand-blue-300 text-base">standard engagement fee</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partnership courtesy */}
           <div className={`transition-all duration-700 ${phase >= 3 ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
             <div className="bg-green-500/10 border-2 border-green-500/50 rounded-2xl p-6 sm:p-8 shadow-lg shadow-green-500/10">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
-                  <Check className="w-5 h-5 text-green-400" />
+                  <Handshake className="w-5 h-5 text-green-400" />
                 </div>
                 <div>
-                  <p className="text-base text-green-300 uppercase tracking-wider mb-1">xTriam &mdash; Phase 1 Implementation</p>
+                  <p className="text-base text-green-300 uppercase tracking-wider mb-1">Partnership Investment</p>
                   <p className="text-base text-brand-blue-300 mb-3">
-                    Full hands-on implementation by Carlos Paesano, including on-site consulting, catalog setup,
-                    BisTrack integration, notifications, AI assistant, dealer onboarding, training, and 30 days of go-live support
+                    xTriam is investing in the long-term relationship with Palm City Ironworks and the
+                    opportunity to bring operational excellence to Suncoast Contractors Supply.
                   </p>
-                  <div className="flex items-baseline gap-2">
-                    {phase >= 3 && (
-                      <AnimatedCounter
-                        end={55}
-                        prefix="$"
-                        suffix=",000"
-                        duration={1500}
-                        className="text-5xl sm:text-6xl font-bold text-green-400"
-                      />
-                    )}
-                    <span className="text-green-300 text-base">one-time investment</span>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-brand-blue-400 text-2xl line-through">$69,000</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      {phase >= 3 && (
+                        <AnimatedCounter
+                          end={55}
+                          prefix="$"
+                          suffix=",000"
+                          duration={1500}
+                          className="text-5xl sm:text-6xl font-bold text-green-400"
+                        />
+                      )}
+                      <span className="text-green-300 text-base">your investment</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 bg-green-500/10 border border-green-500/20 rounded-xl px-4 py-3">
+                    <p className="text-green-300 text-sm">
+                      <strong>$14,000 partnership courtesy</strong> &mdash; xTriam is investing in the opportunity
+                      to expand this partnership to streamline operations at Suncoast Contractors Supply.
+                    </p>
                   </div>
                 </div>
               </div>
