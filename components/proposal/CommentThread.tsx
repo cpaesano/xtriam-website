@@ -107,10 +107,10 @@ export function CommentButton({ sectionId }: { sectionId: string }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-blue-600/10 hover:bg-brand-blue-600/20 text-brand-blue-600 dark:text-brand-blue-400 text-xs font-medium transition-colors"
+        className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-blue-600 hover:bg-brand-blue-700 text-white text-sm font-medium shadow-lg shadow-brand-blue-600/25 hover:shadow-brand-blue-600/40 transition-all"
       >
-        <MessageCircle className="w-4 h-4" />
-        {count > 0 ? `${count} comment${count > 1 ? "s" : ""}` : "Comment"}
+        <MessageCircle className="w-5 h-5" />
+        {count > 0 ? `${count} comment${count > 1 ? "s" : ""}` : "Leave a comment"}
       </button>
 
       {open && (
@@ -154,7 +154,18 @@ function CommentPanel({
       if (e.key === "Escape") onClose();
     }
     window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
+
+    // Push history state so browser back closes panel instead of navigating away
+    window.history.pushState({ commentPanel: true }, "");
+    function handlePopState() {
+      onClose();
+    }
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      window.removeEventListener("popstate", handlePopState);
+    };
   }, [onClose]);
 
   async function handleSend() {
@@ -210,9 +221,10 @@ function CommentPanel({
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg hover:bg-muted transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted hover:bg-red-100 dark:hover:bg-red-950 text-muted-foreground hover:text-red-600 transition-colors text-sm font-medium"
           >
-            <X className="w-5 h-5 text-muted-foreground" />
+            <X className="w-4 h-4" />
+            Close
           </button>
         </div>
 

@@ -9,9 +9,9 @@ interface SectionWrapperProps {
 
 export function SectionWrapper({ sectionId, children }: SectionWrapperProps) {
   return (
-    <div className="relative">
+    <div>
       {children}
-      <div className="absolute top-6 right-6 z-10">
+      <div className="flex justify-center -mt-8 pb-8 relative z-10">
         <CommentButton sectionId={sectionId} />
       </div>
     </div>
