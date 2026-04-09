@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 bg-gradient-to-b from-brand-blue-950 via-brand-blue-900 to-brand-blue-950 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 bg-gradient-to-b from-brand-blue-950 via-brand-blue-900 to-brand-blue-950 overflow-hidden"
     >
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5" style={{
@@ -16,7 +16,7 @@ export function HeroSection() {
       }} />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <p className="text-brand-blue-300 font-medium tracking-widest uppercase text-sm sm:text-base mb-8">
+        <p className="text-brand-blue-300 font-medium tracking-widest uppercase text-sm sm:text-base mb-4">
           Implementation Proposal
         </p>
 
