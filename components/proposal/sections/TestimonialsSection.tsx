@@ -32,6 +32,15 @@ const testimonials = [
     stat: "Effortless",
     statLabel: "proposal delivery",
   },
+  {
+    name: "Michele Diaz",
+    title: "President, Palm Aluminum & Glass",
+    headline: "Streamline Operations",
+    quote: "Streamlined entire operations at Palm Aluminum & Glass, from sales through installation.",
+    videoId: "85sBR952yYk",
+    stat: "End-to-end",
+    statLabel: "operations streamlined",
+  },
 ];
 
 function VideoEmbed({ videoId, title }: { videoId: string; title: string }) {
@@ -89,7 +98,7 @@ export function TestimonialsSection() {
           </div>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((t, i) => (
             <SectionReveal key={t.videoId} delay={i * 150}>
               <div className="bg-muted/50 border border-border rounded-2xl overflow-hidden">
