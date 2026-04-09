@@ -42,9 +42,9 @@ const stages = [
     phase: "2026–2027",
     title: "AI-First, Mobile-First",
     icon: Brain,
-    color: "bg-purple-600",
-    borderColor: "border-purple-600",
-    textColor: "text-purple-600 dark:text-purple-400",
+    color: "bg-emerald-500",
+    borderColor: "border-emerald-500",
+    textColor: "text-emerald-400",
     description: "AI assistant managing operations. Mobile-first tools for the field. Every process automated or augmented by AI.",
     items: [
       { icon: Brain, text: "AI operations assistant for instant insights" },
