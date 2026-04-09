@@ -12,9 +12,9 @@ const stages = [
     phase: "Today",
     title: "Manual Operations",
     icon: FileSpreadsheet,
-    color: "bg-amber-500",
-    borderColor: "border-amber-500",
-    textColor: "text-amber-500",
+    color: "bg-amber-400",
+    borderColor: "border-amber-400",
+    textColor: "text-amber-300",
     description: "Quotes by email and phone. Orders tracked in spreadsheets. Team chasing status updates. Management flying blind.",
     items: [
       { icon: Phone, text: "Dealer quotes via phone & email" },
@@ -57,9 +57,9 @@ const stages = [
     phase: "The Vision",
     title: "Industry Leader",
     icon: Crown,
-    color: "bg-brand-orange-500",
-    borderColor: "border-brand-orange-500",
-    textColor: "text-brand-orange-500",
+    color: "bg-brand-orange-400",
+    borderColor: "border-brand-orange-400",
+    textColor: "text-brand-orange-300",
     description: "Palm City Ironworks as the most technologically advanced iron door manufacturer in the Southeast. Your team free to focus on what moves the needle.",
     items: [
       { icon: Handshake, text: "Negotiation & closing — face-to-face with clients" },
@@ -93,29 +93,29 @@ export function TransformationSection() {
         <div className="space-y-8">
           {stages.map((stage, i) => (
             <SectionReveal key={stage.phase} delay={i * 200}>
-              <div className={`relative bg-brand-blue-800/30 border ${stage.borderColor}/30 rounded-2xl p-6 sm:p-8`}>
+              <div className={`relative bg-brand-blue-900/80 border ${stage.borderColor} rounded-2xl p-6 sm:p-8`}>
                 {/* Phase badge */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className={`w-12 h-12 rounded-xl ${stage.color} flex items-center justify-center`}>
+                  <div className={`w-12 h-12 rounded-xl ${stage.color} flex items-center justify-center shadow-lg`}>
                     <stage.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <span className={`text-sm font-medium ${stage.textColor} uppercase tracking-wider`}>
+                    <span className={`text-base font-bold ${stage.textColor} uppercase tracking-wider`}>
                       {stage.phase}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">{stage.title}</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white">{stage.title}</h3>
                   </div>
                 </div>
 
-                <p className="text-brand-blue-200 text-base mb-6 leading-relaxed">
+                <p className="text-white/80 text-lg mb-6 leading-relaxed">
                   {stage.description}
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {stage.items.map((item) => (
                     <div key={item.text} className="flex items-center gap-3">
-                      <item.icon className={`w-5 h-5 ${stage.textColor} shrink-0`} />
-                      <span className="text-brand-blue-100 text-sm">{item.text}</span>
+                      <item.icon className={`w-6 h-6 ${stage.textColor} shrink-0`} />
+                      <span className="text-white/90 text-base">{item.text}</span>
                     </div>
                   ))}
                 </div>
