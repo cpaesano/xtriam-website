@@ -5,6 +5,7 @@ import { SectionReveal } from "../SectionReveal";
 import { Lightbulb, Check } from "lucide-react";
 
 const features = [
+  { id: "ai-assistant", label: "AI Operations Assistant", description: "Conversational AI for instant operational insights — order status, top dealers, profitability, via text or voice" },
   { id: "visual-configurator", label: "Visual product configurator (2D)", description: "SVG-based preview of configured door/window in the CPQ" },
   { id: "dealer-self-service", label: "Dealer self-service onboarding", description: "Public application flow — dealers apply, Palm City approves" },
   { id: "territory-enforcement", label: "Territory enforcement", description: "Block or flag orders outside a dealer's assigned territory" },

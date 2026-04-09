@@ -3,10 +3,9 @@
 import { SectionReveal } from "../SectionReveal";
 import { BisTrackDiagram } from "./BisTrackDiagram";
 import { NotificationWorkflow } from "./NotificationWorkflow";
-import { AiAssistantDemo } from "./AiAssistantDemo";
 import {
   MapPin, Database, Link2, Sliders, Users,
-  BellRing, Bot, GraduationCap, HeadphonesIcon,
+  BellRing, GraduationCap, HeadphonesIcon,
 } from "lucide-react";
 
 const deliverables = [
@@ -53,13 +52,6 @@ const deliverables = [
     special: "notifications",
   },
   {
-    icon: Bot,
-    title: "AI Operations Assistant",
-    description: "A conversational AI embedded in the Vendor Console. Ask about order status, top dealers, profitability, production bottlenecks — via text or voice.",
-    highlight: "Instant operational overview without pulling a single report.",
-    special: "ai",
-  },
-  {
     icon: GraduationCap,
     title: "Training",
     description: "4 sessions included: 2 vendor-side (all Palm City roles), 2 dealer-side (top accounts). On-site in Fort Myers for vendor training.",
@@ -104,7 +96,7 @@ export function DeliverablesSection() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-medium text-brand-blue-600 dark:text-brand-blue-400 bg-brand-blue-50 dark:bg-brand-blue-950 px-2 py-0.5 rounded">
-                        {i + 1} of 9
+                        {i + 1} of 8
                       </span>
                       <h3 className="text-xl font-semibold text-foreground">{d.title}</h3>
                     </div>
@@ -122,7 +114,6 @@ export function DeliverablesSection() {
                 {/* Special embedded components */}
                 {d.special === "bistrack" && <BisTrackDiagram />}
                 {d.special === "notifications" && <NotificationWorkflow />}
-                {d.special === "ai" && <AiAssistantDemo />}
               </div>
             </SectionReveal>
           ))}
