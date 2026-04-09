@@ -93,10 +93,10 @@ export function NextStepsSection() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-base text-muted-foreground">
-                Carlos A. Paesano &middot; Founder &amp; Chief Software Architect, xTriam
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="text-base font-semibold text-foreground">Carlos A. Paesano</p>
+              <p className="text-sm text-muted-foreground">Founder &amp; Chief Software Architect</p>
+              <p className="text-sm text-muted-foreground">xTriam</p>
+              <p className="text-sm text-muted-foreground mt-2">
                 5966 S Dixie Hwy Ste 300, South Miami, FL 33143
               </p>
             </div>
