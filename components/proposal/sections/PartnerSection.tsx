@@ -6,7 +6,7 @@ import { Wrench, GraduationCap, Building2, Code2, Handshake } from "lucide-react
 
 const timeline = [
   {
-    year: "1990s",
+    year: "1987–2003",
     icon: GraduationCap,
     title: "Civil Engineer & MBA",
     description: "Degree in Civil Engineering. Chicago Booth MBA. The analytical foundation for everything that followed.",
