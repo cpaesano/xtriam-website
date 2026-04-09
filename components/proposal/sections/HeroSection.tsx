@@ -15,7 +15,7 @@ export function HeroSection() {
         backgroundSize: "60px 60px",
       }} />
 
-      <div className="relative z-10 max-w-4xl">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <p className="text-brand-blue-300 font-medium tracking-widest uppercase text-sm sm:text-base mb-8">
           Implementation Proposal
         </p>
@@ -54,7 +54,7 @@ export function HeroSection() {
             height={45}
             className="h-8 sm:h-10 w-auto"
           />
-          <div className="flex items-center gap-3 mt-2">
+          <div className="inline-flex items-center gap-3 mt-2">
             <Image
               src="/images/team/carlos-paesano.png"
               alt="Carlos A. Paesano"
