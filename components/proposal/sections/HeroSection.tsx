@@ -54,9 +54,18 @@ export function HeroSection() {
             height={45}
             className="h-8 sm:h-10 w-auto"
           />
-          <div className="text-brand-blue-400 text-sm mt-1">
-            <p>Carlos A. Paesano</p>
-            <p>Founder &amp; Chief Software Architect</p>
+          <div className="flex items-center gap-3 mt-2">
+            <Image
+              src="/images/team/carlos-paesano.png"
+              alt="Carlos A. Paesano"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full border-2 border-brand-blue-500/30"
+            />
+            <div className="text-left text-brand-blue-400 text-sm">
+              <p className="text-white font-medium">Carlos A. Paesano</p>
+              <p>Founder &amp; Chief Software Architect</p>
+            </div>
           </div>
         </div>
       </div>
