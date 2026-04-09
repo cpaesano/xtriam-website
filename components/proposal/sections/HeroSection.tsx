@@ -56,9 +56,10 @@ export function HeroSection() {
           not around how a software company assumed it does.
         </p>
 
-        <p className="mt-6 text-brand-blue-400 text-sm">
-          Prepared by Carlos A. Paesano, Founder &amp; Chief Software Architect &mdash; xTriam
-        </p>
+        <div className="mt-6 text-brand-blue-400 text-sm">
+          <p>Prepared by Carlos A. Paesano</p>
+          <p>Founder &amp; Chief Software Architect &mdash; xTriam</p>
+        </div>
       </div>
 
       <button
