@@ -32,7 +32,7 @@ export function NextStepsSection() {
       <div className="max-w-4xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-orange-500 font-medium tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
               What happens next
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
