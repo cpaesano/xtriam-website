@@ -122,6 +122,21 @@
   }
 }
 
+/* Proposal comment panel slide-in */
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Manual dark mode toggle (overrides media query when class present) */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --border: #404040;
+}
+
 /* Base Styles */
 body {
   background: var(--background);
