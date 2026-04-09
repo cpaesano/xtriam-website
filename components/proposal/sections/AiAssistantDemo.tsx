@@ -19,7 +19,7 @@ const conversation = [
   },
   {
     role: "assistant" as const,
-    text: "Sunshine Doors LLC — $128,400 in orders (23 orders total). Up 18% from February. Their top product: Urban Impact Series. Second place: Premier Iron Works at $94,100.",
+    text: "Sunshine Doors LLC — $128,400 in orders (23 orders total). Up 18% from February. Their top product: Urban Impact Series. Second place: Premier Ironworks at $94,100.",
   },
 ];
 

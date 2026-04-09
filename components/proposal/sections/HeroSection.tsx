@@ -22,7 +22,7 @@ export function HeroSection() {
 
         <Image
           src="/images/logo/palm-city-ironworks-logo-white.png"
-          alt="Palm City Iron Works"
+          alt="Palm City Ironworks"
           width={500}
           height={150}
           className="h-24 sm:h-32 lg:h-40 w-auto mx-auto mb-10"

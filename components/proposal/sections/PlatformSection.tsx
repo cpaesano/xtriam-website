@@ -9,7 +9,7 @@ import {
 const columns = [
   {
     title: "Vendor Console",
-    subtitle: "Palm City Iron Works",
+    subtitle: "Palm City Ironworks",
     color: "brand-blue",
     features: [
       { icon: Database, text: "Product catalog & pricing management" },
@@ -79,7 +79,7 @@ export function PlatformSection() {
                 </div>
                 <div className="w-px h-4 bg-border" />
                 <div className="bg-brand-orange-500 text-white px-6 py-2 rounded-lg text-sm font-medium">
-                  Palm City Iron Works (Vendor)
+                  Palm City Ironworks (Vendor)
                 </div>
                 <div className="w-px h-4 bg-border" />
                 <div className="flex flex-wrap justify-center gap-3">

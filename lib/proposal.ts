@@ -35,7 +35,7 @@ const proposals: Record<string, ProposalConfig> = {
   palmcity: {
     code: "palmcity",
     title: "Implementation Proposal",
-    client: "Palm City Iron Works",
+    client: "Palm City Ironworks",
     date: "April 2026",
     viewers: {
       brian2608: {

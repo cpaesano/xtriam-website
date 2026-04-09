@@ -106,7 +106,7 @@ export function NextStepsSection() {
         {/* Footer */}
         <div className="mt-12 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} xTriam, LLC. All rights reserved.</p>
-          <p className="mt-1">This proposal is confidential and intended solely for Palm City Iron Works.</p>
+          <p className="mt-1">This proposal is confidential and intended solely for Palm City Ironworks.</p>
         </div>
       </div>
     </section>

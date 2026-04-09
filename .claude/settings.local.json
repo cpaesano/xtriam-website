@@ -45,7 +45,9 @@
       "Bash(gcloud services:*)",
       "Bash(mkdir -p /Users/cpaesano/Projects/xtriam/xtriam-website/app/\\\\\\(marketing\\\\\\)/campaign/bpmpro-demo)",
       "Bash(mkdir -p /Users/cpaesano/Projects/xtriam/xtriam-website/emails)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "WebFetch(domain:impactwindowsmiami.com)",
+      "Bash(git init:*)"
     ]
   }
 }

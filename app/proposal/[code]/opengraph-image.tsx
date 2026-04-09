@@ -1,11 +1,22 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
-export const runtime = "edge";
-export const alt = "Palm City Iron Works — Implementation Proposal by xTriam";
+export const alt = "Palm City Ironworks — Implementation Proposal by xTriam";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OGImage() {
+export default async function OGImage() {
+  const palmCityLogo = await readFile(
+    join(process.cwd(), "public/images/logo/palm-city-ironworks-logo-white.png")
+  );
+  const palmCityBase64 = `data:image/png;base64,${palmCityLogo.toString("base64")}`;
+
+  const xtriamLogo = await readFile(
+    join(process.cwd(), "public/images/logo/xTriam-Logo-Outlines-White-Orange.png")
+  );
+  const xtriamBase64 = `data:image/png;base64,${xtriamLogo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -34,19 +45,13 @@ export default function OGImage() {
           Implementation Proposal
         </div>
 
-        {/* Client name */}
-        <div
-          style={{
-            color: "#ffffff",
-            fontSize: 64,
-            fontWeight: 700,
-            textAlign: "center",
-            lineHeight: 1.1,
-            marginBottom: 20,
-          }}
-        >
-          Palm City Iron Works
-        </div>
+        {/* Palm City logo */}
+        <img
+          src={palmCityBase64}
+          alt="Palm City Ironworks"
+          height={120}
+          style={{ marginBottom: 30 }}
+        />
 
         {/* Divider */}
         <div
@@ -54,7 +59,7 @@ export default function OGImage() {
             display: "flex",
             alignItems: "center",
             gap: "16px",
-            marginBottom: 20,
+            marginBottom: 24,
           }}
         >
           <div style={{ width: 60, height: 1, background: "rgba(2,126,218,0.5)" }} />
@@ -64,17 +69,13 @@ export default function OGImage() {
           <div style={{ width: 60, height: 1, background: "rgba(2,126,218,0.5)" }} />
         </div>
 
-        {/* xTriam */}
-        <div
-          style={{
-            color: "#027eda",
-            fontSize: 36,
-            fontWeight: 700,
-            marginBottom: 16,
-          }}
-        >
-          x<span style={{ color: "#ff9f00" }}>Triam</span>
-        </div>
+        {/* xTriam logo */}
+        <img
+          src={xtriamBase64}
+          alt="xTriam"
+          height={40}
+          style={{ marginBottom: 24 }}
+        />
 
         {/* Tagline */}
         <div

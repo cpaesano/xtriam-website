@@ -6,7 +6,7 @@ import { ProposalNav } from "@/components/proposal/ProposalNav";
 import { getProposalConfig } from "@/lib/proposal";
 
 export const metadata: Metadata = {
-  title: "xTriam — Palm City Iron Works Proposal",
+  title: "xTriam — Palm City Ironworks Proposal",
   robots: { index: false, follow: false },
 };
 
