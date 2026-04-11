@@ -33,7 +33,7 @@ export function NextStepsSection() {
       <div className="max-w-4xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-base mb-3">
               What happens next
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
@@ -47,7 +47,7 @@ export function NextStepsSection() {
             <SectionReveal key={step.title} delay={i * 150}>
               <div className="flex gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue-600 flex items-center justify-center shrink-0 text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-brand-blue-600 flex items-center justify-center shrink-0 text-white font-bold text-xl">
                     {i + 1}
                   </div>
                   {i < steps.length - 1 && (
@@ -55,11 +55,11 @@ export function NextStepsSection() {
                   )}
                 </div>
                 <div className="pb-8">
-                  <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                  <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
                     <step.icon className="w-5 h-5 text-brand-blue-600 dark:text-brand-blue-400" />
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-base mt-2 leading-relaxed">
+                  <p className="text-muted-foreground text-lg mt-2 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -101,13 +101,13 @@ export function NextStepsSection() {
                 height={144}
                 className="w-36 h-36 rounded-full border-4 border-brand-blue-500/20 mx-auto mb-4"
               />
-              <p className="text-lg font-bold text-foreground">Carlos A. Paesano</p>
-              <p className="text-base text-muted-foreground">Founder &amp; Chief Software Architect</p>
-              <p className="text-base text-muted-foreground">xTriam</p>
-              <p className="text-sm text-muted-foreground mt-3">
+              <p className="text-xl font-bold text-foreground">Carlos A. Paesano</p>
+              <p className="text-lg text-muted-foreground">Founder &amp; Chief Software Architect</p>
+              <p className="text-lg text-muted-foreground">xTriam</p>
+              <p className="text-base text-muted-foreground mt-3">
                 5966 S Dixie Hwy Ste 300
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 South Miami, FL 33143
               </p>
             </div>
@@ -115,7 +115,7 @@ export function NextStepsSection() {
         </SectionReveal>
 
         {/* Footer */}
-        <div className="mt-12 text-center text-sm text-muted-foreground space-y-1">
+        <div className="mt-12 text-center text-base text-muted-foreground space-y-1">
           <p className="font-medium">
             This proposal is confidential and prepared exclusively for
             Brian O&apos;Neill and John Felder of Palm City Ironworks.

@@ -44,13 +44,13 @@ export function PartnerSection() {
       <div className="max-w-6xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-base mb-3">
               Why this is different
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               The partner makes the difference
             </h2>
-            <p className="mt-4 text-lg text-brand-blue-200 max-w-3xl mx-auto">
+            <p className="mt-4 text-xl text-brand-blue-200 max-w-3xl mx-auto">
               Anyone can build software. The question is whether the person building it understands your business
               well enough to make it work from day one.
             </p>
@@ -62,7 +62,7 @@ export function PartnerSection() {
             <p className="text-2xl sm:text-3xl font-medium text-white italic leading-relaxed">
               &ldquo;Built by someone who ran a construction company &mdash; not by someone who read about it.&rdquo;
             </p>
-            <cite className="mt-4 block text-brand-blue-300 text-base not-italic">
+            <cite className="mt-4 block text-brand-blue-300 text-lg not-italic">
               Carlos A. Paesano &mdash; Founder &amp; Chief Software Architect, xTriam
             </cite>
           </blockquote>
@@ -82,13 +82,13 @@ export function PartnerSection() {
                   )}
                 </div>
                 <div className="pb-8">
-                  <span className="text-brand-orange-400 text-sm font-medium">
+                  <span className="text-brand-orange-400 text-base font-medium">
                     {item.year}
                   </span>
-                  <h3 className="text-lg font-semibold text-white mt-1">
+                  <h3 className="text-xl font-semibold text-white mt-1">
                     {item.title}
                   </h3>
-                  <p className="text-brand-blue-300 text-base mt-1 leading-relaxed">
+                  <p className="text-brand-blue-300 text-lg mt-1 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -108,7 +108,7 @@ export function PartnerSection() {
                   suffix={stat.suffix || ""}
                   className="text-4xl sm:text-5xl font-bold text-white"
                 />
-                <p className="mt-2 text-brand-blue-300 text-base">{stat.label}</p>
+                <p className="mt-2 text-brand-blue-300 text-lg">{stat.label}</p>
               </div>
             ))}
           </div>

@@ -41,13 +41,13 @@ export function InvestmentSection() {
       <div className="max-w-4xl mx-auto" ref={ref}>
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-base mb-3">
               The investment
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               What does this cost?
             </h2>
-            <p className="mt-4 text-lg text-brand-blue-200">
+            <p className="mt-4 text-xl text-brand-blue-200">
               Let&apos;s put it in perspective.
             </p>
           </div>
@@ -62,8 +62,8 @@ export function InvestmentSection() {
                   <Minus className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
-                  <p className="text-base text-amber-300 uppercase tracking-wider mb-1">The status quo alternative</p>
-                  <p className="text-base text-brand-blue-300 mb-3">
+                  <p className="text-lg text-amber-300 uppercase tracking-wider mb-1">The status quo alternative</p>
+                  <p className="text-lg text-brand-blue-300 mb-3">
                     Hire one operations coordinator or use existing internal staff to manage dealers manually
                   </p>
                   <div className="flex items-baseline gap-2">
@@ -79,9 +79,9 @@ export function InvestmentSection() {
                         <span className="text-amber-400 text-2xl sm:text-3xl font-bold">&ndash; $80K</span>
                       </>
                     )}
-                    <span className="text-amber-300 text-base">per year</span>
+                    <span className="text-amber-300 text-lg">per year</span>
                   </div>
-                  <p className="text-brand-blue-400 text-sm mt-2">
+                  <p className="text-brand-blue-400 text-base mt-2">
                     No automation, no real-time visibility, no AI insights, no dealer self-service &mdash;
                     and they still can&apos;t do what the platform does
                   </p>
@@ -98,8 +98,8 @@ export function InvestmentSection() {
                   <Check className="w-5 h-5 text-brand-blue-400" />
                 </div>
                 <div>
-                  <p className="text-base text-brand-blue-300 uppercase tracking-wider mb-1">xTriam &mdash; Phase 1 Implementation</p>
-                  <p className="text-base text-brand-blue-300 mb-3">
+                  <p className="text-lg text-brand-blue-300 uppercase tracking-wider mb-1">xTriam &mdash; Phase 1 Implementation</p>
+                  <p className="text-lg text-brand-blue-300 mb-3">
                     Full hands-on implementation by Carlos Paesano and his xTriam team, including on-site consulting, catalog setup,
                     BisTrack integration, notifications, dealer onboarding, training, and 30 days of go-live support
                   </p>
@@ -113,7 +113,7 @@ export function InvestmentSection() {
                         className="text-5xl sm:text-6xl font-bold text-white"
                       />
                     )}
-                    <span className="text-brand-blue-300 text-base">standard engagement fee</span>
+                    <span className="text-brand-blue-300 text-lg">standard engagement fee</span>
                   </div>
                 </div>
               </div>
@@ -128,8 +128,8 @@ export function InvestmentSection() {
                   <Handshake className="w-5 h-5 text-green-400" />
                 </div>
                 <div>
-                  <p className="text-base text-green-300 uppercase tracking-wider mb-1">Partnership Investment</p>
-                  <p className="text-base text-brand-blue-300 mb-3">
+                  <p className="text-lg text-green-300 uppercase tracking-wider mb-1">Partnership Investment</p>
+                  <p className="text-lg text-brand-blue-300 mb-3">
                     xTriam is investing in the long-term relationship with Palm City Ironworks and the
                     opportunity to bring operational excellence to Suncoast Contractors Supply.
                   </p>
@@ -147,11 +147,11 @@ export function InvestmentSection() {
                           className="text-5xl sm:text-6xl font-bold text-green-400"
                         />
                       )}
-                      <span className="text-green-300 text-base">your investment</span>
+                      <span className="text-green-300 text-lg">your investment</span>
                     </div>
                   </div>
                   <div className="mt-4 bg-green-500/10 border border-green-500/20 rounded-xl px-4 py-3">
-                    <p className="text-green-300 text-sm">
+                    <p className="text-green-300 text-base">
                       <strong>$14,000 partnership courtesy</strong> &mdash; xTriam is investing in the opportunity
                       to expand this partnership to streamline operations at Suncoast Contractors Supply.
                     </p>
@@ -165,8 +165,8 @@ export function InvestmentSection() {
         {/* Monthly subscription model */}
         <div className={`transition-all duration-700 delay-500 mt-8 ${phase >= 3 ? "opacity-100" : "opacity-0"}`}>
           <div className="bg-brand-blue-800/50 border border-brand-blue-700 rounded-2xl p-6 sm:p-8">
-            <p className="text-white font-semibold text-lg mb-1 text-center">Monthly Platform Subscription</p>
-            <p className="text-brand-blue-300 text-base mb-6 text-center">
+            <p className="text-white font-semibold text-xl mb-1 text-center">Monthly Platform Subscription</p>
+            <p className="text-brand-blue-300 text-lg mb-6 text-center">
               You pay for active users &mdash; the fee scales with the value your network is getting.
             </p>
 
@@ -174,33 +174,33 @@ export function InvestmentSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-white">$700</p>
-                <p className="text-brand-blue-400 text-sm">/month</p>
-                <p className="text-brand-blue-300 text-sm mt-2">Base Platform Fee</p>
-                <p className="text-brand-blue-400 text-xs mt-1">Hosting, AI, email, SMS</p>
+                <p className="text-brand-blue-400 text-base">/month</p>
+                <p className="text-brand-blue-300 text-base mt-2">Base Platform Fee</p>
+                <p className="text-brand-blue-400 text-sm mt-1">Hosting, AI, email, SMS</p>
               </div>
               <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-white">$30</p>
-                <p className="text-brand-blue-400 text-sm">/user/month</p>
-                <p className="text-brand-blue-300 text-sm mt-2">Vendor-Side Users</p>
-                <p className="text-brand-blue-400 text-xs mt-1">Palm City internal team</p>
+                <p className="text-brand-blue-400 text-base">/user/month</p>
+                <p className="text-brand-blue-300 text-base mt-2">Vendor-Side Users</p>
+                <p className="text-brand-blue-400 text-sm mt-1">Palm City internal team</p>
               </div>
               <div className="bg-brand-blue-900/50 border border-brand-blue-700 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-white">$8</p>
-                <p className="text-brand-blue-400 text-sm">/user/month</p>
-                <p className="text-brand-blue-300 text-sm mt-2">Dealer-Side Users</p>
-                <p className="text-brand-blue-400 text-xs mt-1">Per active dealer login</p>
+                <p className="text-brand-blue-400 text-base">/user/month</p>
+                <p className="text-brand-blue-300 text-base mt-2">Dealer-Side Users</p>
+                <p className="text-brand-blue-400 text-sm mt-1">Per active dealer login</p>
               </div>
             </div>
 
             {/* Estimated range */}
             <div className="bg-brand-blue-900/30 border border-brand-blue-600/30 rounded-xl p-4 text-center">
-              <p className="text-brand-blue-200 text-base">
+              <p className="text-brand-blue-200 text-lg">
                 Estimated at launch with 120 active dealers:
               </p>
               <p className="text-3xl font-bold text-white mt-1">
-                $3,000 &ndash; $3,400<span className="text-lg font-normal text-brand-blue-300">/month</span>
+                $3,000 &ndash; $3,400<span className="text-xl font-normal text-brand-blue-300">/month</span>
               </p>
-              <p className="text-brand-blue-400 text-sm mt-2">
+              <p className="text-brand-blue-400 text-base mt-2">
                 Scales with your network &mdash; you never pay for inactive dealers.
               </p>
             </div>
@@ -220,11 +220,11 @@ export function InvestmentSection() {
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2">
                   <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
-                  <span className="text-brand-blue-300 text-base">{item}</span>
+                  <span className="text-brand-blue-300 text-lg">{item}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-brand-blue-200 text-base max-w-xl mx-auto">
+            <p className="mt-6 text-brand-blue-200 text-lg max-w-xl mx-auto">
               You&apos;re paying for a partner &mdash; Carlos Paesano and his xTriam team&apos;s time, presence, and 20+ years of expertise
               applied directly to your business.
             </p>

@@ -47,13 +47,13 @@ export function FutureVisionSection() {
       <div className="max-w-4xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-12">
-            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-base mb-3">
               Beyond Phase 1
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               What matters most to you?
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 text-xl text-muted-foreground max-w-2xl mx-auto">
               Select the features that would have the biggest impact on your operation.
               Your priorities shape the roadmap.
             </p>
@@ -64,7 +64,7 @@ export function FutureVisionSection() {
           <div className="bg-muted/50 border border-border rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-2 mb-6">
               <Lightbulb className="w-5 h-5 text-brand-orange-500" />
-              <span className="text-base text-muted-foreground">
+              <span className="text-lg text-muted-foreground">
                 Click to select &middot; {selected.size} of {features.length} selected
               </span>
             </div>
@@ -88,8 +88,8 @@ export function FutureVisionSection() {
                       {selected.has(f.id) && <Check className="w-4 h-4 text-white" />}
                     </div>
                     <div>
-                      <p className="font-medium text-foreground text-base">{f.label}</p>
-                      <p className="text-sm text-muted-foreground mt-0.5">{f.description}</p>
+                      <p className="font-medium text-foreground text-lg">{f.label}</p>
+                      <p className="text-base text-muted-foreground mt-0.5">{f.description}</p>
                     </div>
                   </button>
                 </SectionReveal>

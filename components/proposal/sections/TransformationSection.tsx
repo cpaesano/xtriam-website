@@ -76,13 +76,13 @@ export function TransformationSection() {
       <div className="max-w-6xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-base mb-3">
               The journey
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               From manual operations to industry leader
             </h2>
-            <p className="mt-4 text-lg text-brand-blue-200 max-w-3xl mx-auto">
+            <p className="mt-4 text-xl text-brand-blue-200 max-w-3xl mx-auto">
               This isn&apos;t just a software implementation. It&apos;s a transformation that frees your team
               to focus on the work that actually grows the business.
             </p>
@@ -100,14 +100,14 @@ export function TransformationSection() {
                     <stage.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <span className={`text-base font-bold ${stage.textColor} uppercase tracking-wider`}>
+                    <span className={`text-lg font-bold ${stage.textColor} uppercase tracking-wider`}>
                       {stage.phase}
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-bold text-white">{stage.title}</h3>
                   </div>
                 </div>
 
-                <p className="text-white/80 text-lg mb-6 leading-relaxed">
+                <p className="text-white/80 text-xl mb-6 leading-relaxed">
                   {stage.description}
                 </p>
 
@@ -115,7 +115,7 @@ export function TransformationSection() {
                   {stage.items.map((item) => (
                     <div key={item.text} className="flex items-center gap-3">
                       <item.icon className={`w-6 h-6 ${stage.textColor} shrink-0`} />
-                      <span className="text-white/90 text-base">{item.text}</span>
+                      <span className="text-white/90 text-lg">{item.text}</span>
                     </div>
                   ))}
                 </div>

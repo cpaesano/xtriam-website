@@ -53,13 +53,13 @@ export function PlatformSection() {
       <div className="max-w-6xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-base mb-3">
               The solution
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               xTriam Dealer Portal
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="mt-4 text-xl text-muted-foreground max-w-3xl mx-auto">
               A white-label platform connecting Palm City with your dealer network.
               Purpose-built for the manufacturer&ndash;dealer channel.
             </p>
@@ -71,20 +71,20 @@ export function PlatformSection() {
           <div className="max-w-2xl mx-auto mb-16">
             <div className="bg-muted/50 border border-border rounded-2xl p-6">
               <div className="text-center mb-4">
-                <span className="text-base text-muted-foreground">Three-level tenancy model</span>
+                <span className="text-lg text-muted-foreground">Three-level tenancy model</span>
               </div>
               <div className="flex flex-col items-center gap-3">
-                <div className="bg-brand-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                <div className="bg-brand-blue-600 text-white px-6 py-2 rounded-lg text-base font-medium">
                   xTriam (Platform Owner)
                 </div>
                 <div className="w-px h-4 bg-border" />
-                <div className="bg-brand-orange-500 text-white px-6 py-2 rounded-lg text-sm font-medium">
+                <div className="bg-brand-orange-500 text-white px-6 py-2 rounded-lg text-base font-medium">
                   Palm City Ironworks (Vendor)
                 </div>
                 <div className="w-px h-4 bg-border" />
                 <div className="flex flex-wrap justify-center gap-3">
                   {["Sunshine Doors LLC", "Gulf Coast Windows", "... up to 250 dealers"].map((d) => (
-                    <div key={d} className="bg-muted border border-border px-4 py-2 rounded-lg text-xs text-foreground">
+                    <div key={d} className="bg-muted border border-border px-4 py-2 rounded-lg text-sm text-foreground">
                       {d}
                     </div>
                   ))}
@@ -100,12 +100,12 @@ export function PlatformSection() {
             <SectionReveal key={col.title} delay={i * 150}>
               <div className="h-full bg-muted/50 border border-border rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-foreground mb-1">{col.title}</h3>
-                <p className="text-base text-muted-foreground mb-6">{col.subtitle}</p>
+                <p className="text-lg text-muted-foreground mb-6">{col.subtitle}</p>
                 <ul className="space-y-3">
                   {col.features.map((f) => (
                     <li key={f.text} className="flex gap-3 items-start">
                       <f.icon className="w-5 h-5 text-brand-blue-600 dark:text-brand-blue-400 shrink-0 mt-0.5" />
-                      <span className="text-base text-foreground">{f.text}</span>
+                      <span className="text-lg text-foreground">{f.text}</span>
                     </li>
                   ))}
                 </ul>

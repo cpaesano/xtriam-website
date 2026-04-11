@@ -54,13 +54,13 @@ export function ChallengeSection() {
       <div className="max-w-6xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-base mb-3">
               Where you are today
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               The challenges holding back growth
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 text-xl text-muted-foreground max-w-2xl mx-auto">
               We listened. These are the pain points you shared with us &mdash; and the industry data that shows you&apos;re not alone.
             </p>
           </div>
@@ -74,18 +74,18 @@ export function ChallengeSection() {
                   <point.icon className="w-6 h-6 text-brand-blue-600" />
                 </div>
 
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-xl font-semibold text-foreground mb-2">
                   {point.title}
                 </h3>
-                <p className="text-muted-foreground text-base mb-4">
+                <p className="text-muted-foreground text-lg mb-4">
                   {point.description}
                 </p>
 
                 <div className="border-t border-border pt-4 mt-auto">
-                  <p className="text-base text-brand-blue-600 dark:text-brand-blue-400 font-medium leading-relaxed">
+                  <p className="text-lg text-brand-blue-600 dark:text-brand-blue-400 font-medium leading-relaxed">
                     &ldquo;{point.insight}&rdquo;
                   </p>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-base text-muted-foreground mt-1">
                     &mdash; {point.source}
                   </p>
                 </div>

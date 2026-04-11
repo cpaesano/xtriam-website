@@ -73,13 +73,13 @@ export function DeliverablesSection() {
       <div className="max-w-5xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-base mb-3">
               Phase 1 — Scope & Deliverables
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               Everything included in Phase 1
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 text-xl text-muted-foreground max-w-2xl mx-auto">
               A complete, hands-on implementation. Not a software license — a partnership.
             </p>
           </div>
@@ -95,16 +95,16 @@ export function DeliverablesSection() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-medium text-brand-blue-600 dark:text-brand-blue-400 bg-brand-blue-50 dark:bg-brand-blue-950 px-2 py-0.5 rounded">
+                      <span className="text-sm font-medium text-brand-blue-600 dark:text-brand-blue-400 bg-brand-blue-50 dark:bg-brand-blue-950 px-2 py-0.5 rounded">
                         {i + 1} of 8
                       </span>
                       <h3 className="text-xl font-semibold text-foreground">{d.title}</h3>
                     </div>
-                    <p className="text-muted-foreground text-base mt-2 leading-relaxed">
+                    <p className="text-muted-foreground text-lg mt-2 leading-relaxed">
                       {d.description}
                     </p>
                     {d.highlight && (
-                      <p className="text-base text-brand-orange-600 dark:text-brand-orange-400 font-medium mt-3">
+                      <p className="text-lg text-brand-orange-600 dark:text-brand-orange-400 font-medium mt-3">
                         {d.highlight}
                       </p>
                     )}

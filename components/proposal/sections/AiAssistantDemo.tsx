@@ -66,7 +66,7 @@ export function AiAssistantDemo() {
   return (
     <SectionReveal>
       <div className="bg-muted/50 border border-border rounded-2xl p-6 sm:p-8 my-6">
-        <h4 className="text-center text-base font-medium text-muted-foreground mb-6">
+        <h4 className="text-center text-lg font-medium text-muted-foreground mb-6">
           AI Operations Assistant &mdash; Instant Answers from Live Data
         </h4>
 
@@ -82,7 +82,7 @@ export function AiAssistantDemo() {
                 </div>
               )}
               <div
-                className={`rounded-2xl px-4 py-3 max-w-[80%] text-base leading-relaxed ${
+                className={`rounded-2xl px-4 py-3 max-w-[80%] text-lg leading-relaxed ${
                   msg.role === "user"
                     ? "bg-brand-blue-600 text-white rounded-br-md"
                     : "bg-background border border-border text-foreground rounded-bl-md"
@@ -103,14 +103,14 @@ export function AiAssistantDemo() {
           ))}
 
           {visibleCount === 0 && (
-            <div className="text-center text-muted-foreground text-base py-8">
+            <div className="text-center text-muted-foreground text-lg py-8">
               <Bot className="w-8 h-8 mx-auto mb-2 text-brand-blue-400" />
               Loading conversation...
             </div>
           )}
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-6">
+        <p className="text-center text-base text-muted-foreground mt-6">
           Powered by Claude AI &middot; Pulls live data from Firestore &amp; BisTrack
         </p>
       </div>

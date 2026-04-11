@@ -16,7 +16,7 @@ export function HeroSection() {
       }} />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <p className="text-brand-blue-300 font-medium tracking-widest uppercase text-sm sm:text-base mb-4">
+        <p className="text-brand-blue-300 font-medium tracking-widest uppercase text-base sm:text-lg mb-4">
           Implementation Proposal
         </p>
 
@@ -36,7 +36,7 @@ export function HeroSection() {
           partnership
         </h1>
 
-        <p className="mt-8 text-lg sm:text-xl text-brand-blue-200 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-8 text-xl sm:text-xl text-brand-blue-200 max-w-2xl mx-auto leading-relaxed">
           A platform customized around how your business actually works &mdash;
           not around how a software company assumed it does.
         </p>
@@ -44,7 +44,7 @@ export function HeroSection() {
         <div className="mt-10 flex flex-col items-center gap-3">
           <div className="flex items-center gap-4">
             <div className="w-12 h-px bg-brand-blue-500/50" />
-            <span className="text-brand-blue-400 text-sm tracking-widest uppercase">Presented by</span>
+            <span className="text-brand-blue-400 text-base tracking-widest uppercase">Presented by</span>
             <div className="w-12 h-px bg-brand-blue-500/50" />
           </div>
           <Image
@@ -62,7 +62,7 @@ export function HeroSection() {
               height={48}
               className="w-12 h-12 rounded-full border-2 border-brand-blue-500/30"
             />
-            <div className="text-left text-brand-blue-400 text-sm">
+            <div className="text-left text-brand-blue-400 text-base">
               <p className="text-white font-medium">Carlos A. Paesano</p>
               <p>Founder &amp; Chief Software Architect</p>
             </div>

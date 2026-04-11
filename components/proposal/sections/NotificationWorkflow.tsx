@@ -31,7 +31,7 @@ export function NotificationWorkflow() {
   return (
     <SectionReveal>
       <div className="bg-muted/50 border border-border rounded-2xl p-6 sm:p-8 my-6">
-        <h4 className="text-center text-base font-medium text-muted-foreground mb-8">
+        <h4 className="text-center text-lg font-medium text-muted-foreground mb-8">
           Notification System &mdash; Email + SMS Automation
         </h4>
 
@@ -43,7 +43,7 @@ export function NotificationWorkflow() {
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${step.color} flex items-center justify-center`}>
                   <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <span className="text-sm text-muted-foreground text-center max-w-[80px]">
+                <span className="text-base text-muted-foreground text-center max-w-[80px]">
                   {step.label}
                 </span>
               </div>
@@ -57,12 +57,12 @@ export function NotificationWorkflow() {
         {/* Two columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <h5 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+            <h5 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
               <User className="w-4 h-4 text-brand-blue-600" /> Dealer Notifications
             </h5>
             <ul className="space-y-2">
               {dealerNotifications.map((n) => (
-                <li key={n} className="text-base text-muted-foreground flex items-start gap-2">
+                <li key={n} className="text-lg text-muted-foreground flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-blue-500 mt-1.5 shrink-0" />
                   {n}
                 </li>
@@ -70,12 +70,12 @@ export function NotificationWorkflow() {
             </ul>
           </div>
           <div>
-            <h5 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+            <h5 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
               <Zap className="w-4 h-4 text-brand-orange-500" /> Internal Team Notifications
             </h5>
             <ul className="space-y-2">
               {internalNotifications.map((n) => (
-                <li key={n} className="text-base text-muted-foreground flex items-start gap-2">
+                <li key={n} className="text-lg text-muted-foreground flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-orange-500 mt-1.5 shrink-0" />
                   {n}
                 </li>

@@ -21,13 +21,13 @@ export function DemoSection() {
             <Monitor className="w-8 h-8 text-brand-orange-400" />
           </div>
 
-          <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-sm mb-3">
+          <p className="text-brand-orange-400 font-medium tracking-widest uppercase text-base mb-3">
             Working prototype
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             We&apos;ve Already Started Building
           </h2>
-          <p className="text-lg text-brand-blue-200 max-w-2xl mx-auto mb-10">
+          <p className="text-xl text-brand-blue-200 max-w-2xl mx-auto mb-10">
             A live prototype of the Dealer Portal was presented on-site at Palm City Ironworks
             on April 8, 2026. Here&apos;s what was demonstrated:
           </p>
@@ -37,13 +37,13 @@ export function DemoSection() {
               {demoHighlights.map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
-                  <span className="text-brand-blue-100 text-base">{item}</span>
+                  <span className="text-brand-blue-100 text-lg">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <p className="mt-8 text-brand-blue-300 text-base max-w-lg mx-auto">
+          <p className="mt-8 text-brand-blue-300 text-lg max-w-lg mx-auto">
             The prototype is built on the same production stack that will power your live platform.
             What you saw is not a mockup &mdash; it&apos;s the foundation.
           </p>

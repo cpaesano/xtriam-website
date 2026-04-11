@@ -82,7 +82,7 @@ function VideoEmbed({ videoId, title, platform = "youtube" }: { videoId: string;
         />
       ) : (
         <div className="w-full h-full bg-gradient-to-br from-brand-blue-800 to-brand-blue-950 flex items-center justify-center">
-          <p className="text-brand-blue-300 text-sm px-4 text-center">{title}</p>
+          <p className="text-brand-blue-300 text-base px-4 text-center">{title}</p>
         </div>
       )}
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
@@ -100,13 +100,13 @@ export function TestimonialsSection() {
       <div className="max-w-6xl mx-auto">
         <SectionReveal>
           <div className="text-center mb-16">
-            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-sm mb-3">
+            <p className="text-brand-blue-600 dark:text-brand-blue-400 font-bold tracking-widest uppercase text-base mb-3">
               Proven results
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               What our clients say
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="mt-4 text-xl text-muted-foreground max-w-3xl mx-auto">
               Window and door professionals who transformed their operations with xTriam.
               The same approach, the same commitment — now applied to Palm City Ironworks.
             </p>
@@ -125,7 +125,7 @@ export function TestimonialsSection() {
                     <span className="text-3xl font-bold text-brand-blue-600 dark:text-brand-blue-400">
                       {t.stat}
                     </span>
-                    <span className="text-base text-muted-foreground ml-2">
+                    <span className="text-lg text-muted-foreground ml-2">
                       {t.statLabel}
                     </span>
                   </div>
@@ -133,7 +133,7 @@ export function TestimonialsSection() {
                   {/* Quote */}
                   <div className="flex gap-2 mb-4">
                     <Quote className="w-5 h-5 text-brand-orange-400 shrink-0 mt-0.5" />
-                    <p className="text-base text-foreground leading-relaxed italic">
+                    <p className="text-lg text-foreground leading-relaxed italic">
                       {t.quote}
                     </p>
                   </div>
@@ -141,7 +141,7 @@ export function TestimonialsSection() {
                   {/* Author */}
                   <div className="border-t border-border pt-4">
                     <p className="font-semibold text-foreground">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.title}</p>
+                    <p className="text-base text-muted-foreground">{t.title}</p>
                   </div>
                 </div>
               </div>
