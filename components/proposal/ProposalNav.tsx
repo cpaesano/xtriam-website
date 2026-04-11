@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
-import { useTheme } from "./ThemeProvider";
 
 const sections = [
   { id: "hero", label: "Welcome" },
@@ -18,8 +17,7 @@ const sections = [
   { id: "next-steps", label: "Next Steps" },
 ];
 
-export function ProposalNav({ clientName }: { clientName: string }) {
-  const { theme } = useTheme();
+export function ProposalNav() {
 
   function scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -36,9 +34,6 @@ export function ProposalNav({ clientName }: { clientName: string }) {
             height={30}
             className="h-7 w-auto"
           />
-          <span className="hidden sm:inline text-brand-blue-100 text-sm">
-            &middot; {clientName}
-          </span>
         </div>
 
         <div className="hidden lg:flex items-center gap-1">

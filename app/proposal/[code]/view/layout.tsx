@@ -24,7 +24,7 @@ export default async function ProposalLayout({
     <ThemeProvider>
       <ViewerProvider>
         <ScrollProgress />
-        <ProposalNav clientName={config?.client || ""} />
+        <ProposalNav />
         <main>{children}</main>
       </ViewerProvider>
     </ThemeProvider>
