@@ -36,7 +36,7 @@ export function ProposalNav({ clientName }: { clientName: string }) {
             height={30}
             className="h-7 w-auto"
           />
-          <span className="hidden sm:inline text-brand-blue-300 text-sm">
+          <span className="hidden sm:inline text-brand-blue-100 text-sm">
             &middot; {clientName}
           </span>
         </div>
@@ -46,7 +46,7 @@ export function ProposalNav({ clientName }: { clientName: string }) {
             <button
               key={s.id}
               onClick={() => scrollTo(s.id)}
-              className="px-2.5 py-1 text-xs text-brand-blue-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="px-2.5 py-1 text-xs text-brand-blue-100 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
             >
               {s.label}
             </button>
