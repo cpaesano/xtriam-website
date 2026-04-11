@@ -100,7 +100,7 @@ export function InvestmentSection() {
                 <div>
                   <p className="text-base text-brand-blue-300 uppercase tracking-wider mb-1">xTriam &mdash; Phase 1 Implementation</p>
                   <p className="text-base text-brand-blue-300 mb-3">
-                    Full hands-on implementation by Carlos Paesano, including on-site consulting, catalog setup,
+                    Full hands-on implementation by Carlos Paesano and his xTriam team, including on-site consulting, catalog setup,
                     BisTrack integration, notifications, dealer onboarding, training, and 30 days of go-live support
                   </p>
                   <div className="flex items-baseline gap-2">
@@ -225,7 +225,7 @@ export function InvestmentSection() {
               ))}
             </div>
             <p className="mt-6 text-brand-blue-200 text-base max-w-xl mx-auto">
-              You&apos;re paying for a partner &mdash; Carlos Paesano&apos;s time, presence, and 20+ years of expertise
+              You&apos;re paying for a partner &mdash; Carlos Paesano and his xTriam team&apos;s time, presence, and 20+ years of expertise
               applied directly to your business.
             </p>
           </div>

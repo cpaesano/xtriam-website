@@ -8,7 +8,7 @@ const steps = [
   {
     icon: MapPin,
     title: "Discovery Session",
-    description: "Carlos on-site at Palm City. Shadow team members, review BisTrack, confirm SKU count, map production stages and notification triggers.",
+    description: "Carlos and his xTriam team on-site at Palm City. Shadow team members, review BisTrack, confirm SKU count, map production stages and notification triggers.",
   },
   {
     icon: FileText,
@@ -23,7 +23,7 @@ const steps = [
   {
     icon: HeadphonesIcon,
     title: "Go Live",
-    description: "Dealers start quoting and ordering through the portal. Carlos on-call for 30 days.",
+    description: "Dealers start quoting and ordering through the portal. Carlos and his xTriam team on-call for 30 days.",
   },
 ];
 

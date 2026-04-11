@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { useViewer } from "./ViewerProvider";
 import {
   addComment,
@@ -101,6 +102,8 @@ export function CommentButton({ sectionId }: { sectionId: string }) {
     return () => unsub();
   }, [viewer, sectionId]);
 
+  const handleClose = useCallback(() => setOpen(false), []);
+
   const count = comments.length;
 
   return (
@@ -113,12 +116,13 @@ export function CommentButton({ sectionId }: { sectionId: string }) {
         {count > 0 ? `${count} comment${count > 1 ? "s" : ""}` : "Leave a comment"}
       </button>
 
-      {open && (
+      {open && createPortal(
         <CommentPanel
           sectionId={sectionId}
           comments={comments}
-          onClose={() => setOpen(false)}
-        />
+          onClose={handleClose}
+        />,
+        document.body
       )}
     </>
   );

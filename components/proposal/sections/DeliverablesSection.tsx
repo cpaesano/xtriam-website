@@ -12,7 +12,7 @@ const deliverables = [
   {
     icon: MapPin,
     title: "On-Site Business Consulting & Discovery",
-    description: "Carlos embeds with your team in Fort Myers. Shadows every role, maps every workflow, reviews BisTrack, and documents the full order lifecycle before configuring a single setting.",
+    description: "Carlos and his xTriam team embed with your team in Fort Myers. Shadow every role, map every workflow, review BisTrack, and document the full order lifecycle before configuring a single setting.",
     highlight: "This is the highest-value component — what ensures the platform works from day one.",
     special: null,
   },
@@ -61,7 +61,7 @@ const deliverables = [
   {
     icon: HeadphonesIcon,
     title: "Go-Live Support",
-    description: "30 days of dedicated post-launch support. Carlos on-call during first real orders through the system.",
+    description: "30 days of dedicated post-launch support. Carlos and his xTriam team on-call during first real orders through the system.",
     highlight: "Bug fixes and configuration adjustments at no extra charge within the 30-day window.",
     special: null,
   },
