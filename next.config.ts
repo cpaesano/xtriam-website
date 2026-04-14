@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Include content/knowledge/ and content/tutorials/ in serverless function bundles
+  // so the AI support chat knowledge-loader can read them at runtime via fs.readFileSync
+  outputFileTracingIncludes: {
+    '/api/support/chat': ['./content/knowledge/**/*', './content/tutorials/**/*'],
+  },
   async redirects() {
     return [
       {
