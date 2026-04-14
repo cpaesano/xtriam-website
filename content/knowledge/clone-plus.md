@@ -2,20 +2,22 @@
 title: "Clone Plus - Sales Document Cloning"
 keywords:
   - clone
-  - copy
-  - duplicate
   - clone plus
   - clone sales document
+  - clone sales documents
+  - copy
   - copy quote
+  - copy sales document
+  - copy to another
+  - clone to another
+  - duplicate
+  - duplicate quote
   - re-bid
   - rebid
   - different customer
   - different account
-  - clone to another
-  - copy to another
   - clone proposal
-  - duplicate quote
-  - copy sales document
+  - clone quote
 category: "sales-documents"
 ---
 

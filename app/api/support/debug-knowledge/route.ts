@@ -1,16 +1,25 @@
 import { NextResponse } from "next/server";
-import { getAvailableTopics, loadKnowledgeBase, getRelevantKnowledge } from "@/lib/knowledge-loader";
+import { loadKnowledgeBase } from "@/lib/knowledge-loader";
 
 export async function GET() {
   const topics = loadKnowledgeBase();
-  const available = getAvailableTopics();
+  const message = "how can we clone sales documents?";
+  const lower = message.toLowerCase();
 
-  // Test clone query
-  const cloneResult = getRelevantKnowledge("how can we clone sales documents?");
+  const scored = topics
+    .map((t) => ({
+      slug: t.slug,
+      title: t.title,
+      score: t.keywords.filter((kw) => lower.includes(kw.toLowerCase())).length,
+      matched: t.keywords.filter((kw) => lower.includes(kw.toLowerCase())),
+    }))
+    .filter((t) => t.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10);
 
   return NextResponse.json({
     totalTopics: topics.length,
-    topicTitles: available,
-    cloneTestResult: cloneResult ? cloneResult.substring(0, 200) + "..." : "NO MATCH",
+    query: message,
+    topMatches: scored,
   });
 }
