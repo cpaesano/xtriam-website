@@ -165,7 +165,7 @@ export function ChatInterface() {
         {loading && (
           <div className="flex justify-start">
             <div className="bg-gray-100 rounded-2xl px-4 py-3">
-              <div className="flex gap-1">
+              <div className="flex gap-1 mb-1.5">
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
                 <div
                   className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
@@ -176,6 +176,7 @@ export function ChatInterface() {
                   style={{ animationDelay: "0.2s" }}
                 />
               </div>
+              <p className="text-xs text-gray-400 m-0">Looking up your answer...</p>
             </div>
           </div>
         )}
