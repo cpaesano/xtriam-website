@@ -226,7 +226,7 @@ export function getRelevantKnowledge(userMessage: string): string {
   return scoredTopics
     .map((item) => {
       const tutorialNote = item.topic.tutorialUrl
-        ? `\n\n**Full Tutorial:** [View step-by-step guide with screenshots](${item.topic.tutorialUrl})`
+        ? `\n\n**Full Tutorial for ${item.topic.title}:** [View step-by-step guide with screenshots](${item.topic.tutorialUrl})`
         : "";
       return `## ${item.topic.title}\n\n${item.topic.content}${tutorialNote}`;
     })

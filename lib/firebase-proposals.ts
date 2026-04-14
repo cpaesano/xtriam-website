@@ -75,14 +75,20 @@ export function subscribeToComments(
     orderBy("createdAt", "asc")
   );
 
-  return onSnapshot(q, (snapshot) => {
-    const comments: ProposalComment[] = snapshot.docs.map((d) => ({
-      id: d.id,
-      ...d.data(),
-      createdAt: d.data().createdAt?.toDate() || new Date(),
-    })) as ProposalComment[];
-    callback(comments);
-  });
+  return onSnapshot(
+    q,
+    (snapshot) => {
+      const comments: ProposalComment[] = snapshot.docs.map((d) => ({
+        id: d.id,
+        ...d.data(),
+        createdAt: d.data().createdAt?.toDate() || new Date(),
+      })) as ProposalComment[];
+      callback(comments);
+    },
+    (error) => {
+      console.error("[Comments] Firestore listener error:", error.code, error.message);
+    }
+  );
 }
 
 export async function toggleLike(commentId: string, viewerId: string, currentlyLiked: boolean) {
