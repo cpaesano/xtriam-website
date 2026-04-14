@@ -872,6 +872,94 @@ This guide helps new users get set up and familiar with the system.
   },
 
   // ============================================
+  // CLONE PLUS (Sales Document Cloning)
+  // ============================================
+  clonePlus: {
+    keywords: [
+      "clone",
+      "copy",
+      "duplicate",
+      "clone plus",
+      "clone sales document",
+      "copy quote",
+      "re-bid",
+      "rebid",
+      "different customer",
+      "different account",
+      "clone to another",
+      "copy to another",
+      "clone proposal",
+      "duplicate quote",
+    ],
+    title: "Clone Plus (Sales Document Cloning)",
+    content: `
+## Clone Plus - Sales Document Cloning
+
+### Overview
+Clone Plus allows you to create an exact copy of a Sales Document, including all its line items (A3 Product & Labor items and C Specialty items). You can clone to the same project or to an entirely different customer/account.
+
+### How to Clone a Sales Document
+
+1. **Open the Sales Document** you want to clone
+2. **Click the "Clone Plus" quick action button** in the highlights panel
+3. The Clone Plus wizard opens and shows:
+   - A preview of all line items that will be cloned
+   - The option to select/deselect individual items
+   - The clone destination (Same Project or Different Account)
+
+### Clone to Same Project
+This is the simplest option. It creates a copy of the Sales Document under the same project and account. Use this when you want to create a variation of an existing quote (for example, with different product options).
+
+1. Select **"Same Project"** as the destination
+2. Enter a name for the new Sales Document
+3. Check/uncheck any line items you want to include or exclude
+4. Click **Clone**
+5. The new Sales Document opens automatically
+
+### Clone to a Different Customer (Re-Bid)
+This is the powerful feature that lets you take an existing quote and clone it for a completely different customer. This is common when you have a standard job scope that applies to multiple clients.
+
+1. Select **"Different Account"** as the destination
+2. **Search and select the target account** (the new customer)
+3. A new Project will be created automatically under that account
+4. Enter the **Project Name** for the new project
+5. Select the **Service Type** (Product + Installation, Installation Only, Product Only, Export, Other)
+6. Check/uncheck any line items you want to include or exclude
+7. Click **Clone**
+
+When cloning to a different account, the system creates:
+- A new **Project** under the target account
+- A new **Sales Document** under that project
+- All selected **A3 Labor Items** with their add-ons
+- All selected **C Specialty Items**
+
+### What Gets Cloned
+- All selected A3 Product & Labor line items (with dimensions, pricing, markups)
+- All A3 Add-Ons (junction records) linked to cloned items
+- All selected C Specialty line items
+- The Sales Document name (editable before cloning)
+- The new Sales Document starts with **"Unquoted"** status regardless of the original status
+
+### What Does NOT Get Cloned
+- Payment schedules or invoices
+- E-signatures
+- Attachments or photos
+- The original Sales Document status (always resets to Unquoted)
+
+### Common Use Cases
+- **Re-bidding for a different customer:** Clone a detailed quote to a new account instead of rebuilding it from scratch
+- **Creating variations:** Clone a quote in the same project with different product options
+- **Standardized job scopes:** Use a template Sales Document and clone it for each new customer
+- **Copying pricing:** When two customers need the same products, clone and adjust pricing as needed
+
+### Tips
+- Review the line item list before cloning. You can deselect items you do not need.
+- After cloning, always review the new Sales Document to adjust pricing or details for the new customer.
+- The original Sales Document is never modified. Clone Plus only creates copies.
+`,
+  },
+
+  // ============================================
   // PERMISSIONS & ACCESS
   // ============================================
   permissions: {
