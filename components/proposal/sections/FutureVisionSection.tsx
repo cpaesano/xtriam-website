@@ -53,16 +53,14 @@ export function FutureVisionSection() {
       if (snap.exists()) {
         const data = snap.data() as Record<string, string[]>;
         setAllVotes(data);
-        // Set current viewer's selections
-        if (viewer) {
-          const mySelections = new Set<string>();
-          for (const [featureId, voters] of Object.entries(data)) {
-            if (voters.includes(viewer.viewerId)) {
-              mySelections.add(featureId);
-            }
+        // Show as selected if anyone has voted for it
+        const allSelected = new Set<string>();
+        for (const [featureId, voters] of Object.entries(data)) {
+          if (voters.length > 0) {
+            allSelected.add(featureId);
           }
-          setSelected(mySelections);
         }
+        setSelected(allSelected);
       }
     }
     load();
