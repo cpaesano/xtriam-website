@@ -92,9 +92,17 @@ export function FutureVisionSection() {
     await setDoc(ref, updatedAllVotes, { merge: true });
   }
 
-  // Count total unique voters across all features
-  function getVoterCount(featureId: string): number {
-    return (allVotes[featureId] || []).length;
+  const voterNames: Record<string, string> = {
+    brian: "Brian O'Neill",
+    john: "John Felder",
+    carlos: "Carlos Paesano",
+    alejandro: "Alejandro Eliaschev",
+    eduardo: "Eduardo Bleiberg",
+    keith: "Keith Waletko",
+  };
+
+  function getVoters(featureId: string): string[] {
+    return (allVotes[featureId] || []).map(id => voterNames[id] || id);
   }
 
   return (
@@ -126,7 +134,7 @@ export function FutureVisionSection() {
 
             <div className="space-y-3">
               {features.map((f, i) => {
-                const voterCount = getVoterCount(f.id);
+                const voters = getVoters(f.id);
                 return (
                   <SectionReveal key={f.id} delay={i * 50}>
                     <button
@@ -145,11 +153,11 @@ export function FutureVisionSection() {
                         {selected.has(f.id) && <Check className="w-4 h-4 text-white" />}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center flex-wrap gap-2">
                           <p className="font-medium text-foreground text-lg">{f.label}</p>
-                          {voterCount > 0 && (
+                          {voters.length > 0 && (
                             <span className="text-xs text-brand-blue-600 dark:text-brand-blue-400 bg-brand-blue-50 dark:bg-brand-blue-950 px-2 py-0.5 rounded-full">
-                              {voterCount} vote{voterCount > 1 ? "s" : ""}
+                              {voters.join(", ")}
                             </span>
                           )}
                         </div>
