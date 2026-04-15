@@ -193,28 +193,23 @@ function InlineChatThread({ sectionId }: { sectionId: string }) {
     <div className="border-t border-border bg-muted/20">
       {/* Messages */}
       {comments.length > 0 && (
-        <div className="px-5 py-4 space-y-3 max-h-80 overflow-y-auto">
+        <div className="px-5 py-3 space-y-2 max-h-80 overflow-y-auto">
           {comments.map((c) => {
             const own = isOwnMessage(c);
             const isClient = c.viewerRole === "client";
             return (
-              <div key={c.id} className={`flex items-end gap-2 ${own ? "flex-row-reverse" : ""}`}>
+              <div key={c.id} className={`flex items-center gap-2 ${own ? "flex-row-reverse" : ""}`}>
                 <Avatar initials={c.viewerAvatar} role={c.viewerRole} size="sm" />
-                <div className={`max-w-[75%] ${own ? "items-end" : "items-start"}`}>
-                  <div className={`rounded-2xl px-4 py-2.5 ${
-                    own
-                      ? "bg-brand-blue-600 text-white rounded-br-md"
-                      : isClient
-                        ? "bg-brand-orange-100 dark:bg-brand-orange-950/30 text-foreground rounded-bl-md"
-                        : "bg-muted text-foreground rounded-bl-md"
-                  }`}>
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">{c.text}</p>
-                  </div>
-                  <div className={`flex items-center gap-1.5 mt-1 px-1 ${own ? "justify-end" : ""}`}>
-                    <span className="text-[11px] text-muted-foreground">{c.viewerName}</span>
-                    <span className="text-[11px] text-muted-foreground/60">{timeAgo(c.createdAt)}</span>
-                  </div>
+                <div className={`rounded-2xl px-4 py-1.5 ${
+                  own
+                    ? "bg-brand-blue-600 text-white rounded-br-md"
+                    : isClient
+                      ? "bg-brand-orange-100 dark:bg-brand-orange-950/30 text-foreground rounded-bl-md"
+                      : "bg-muted text-foreground rounded-bl-md"
+                }`}>
+                  <p className="text-sm leading-snug whitespace-pre-wrap">{c.text}</p>
                 </div>
+                <span className="text-[11px] text-muted-foreground whitespace-nowrap">{c.viewerName} &middot; {timeAgo(c.createdAt)}</span>
               </div>
             );
           })}
