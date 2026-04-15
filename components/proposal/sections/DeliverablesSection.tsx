@@ -6,6 +6,7 @@ import { NotificationWorkflow } from "./NotificationWorkflow";
 import {
   MapPin, Database, Link2, Sliders, Users,
   BellRing, GraduationCap, HeadphonesIcon,
+  BarChart3, Mail,
 } from "lucide-react";
 
 const deliverables = [
@@ -40,8 +41,8 @@ const deliverables = [
   {
     icon: Users,
     title: "Dealer Onboarding",
-    description: "Up to 150 dealer accounts configured with role assignments, discount tiers, and territory assignments. Every account provisioned and tested.",
-    highlight: "Covers all active dealers plus growth buffer.",
+    description: "All dealer accounts configured with role assignments, discount tiers, and territory assignments. Every account provisioned and tested — no cap on the number of dealers onboarded.",
+    highlight: "Your full dealer network from day one, with room to grow.",
     special: null,
   },
   {
@@ -50,6 +51,20 @@ const deliverables = [
     description: "Automated notifications to dealers and Palm City team members at every stage of the order lifecycle. SendGrid for email, Twilio for SMS.",
     highlight: "The right person knows what they need to know, the moment it happens.",
     special: "notifications",
+  },
+  {
+    icon: BarChart3,
+    title: "Aging Reports",
+    description: "Real-time aging visibility for every role. Dealers see what they owe Palm City at a glance — deposits due, balance invoices, and payment history. Sales reps see aging across their assigned dealers. Admins get the full picture with filtering by rep, region, and age bucket (30/60/90/120+ days).",
+    highlight: "Data pulled from BisTrack — a natural extension of the integration.",
+    special: null,
+  },
+  {
+    icon: Mail,
+    title: "Automated Weekly Reports",
+    description: "Weekly email digests sent to each sales rep with open quotes summary (amount, days since created, expiring soon) and aging summary (past due amounts by bucket). SMS alerts via Twilio for urgent items only — e.g., accounts 90+ days past due.",
+    highlight: "The right data to the right person, every Monday morning.",
+    special: null,
   },
   {
     icon: GraduationCap,
@@ -96,7 +111,7 @@ export function DeliverablesSection() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-medium text-brand-blue-600 dark:text-brand-blue-400 bg-brand-blue-50 dark:bg-brand-blue-950 px-2 py-0.5 rounded">
-                        {i + 1} of 8
+                        {i + 1} of {deliverables.length}
                       </span>
                       <h3 className="text-xl font-semibold text-foreground">{d.title}</h3>
                     </div>

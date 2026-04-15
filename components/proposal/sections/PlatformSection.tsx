@@ -17,6 +17,7 @@ const columns = [
       { icon: ShoppingCart, text: "Order review & approval workflow" },
       { icon: Truck, text: "Container & shipment tracking" },
       { icon: BarChart3, text: "Sales pipeline & dealer performance" },
+      { icon: Shield, text: "Sales rep roles — restricted view, no cost/margin data" },
       { icon: Bot, text: "AI operations assistant" },
     ],
   },
@@ -34,7 +35,7 @@ const columns = [
   },
   {
     title: "Dealer Portal",
-    subtitle: "250+ dealers",
+    subtitle: "Your entire dealer network",
     color: "brand-blue",
     features: [
       { icon: Database, text: "Browse Palm City product catalog" },
@@ -42,6 +43,7 @@ const columns = [
       { icon: FileText, text: "Generate branded proposals for end clients" },
       { icon: ShoppingCart, text: "Convert quotes to orders with e-signature" },
       { icon: Truck, text: "Track order status & shipment ETAs" },
+      { icon: BarChart3, text: "Aging reports — deposits due, balance invoices, payment history" },
       { icon: BellRing, text: "Automated email + SMS notifications" },
     ],
   },
@@ -60,8 +62,8 @@ export function PlatformSection() {
               xTriam Dealer Portal
             </h2>
             <p className="mt-4 text-xl text-muted-foreground max-w-3xl mx-auto">
-              A white-label platform connecting Palm City with your dealer network.
-              Purpose-built for the manufacturer&ndash;dealer channel.
+              A platform built around Palm City&apos;s brand, connecting you with your dealer network.
+              Purpose-built for the manufacturer&ndash;dealer channel. Powered by xTriam.
             </p>
           </div>
         </SectionReveal>
@@ -83,7 +85,7 @@ export function PlatformSection() {
                 </div>
                 <div className="w-px h-4 bg-border" />
                 <div className="flex flex-wrap justify-center gap-3">
-                  {["Sunshine Doors LLC", "Gulf Coast Windows", "... up to 250 dealers"].map((d) => (
+                  {["Sunshine Doors LLC", "Gulf Coast Windows", "... your entire network"].map((d) => (
                     <div key={d} className="bg-muted border border-border px-4 py-2 rounded-lg text-sm text-foreground">
                       {d}
                     </div>

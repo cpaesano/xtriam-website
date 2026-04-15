@@ -13,6 +13,8 @@ const sections = [
   { id: "deliverables", label: "Phase 1" },
   { id: "demo", label: "Live Demo" },
   { id: "investment", label: "Investment" },
+  { id: "support", label: "Support" },
+  { id: "faq", label: "Q&A" },
   { id: "future", label: "Future Vision" },
   { id: "next-steps", label: "Next Steps" },
 ];
@@ -20,7 +22,9 @@ const sections = [
 export function ProposalNav() {
 
   function scrollTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    // Try the section wrapper first (collapsible), then the inner section element
+    const el = document.getElementById(`section-${id}`) || document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (

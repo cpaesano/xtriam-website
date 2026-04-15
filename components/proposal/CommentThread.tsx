@@ -91,7 +91,7 @@ function CommentItem({
   );
 }
 
-export function CommentButton({ sectionId }: { sectionId: string }) {
+export function CommentButton({ sectionId, readOnly = false }: { sectionId: string; readOnly?: boolean }) {
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState<ProposalComment[]>([]);
   const viewer = useViewer();
@@ -106,14 +106,27 @@ export function CommentButton({ sectionId }: { sectionId: string }) {
 
   const count = comments.length;
 
+  // In read-only mode, hide the button if no existing comments.
+  // Show it only when there are prior comments to view.
+  if (readOnly && count === 0) return null;
+  // Also hide during loading (comments not yet fetched) in read-only mode
+  if (readOnly && !viewer) return null;
+
   return (
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-blue-600 hover:bg-brand-blue-700 text-white text-sm font-medium shadow-lg shadow-brand-blue-600/25 hover:shadow-brand-blue-600/40 transition-all"
+        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium shadow-lg transition-all ${
+          readOnly
+            ? "bg-muted hover:bg-muted/80 text-muted-foreground shadow-none"
+            : "bg-brand-blue-600 hover:bg-brand-blue-700 text-white shadow-brand-blue-600/25 hover:shadow-brand-blue-600/40"
+        }`}
       >
         <MessageCircle className="w-5 h-5" />
-        {count > 0 ? `${count} comment${count > 1 ? "s" : ""}` : "Leave a comment"}
+        {readOnly
+          ? `View ${count} comment${count > 1 ? "s" : ""}`
+          : count > 0 ? `${count} comment${count > 1 ? "s" : ""}` : "Leave a comment"
+        }
       </button>
 
       {open && createPortal(
@@ -121,6 +134,7 @@ export function CommentButton({ sectionId }: { sectionId: string }) {
           sectionId={sectionId}
           comments={comments}
           onClose={handleClose}
+          readOnly={readOnly}
         />,
         document.body
       )}
@@ -132,10 +146,12 @@ function CommentPanel({
   sectionId,
   comments,
   onClose,
+  readOnly = false,
 }: {
   sectionId: string;
   comments: ProposalComment[];
   onClose: () => void;
+  readOnly?: boolean;
 }) {
   const viewer = useViewer();
   const [text, setText] = useState("");
@@ -265,44 +281,52 @@ function CommentPanel({
         </div>
 
         {/* Input */}
-        <div className="border-t border-border px-4 py-3">
-          {replyTo && (
-            <div className="flex items-center gap-2 mb-2 text-xs text-muted-foreground">
-              <Reply className="w-3 h-3" />
-              Replying to {replyTo.name}
+        {readOnly ? (
+          <div className="border-t border-border px-4 py-3">
+            <p className="text-sm text-muted-foreground text-center">
+              New conversations have moved to the Q&amp;A section.
+            </p>
+          </div>
+        ) : (
+          <div className="border-t border-border px-4 py-3">
+            {replyTo && (
+              <div className="flex items-center gap-2 mb-2 text-xs text-muted-foreground">
+                <Reply className="w-3 h-3" />
+                Replying to {replyTo.name}
+                <button
+                  onClick={() => setReplyTo(null)}
+                  className="ml-auto hover:text-foreground"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              </div>
+            )}
+            <div className="flex items-end gap-2">
+              <Avatar initials={viewer.viewerAvatar} role={viewer.viewerRole} />
+              <textarea
+                ref={inputRef}
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSend();
+                  }
+                }}
+                placeholder="Write a comment..."
+                rows={1}
+                className="flex-1 resize-none rounded-xl border border-border bg-muted/50 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-transparent"
+              />
               <button
-                onClick={() => setReplyTo(null)}
-                className="ml-auto hover:text-foreground"
+                onClick={handleSend}
+                disabled={!text.trim() || sending}
+                className="p-2 rounded-xl bg-brand-blue-600 text-white hover:bg-brand-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                <X className="w-3 h-3" />
+                <Send className="w-4 h-4" />
               </button>
             </div>
-          )}
-          <div className="flex items-end gap-2">
-            <Avatar initials={viewer.viewerAvatar} role={viewer.viewerRole} />
-            <textarea
-              ref={inputRef}
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSend();
-                }
-              }}
-              placeholder="Write a comment..."
-              rows={1}
-              className="flex-1 resize-none rounded-xl border border-border bg-muted/50 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-transparent"
-            />
-            <button
-              onClick={handleSend}
-              disabled={!text.trim() || sending}
-              className="p-2 rounded-xl bg-brand-blue-600 text-white hover:bg-brand-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <Send className="w-4 h-4" />
-            </button>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

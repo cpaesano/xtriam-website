@@ -188,20 +188,17 @@ export function InvestmentSection() {
                 <p className="text-2xl font-bold text-white">$8</p>
                 <p className="text-brand-blue-400 text-base">/user/month</p>
                 <p className="text-brand-blue-300 text-base mt-2">Dealer-Side Users</p>
-                <p className="text-brand-blue-400 text-sm mt-1">Per active dealer login</p>
+                <p className="text-brand-blue-400 text-sm mt-1">Per individual login. Each rep at a dealer counts as one user.</p>
               </div>
             </div>
 
             {/* Estimated range */}
             <div className="bg-brand-blue-900/30 border border-brand-blue-600/30 rounded-xl p-4 text-center">
               <p className="text-brand-blue-200 text-lg">
-                Estimated at launch with 120 active dealers:
-              </p>
-              <p className="text-3xl font-bold text-white mt-1">
-                $3,000 &ndash; $3,400<span className="text-xl font-normal text-brand-blue-300">/month</span>
+                No cap on dealers. Your monthly cost scales with active users.
               </p>
               <p className="text-brand-blue-400 text-base mt-2">
-                Scales with your network &mdash; you never pay for inactive dealers.
+                You only pay for users who are actively logging in. Inactive accounts cost nothing.
               </p>
             </div>
           </div>
