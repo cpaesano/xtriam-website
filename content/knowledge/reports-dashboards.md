@@ -11,6 +11,22 @@ keywords:
   - performance
   - sales report
   - pipeline
+  - create report
+  - new report
+  - build report
+  - custom report
+  - report builder
+  - report type
+  - sales cycle
+  - cycle duration
+  - sales cycle duration
+  - stage duration
+  - time in stage
+  - project stage
+  - stage assignment
+  - stage assignments
+  - duration days
+  - psa
 category: "admin"
 ---
 
@@ -52,9 +68,26 @@ Using Dashboards:
 
 Creating Custom Reports:
 1. Go to Reports, then click New Report
-2. Select report type (Opportunities, Projects, etc.)
-3. Add filters and columns
-4. Run and save the report
+2. Select a report type in the Create Report dialog (examples: Projects with Stage Assignments for sales cycle analysis, Sales Documents, Opportunities)
+3. Use the Outline tab to add columns from the available fields
+4. Use the Filters tab to narrow results (for example, filter Status equals Passed when looking at stage durations)
+5. Group rows by a field such as Project Name by clicking the column header dropdown
+6. Save the report into the bpmPro Reports folder so others can find it
+
+Common Custom Report Recipes:
+
+Sales Cycle Duration report:
+- Shows how long each project spends in every sales stage (Leads/Unquoted, Being Quoted, Quoted, Sold)
+- Built from the "Projects with Stage Assignments" report type (bpmPro 7.94+)
+- Full walkthrough: /support/tutorials/sales-cycle-duration-report
+
+Filtering Sales Reports by SalesDoc Status:
+- Add a SalesDoc Status filter to any sales report to see only Sold, Quoted, or any specific status
+- Full walkthrough: /support/tutorials/filtering-sales-reports-by-status
+
+Customizing the Sales Document Report View:
+- Adjust which columns appear on sales document list views and reports
+- Full walkthrough: /support/tutorials/customize-sales-document-report-view
 
 Scheduling Reports:
 1. Open the report
