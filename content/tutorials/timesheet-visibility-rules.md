@@ -1,7 +1,7 @@
 ---
 title: "Timesheet Console — Who Sees What"
 description: "Plain-English guide to the Timesheet Console visibility rules: what regular employees see, what accounting and managers see, and how to grant access. Use this to onboard your team to bi-weekly payroll review without confusion."
-category: timesheet
+category: admin
 ---
 
 # Timesheet Console — Who Sees What
