@@ -8,6 +8,7 @@ import { DeliverablesSection } from "@/components/proposal/sections/Deliverables
 import { DemoSection } from "@/components/proposal/sections/DemoSection";
 import { FutureVisionSection } from "@/components/proposal/sections/FutureVisionSection";
 import { InvestmentSection } from "@/components/proposal/sections/InvestmentSection";
+import { PaymentMilestonesSection } from "@/components/proposal/sections/PaymentMilestonesSection";
 import { SupportSection } from "@/components/proposal/sections/SupportSection";
 import { FAQSection } from "@/components/proposal/sections/FAQSection";
 import { NextStepsSection } from "@/components/proposal/sections/NextStepsSection";
@@ -40,6 +41,9 @@ export default function ProposalPage() {
       </SectionWrapper>
       <SectionWrapper sectionId="investment" title="Investment" commentsReadOnly>
         <InvestmentSection />
+      </SectionWrapper>
+      <SectionWrapper sectionId="payment" title="Payment Terms" isNew commentsReadOnly>
+        <PaymentMilestonesSection />
       </SectionWrapper>
       <SectionWrapper sectionId="support" title="Ongoing Support" isNew commentsReadOnly>
         <SupportSection />

@@ -13,6 +13,7 @@ const sections = [
   { id: "deliverables", label: "Phase 1" },
   { id: "demo", label: "Live Demo" },
   { id: "investment", label: "Investment" },
+  { id: "payment", label: "Payment" },
   { id: "support", label: "Support" },
   { id: "faq", label: "Q&A" },
   { id: "future", label: "Future Vision" },
