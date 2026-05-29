@@ -417,52 +417,85 @@ interface AttachmentMeta {
   uploadedAt: string;
 }
 
-/** Upload an attachment to Cloud Storage and record metadata on the ticket. */
-export async function uploadFileToRecord(data: {
+/**
+ * Generate a short-lived v4 signed URL the browser uses to upload an attachment
+ * DIRECTLY to Cloud Storage. This bypasses the serverless request-body limit
+ * (Vercel caps function bodies at ~4.5 MB; a base64 photo can exceed that), and
+ * keeps large file bytes off our API routes entirely. Signing is done locally
+ * with the service-account private key (no iam.signBlob permission required).
+ */
+export async function createSignedUploadUrl(data: {
   recordId: string;
   fileName: string;
-  base64Data: string;
   contentType: string;
-}): Promise<{ success: boolean; contentDocumentId?: string; error?: string }> {
-  try {
-    const db = getAdminDb();
-    const bucket = getSupportBucket();
+}): Promise<{ id: string; path: string; uploadUrl: string }> {
+  const id = randomUUID();
+  const safeName = data.fileName.replace(/[^\w.\-]/g, "_");
+  const path = `support/${data.recordId}/${id}-${safeName}`;
 
-    const id = randomUUID();
-    const safeName = data.fileName.replace(/[^\w.\-]/g, "_");
-    const path = `support/${data.recordId}/${id}-${safeName}`;
-    const buffer = Buffer.from(data.base64Data, "base64");
-
-    await bucket.file(path).save(buffer, {
+  const [uploadUrl] = await getSupportBucket()
+    .file(path)
+    .getSignedUrl({
+      version: "v4",
+      action: "write",
+      expires: Date.now() + 15 * 60 * 1000, // 15 minutes
       contentType: data.contentType,
-      resumable: false,
-      metadata: { metadata: { ticketId: data.recordId } },
     });
 
-    const meta: AttachmentMeta = {
-      id,
+  return { id, path, uploadUrl };
+}
+
+/**
+ * Record an uploaded attachment on the ticket after the browser has PUT the
+ * bytes to Cloud Storage. Verifies the object exists and lives inside the
+ * ticket's own folder (so a client can't register a path it doesn't own)
+ * before persisting the metadata.
+ */
+export async function recordUploadedFile(data: {
+  recordId: string;
+  id: string;
+  fileName: string;
+  path: string;
+  contentType?: string;
+}): Promise<{ success: boolean; error?: string }> {
+  try {
+    // Security: the path must be within this ticket's own folder.
+    if (!data.path.startsWith(`support/${data.recordId}/`)) {
+      return { success: false, error: "Invalid attachment path" };
+    }
+
+    const file = getSupportBucket().file(data.path);
+    const [exists] = await file.exists();
+    if (!exists) {
+      return { success: false, error: "Uploaded file not found in storage" };
+    }
+
+    const [meta] = await file.getMetadata();
+
+    const attachment: AttachmentMeta = {
+      id: data.id,
       title: data.fileName,
-      path,
+      path: data.path,
       fileExtension: (data.fileName.split(".").pop() || "").toLowerCase(),
-      contentSize: buffer.length,
-      contentType: data.contentType,
+      contentSize: Number(meta.size) || 0,
+      contentType: data.contentType || meta.contentType || "",
       uploadedAt: new Date().toISOString(),
     };
 
-    await db
+    await getAdminDb()
       .collection(TICKETS)
       .doc(data.recordId)
       .update({
-        attachments: FieldValue.arrayUnion(meta),
+        attachments: FieldValue.arrayUnion(attachment),
         updatedAt: Timestamp.now(),
       });
 
-    return { success: true, contentDocumentId: id };
+    return { success: true };
   } catch (error) {
-    console.error("uploadFileToRecord (Storage) error:", error);
+    console.error("recordUploadedFile error:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Failed to upload file",
+      error: error instanceof Error ? error.message : "Failed to record attachment",
     };
   }
 }

@@ -22,3 +22,5 @@ export { CalendlyEmbed } from "./CalendlyEmbed";
 export { FloatingHelpButton } from "./FloatingHelpButton";
 
 export { AnimatedCounter } from "./AnimatedCounter";
+
+export { ProcessingOverlay } from "./ProcessingOverlay";

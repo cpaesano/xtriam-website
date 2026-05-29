@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Send, Loader2, AlertCircle, Upload, X, Image as ImageIcon } from "lucide-react";
-import { Button } from "@/components/ui";
+import { Button, ProcessingOverlay } from "@/components/ui";
 
 interface TicketFormProps {
   onSuccess?: (caseId: string) => void;
@@ -29,6 +29,9 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
   const [loading, setLoading] = useState(false);
   const [uploadingFiles, setUploadingFiles] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Set once the ticket is created, so we can link to it even if an attachment
+  // upload subsequently fails.
+  const [createdCaseId, setCreatedCaseId] = useState<string | null>(null);
 
   function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
     const selectedFiles = e.target.files;
@@ -77,55 +80,87 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
     });
   }
 
+  /**
+   * Upload each attached file directly to Cloud Storage via a signed URL:
+   *   1. ask our API for a signed upload URL
+   *   2. PUT the file bytes straight to Storage (no serverless body limit)
+   *   3. tell our API to record the attachment on the ticket
+   * Returns true only if every file succeeded; surfaces failures to the user.
+   */
   async function uploadFiles(caseId: string): Promise<boolean> {
     if (files.length === 0) return true;
 
     setUploadingFiles(true);
+    const failed: string[] = [];
 
     try {
       for (const { file } of files) {
-        // Convert file to base64
-        const base64 = await fileToBase64(file);
+        try {
+          // 1. Get a signed upload URL
+          const urlRes = await fetch("/api/support/upload", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              caseId,
+              fileName: file.name,
+              contentType: file.type,
+              fileSize: file.size,
+            }),
+          });
+          const urlData = await urlRes.json();
+          if (!urlRes.ok || !urlData.success) {
+            console.error(`Upload URL failed for ${file.name}:`, urlData.error);
+            failed.push(file.name);
+            continue;
+          }
 
-        const response = await fetch("/api/support/upload", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            caseId,
-            fileName: file.name,
-            base64Data: base64,
-            contentType: file.type,
-          }),
-        });
+          // 2. Upload the bytes directly to Cloud Storage
+          const putRes = await fetch(urlData.uploadUrl, {
+            method: "PUT",
+            headers: { "Content-Type": file.type },
+            body: file,
+          });
+          if (!putRes.ok) {
+            console.error(`Storage PUT failed for ${file.name}:`, putRes.status);
+            failed.push(file.name);
+            continue;
+          }
 
-        const data = await response.json();
-
-        if (!data.success) {
-          console.error(`Failed to upload ${file.name}:`, data.error);
-          // Continue uploading other files even if one fails
+          // 3. Record the attachment on the ticket
+          const doneRes = await fetch("/api/support/upload/complete", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              caseId,
+              id: urlData.id,
+              fileName: file.name,
+              path: urlData.path,
+              contentType: file.type,
+            }),
+          });
+          const doneData = await doneRes.json();
+          if (!doneRes.ok || !doneData.success) {
+            console.error(`Recording attachment failed for ${file.name}:`, doneData.error);
+            failed.push(file.name);
+          }
+        } catch (err) {
+          console.error(`File upload error for ${file.name}:`, err);
+          failed.push(file.name);
         }
       }
 
+      if (failed.length > 0) {
+        setError(
+          `Your ticket was created, but these attachments did not upload: ${failed.join(
+            ", "
+          )}. You can add them by replying to the ticket.`
+        );
+        return false;
+      }
       return true;
-    } catch (err) {
-      console.error("File upload error:", err);
-      return false;
     } finally {
       setUploadingFiles(false);
     }
-  }
-
-  function fileToBase64(file: File): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        // Remove the data URL prefix (e.g., "data:image/png;base64,")
-        const base64 = (reader.result as string).split(",")[1];
-        resolve(base64);
-      };
-      reader.onerror = (error) => reject(error);
-    });
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -150,13 +185,21 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
       const data = await response.json();
 
       if (data.success) {
-        // Upload any attached files
-        if (files.length > 0) {
-          await uploadFiles(data.caseId);
-        }
+        setCreatedCaseId(data.caseId);
+
+        // Upload any attached files (directly to Cloud Storage)
+        const uploadsOk =
+          files.length > 0 ? await uploadFiles(data.caseId) : true;
 
         // Clean up file previews
         files.forEach(({ preview }) => URL.revokeObjectURL(preview));
+
+        if (!uploadsOk) {
+          // Ticket was created but an attachment failed. Keep the user here so
+          // they see the error + the link to their ticket (rendered below)
+          // rather than silently redirecting.
+          return;
+        }
 
         if (onSuccess) {
           onSuccess(data.caseId);
@@ -176,13 +219,27 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
   const isSubmitting = loading || uploadingFiles;
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <>
+      <ProcessingOverlay
+        show={isSubmitting}
+        message={uploadingFiles ? "Uploading attachments..." : "Submitting your ticket..."}
+      />
+      <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
         <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-600">
           <div className="flex items-start gap-2">
             <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
             <span className="whitespace-pre-wrap">{error}</span>
           </div>
+          {createdCaseId && (
+            <button
+              type="button"
+              onClick={() => router.push(`/support/tickets/${createdCaseId}`)}
+              className="mt-3 text-sm font-medium text-brand-blue-600 underline hover:text-brand-blue-700"
+            >
+              View your ticket
+            </button>
+          )}
         </div>
       )}
 
@@ -322,7 +379,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
                   <img
                     src={filePreview.preview}
                     alt={filePreview.file.name}
-                    className="w-full h-24 object-cover"
+                    className="w-full h-24 object-contain bg-gray-100"
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <button
@@ -377,6 +434,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
           )}
         </Button>
       </div>
-    </form>
+      </form>
+    </>
   );
 }
