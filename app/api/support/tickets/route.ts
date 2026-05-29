@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getCases, getAllCases, createCase } from "@/lib/salesforce";
+import { getCases, getAllCases, createCase } from "@/lib/support-store";
 import type { CreateTicketRequest } from "@/types/auth";
 
 /**
@@ -72,6 +72,10 @@ export async function POST(request: Request) {
       description: body.description,
       priority: body.priority || "Medium",
       type: body.type || "Issue",
+      submitterName: `${session.firstName} ${session.lastName}`.trim(),
+      submitterEmail: session.email,
+      accountName: session.orgName || null,
+      origin: session.authMethod || "web",
     });
 
     if (!result.success) {

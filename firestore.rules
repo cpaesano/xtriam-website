@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All support data (tickets, comments, counters, accounts, mail) is accessed
+    // exclusively server-side via the Firebase Admin SDK from the Next.js API
+    // routes. The Admin SDK bypasses these rules entirely. No browser/client SDK
+    // ever touches these collections, so we deny all direct client access.
+    // The security boundary is the API route (JWT session + isAdmin checks),
+    // never client-side filtering.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

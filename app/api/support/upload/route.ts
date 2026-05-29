@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { uploadFileToRecord, getCaseById } from "@/lib/salesforce";
+import { uploadFileToRecord, getCaseById } from "@/lib/support-store";
 
 // Max file size: 5MB
 const MAX_FILE_SIZE = 5 * 1024 * 1024;

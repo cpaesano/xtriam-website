@@ -1,0 +1,12 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Support attachments are written and read only through server-side API
+    // routes using the Admin SDK (and signed URLs for download). Deny all
+    // direct client access.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

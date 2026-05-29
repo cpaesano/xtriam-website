@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getAccountInfo } from "@/lib/salesforce";
+import { getAccountInfo } from "@/lib/support-store";
 
 /**
  * GET /api/support/account

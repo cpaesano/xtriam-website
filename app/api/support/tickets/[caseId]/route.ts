@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getCaseById, updateCaseStatus, getCaseComments, addCaseComment, getAdjacentCaseIds } from "@/lib/salesforce";
+import { getCaseById, updateCaseStatus, getCaseComments, addCaseComment, getAdjacentCaseIds } from "@/lib/support-store";
 
 interface RouteParams {
   params: Promise<{ caseId: string }>;
@@ -91,8 +91,13 @@ export async function PATCH(request: Request, { params }: RouteParams) {
       );
     }
 
-    // Update status
-    const result = await updateCaseStatus(caseId, status);
+    const hasComment = !!(body.comment && body.comment.trim());
+
+    // Update status. If a comment is also being posted, suppress the status
+    // email so the client gets a single notification (the reply) rather than two.
+    const result = await updateCaseStatus(caseId, status, {
+      notifyClient: !hasComment,
+    });
 
     if (!result.success) {
       return NextResponse.json(
@@ -101,9 +106,12 @@ export async function PATCH(request: Request, { params }: RouteParams) {
       );
     }
 
-    // If a comment was included with the status change, add it
-    if (body.comment && body.comment.trim()) {
-      await addCaseComment(caseId, body.comment.trim());
+    // If a comment was included with the status change, add it (admin reply).
+    if (hasComment) {
+      await addCaseComment(caseId, body.comment.trim(), {
+        authorName: `${session.firstName} ${session.lastName}`.trim() || "xTriam Support",
+        isAdmin: true,
+      });
     }
 
     return NextResponse.json({ success: true });
@@ -139,7 +147,12 @@ export async function POST(request: Request, { params }: RouteParams) {
       );
     }
 
-    const result = await addCaseComment(caseId, comment.trim());
+    const result = await addCaseComment(caseId, comment.trim(), {
+      authorName:
+        `${session.firstName} ${session.lastName}`.trim() ||
+        (session.isAdmin ? "xTriam Support" : "Customer"),
+      isAdmin: !!session.isAdmin,
+    });
 
     if (!result.success) {
       return NextResponse.json(
