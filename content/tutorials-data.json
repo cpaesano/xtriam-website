@@ -1,0 +1,479 @@
+[
+  {
+    "slug": "adding-a-new-sales-person",
+    "title": "Adding a New Sales Person",
+    "category": "admin",
+    "keywords": [
+      "adding",
+      "sales",
+      "person",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "quote",
+      "proposal",
+      "import"
+    ],
+    "description": "To add a new sales person in bpmPro, you create them as a contact under your company's account and assign them the Sales and Estimating internal company role. This ensures they appear in sales person ...",
+    "sourceFile": "adding-a-new-sales-person.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "adding-chargebacks-to-sales-documents",
+    "title": "Adding Chargebacks to Sales Documents",
+    "category": "financial",
+    "keywords": [
+      "adding",
+      "chargebacks",
+      "sales",
+      "documents",
+      "account",
+      "sales document",
+      "quote",
+      "commission",
+      "report",
+      "sales person"
+    ],
+    "description": "Chargebacks let you track additional costs that weren't part of the original quote — such as product reorders due to sales errors, damaged items, or extra labor. bpmPro records these chargebacks on th...",
+    "sourceFile": "adding-chargebacks-to-sales-documents.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "adding-work-assignment-calendars",
+    "title": "Adding Work Assignment Calendars",
+    "category": "operations",
+    "keywords": [
+      "adding",
+      "work",
+      "assignment",
+      "calendars",
+      "project",
+      "calendar",
+      "work assignment",
+      "installation"
+    ],
+    "description": "By default, bpmPro's calendar only shows your personal events. But you can add custom calendars that display your work assignments — installations, final measurements, measuring appointments, and more...",
+    "sourceFile": "adding-work-assignment-calendars.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "cost-and-price-overrides",
+    "title": "Cost and Price Overrides",
+    "category": "estimating",
+    "keywords": [
+      "cost",
+      "price",
+      "overrides",
+      "sales document",
+      "quote",
+      "installation",
+      "import"
+    ],
+    "description": "This tutorial demonstrates how to apply cost and price overrides inside bpmPro, giving you full control over your quoting and pricing process. You'll learn how to adjust markup and cost dynamically, c...",
+    "sourceFile": "cost-and-price-overrides.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "creating-accounts",
+    "title": "Creating Accounts",
+    "category": "sales",
+    "keywords": [
+      "creating",
+      "accounts",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "quote",
+      "installation",
+      "lead",
+      "permit"
+    ],
+    "description": "Accounts are the foundation of your data in bpmPro. Every contact, project, and sales document is linked to an account. Before you can create a lead or a quote, you need an account.",
+    "sourceFile": "creating-accounts.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "creating-contacts",
+    "title": "Creating Contacts",
+    "category": "sales",
+    "keywords": [
+      "creating",
+      "contacts",
+      "account",
+      "contact",
+      "project",
+      "quote",
+      "import",
+      "employee",
+      "sales person"
+    ],
+    "description": "Every account can have one or more contacts — homeowners, company employees, vendor reps, etc. Contacts are how you track the people associated with each account.",
+    "sourceFile": "creating-contacts.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "creating-sales-documents",
+    "title": "Creating Sales Documents",
+    "category": "sales",
+    "keywords": [
+      "creating",
+      "sales",
+      "documents",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "quote",
+      "proposal",
+      "import"
+    ],
+    "description": "Sales documents are where you build your quotes, proposals, and contracts. Each sales document belongs to a project, and a project can have multiple sales documents — for example, different product co...",
+    "sourceFile": "creating-sales-documents.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "creating-special-discounts",
+    "title": "Creating Special Discounts",
+    "category": "sales",
+    "keywords": [
+      "creating",
+      "special",
+      "discounts",
+      "account",
+      "sales document",
+      "quote",
+      "proposal",
+      "installation",
+      "report",
+      "import"
+    ],
+    "description": "Special discounts in bpmPro are added as Specialty Items on a sales document. By entering a negative dollar amount, you can apply a discount that reduces the total price on your proposal — perfect for...",
+    "sourceFile": "creating-special-discounts.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "creating-your-email-signature",
+    "title": "Creating Your Email Signature",
+    "category": "admin",
+    "keywords": [
+      "creating",
+      "your",
+      "email",
+      "signature",
+      "contact"
+    ],
+    "description": "Setting up your email signature ensures that every email sent from bpmPro includes your professional contact information. This quick tutorial walks through the steps to create your signature in your S...",
+    "sourceFile": "creating-your-email-signature.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "customize-sales-document-report-view",
+    "title": "Customize Sales Document Report View",
+    "category": "sales",
+    "keywords": [
+      "customize",
+      "sales",
+      "document",
+      "report",
+      "view",
+      "sales document",
+      "quote",
+      "proposal"
+    ],
+    "description": "Before sending a proposal or contract to a customer, you can customize exactly what information appears in the report. The Customize Report View menu gives you toggle controls to show or hide sections...",
+    "sourceFile": "customize-sales-document-report-view.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "customizing-sales-document-clauses",
+    "title": "Customizing Sales Document Clauses",
+    "category": "sales",
+    "keywords": [
+      "customizing",
+      "sales",
+      "document",
+      "clauses",
+      "sales document",
+      "proposal",
+      "import"
+    ],
+    "description": "Sales document clauses are the terms and conditions that appear at the bottom of your proposals and contracts. bpmPro gives you full control over these clauses — you can edit the text, format it with ...",
+    "sourceFile": "customizing-sales-document-clauses.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "filtering-sales-reports-by-status",
+    "title": "Filtering Sales Reports by SalesDoc Status",
+    "category": "sales",
+    "keywords": [
+      "filtering",
+      "sales",
+      "reports",
+      "salesdoc",
+      "status",
+      "sales document",
+      "quote",
+      "proposal",
+      "report"
+    ],
+    "description": "bpmPro's sales reports show all sales documents by default — including quotes that are still being worked on, cancelled proposals, and sold contracts. To get an accurate picture of your actual sales, ...",
+    "sourceFile": "filtering-sales-reports-by-status.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "importing-from-pgt-industries",
+    "title": "Importing from PGT Industries",
+    "category": "estimating",
+    "keywords": [
+      "importing",
+      "from",
+      "industries",
+      "quote",
+      "report",
+      "csv",
+      "import",
+      "export"
+    ],
+    "description": "> Purpose: Export the correct CSV file from the PGT Industries quoting system so it can be imported into bpmPro.\n>\n> Before you begin: Make sure your quote is complete and ready to export in the PGT q...",
+    "sourceFile": "importing-from-pgt-industries.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "installation-notes",
+    "title": "Installation Notes",
+    "category": "operations",
+    "keywords": [
+      "installation",
+      "notes",
+      "project",
+      "sales document",
+      "report",
+      "sales person"
+    ],
+    "description": "> Purpose: Enter notes from the sales rep or project manager that the installation team needs to see on-site. These notes print directly on the Installation Ticket.",
+    "sourceFile": "installation-notes.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "introduction-to-bpmpro",
+    "title": "Introduction to bpmPro",
+    "category": "general",
+    "keywords": [
+      "introduction",
+      "bpmpro",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "quote",
+      "proposal",
+      "payment",
+      "installation"
+    ],
+    "description": "Welcome to bpmPro Contractor, the premier tailored software for windows and doors contractors. This introductory video walks you through the main data structure to help you begin using the software, d...",
+    "sourceFile": "introduction-to-bpmpro.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "lead-quickstart-wizard",
+    "title": "Lead Quick Start Wizard",
+    "category": "sales",
+    "keywords": [
+      "lead",
+      "quick",
+      "start",
+      "wizard",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "quote",
+      "calendar"
+    ],
+    "description": "The Lead Quick Start Wizard is the fastest way to capture a new lead from an incoming call. It creates the Project, Account, Contact, and Sales Document automatically, assigns the team, schedules a sa...",
+    "sourceFile": "lead-quickstart-wizard.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "making-a-sales-person-inactive",
+    "title": "Making a Sales Person Inactive",
+    "category": "admin",
+    "keywords": [
+      "making",
+      "sales",
+      "person",
+      "inactive",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "quote",
+      "import"
+    ],
+    "description": "When a sales person leaves the company or changes roles, you need to deactivate them in bpmPro so they no longer appear in sales person dropdown menus. This tutorial walks through the steps to uncheck...",
+    "sourceFile": "making-a-sales-person-inactive.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "managing-product-and-labor-items",
+    "title": "Managing Product and Labor Items",
+    "category": "estimating",
+    "keywords": [
+      "managing",
+      "product",
+      "labor",
+      "items",
+      "project",
+      "sales document",
+      "quote",
+      "proposal",
+      "installation"
+    ],
+    "description": "The Manage Items functionality is where you build your sales document line by line. This tutorial walks through the complete process — from creating a new sales document to adding product and labor it...",
+    "sourceFile": "managing-product-and-labor-items.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "mapping-dealer-items",
+    "title": "Mapping Dealer Items in bpmPro",
+    "category": "estimating",
+    "keywords": [
+      "mapping",
+      "dealer",
+      "items",
+      "bpmpro",
+      "sales document"
+    ],
+    "description": "Dealer Item mapping connects each line item on a sales document to a specific product from your dealer item library. This tells bpmPro which product drawing and default dimensions apply to each line, ...",
+    "sourceFile": "mapping-dealer-items.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "merging-duplicate-contacts",
+    "title": "Merging Duplicate Contacts",
+    "category": "admin",
+    "keywords": [
+      "merging",
+      "duplicate",
+      "contacts",
+      "account",
+      "contact",
+      "project",
+      "sales document",
+      "import",
+      "lead",
+      "quickstart"
+    ],
+    "description": "Duplicate contacts create confusion — the wrong phone number gets called, emails go to the wrong address, and sales history gets split across two records. bpmPro uses Salesforce's built-in duplicate d...",
+    "sourceFile": "merging-duplicate-contacts.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "printing-sales-documents",
+    "title": "Printing Sales Documents",
+    "category": "sales",
+    "keywords": [
+      "printing",
+      "sales",
+      "documents",
+      "sales document",
+      "proposal",
+      "report"
+    ],
+    "description": "When you need to print a proposal or save it as a PDF, bpmPro generates the document directly in your browser. To make sure it looks right, you need to configure two print settings in your browser.",
+    "sourceFile": "printing-sales-documents.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "sales-cycle-duration-report",
+    "title": "How to Build a Sales Cycle Duration Report",
+    "category": "sales",
+    "keywords": [
+      "build",
+      "sales",
+      "cycle",
+      "duration",
+      "report",
+      "account",
+      "project",
+      "quote",
+      "lead"
+    ],
+    "description": "Who this is for: Owners, sales managers, and anyone who wants to see how long projects spend in each sales stage — Leads/Unquoted, Being Quoted, Quoted, Sold.",
+    "sourceFile": "sales-cycle-duration-report.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "service-tickets",
+    "title": "Service Tickets",
+    "category": "operations",
+    "keywords": [
+      "service ticket",
+      "service tickets board",
+      "dispatch",
+      "schedule",
+      "technician",
+      "warranty",
+      "repair",
+      "resolution",
+      "reopen"
+    ],
+    "description": "How to create, schedule, complete, and notify on service tickets — start to finish.",
+    "sourceFile": "service-tickets.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "setting-up-building-materials",
+    "title": "Setting Up Building Materials",
+    "category": "estimating",
+    "keywords": [
+      "setting",
+      "building",
+      "materials",
+      "sales document",
+      "quote",
+      "installation",
+      "import"
+    ],
+    "description": "Building materials are a foundational setup step in bpmPro. They define the products used during installation — wood bucks, flashing membranes, screws, caulking, and more. Once configured, these mater...",
+    "sourceFile": "setting-up-building-materials.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "timesheet-visibility-rules",
+    "title": "Timesheet Console — Who Sees What",
+    "category": "admin",
+    "keywords": [
+      "timesheet",
+      "console",
+      "sees",
+      "what",
+      "account",
+      "contact",
+      "project",
+      "report",
+      "csv",
+      "export"
+    ],
+    "description": "Who this is for: Owners, general managers, accounting staff, and HR. Anyone who needs to know what employees can and cannot see in the Timesheet Console, and how to set up team access correctly.",
+    "sourceFile": "timesheet-visibility-rules.md",
+    "lastUpdated": "2026-05-29"
+  },
+  {
+    "slug": "updating-product-installation-items",
+    "title": "Updating Product Installation Items",
+    "category": "estimating",
+    "keywords": [
+      "updating",
+      "product",
+      "installation",
+      "items",
+      "sales document"
+    ],
+    "description": "bpmPro stores all your dealer item pricing and material settings in the Dealer Items section of the Command Center. These settings control installation costs for new construction and retrofit jobs, ad...",
+    "sourceFile": "updating-product-installation-items.md",
+    "lastUpdated": "2026-05-29"
+  }
+]
