@@ -284,15 +284,20 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
 
           {/* Add Comment Form */}
           <form onSubmit={handleAddComment} className="mb-4">
+            <label
+              htmlFor="new-comment"
+              className="block text-sm font-medium text-foreground mb-2"
+            >
+              Add a comment
+            </label>
             <div className="flex gap-2">
               <textarea
+                id="new-comment"
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
-                placeholder="Add a comment..."
                 rows={2}
                 disabled={submittingComment}
                 className="flex-1 resize-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm
-                  placeholder:text-gray-400
                   focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500
                   disabled:bg-gray-100 disabled:cursor-not-allowed"
               />

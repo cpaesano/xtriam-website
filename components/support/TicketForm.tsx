@@ -256,10 +256,12 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
           id="subject"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          placeholder="Brief description of your issue or request"
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
+          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20"
           disabled={isSubmitting}
         />
+        <p className="mt-2 text-xs text-muted-foreground">
+          A brief description of your issue or request.
+        </p>
       </div>
 
       {/* Type and Priority - Same Row */}
@@ -319,17 +321,17 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder={
-            type === "Issue"
-              ? "Please describe the issue in detail. Include any error messages, steps to reproduce, and what you expected to happen."
-              : type === "Feature Request"
-              ? "Please describe the feature you'd like to see. Include the problem it would solve and how you envision it working."
-              : "What would you like to know? Please provide as much context as possible."
-          }
           rows={6}
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20 resize-none"
+          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20 resize-none"
           disabled={isSubmitting}
         />
+        <p className="mt-2 text-xs text-muted-foreground">
+          {type === "Issue"
+            ? "Describe the issue in detail. Include any error messages, steps to reproduce, and what you expected to happen."
+            : type === "Feature Request"
+            ? "Describe the feature you'd like to see. Include the problem it would solve and how you envision it working."
+            : "What would you like to know? Please provide as much context as possible."}
+        </p>
       </div>
 
       {/* Screenshot Upload */}
@@ -370,16 +372,16 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
 
           {/* File Previews */}
           {files.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="flex flex-wrap gap-3">
               {files.map((filePreview, index) => (
                 <div
                   key={index}
-                  className="relative group rounded-lg overflow-hidden border border-border bg-gray-50"
+                  className="relative group w-32 flex-shrink-0 rounded-lg overflow-hidden border border-border bg-gray-50"
                 >
                   <img
                     src={filePreview.preview}
                     alt={filePreview.file.name}
-                    className="w-full h-24 object-contain bg-gray-100"
+                    className="w-full h-32 object-contain bg-gray-100"
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <button
