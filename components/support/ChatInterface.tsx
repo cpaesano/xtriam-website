@@ -188,17 +188,21 @@ export function ChatInterface() {
         onSubmit={handleSubmit}
         className="p-4 border-t-2 border-brand-blue-100 bg-gradient-to-t from-gray-50 to-white"
       >
+        <label htmlFor="chat-input" className="block text-sm font-medium text-gray-700 mb-2">
+          Your question{" "}
+          <span className="font-normal text-gray-400">(press Enter to send)</span>
+        </label>
         <div className="flex gap-3">
           <textarea
             ref={inputRef}
+            id="chat-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type your question here... (Press Enter to send)"
             rows={2}
             disabled={loading}
             className="flex-1 resize-none rounded-xl border-2 border-brand-blue-200 bg-white px-4 py-3 text-base
-              shadow-sm placeholder:text-gray-400
+              shadow-sm
               focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500 focus:shadow-md
               disabled:bg-gray-100 disabled:cursor-not-allowed
               transition-all duration-200"

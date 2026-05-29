@@ -40,14 +40,17 @@ export default function SubscriberFAQsPage() {
       </div>
 
       {/* Search */}
+      <label htmlFor="faq-search" className="block text-sm font-medium text-foreground mb-2">
+        Search FAQs
+      </label>
       <div className="relative">
         <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
         <input
           type="text"
-          placeholder="Search FAQs..."
+          id="faq-search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full rounded-lg border border-border bg-background py-3 pl-10 pr-4 text-foreground placeholder:text-muted-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-1 focus:ring-brand-blue-500"
+          className="w-full rounded-lg border border-border bg-background py-3 pl-10 pr-4 text-foreground focus:border-brand-blue-500 focus:outline-none focus:ring-1 focus:ring-brand-blue-500"
         />
       </div>
 

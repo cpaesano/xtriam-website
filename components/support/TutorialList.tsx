@@ -266,6 +266,9 @@ export function TutorialList({ tutorials }: { tutorials: TutorialMeta[] }) {
   return (
     <>
       {/* Search Bar */}
+      <label htmlFor="tutorial-search" className="block text-sm font-medium text-foreground mb-2">
+        Search tutorials
+      </label>
       <div className="relative mb-4">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg
@@ -284,10 +287,10 @@ export function TutorialList({ tutorials }: { tutorials: TutorialMeta[] }) {
         </div>
         <input
           type="text"
-          placeholder="Search tutorials..."
+          id="tutorial-search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500 transition-colors"
+          className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-xl bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500 transition-colors"
         />
         {query && (
           <button
