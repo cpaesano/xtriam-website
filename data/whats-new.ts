@@ -18,12 +18,190 @@ export interface MonthRelease {
 
 export const releases: MonthRelease[] = [
   // ─────────────────────────────────────────────
+  // JUNE 2026
+  // ─────────────────────────────────────────────
+  {
+    month: "June 2026",
+    versions: "v8.10",
+    features: [
+      {
+        title: "New Service Ticket Intake Wizard",
+        type: "new",
+        summary:
+          "A guided two-step form for creating a Service Ticket, built for taking a call live. Search the caller by name or phone, attach or create their account, then capture the problem in a few fields.",
+        tutorialSlug: "service-tickets",
+        details: [
+          "Step 1 — find the caller with one search box across Accounts and Contacts; picking a Contact attaches both the account and that contact",
+          'If the caller is new, "Create new account" captures name, caller type (Homeowner / Contractor), phone, and address inline and creates them as a Client',
+          "Step 2 — Problem Summary, Service Type, and Priority (defaults to Normal); the service address pre-fills from the account",
+          'Create Ticket stays disabled until Problem Summary, Service Type, and Priority are filled',
+          'Ticket Source defaults to Phone and the Call-In Date is set automatically',
+          'Open it from the "New Service Ticket" item on the utility bar (bottom of the screen) or the "+ New Ticket" button on the Service Tickets board',
+        ],
+      },
+      {
+        title: "Service Ticket Lifecycle Progress Path",
+        type: "improvement",
+        summary:
+          "The Service Ticket Console now shows a color-coded progress path — New → Scheduled → In Progress → Completed — instead of a single next-action banner. See where every ticket stands at a glance.",
+        tutorialSlug: "service-tickets",
+        details: [
+          "Completed steps are green, the current step is highlighted, upcoming steps are muted",
+          "Each stage has a one-click action: Schedule Now, Start Work, Complete Ticket, or Reopen",
+          "Click any stage pill to jump the ticket directly to that stage",
+          'A canceled ticket shows a "Canceled" badge with a Reopen option instead of the path',
+        ],
+      },
+      {
+        title: "Schedule a Visit with Assignee and Calendar Event",
+        type: "new",
+        summary:
+          "Scheduling now assigns the technician at the same moment and drops the visit onto that technician's Salesforce calendar automatically.",
+        tutorialSlug: "service-tickets",
+        details: [
+          "The Schedule action includes an Assigned To picker, so you set the tech while you pick the window",
+          'Scheduling with no assignee shows a soft warning ("Schedule anyway") but is still allowed',
+          'A calendar Event is created on the assignee\'s calendar titled "Service Visit: <Account> (SVC-####)"',
+          "The event updates on reschedule, moves to the new owner on reassignment, and is removed if the ticket is canceled or unassigned",
+          "The event's Related To links back to the Service Ticket — one click from the calendar to the ticket",
+        ],
+      },
+      {
+        title: "Service Tickets Board — Search and Completed View",
+        type: "improvement",
+        summary:
+          "Find any ticket fast with a keyword search, and pull up older completed work with a wider time window and paging.",
+        tutorialSlug: "service-tickets",
+        details: [
+          "Keyword search filters by ticket number, account name, problem summary, or assignee, and combines with the existing assignee / priority / service-type filters",
+          'Completed view offers 7 days, 14 days, or All, with paging ("Showing X of Y" plus Load more)',
+          'An "Open in list view" link opens the standard Completed Service Tickets list view',
+        ],
+      },
+      {
+        title: "Create Service Project Reliability Fix",
+        type: "fix",
+        summary:
+          'Creating a Service Project from a Service Ticket no longer fails on orgs whose Lead Source picklist has no "Service" value (it previously surfaced as a generic Server Error).',
+        details: [
+          "The package now resolves Lead Source picklist values defensively, so Create Service Project works regardless of the org's configured values",
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
   // APRIL 2026
   // ─────────────────────────────────────────────
   {
     month: "April 2026",
-    versions: "v7.69 – v7.80",
+    versions: "v7.69 – v7.99",
     features: [
+      {
+        title: "Locked Sales Documents and Deal Sheets",
+        type: "new",
+        summary:
+          "Once a Sales Document is Sold or Booked, only Accounting can change its status away from those states or edit the Close Date. Once a Deal Sheet is created, only Accounting can modify the commission terms, sales rep assignment, or the linked project.",
+        details: [
+          "Sales reps still see the buttons but the system explains that they need Accounting to make the change",
+          "Prevents accidental backdating, demoting, or rewriting commission terms after the deal is closed",
+          "Commission rollups stay accurate because Deal Sheets cannot be edited mid-pay-cycle by sales reps",
+          "Released in v7.98",
+        ],
+      },
+      {
+        title: "Customer Deposit Before Sold",
+        type: "new",
+        summary:
+          "Sales reps can now collect a deposit at the moment the customer agrees, instead of waiting for Sold. The customer receives the agreement and the deposit invoice in the same email.",
+        details: [
+          'Open the Send Sales Document Wizard and check "Also create Customer Deposit / Invoice"',
+          "Pick a payment term (Upon Agreement is the default)",
+          "Customer receives one email with the agreement and the deposit invoice together",
+          "The Sales Document stays in its current status until the customer signs",
+          "Released in v7.98 and refined in v7.99",
+        ],
+      },
+      {
+        title: "Workforce Manager Tab in Timesheet Console",
+        type: "new",
+        summary:
+          "New tab in the Timesheet Console for Accounting. Maintain the active employee list, hourly rates, and employment type from one screen.",
+        details: [
+          "Click an employee name to edit hourly rate, active flag, employment type (W-2 / 1099 Contractor / Salaried), title, and phone in one modal",
+          "Filter by name, employment type, and active status",
+          "Bulk actions and an inline + New Employee button are coming next",
+          "Released in v7.98",
+        ],
+      },
+      {
+        title: "Timesheet Console with Payroll-Ready PDF and CSV Export",
+        type: "new",
+        summary:
+          "Brand-new Timesheet Console with three tabs: My Timesheet, Payroll & Reports, and Team Timesheets. Hand the export file to Gusto, ADP, or QuickBooks Payroll without retyping anything.",
+        details: [
+          "Pay Period configurable per company: weekly Monday-anchored, bi-weekly Wed-Tue, and other patterns",
+          "Payroll-ready CSV export formatted for Gusto, ADP, and QuickBooks Payroll",
+          "Polished payroll PDF in landscape, color-coded, ready to hand to your accountant",
+          "Hourly rate now lives on the employee Contact and feeds straight into payroll math",
+          "Released in v7.96 and hardened in v7.97",
+        ],
+      },
+      {
+        title: "ES Windows CSV Import Resilience",
+        type: "fix",
+        summary:
+          "When a vendor adds or moves a column in their CSV export, bpmPro now reads each column by header name instead of by fixed position. The import survives vendor format changes without silently shifting values to the wrong field.",
+        details: [
+          "ES Windows added a column to their export on April 28, 2026 — older bpmPro versions silently misaligned every value after the new column",
+          "v7.99 reads each column by header name, so the same kind of vendor change no longer breaks the import",
+          "New column-count safety banner on the Import Quote Records page shows actual vs. expected column counts before you click Import",
+          "Stronger Labor Items processing: a missing cost field on a single Dealer Item no longer rolls back the whole import",
+          "Linea Rossa CSV format also self-corrects (v7.93 – v7.95)",
+        ],
+      },
+      {
+        title: "Improved Permit Fee Invoicing",
+        type: "improvement",
+        summary:
+          "Permit fees that were left as Estimated until permit submission now flow correctly into the customer's invoice when the actual amount is recorded. The line-item preview and the Accounting Package report the same numbers.",
+        details: [
+          "A separate permit-fee line on the Project Invoice, distinct from labor and product lines",
+          "County-tax cap distribution now matches the Accounting Package exactly",
+          "Released in v7.92 with refinements in v7.95",
+        ],
+      },
+      {
+        title: "PicBuh Photo Gallery",
+        type: "new",
+        summary:
+          "Replaces the older SharinPix integration with our own picbuh.com gallery, accessed through a cleaner interface inside Salesforce. Field crews attach photos to a project. Office staff see them inline.",
+        details: [
+          "Cleaner upload and viewer experience on the Project page",
+          "Old SharinPix references removed in v7.87 internal cleanup",
+          "Released in v7.86",
+        ],
+      },
+      {
+        title: 'Accepted Status for Signed Sales Documents',
+        type: "new",
+        summary:
+          'A Sales Document that has been signed in the customer\'s browser now flips to "Accepted" automatically when the e-sign chain completes. This is a separate state from "Sold" so accounting decides when to mark Sold based on payment.',
+        details: [
+          "Released in v7.90",
+          "E-sign error messages are clearer when a customer's link expires or a phone signature fails (v7.91)",
+          "New Close Deal Checklist on the Sales Document with the steps that must be done before marking Sold (v7.91)",
+        ],
+      },
+      {
+        title: "Clone Plus Safety Guards",
+        type: "improvement",
+        summary:
+          "Clone Plus now safely re-runs all pricing, tax, and commission calculations against the new account when you clone a Sales Document onto a different client. Prevents stale field values from carrying over.",
+        details: [
+          "Released in v7.88 with name and namespace cleanup in v7.89",
+        ],
+      },
       {
         title: "Quick Start Lead Wizard",
         type: "new",
@@ -46,19 +224,21 @@ export const releases: MonthRelease[] = [
         details: [
           '"View & Sign" email with company logo and document summary',
           "Product illustrations with dimensions on the public view",
-          "Signature capture with SHA-256 audit trail",
+          "Signature capture with full audit trail",
           "Collapsible Terms & Conditions section",
           "Sales rep contact card on every shared document",
+          "Image cache speeds up PDF and email rendering because product illustrations are cached instead of re-fetched every time (v7.80)",
         ],
       },
       {
         title: "Stage Integration Emails",
         type: "new",
         summary:
-          "Automatically send project data to external systems when a stage is passed. Connect bpmPro to your automation workflows, AI platforms, Zapier, Make, or any system that can receive email.",
+          "Automatically send project data to external systems when a project moves through stages. Connect bpmPro to your automation workflows, AI platforms, Zapier, Make, or any system that can receive email.",
         details: [
-          "Fires automatically when any stage is marked \"Passed\" — no user action required",
+          "Fires when a stage is marked Passed and also when a stage moves to In Progress (added in v7.82)",
           "Also fires when a new Lead is created (first stage auto-passes)",
+          "Appointment Integration so scheduled customer visits feed into the same emails and timeline (v7.82)",
           "JSON payload with project, contact, address, sales document, and payment terms data",
           "Configure different email addresses per stage (comma-separated)",
           "Works with any automation platform that can receive email",
@@ -72,10 +252,10 @@ export const releases: MonthRelease[] = [
         details: [],
       },
       {
-        title: "Sales Hub User Filter",
+        title: "Sales Hub Filters",
         type: "new",
         summary:
-          "Filter the Sales Hub dashboard by sales rep. View your own pipeline, all reps, or select an individual rep to see their sales documents.",
+          "Filter the Sales Hub dashboard by sales person, status, age, and more. View your own pipeline, all reps, or select an individual rep to see their sales documents.",
         details: [
           "Dropdown: My SalesDocs / All Sales Reps / individual rep names",
           "Dynamic section titles show whose pipeline you are viewing",
@@ -93,7 +273,7 @@ export const releases: MonthRelease[] = [
         title: "A3 Edit Items Improvements",
         type: "improvement",
         summary:
-          "Vendor discounts, $0 price overrides, responsive layout for tablets, and empty state design when no items exist.",
+          "Vendor discounts, $0 price overrides, responsive layout for tablets, and empty state design when no items exist. Manage Items page tightened so the table no longer jitters on save (v7.95).",
         details: [
           "Vendor Discount: enter discount as dollar amount or percentage with bidirectional sync",
           "$0 Price Override: include items at no charge for bundled or promotional pricing",
@@ -106,15 +286,24 @@ export const releases: MonthRelease[] = [
         title: "Financial Summary Fees Hint",
         type: "improvement",
         summary:
-          'The Contract & Billing card now shows "Includes $X in fees" when the invoiced amount exceeds the contracted amount due to permit fees or transaction fees.',
+          'The Contract & Billing card now shows "Includes $X in fees" when the invoiced amount exceeds the contracted amount due to permit fees or transaction fees. A subscriber-org hotfix in v7.81 also restored a missing field that was causing wrong totals on some Projects.',
         details: [],
       },
       {
         title: "Send Wizard Simplified",
         type: "improvement",
         summary:
-          'Streamlined from 4 steps to 3 (removed Preview PDF step). Dynamic button labels match document type ("Send Proposal", "Send Contract"). Email content toggles with live preview.',
+          'Streamlined from 4 steps to 3 (removed Preview PDF step). Dynamic button labels match document type ("Send Proposal", "Send Contract"). Email content toggles with live preview. Fixed a small bug where the wizard occasionally previewed an outdated PDF (v7.82).',
         details: [],
+      },
+      {
+        title: "Projects Board Time-on-Stage Counter",
+        type: "fix",
+        summary:
+          "The time-on-stage counter on the Projects Board now reflects current values without a manual refresh.",
+        details: [
+          "Released in v7.94 and refined in v7.95",
+        ],
       },
     ],
   },

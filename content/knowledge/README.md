@@ -134,6 +134,11 @@ Support:
 General:
 - getting-started.md: New user onboarding
 - mobile-access.md: Using the mobile app
+- whats-new-april-2026.md: Customer-facing changelog for v7.80 through v7.99 (April 2026)
+- whats-new-june-2026.md: Customer-facing changelog for v8.10 (June 2026) — Service Ticket intake wizard, progress path, calendar, board search
+
+Operations (cont.):
+- tutorial-service-tickets.md: Service Tickets — intake wizard, progress path, scheduling + calendar, board search/completed view
 
 Index Files:
 - TUTORIALS_INDEX.md: Tracks converted PDF tutorials from xTriam Tutorials folder
