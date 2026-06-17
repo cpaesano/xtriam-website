@@ -14,6 +14,8 @@ import {
   Tag,
   MessageSquare,
   Send,
+  Paperclip,
+  FileText,
 } from "lucide-react";
 import type { SalesforceCase } from "@/types/auth";
 
@@ -26,6 +28,15 @@ interface CaseComment {
   };
 }
 
+interface Attachment {
+  id: string;
+  title: string;
+  contentType: string;
+  contentSize: number;
+  fileExtension: string;
+  url: string;
+}
+
 interface TicketDetailProps {
   caseId: string;
 }
@@ -35,6 +46,7 @@ const STATUSES = ["New", "Working", "On Hold", "Escalated", "Closed"];
 export function TicketDetail({ caseId }: TicketDetailProps) {
   const [ticket, setTicket] = useState<SalesforceCase | null>(null);
   const [comments, setComments] = useState<CaseComment[]>([]);
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [prevCaseId, setPrevCaseId] = useState<string | null>(null);
   const [nextCaseId, setNextCaseId] = useState<string | null>(null);
@@ -53,6 +65,7 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
         if (data.success) {
           setTicket(data.ticket);
           setComments(data.comments || []);
+          setAttachments(data.attachments || []);
           if (data.isAdmin !== undefined) setIsAdmin(data.isAdmin);
           setPrevCaseId(data.prevCaseId || null);
           setNextCaseId(data.nextCaseId || null);
@@ -275,6 +288,47 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
           </div>
         </div>
 
+        {/* Attachments */}
+        {attachments.length > 0 && (
+          <div className="mt-6">
+            <h2 className="text-sm font-medium text-muted-foreground mb-3 flex items-center gap-2">
+              <Paperclip className="h-4 w-4" />
+              Attachments ({attachments.length})
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {attachments.map((a) => (
+                <a
+                  key={a.id}
+                  href={a.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group overflow-hidden rounded-lg border border-gray-200 bg-gray-50 transition-colors hover:border-brand-blue-300"
+                  title={a.title}
+                >
+                  {a.contentType?.startsWith("image/") ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={a.url}
+                      alt={a.title}
+                      className="h-40 w-full bg-white object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-40 w-full items-center justify-center bg-white">
+                      <FileText className="h-10 w-10 text-gray-400" />
+                    </div>
+                  )}
+                  <div className="flex items-center justify-between gap-2 px-3 py-2">
+                    <span className="truncate text-sm text-gray-700">{a.title}</span>
+                    <span className="shrink-0 text-xs text-gray-400">
+                      {formatSize(a.contentSize)}
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Comments Section */}
         <div className="mt-6">
           <h2 className="text-sm font-medium text-muted-foreground mb-3 flex items-center gap-2">
@@ -442,4 +496,11 @@ function formatDate(dateString: string): string {
     hour: "numeric",
     minute: "2-digit",
   });
+}
+
+function formatSize(bytes: number): string {
+  if (!bytes) return "";
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }

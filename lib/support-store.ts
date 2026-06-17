@@ -565,3 +565,41 @@ export async function getFilesForRecord(recordId: string): Promise<
     ContentSize: a.contentSize,
   }));
 }
+
+/**
+ * Return a ticket's attachments with short-lived signed READ URLs so the
+ * browser can display/download them (the bucket is private). URLs expire in
+ * 1 hour, which is plenty for a page view.
+ */
+export async function getAttachmentDownloads(recordId: string): Promise<
+  {
+    id: string;
+    title: string;
+    contentType: string;
+    contentSize: number;
+    fileExtension: string;
+    url: string;
+  }[]
+> {
+  const db = getAdminDb();
+  const doc = await db.collection(TICKETS).doc(recordId).get();
+  const attachments = (doc.data()?.attachments as AttachmentMeta[]) || [];
+  const bucket = getSupportBucket();
+  return Promise.all(
+    attachments.map(async (a) => {
+      const [url] = await bucket.file(a.path).getSignedUrl({
+        version: "v4",
+        action: "read",
+        expires: Date.now() + 60 * 60 * 1000, // 1 hour
+      });
+      return {
+        id: a.id,
+        title: a.title,
+        contentType: a.contentType,
+        contentSize: a.contentSize,
+        fileExtension: a.fileExtension,
+        url,
+      };
+    })
+  );
+}

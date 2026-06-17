@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
-import { getCaseById, updateCaseStatus, getCaseComments, addCaseComment, getAdjacentCaseIds } from "@/lib/support-store";
+import { getCaseById, updateCaseStatus, getCaseComments, addCaseComment, getAdjacentCaseIds, getAttachmentDownloads } from "@/lib/support-store";
 
 interface RouteParams {
   params: Promise<{ caseId: string }>;
@@ -32,10 +32,11 @@ export async function GET(request: Request, { params }: RouteParams) {
 
     const contactId = session.isAdmin ? undefined : session.contactId;
 
-    const [ticket, comments, adjacent] = await Promise.all([
+    const [ticket, comments, adjacent, attachments] = await Promise.all([
       getCaseById(caseId),
       getCaseComments(caseId),
       getAdjacentCaseIds(caseId, contactId),
+      getAttachmentDownloads(caseId),
     ]);
 
     if (!ticket) {
@@ -49,6 +50,7 @@ export async function GET(request: Request, { params }: RouteParams) {
       success: true,
       ticket,
       comments,
+      attachments,
       isAdmin: !!session.isAdmin,
       prevCaseId: adjacent.prevCaseId,
       nextCaseId: adjacent.nextCaseId,
