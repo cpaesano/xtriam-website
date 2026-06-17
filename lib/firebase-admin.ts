@@ -19,8 +19,12 @@ import { getStorage } from "firebase-admin/storage";
  */
 
 const APP_NAME = "support";
-const DEFAULT_BUCKET =
-  process.env.FIREBASE_STORAGE_BUCKET || "xtriam-support.firebasestorage.app";
+// .trim() defends against a stray trailing space in the env var. A space in
+// the Vercel value produced "...firebasestorage.app%20/" upload URLs that
+// failed with CORS/404. Keep this even after the env var is cleaned up.
+const DEFAULT_BUCKET = (
+  process.env.FIREBASE_STORAGE_BUCKET || "xtriam-support.firebasestorage.app"
+).trim();
 
 let cachedApp: App | null = null;
 let settingsApplied = false;
