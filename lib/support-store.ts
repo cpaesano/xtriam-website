@@ -70,6 +70,7 @@ interface TicketData {
   lastModifiedAt?: Timestamp;
   closedAt?: Timestamp | null;
   attachments?: AttachmentMeta[];
+  replyCount?: number;
 }
 
 function docToCase(id: string, d: TicketData): SalesforceCase {
@@ -87,6 +88,8 @@ function docToCase(id: string, d: TicketData): SalesforceCase {
       Name: d.submitterName ?? "",
       Account: { Name: d.accountName ?? "" },
     },
+    AttachmentCount: d.attachments?.length ?? 0,
+    ReplyCount: d.replyCount ?? 0,
   };
 }
 
@@ -368,12 +371,17 @@ export async function addCaseComment(
       createdAt: now,
     });
 
-    await ticketRef.update({
+    const ticketUpdate: Record<string, unknown> = {
       updatedAt: now,
       lastModifiedAt: now,
       lastReplyAt: now,
       lastReplyBy: authorName,
-    });
+    };
+    // Count only published support-team replies for the list indicator.
+    if (opts?.isAdmin && !opts?.isInternal) {
+      ticketUpdate.replyCount = FieldValue.increment(1);
+    }
+    await ticketRef.update(ticketUpdate);
 
     if (!opts?.isInternal) {
       const snap = await ticketRef.get();

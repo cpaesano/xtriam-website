@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { Ticket, Clock, AlertCircle, CheckCircle2, Loader2, Shield } from "lucide-react";
+import { Ticket, Clock, AlertCircle, CheckCircle2, Loader2, Shield, MessageSquare, Paperclip } from "lucide-react";
 import type { SalesforceCase } from "@/types/auth";
 
 type FilterTab = "all" | "open" | "closed";
@@ -203,12 +203,32 @@ export function TicketList({ limit, showViewAll = false }: TicketListProps) {
                     </td>
                   )}
                   <td className="px-4 py-3">
-                    <Link
-                      href={`/support/tickets/${ticket.Id}`}
-                      className="text-foreground hover:text-brand-blue-600"
-                    >
-                      {ticket.Subject}
-                    </Link>
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href={`/support/tickets/${ticket.Id}`}
+                        className="text-foreground hover:text-brand-blue-600"
+                      >
+                        {ticket.Subject}
+                      </Link>
+                      {!!ticket.ReplyCount && (
+                        <span
+                          className="inline-flex items-center gap-1 rounded-full bg-brand-blue-50 px-2 py-0.5 text-xs font-medium text-brand-blue-700"
+                          title={`${ticket.ReplyCount} repl${ticket.ReplyCount === 1 ? "y" : "ies"} from support`}
+                        >
+                          <MessageSquare className="h-3 w-3" />
+                          {ticket.ReplyCount}
+                        </span>
+                      )}
+                      {!!ticket.AttachmentCount && (
+                        <span
+                          className="inline-flex items-center gap-1 text-xs text-muted-foreground"
+                          title={`${ticket.AttachmentCount} attachment${ticket.AttachmentCount === 1 ? "" : "s"}`}
+                        >
+                          <Paperclip className="h-3 w-3" />
+                          {ticket.AttachmentCount}
+                        </span>
+                      )}
+                    </div>
                   </td>
                   <td className="whitespace-nowrap px-4 py-3">
                     <StatusBadge status={ticket.Status} />

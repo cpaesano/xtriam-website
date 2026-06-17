@@ -76,6 +76,8 @@ export interface SalesforceCase {
       Name: string;
     };
   };
+  AttachmentCount?: number;
+  ReplyCount?: number;
 }
 
 // API request/response types
