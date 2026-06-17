@@ -72,7 +72,7 @@ export default function SupportLayout({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="support-portal min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-brand-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">Loading...</p>
@@ -82,7 +82,7 @@ export default function SupportLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="support-portal min-h-screen bg-gray-50">
       {/* Top Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="flex items-center justify-between px-4 h-16">
