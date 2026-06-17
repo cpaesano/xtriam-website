@@ -204,6 +204,42 @@ export async function getAccountInfo(accountId: string): Promise<SalesforceAccou
 
 // ---------- writes ----------
 
+// Customer-facing ticket code: YYYY-MM-II-RRRR (e.g. 2026-06-JD-8K4P).
+// The random suffix means the displayed number does not reveal how many
+// tickets we have handled cumulatively. We still keep an internal monotonic
+// `ticketNumber` (int) for ordering/adjacency. Year+month are computed in
+// America/New_York so a late-night ticket does not roll into the next month
+// under UTC.
+const CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no I, L, O, 0, 1
+
+function randomCodeSuffix(len = 4): string {
+  let s = "";
+  for (let i = 0; i < len; i++) {
+    s += CODE_ALPHABET[Math.floor(Math.random() * CODE_ALPHABET.length)];
+  }
+  return s;
+}
+
+function submitterInitials(name?: string, accountName?: string | null): string {
+  const src = (name && name.trim()) || (accountName && accountName.trim()) || "";
+  if (!src) return "XX";
+  const parts = src.split(/\s+/).filter(Boolean);
+  const letters =
+    parts.length === 1 ? parts[0].slice(0, 2) : parts[0][0] + parts[parts.length - 1][0];
+  return letters.toUpperCase().replace(/[^A-Z]/g, "") || "XX";
+}
+
+function buildTicketCode(date: Date, name?: string, accountName?: string | null): string {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+  }).formatToParts(date);
+  const yyyy = parts.find((p) => p.type === "year")?.value ?? "0000";
+  const mm = parts.find((p) => p.type === "month")?.value ?? "00";
+  return `${yyyy}-${mm}-${submitterInitials(name, accountName)}-${randomCodeSuffix()}`;
+}
+
 /** Create a support ticket with an atomic sequential ticket number. */
 export async function createCase(data: {
   contactId: string;
@@ -225,6 +261,21 @@ export async function createCase(data: {
     const now = Timestamp.now();
     let ticketNumber = 0;
 
+    // Customer-facing code (collision-checked; the random suffix carries uniqueness).
+    const nowDate = now.toDate();
+    let formatted = buildTicketCode(nowDate, data.submitterName, data.accountName);
+    for (let attempt = 0; attempt < 6; attempt++) {
+      const dup = await db
+        .collection(TICKETS)
+        .where("ticketNumberFormatted", "==", formatted)
+        .limit(1)
+        .get();
+      if (dup.empty) break;
+      formatted =
+        buildTicketCode(nowDate, data.submitterName, data.accountName) +
+        (attempt >= 4 ? randomCodeSuffix(2) : "");
+    }
+
     await db.runTransaction(async (tx) => {
       const counter = await tx.get(counterRef);
       const current = counter.exists ? (counter.data()!.current as number) : 1000;
@@ -233,7 +284,7 @@ export async function createCase(data: {
 
       tx.set(ticketRef, {
         ticketNumber,
-        ticketNumberFormatted: String(ticketNumber).padStart(8, "0"),
+        ticketNumberFormatted: formatted,
         subject: data.subject,
         description: data.description,
         status: "New",
@@ -267,7 +318,6 @@ export async function createCase(data: {
         { merge: true }
       );
 
-    const formatted = String(ticketNumber).padStart(8, "0");
     await safeNotify(() =>
       notifyNewTicket({
         ticketId: ticketRef.id,
