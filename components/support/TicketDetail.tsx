@@ -434,6 +434,12 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
                 {submittingComment ? "Sending..." : "Send"}
               </button>
             </div>
+            {isAdmin && (
+              <p className="mt-1.5 text-xs text-amber-700">
+                Sending posts your reply and emails it to the customer
+                {ticket.Contact?.Name ? ` (${ticket.Contact.Name})` : ""}.
+              </p>
+            )}
           </form>
 
           {/* Comment List */}
