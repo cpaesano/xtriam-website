@@ -16,6 +16,7 @@ import {
   Send,
   Paperclip,
   FileText,
+  Sparkles,
 } from "lucide-react";
 import type { SalesforceCase } from "@/types/auth";
 
@@ -55,6 +56,9 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
   const [newComment, setNewComment] = useState("");
   const [submittingComment, setSubmittingComment] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [aiInstruction, setAiInstruction] = useState("");
+  const [aiDrafting, setAiDrafting] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchTicket() {
@@ -99,6 +103,29 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
       console.error("Failed to update status");
     } finally {
       setUpdating(false);
+    }
+  }
+
+  async function handleAiDraft() {
+    if (!aiInstruction.trim() || aiDrafting) return;
+    setAiDrafting(true);
+    setAiError(null);
+    try {
+      const response = await fetch(`/api/support/tickets/${caseId}/ai-draft`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ instruction: aiInstruction.trim() }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setNewComment(data.draft);
+      } else {
+        setAiError(data.error || "Failed to draft reply");
+      }
+    } catch {
+      setAiError("Failed to draft reply");
+    } finally {
+      setAiDrafting(false);
     }
   }
 
@@ -335,6 +362,46 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
             <MessageSquare className="h-4 w-4" />
             Comments ({comments.length})
           </h2>
+
+          {/* AI reply composer (admin only) */}
+          {isAdmin && (
+            <div className="mb-4 rounded-lg border border-brand-blue-200 bg-brand-blue-50/40 p-3">
+              <label
+                htmlFor="ai-instruction"
+                className="mb-2 flex items-center gap-2 text-sm font-medium text-brand-blue-900"
+              >
+                <Sparkles className="h-4 w-4" />
+                AI assist — tell Claude what to say, or paste a rough draft
+              </label>
+              <div className="flex gap-2">
+                <textarea
+                  id="ai-instruction"
+                  value={aiInstruction}
+                  onChange={(e) => setAiInstruction(e.target.value)}
+                  rows={2}
+                  disabled={aiDrafting}
+                  className="flex-1 resize-none rounded-lg border border-brand-blue-200 bg-white px-3 py-2 text-sm text-gray-900
+                    focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500
+                    disabled:bg-gray-100 disabled:cursor-not-allowed"
+                />
+                <button
+                  type="button"
+                  onClick={handleAiDraft}
+                  disabled={aiDrafting || !aiInstruction.trim()}
+                  className="flex items-center gap-2 self-end rounded-lg bg-brand-blue-600 px-4 py-2 text-sm font-medium text-white
+                    transition-colors hover:bg-brand-blue-700
+                    disabled:cursor-not-allowed disabled:bg-gray-300"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  {aiDrafting ? "Drafting..." : "Draft reply"}
+                </button>
+              </div>
+              <p className="mt-1.5 text-xs text-brand-blue-700">
+                Claude reads this ticket and fills the reply box below. Review and edit before you send.
+              </p>
+              {aiError && <p className="mt-1 text-xs text-red-600">{aiError}</p>}
+            </div>
+          )}
 
           {/* Add Comment Form */}
           <form onSubmit={handleAddComment} className="mb-4">

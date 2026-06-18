@@ -101,3 +101,63 @@ export function getWelcomeMessage(): string {
 
 What can I help you with today?`;
 }
+
+/**
+ * Draft a customer-facing support reply for the admin "AI reply composer".
+ * Follows xTriam support email conventions (plain text, no markdown, no em
+ * dashes, no exclamation marks). Returns ONLY the reply body for the operator
+ * to review and edit before sending. Different system prompt from chat() — this
+ * writes an outbound support reply, it does not converse as the assistant.
+ */
+export async function draftSupportReply(input: {
+  subject: string;
+  description: string;
+  customerName?: string;
+  accountName?: string;
+  thread?: { author: string; body: string }[];
+  instruction: string;
+}): Promise<string> {
+  const system = `You draft customer-facing support reply messages for xTriam Support (bpmPro, a Salesforce-native CRM for window and door contractors).
+
+Write in the xTriam support voice and follow these rules exactly:
+- Plain text only. NO markdown syntax: no asterisks, no #, no bold. Use a hyphen or plain number only if a short list is genuinely needed.
+- NO em dashes. Use commas, periods, or parentheses.
+- NO exclamation marks. Deliver even good news calmly.
+- No marketing language (no "excited", "thrilled", "seamless", "robust", "leverage").
+- Be helpful, professional, calm, and concise. Match the customer's vocabulary.
+- Open with "Dear <First Name>," when the customer's name is known.
+- Do NOT invent facts, fixes, ticket numbers, dates, or commitments. Use only the ticket context and the operator's instruction. If information is missing, ask the customer for it clearly.
+- If the operator pasted a rough draft, improve its clarity and tone while keeping their intent.
+- Output ONLY the reply body. Do NOT include a subject line and do NOT add a signature block (it is added separately).`;
+
+  const threadText =
+    input.thread && input.thread.length
+      ? input.thread.map((c) => `- ${c.author}: ${c.body}`).join("\n")
+      : "(no prior replies)";
+
+  const user = `TICKET SUBJECT: ${input.subject}
+CUSTOMER: ${input.customerName || "Unknown"}${input.accountName ? ` (${input.accountName})` : ""}
+
+CUSTOMER'S ORIGINAL MESSAGE:
+${input.description || "(none)"}
+
+CONVERSATION SO FAR (oldest first):
+${threadText}
+
+OPERATOR INSTRUCTION (what to say, or a rough draft to improve):
+${input.instruction}
+
+Write the reply now.`;
+
+  const response = await anthropic.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 1024,
+    system,
+    messages: [{ role: "user", content: user }],
+  });
+
+  if (response.content[0].type === "text") {
+    return response.content[0].text.trim();
+  }
+  return "";
+}
