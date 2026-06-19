@@ -332,7 +332,9 @@ export function TicketDetail({ caseId }: TicketDetailProps) {
                   className="group overflow-hidden rounded-lg border border-gray-200 bg-gray-50 transition-colors hover:border-brand-blue-300"
                   title={a.title}
                 >
-                  {a.contentType?.startsWith("image/") ? (
+                  {["png", "jpg", "jpeg", "gif", "webp"].includes(
+                    (a.fileExtension || "").toLowerCase()
+                  ) ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={a.url}

@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Send, Loader2, AlertCircle, Upload, X, Image as ImageIcon } from "lucide-react";
+import { Send, Loader2, AlertCircle, Upload, X, Image as ImageIcon, FileText } from "lucide-react";
 import { Button, ProcessingOverlay } from "@/components/ui";
 
 interface TicketFormProps {
@@ -12,10 +12,24 @@ interface TicketFormProps {
 interface FilePreview {
   file: File;
   preview: string;
+  renderable: boolean;
 }
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg", "image/gif", "image/webp"];
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+// Validate by extension (HEIC often has no/unreliable MIME type in browsers).
+const ALLOWED_EXT = ["png", "jpg", "jpeg", "gif", "webp", "heic", "heif", "pdf"];
+const RENDERABLE_EXT = ["png", "jpg", "jpeg", "gif", "webp"]; // browsers can <img> these
+const ALLOWED_LABEL = "PNG, JPG, GIF, WebP, HEIC, or PDF";
+const MIME_BY_EXT: Record<string, string> = {
+  png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif",
+  webp: "image/webp", heic: "image/heic", heif: "image/heif", pdf: "application/pdf",
+};
+function extOf(name: string): string {
+  return (name.split(".").pop() || "").toLowerCase();
+}
+function contentTypeFor(file: File): string {
+  return file.type || MIME_BY_EXT[extOf(file.name)] || "application/octet-stream";
+}
 
 export function TicketForm({ onSuccess }: TicketFormProps) {
   const router = useRouter();
@@ -41,21 +55,23 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
     const errors: string[] = [];
 
     Array.from(selectedFiles).forEach((file) => {
-      // Check file type
-      if (!ALLOWED_TYPES.includes(file.type)) {
-        errors.push(`${file.name}: Invalid file type. Only images allowed.`);
+      const ext = extOf(file.name);
+      // Check file type (by extension)
+      if (!ALLOWED_EXT.includes(ext)) {
+        errors.push(`${file.name}: Invalid file type. Allowed: ${ALLOWED_LABEL}.`);
         return;
       }
 
       // Check file size
       if (file.size > MAX_FILE_SIZE) {
-        errors.push(`${file.name}: File too large. Maximum size is 5MB.`);
+        errors.push(`${file.name}: File too large. Maximum size is 10MB.`);
         return;
       }
 
-      // Create preview
-      const preview = URL.createObjectURL(file);
-      newFiles.push({ file, preview });
+      // Only browser-renderable images get an <img> preview; others show a tile.
+      const renderable = RENDERABLE_EXT.includes(ext);
+      const preview = renderable ? URL.createObjectURL(file) : "";
+      newFiles.push({ file, preview, renderable });
     });
 
     if (errors.length > 0) {
@@ -95,6 +111,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
 
     try {
       for (const { file } of files) {
+        const ct = contentTypeFor(file);
         try {
           // 1. Get a signed upload URL
           const urlRes = await fetch("/api/support/upload", {
@@ -103,7 +120,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
             body: JSON.stringify({
               caseId,
               fileName: file.name,
-              contentType: file.type,
+              contentType: ct,
               fileSize: file.size,
             }),
           });
@@ -117,7 +134,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
           // 2. Upload the bytes directly to Cloud Storage
           const putRes = await fetch(urlData.uploadUrl, {
             method: "PUT",
-            headers: { "Content-Type": file.type },
+            headers: { "Content-Type": ct },
             body: file,
           });
           if (!putRes.ok) {
@@ -135,7 +152,7 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
               id: urlData.id,
               fileName: file.name,
               path: urlData.path,
-              contentType: file.type,
+              contentType: ct,
             }),
           });
           const doneData = await doneRes.json();
@@ -356,14 +373,14 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
               Click to upload screenshots
             </p>
             <p className="text-xs text-gray-400">
-              PNG, JPG, GIF up to 5MB each
+              PNG, JPG, GIF, WebP, HEIC, or PDF up to 10MB each
             </p>
           </div>
 
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/png,image/jpeg,image/jpg,image/gif,image/webp"
+            accept="image/png,image/jpeg,image/jpg,image/gif,image/webp,image/heic,image/heif,application/pdf,.heic,.heif,.pdf"
             multiple
             onChange={handleFileSelect}
             className="hidden"
@@ -378,11 +395,20 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
                   key={index}
                   className="relative group w-32 flex-shrink-0 rounded-lg overflow-hidden border border-border bg-gray-50"
                 >
-                  <img
-                    src={filePreview.preview}
-                    alt={filePreview.file.name}
-                    className="w-full h-32 object-contain bg-gray-100"
-                  />
+                  {filePreview.renderable ? (
+                    <img
+                      src={filePreview.preview}
+                      alt={filePreview.file.name}
+                      className="w-full h-32 object-contain bg-gray-100"
+                    />
+                  ) : (
+                    <div className="flex h-32 w-full flex-col items-center justify-center bg-gray-100 px-2 text-center">
+                      <FileText className="h-8 w-8 text-gray-400" />
+                      <span className="mt-1 text-[10px] font-medium uppercase text-gray-500">
+                        {extOf(filePreview.file.name)}
+                      </span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <button
                       type="button"

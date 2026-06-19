@@ -118,6 +118,34 @@ export async function notifyCommentToSupport(t: {
 
 // --- Client-facing notifications (follow SUPPORT_EMAIL_CONVENTIONS.md) ---
 
+/** Auto-acknowledgment to the person who submitted the ticket. */
+export async function notifyTicketCreatedToClient(t: {
+  ticketId: string;
+  ticketNumber: string;
+  subject: string;
+  submitterEmail: string;
+  submitterName: string;
+}): Promise<void> {
+  if (!t.submitterEmail) return;
+  const link = `${PORTAL_URL}/tickets/${t.ticketId}`;
+  const text = [
+    `Dear ${firstName(t.submitterName)},`,
+    "",
+    "Thank you for contacting xTriam Support. This confirms that we received your request and our team is looking into it.",
+    "",
+    `CASE NUMBER: ${t.ticketNumber}`,
+    `SUBJECT: ${t.subject}`,
+    "",
+    "We are investigating and will follow up with an update or any questions we have. There is nothing you need to do right now. You can view your ticket or add more details here:",
+    link,
+    "",
+    "If this is urgent, you can reach us at (305) 204-9694.",
+    "",
+    SIGNATURE,
+  ].join("\n");
+  await enqueue(t.submitterEmail, `We Received Your Request: Case ${t.ticketNumber}`, text);
+}
+
 export async function notifyReplyToClient(t: {
   ticketId: string;
   ticketNumber: string;

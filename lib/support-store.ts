@@ -4,6 +4,7 @@ import { FieldValue, Timestamp } from "firebase-admin/firestore";
 import type { SalesforceCase, SalesforceAccount } from "@/types/auth";
 import {
   notifyNewTicket,
+  notifyTicketCreatedToClient,
   notifyCommentToSupport,
   notifyReplyToClient,
   notifyStatusChangeToClient,
@@ -332,6 +333,17 @@ export async function createCase(data: {
         accountName: data.accountName ?? "",
         priority: data.priority || "Medium",
         type: data.type || "Issue",
+      })
+    );
+
+    // Auto-acknowledge to the submitter (no-op if no email on file).
+    await safeNotify(() =>
+      notifyTicketCreatedToClient({
+        ticketId: ticketRef.id,
+        ticketNumber: formatted,
+        subject: data.subject,
+        submitterName: data.submitterName || "",
+        submitterEmail: data.submitterEmail || "",
       })
     );
 

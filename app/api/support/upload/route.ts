@@ -2,17 +2,21 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
 import { createSignedUploadUrl, getCaseById } from "@/lib/support-store";
 
-// Max file size: 5MB
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
+// Max file size: 10MB (uploads go straight to Cloud Storage, not through the function)
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-// Allowed file types for screenshots
-const ALLOWED_TYPES = [
-  "image/png",
-  "image/jpeg",
-  "image/jpg",
-  "image/gif",
-  "image/webp",
-];
+// Allowed by file EXTENSION — some formats (notably iPhone HEIC) report an
+// empty or unreliable MIME type in the browser, so extension is the reliable signal.
+const ALLOWED_EXT = ["png", "jpg", "jpeg", "gif", "webp", "heic", "heif", "pdf"];
+const ALLOWED_LABEL = "PNG, JPG, GIF, WebP, HEIC, or PDF";
+const MIME_BY_EXT: Record<string, string> = {
+  png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif",
+  webp: "image/webp", heic: "image/heic", heif: "image/heif", pdf: "application/pdf",
+};
+
+function extOf(name: string): string {
+  return (name.split(".").pop() || "").toLowerCase();
+}
 
 /**
  * POST /api/support/upload
@@ -30,23 +34,27 @@ export async function POST(request: NextRequest) {
 
     const { caseId, fileName, contentType, fileSize } = await request.json();
 
-    if (!caseId || !fileName || !contentType) {
+    if (!caseId || !fileName) {
       return NextResponse.json(
-        { error: "Missing required fields: caseId, fileName, contentType" },
+        { error: "Missing required fields: caseId, fileName" },
         { status: 400 }
       );
     }
 
-    if (!ALLOWED_TYPES.includes(contentType)) {
+    const ext = extOf(fileName);
+    if (!ALLOWED_EXT.includes(ext)) {
       return NextResponse.json(
-        { error: "Invalid file type. Only images are allowed (PNG, JPG, GIF, WebP)" },
+        { error: `Invalid file type. Allowed types: ${ALLOWED_LABEL}.` },
         { status: 400 }
       );
     }
+
+    // Derive a content type when the browser didn't provide one (e.g. HEIC).
+    const resolvedContentType = contentType || MIME_BY_EXT[ext] || "application/octet-stream";
 
     if (typeof fileSize === "number" && fileSize > MAX_FILE_SIZE) {
       return NextResponse.json(
-        { error: "File too large. Maximum size is 5MB" },
+        { error: "File too large. Maximum size is 10MB" },
         { status: 400 }
       );
     }
@@ -60,7 +68,7 @@ export async function POST(request: NextRequest) {
     const { id, path, uploadUrl } = await createSignedUploadUrl({
       recordId: caseId,
       fileName,
-      contentType,
+      contentType: resolvedContentType,
     });
 
     return NextResponse.json({ success: true, id, path, uploadUrl });
