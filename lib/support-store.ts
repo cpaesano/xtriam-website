@@ -342,6 +342,7 @@ export async function createCase(data: {
         ticketId: ticketRef.id,
         ticketNumber: formatted,
         subject: data.subject,
+        description: data.description,
         submitterName: data.submitterName || "",
         submitterEmail: data.submitterEmail || "",
       })

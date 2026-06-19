@@ -123,6 +123,7 @@ export async function notifyTicketCreatedToClient(t: {
   ticketId: string;
   ticketNumber: string;
   subject: string;
+  description: string;
   submitterEmail: string;
   submitterName: string;
 }): Promise<void> {
@@ -135,6 +136,9 @@ export async function notifyTicketCreatedToClient(t: {
     "",
     `CASE NUMBER: ${t.ticketNumber}`,
     `SUBJECT: ${t.subject}`,
+    "",
+    "WHAT YOU SENT US:",
+    t.description || "(no description provided)",
     "",
     "We are investigating and will follow up with an update or any questions we have. There is nothing you need to do right now. You can view your ticket or add more details here:",
     link,
