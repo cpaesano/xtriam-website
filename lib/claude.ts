@@ -72,7 +72,12 @@ export async function chat(messages: ChatMessage[]): Promise<string> {
       : BASE_SYSTEM_PROMPT;
 
     const response = await anthropic.messages.create({
-      model: "claude-sonnet-4-20250514",
+      // claude-sonnet-4-20250514 (Sonnet 4) was retired 2026-06-15 → 404s.
+      // Sonnet 5 is its successor; disable thinking so replies stay fast and
+      // the 1024-token budget isn't shared with adaptive thinking (on-by-default
+      // when the field is omitted on Sonnet 5).
+      model: "claude-sonnet-5",
+      thinking: { type: "disabled" },
       max_tokens: 1024,
       system: systemPrompt,
       messages: messages.map((m) => ({
