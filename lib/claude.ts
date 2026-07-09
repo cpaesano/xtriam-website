@@ -155,7 +155,10 @@ ${input.instruction}
 Write the reply now.`;
 
   const response = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
+    // Keep on the current Sonnet tier; disable thinking (on-by-default on
+    // Sonnet 5 when omitted) so the 1024-token budget goes to the reply.
+    model: "claude-sonnet-5",
+    thinking: { type: "disabled" },
     max_tokens: 1024,
     system,
     messages: [{ role: "user", content: user }],
