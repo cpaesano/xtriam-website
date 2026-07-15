@@ -150,6 +150,42 @@ export async function notifyTicketCreatedToClient(t: {
   await enqueue(t.submitterEmail, `We Received Your Request: Case ${t.ticketNumber}`, text);
 }
 
+/**
+ * Acknowledgment for a ticket WE opened on the client's behalf (phone, email,
+ * Zoom, etc.). Distinct from notifyTicketCreatedToClient so we never tell a
+ * client "thanks for submitting your ticket" when they did not submit it.
+ */
+export async function notifyAdminOpenedTicketToClient(t: {
+  ticketId: string;
+  ticketNumber: string;
+  subject: string;
+  description: string;
+  submitterEmail: string;
+  submitterName: string;
+}): Promise<void> {
+  if (!t.submitterEmail) return;
+  const link = `${PORTAL_URL}/tickets/${t.ticketId}`;
+  const text = [
+    `Dear ${firstName(t.submitterName)},`,
+    "",
+    "Following up on your request, we have logged it in our support system so we can track it through to resolution.",
+    "",
+    `CASE NUMBER: ${t.ticketNumber}`,
+    `SUBJECT: ${t.subject}`,
+    "",
+    "WHAT WE LOGGED:",
+    t.description || "(no description provided)",
+    "",
+    "There is nothing you need to do right now. You can view the ticket or add more details here:",
+    link,
+    "",
+    "If this is urgent, you can reach us at (305) 204-9694.",
+    "",
+    SIGNATURE,
+  ].join("\n");
+  await enqueue(t.submitterEmail, `We Logged Your Request: Case ${t.ticketNumber}`, text);
+}
+
 export async function notifyReplyToClient(t: {
   ticketId: string;
   ticketNumber: string;
