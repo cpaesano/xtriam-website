@@ -46,10 +46,17 @@ export async function GET(request: Request, { params }: RouteParams) {
       );
     }
 
+    // Internal (support-only) comments must never reach a client. getCaseComments
+    // marks them IsPublished=false; strip them for non-admin sessions here, at the
+    // server boundary, rather than trusting the client to hide them.
+    const visibleComments = session.isAdmin
+      ? comments
+      : comments.filter((c) => c.IsPublished);
+
     return NextResponse.json({
       success: true,
       ticket,
-      comments,
+      comments: visibleComments,
       attachments,
       isAdmin: !!session.isAdmin,
       prevCaseId: adjacent.prevCaseId,
