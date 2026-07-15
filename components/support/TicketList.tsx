@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Ticket, Clock, AlertCircle, CheckCircle2, Loader2, Shield, MessageSquare, Paperclip } from "lucide-react";
+import { Ticket, Clock, AlertCircle, CheckCircle2, Loader2, Shield, MessageSquare, Paperclip, PlusCircle } from "lucide-react";
 import type { SalesforceCase } from "@/types/auth";
+import { AdminTicketIntakeModal } from "./AdminTicketIntakeModal";
 
 type FilterTab = "all" | "open" | "closed";
 
@@ -15,37 +17,52 @@ interface TicketListProps {
 }
 
 export function TicketList({ limit, showViewAll = false }: TicketListProps) {
+  const router = useRouter();
   const [allTickets, setAllTickets] = useState<SalesforceCase[]>([]);
   const [activeFilter, setActiveFilter] = useState<FilterTab>("open");
   const [isAdmin, setIsAdmin] = useState(false);
   const [viewAll, setViewAll] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showIntake, setShowIntake] = useState(false);
+
+  const fetchTickets = useCallback(async () => {
+    try {
+      const url = viewAll ? "/api/support/tickets?all=true" : "/api/support/tickets";
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.success) {
+        setAllTickets(data.tickets);
+        if (data.isAdmin !== undefined) {
+          setIsAdmin(data.isAdmin);
+        }
+      } else {
+        setError(data.error || "Failed to load tickets");
+      }
+    } catch {
+      setError("Failed to connect to server");
+    } finally {
+      setLoading(false);
+    }
+  }, [viewAll]);
 
   useEffect(() => {
-    async function fetchTickets() {
-      try {
-        const url = viewAll ? "/api/support/tickets?all=true" : "/api/support/tickets";
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (data.success) {
-          setAllTickets(data.tickets);
-          if (data.isAdmin !== undefined) {
-            setIsAdmin(data.isAdmin);
-          }
-        } else {
-          setError(data.error || "Failed to load tickets");
-        }
-      } catch {
-        setError("Failed to connect to server");
-      } finally {
-        setLoading(false);
-      }
-    }
-
     fetchTickets();
-  }, [viewAll]);
+  }, [fetchTickets]);
+
+  function handleTicketCreated(caseId: string) {
+    setShowIntake(false);
+    router.push(`/support/tickets/${caseId}`);
+  }
+
+  const intakeModal =
+    showIntake && !limit ? (
+      <AdminTicketIntakeModal
+        onClose={() => setShowIntake(false)}
+        onCreated={handleTicketCreated}
+      />
+    ) : null;
 
   const counts = useMemo(() => {
     const closed = allTickets.filter((t) => CLOSED_STATUSES.includes(t.Status)).length;
@@ -84,7 +101,14 @@ export function TicketList({ limit, showViewAll = false }: TicketListProps) {
   if (allTickets.length === 0 && !viewAll) {
     return (
       <div className="space-y-4">
-        {isAdmin && !limit && <AdminToggle viewAll={viewAll} onToggle={setViewAll} />}
+        {intakeModal}
+        {isAdmin && !limit && (
+          <AdminToggle
+            viewAll={viewAll}
+            onToggle={setViewAll}
+            onLogTicket={() => setShowIntake(true)}
+          />
+        )}
         <div className="rounded-lg border border-border bg-muted/30 p-8 text-center">
           <Ticket className="mx-auto h-12 w-12 text-muted-foreground/50" />
           <h3 className="mt-4 font-semibold text-foreground">No tickets yet</h3>
@@ -112,8 +136,16 @@ export function TicketList({ limit, showViewAll = false }: TicketListProps) {
 
   return (
     <div className="space-y-4">
+      {intakeModal}
+
       {/* Admin Toggle */}
-      {isAdmin && !limit && <AdminToggle viewAll={viewAll} onToggle={setViewAll} />}
+      {isAdmin && !limit && (
+        <AdminToggle
+          viewAll={viewAll}
+          onToggle={setViewAll}
+          onLogTicket={() => setShowIntake(true)}
+        />
+      )}
 
       {/* Filter Tabs */}
       {!limit && (
@@ -260,11 +292,28 @@ export function TicketList({ limit, showViewAll = false }: TicketListProps) {
   );
 }
 
-function AdminToggle({ viewAll, onToggle }: { viewAll: boolean; onToggle: (v: boolean) => void }) {
+function AdminToggle({
+  viewAll,
+  onToggle,
+  onLogTicket,
+}: {
+  viewAll: boolean;
+  onToggle: (v: boolean) => void;
+  onLogTicket?: () => void;
+}) {
   return (
-    <div className="flex items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+    <div className="flex flex-wrap items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
       <Shield className="h-4 w-4 text-purple-600" />
       <span className="text-sm font-medium text-purple-800">Admin</span>
+      {onLogTicket && (
+        <button
+          onClick={onLogTicket}
+          className="inline-flex items-center gap-1.5 rounded-md bg-purple-600 px-3 py-1 text-xs font-medium text-white transition-colors hover:bg-purple-700"
+        >
+          <PlusCircle className="h-3.5 w-3.5" />
+          Log Ticket
+        </button>
+      )}
       <div className="flex gap-1 ml-auto">
         <button
           onClick={() => onToggle(false)}

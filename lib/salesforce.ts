@@ -101,6 +101,81 @@ export async function findContactByPhone(
 }
 
 /**
+ * Admin contact search (for logging tickets on behalf of a client).
+ * Matches Name / Email, and phone fields when the term looks like a number.
+ * Returns up to 10 results, ordered by Name.
+ *
+ * NOTE: identity source is the xTriam Salesforce org, the SAME source
+ * phone-PIN login resolves against. A ticket stored under one of these
+ * contactIds only surfaces for a client who ALSO logs in via phone-PIN.
+ * SSO users (bpmPro "Need Help?" button) get a subscriber-org contactId,
+ * which will not match — see the admin intake modal's identity note.
+ */
+export interface ContactSearchResult {
+  Id: string;
+  Name: string;
+  Email: string | null;
+  AccountId: string;
+  AccountName: string;
+  Phone: string | null;
+  MobilePhone: string | null;
+}
+
+export async function searchContacts(q: string): Promise<ContactSearchResult[]> {
+  const term = (q || "").trim();
+  if (term.length < 2) return [];
+
+  const conn = await getSalesforceConnection();
+
+  // Escape SOQL string literals to prevent injection (jsforce does not param-bind).
+  const escapeSoql = (s: string) => s.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+  const like = `%${escapeSoql(term)}%`;
+
+  const clauses = [`Name LIKE '${like}'`, `Email LIKE '${like}'`];
+
+  // When the term carries enough digits, also match phone fields regardless of
+  // formatting by interleaving the digits with wildcards.
+  const digits = term.replace(/\D/g, "");
+  if (digits.length >= 7) {
+    const phonePattern = `%${digits.split("").join("%")}%`;
+    clauses.push(
+      `Phone LIKE '${phonePattern}'`,
+      `MobilePhone LIKE '${phonePattern}'`,
+      `HomePhone LIKE '${phonePattern}'`,
+      `OtherPhone LIKE '${phonePattern}'`
+    );
+  }
+
+  const query = `
+    SELECT Id, Name, Email, Phone, MobilePhone, AccountId, Account.Name
+    FROM Contact
+    WHERE ${clauses.join(" OR ")}
+    ORDER BY Name
+    LIMIT 10
+  `;
+
+  const result = await conn.query<{
+    Id: string;
+    Name: string;
+    Email: string | null;
+    Phone: string | null;
+    MobilePhone: string | null;
+    AccountId: string;
+    Account?: { Name: string };
+  }>(query);
+
+  return result.records.map((r) => ({
+    Id: r.Id,
+    Name: r.Name,
+    Email: r.Email,
+    AccountId: r.AccountId,
+    AccountName: r.Account?.Name ?? "",
+    Phone: r.Phone,
+    MobilePhone: r.MobilePhone,
+  }));
+}
+
+/**
  * Get Account information by ID
  */
 export async function getAccountInfo(

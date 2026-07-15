@@ -5,6 +5,7 @@ import type { SalesforceCase, SalesforceAccount } from "@/types/auth";
 import {
   notifyNewTicket,
   notifyTicketCreatedToClient,
+  notifyAdminOpenedTicketToClient,
   notifyCommentToSupport,
   notifyReplyToClient,
   notifyStatusChangeToClient,
@@ -244,7 +245,23 @@ function buildTicketCode(date: Date, name?: string, accountName?: string | null)
   return `${yyyy}-${mm}-${submitterInitials(name, accountName)}-${randomCodeSuffix()}`;
 }
 
-/** Create a support ticket with an atomic sequential ticket number. */
+/**
+ * Create a support ticket with an atomic sequential ticket number.
+ *
+ * Self-service (client) submissions pass only the base fields and get the
+ * original behavior: notify the support team + auto-acknowledge the submitter.
+ *
+ * Admin intake (a ticket logged on a client's behalf) sets `onBehalf` and may
+ * additionally supply:
+ *   - `status`        -> "New" (default) or "Closed" (resolve-and-log)
+ *   - `createdAt`     -> backdate to when the client actually reported it
+ *   - `notify`        -> false suppresses ALL client email (default true)
+ *   - `resolution`    -> published support reply added to the thread
+ *   - `internalNote`  -> support-only note (hidden from the client)
+ *   - `createdByAdmin`-> email of the admin who logged it
+ * Admin-created tickets never fire the support-team "new ticket" alert (we are
+ * the ones creating it); the client ack uses the distinct admin-opened template.
+ */
 export async function createCase(data: {
   contactId: string;
   accountId: string;
@@ -257,17 +274,30 @@ export async function createCase(data: {
   accountName?: string | null;
   origin?: string;
   productKey?: string;
+  // Admin-intake extensions (all optional; default to self-service behavior):
+  onBehalf?: boolean;
+  createdByAdmin?: string;
+  status?: string;
+  createdAt?: Date;
+  notify?: boolean;
+  resolution?: string;
+  internalNote?: string;
 }): Promise<{ success: boolean; id?: string; error?: string }> {
   const db = getAdminDb();
   try {
     const ticketRef = db.collection(TICKETS).doc();
     const counterRef = db.collection("counters").doc(TICKETS);
-    const now = Timestamp.now();
+    const now = data.createdAt ? Timestamp.fromDate(data.createdAt) : Timestamp.now();
+    const status = data.status || "New";
+    const isClosed = status === "Closed";
+    const notify = data.notify !== false; // default true
+    const hasResolution = !!(data.resolution && data.resolution.trim());
+    const hasInternalNote = !!(data.internalNote && data.internalNote.trim());
     let ticketNumber = 0;
 
     // Customer-facing code (collision-checked; the random suffix carries uniqueness).
-    const nowDate = now.toDate();
-    let formatted = buildTicketCode(nowDate, data.submitterName, data.accountName);
+    const codeDate = now.toDate();
+    let formatted = buildTicketCode(codeDate, data.submitterName, data.accountName);
     for (let attempt = 0; attempt < 6; attempt++) {
       const dup = await db
         .collection(TICKETS)
@@ -276,7 +306,7 @@ export async function createCase(data: {
         .get();
       if (dup.empty) break;
       formatted =
-        buildTicketCode(nowDate, data.submitterName, data.accountName) +
+        buildTicketCode(codeDate, data.submitterName, data.accountName) +
         (attempt >= 4 ? randomCodeSuffix(2) : "");
     }
 
@@ -291,7 +321,7 @@ export async function createCase(data: {
         ticketNumberFormatted: formatted,
         subject: data.subject,
         description: data.description,
-        status: "New",
+        status,
         priority: data.priority || "Medium",
         type: data.type || "Issue",
         productKey: data.productKey || "bpmpro",
@@ -301,13 +331,39 @@ export async function createCase(data: {
         submitterName: data.submitterName || "",
         submitterEmail: data.submitterEmail || "",
         origin: data.origin || "web",
+        onBehalf: !!data.onBehalf,
+        createdByAdmin: data.createdByAdmin || null,
         createdAt: now,
         updatedAt: now,
         lastModifiedAt: now,
-        closedAt: null,
+        closedAt: isClosed ? now : null,
         attachments: [],
+        // Count the resolution as the first published support reply.
+        replyCount: hasResolution ? 1 : 0,
       });
     });
+
+    // Support-only internal note captured at creation (hidden from the client).
+    if (hasInternalNote) {
+      await ticketRef.collection("comments").add({
+        body: data.internalNote!.trim(),
+        authorName: data.createdByAdmin || "xTriam Support",
+        isAdmin: true,
+        isInternal: true,
+        createdAt: now,
+      });
+    }
+
+    // Resolution posted as a published support reply on the thread.
+    if (hasResolution) {
+      await ticketRef.collection("comments").add({
+        body: data.resolution!.trim(),
+        authorName: "xTriam Support",
+        isAdmin: true,
+        isInternal: false,
+        createdAt: now,
+      });
+    }
 
     // Upsert a lightweight account record for the account page.
     await db
@@ -322,31 +378,62 @@ export async function createCase(data: {
         { merge: true }
       );
 
-    await safeNotify(() =>
-      notifyNewTicket({
-        ticketId: ticketRef.id,
-        ticketNumber: formatted,
-        subject: data.subject,
-        description: data.description,
-        submitterName: data.submitterName || "",
-        submitterEmail: data.submitterEmail || "",
-        accountName: data.accountName ?? "",
-        priority: data.priority || "Medium",
-        type: data.type || "Issue",
-      })
-    );
+    // Alert the support team only for genuine client submissions. When an admin
+    // logs a ticket on a client's behalf, we already know about it.
+    if (!data.onBehalf) {
+      await safeNotify(() =>
+        notifyNewTicket({
+          ticketId: ticketRef.id,
+          ticketNumber: formatted,
+          subject: data.subject,
+          description: data.description,
+          submitterName: data.submitterName || "",
+          submitterEmail: data.submitterEmail || "",
+          accountName: data.accountName ?? "",
+          priority: data.priority || "Medium",
+          type: data.type || "Issue",
+        })
+      );
+    }
 
-    // Auto-acknowledge to the submitter (no-op if no email on file).
-    await safeNotify(() =>
-      notifyTicketCreatedToClient({
-        ticketId: ticketRef.id,
-        ticketNumber: formatted,
-        subject: data.subject,
-        description: data.description,
-        submitterName: data.submitterName || "",
-        submitterEmail: data.submitterEmail || "",
-      })
-    );
+    // Client-facing email (all no-op if no email on file).
+    if (notify) {
+      if (hasResolution) {
+        // Resolve-and-log: send the answer, not a bare acknowledgment.
+        await safeNotify(() =>
+          notifyReplyToClient({
+            ticketId: ticketRef.id,
+            ticketNumber: formatted,
+            subject: data.subject,
+            submitterEmail: data.submitterEmail || "",
+            submitterName: data.submitterName || "",
+            body: data.resolution!.trim(),
+          })
+        );
+      } else if (data.onBehalf) {
+        await safeNotify(() =>
+          notifyAdminOpenedTicketToClient({
+            ticketId: ticketRef.id,
+            ticketNumber: formatted,
+            subject: data.subject,
+            description: data.description,
+            submitterName: data.submitterName || "",
+            submitterEmail: data.submitterEmail || "",
+          })
+        );
+      } else {
+        await safeNotify(() =>
+          notifyTicketCreatedToClient({
+            ticketId: ticketRef.id,
+            ticketNumber: formatted,
+            subject: data.subject,
+            description: data.description,
+            submitterName: data.submitterName || "",
+            submitterEmail: data.submitterEmail || "",
+          })
+        );
+      }
+    }
 
     return { success: true, id: ticketRef.id };
   } catch (error) {

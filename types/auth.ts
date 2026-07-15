@@ -95,6 +95,19 @@ export interface CreateTicketRequest {
   description: string;
   priority?: "Low" | "Medium" | "High";
   type?: "Issue" | "Feature Request" | "Question";
+  // Admin intake (logging a ticket on behalf of a client). Honored only when
+  // the caller's session is an admin; ignored for regular client submissions.
+  onBehalfContactId?: string;
+  onBehalfAccountId?: string;
+  onBehalfName?: string;
+  onBehalfEmail?: string;
+  onBehalfAccountName?: string;
+  origin?: string; // channel: phone | email | sms | zoom | walkthrough | web
+  reportedAt?: string; // ISO date the client actually reported it
+  resolveNow?: boolean; // create Closed with the resolution as a support reply
+  resolution?: string;
+  internalNote?: string;
+  notify?: boolean; // email the client (default true; UI defaults off when resolving)
 }
 
 export interface ChatMessage {
