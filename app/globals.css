@@ -154,6 +154,24 @@ html.dark {
   color-scheme: light;
 }
 
+/*
+ * Force dark text in every portal form control. Some inputs set only a light
+ * background (bg-white) and rely on inherited text color, which iOS/Safari in
+ * dark mode does NOT honor even under color-scheme:light — producing invisible
+ * "ghosted" text (FSPU, Jason Dooley, 2026-07-22: ticket reply box). Pinning the
+ * color here covers every input/textarea/select at once, including future ones,
+ * rather than depending on each element carrying an explicit text-color class.
+ */
+.support-portal input,
+.support-portal textarea,
+.support-portal select {
+  color: #171717;
+}
+.support-portal input::placeholder,
+.support-portal textarea::placeholder {
+  color: #9ca3af;
+}
+
 /* Base Styles */
 body {
   background: var(--background);
